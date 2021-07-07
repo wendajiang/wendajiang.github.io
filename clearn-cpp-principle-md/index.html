@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+    
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+
+        <title>
+            Clean C++ 读书笔记1
+        </title>
+
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;page.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;page_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;navigatebar_mobile.css">
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;highlight.css">
+
+        
+        <script>
+        function initMermaid() {
+          var config = {
+            startOnLoad: true,
+            theme: "forest",
+            flowchart:{
+              useMaxWidth: true,
+              htmlLabels: true
+            }
+          };
+          mermaid.initialize(config);
+          window.mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+        }
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/mermaid/8.9.1/mermaid.min.js"
+          async
+          onload="initMermaid()">
+        </script>
+        
+
+        
+        <!-- Math rendering -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="https:&#x2F;&#x2F;wendajiang.github.io">David</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="https:&#x2F;&#x2F;wendajiang.github.io/tags">Tags</a>
+    </div>
+    
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;essay&#x2F;">Essay</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;ddia&#x2F;">ddia</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;http2ia&#x2F;">http2ia</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;QA&#x2F;">Q&amp;A</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;about&#x2F;">About</a>
+        </div>
+    
+    <div class="navigatebar-button">
+        <a href = "https:&#x2F;&#x2F;wendajiang.github.io/about/archive">Archive</a>
+    </div>
+</div>
+
+
+        <div class="content-area">
+            <div class="title">
+                Clean C++ 读书笔记1
+            </div>
+            
+            <div class="category-area">
+                「
+                <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;tags/clean cpp">
+                    <div class="category">
+                        clean cpp
+                    </div>
+                </a>
+                」
+            </div>
+            
+            <div class="char-counter">
+                字数2058 2021-04-25T22:45:06
+            </div>
+            <div class="content">
+                
+                <ul>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/clearn-cpp-principle-md/#yuan-ze">原则</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/clearn-cpp-principle-md/#kiss">KISS</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/clearn-cpp-principle-md/#yagni">YAGNI</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/clearn-cpp-principle-md/#dry">DRY</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/clearn-cpp-principle-md/#information-hiding">Information Hiding</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/clearn-cpp-principle-md/#strong-cohesion">Strong Cohesion</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/clearn-cpp-principle-md/#loose-coupling">Loose Coupling</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/clearn-cpp-principle-md/#be-careful-with-optimizations">Be Careful with Optimizations</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/clearn-cpp-principle-md/#principle-of-least-astonishment-pla">Principle of Least Astonishment (PLA)</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/clearn-cpp-principle-md/#the-boy-scout-rule">The Boy Scout Rule</a>
+                            
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                </ul>
+                
+                <!--
+mermaid example:
+<div class="mermaid">
+    mermaid program
+</div>
+-->
+<h2 id="yuan-ze">原则</h2>
+<h3 id="kiss">KISS</h3>
+<p><strong>Keep it Simple and stupid</strong> </p>
+<p>保持代码简单，不要为了炫技而炫技，代码的第一位永远是可读和可维护性</p>
+<p>控制代码的复杂度非常重要</p>
+<h3 id="yagni">YAGNI</h3>
+<p><strong>You Aren't Gonna Need It!</strong></p>
+<p>不要写将来的代码，永远不要假设什么代码将来会需要，需要的时候再写即可</p>
+<p>记住重构的力量</p>
+<h3 id="dry">DRY</h3>
+<p><strong>Don't repeat yourself</strong></p>
+<p>不要复制代码，否则修改代码要记住修改所有 copy 的位置，基本这就肯定会带来 bug</p>
+<h3 id="information-hiding">Information Hiding</h3>
+<p>类或者什么暴露给其他人使用的内容尽可能隐藏内部实现，这样调整类或者 API 实现时用户代码尽可能少的修改</p>
+<p>优点：</p>
+<ul>
+<li>模块修改的影响</li>
+<li>提高模块可用性</li>
+<li>更易测试</li>
+</ul>
+<p>信息隐藏于封装很容易混淆，但是两者不同。信息隐藏是一个设计原则，帮助开发者更好构建模块，原则可以应用于多个层次的抽象，尤其是大型系统</p>
+<p>封装是依赖语言的，比如在 C++ 中，你可以将方法使用 private 关键字使之于外部无法访问。封装是信息隐藏的一种实现方式，但是不能保证。</p>
+<h3 id="strong-cohesion">Strong Cohesion</h3>
+<p>强内聚，软件开发中一般建议是任何软件实体(module, component, unit, class, function ...)应该是强内聚的</p>
+<h3 id="loose-coupling">Loose Coupling</h3>
+<p>低耦合，有个例子</p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#268bd2;">class </span><span style="color:#b58900;">Lamp </span><span style="color:#657b83;">{
+</span><span style="color:#859900;">public</span><span style="color:#657b83;">:
+    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">on</span><span style="color:#657b83;">() {}
+    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">off</span><span style="color:#657b83;">() {}
+};
+
+</span><span style="color:#268bd2;">class </span><span style="color:#b58900;">Switch </span><span style="color:#657b83;">{
+</span><span style="color:#859900;">private</span><span style="color:#657b83;">:
+    Lamp </span><span style="color:#859900;">&amp;</span><span style="color:#657b83;">lamp;
+    </span><span style="color:#268bd2;">bool</span><span style="color:#657b83;"> state {</span><span style="color:#b58900;">false</span><span style="color:#657b83;">};
+</span><span style="color:#859900;">public</span><span style="color:#657b83;">:
+    </span><span style="color:#b58900;">Switch</span><span style="color:#657b83;">(Lamp </span><span style="color:#859900;">&amp;</span><span style="color:#268bd2;">lamp</span><span style="color:#657b83;">): </span><span style="color:#268bd2;">lamp</span><span style="color:#657b83;">(lamp) {}
+
+    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">toggle</span><span style="color:#657b83;">() {
+        </span><span style="color:#859900;">if </span><span style="color:#657b83;">(state) {
+            state = </span><span style="color:#b58900;">false</span><span style="color:#657b83;">;
+            lamp.</span><span style="color:#b58900;">off</span><span style="color:#657b83;">();
+        }
+        </span><span style="color:#859900;">else </span><span style="color:#657b83;">{
+            state = </span><span style="color:#b58900;">true</span><span style="color:#657b83;">;
+            lamp.</span><span style="color:#b58900;">on</span><span style="color:#657b83;">();
+        }
+    }
+};
+</span></code></pre>
+<p>Lamp 与 Switch 是强耦合的</p>
+<p>可以拆解为：</p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#268bd2;">class </span><span style="color:#b58900;">Swithable </span><span style="color:#657b83;">{
+</span><span style="color:#859900;">public</span><span style="color:#657b83;">:
+    </span><span style="color:#859900;">virtual </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">on</span><span style="color:#657b83;">() = </span><span style="color:#6c71c4;">0</span><span style="color:#657b83;">;
+    </span><span style="color:#859900;">virtual </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">off</span><span style="color:#657b83;">() = </span><span style="color:#6c71c4;">0</span><span style="color:#657b83;">;
+};
+
+</span><span style="color:#268bd2;">class </span><span style="color:#b58900;">Switch </span><span style="color:#657b83;">{
+</span><span style="color:#859900;">private</span><span style="color:#657b83;">:
+    Switchadble</span><span style="color:#859900;">&amp;</span><span style="color:#657b83;"> switchable;
+    </span><span style="color:#268bd2;">bool</span><span style="color:#657b83;"> state {</span><span style="color:#b58900;">false</span><span style="color:#657b83;">};
+</span><span style="color:#859900;">public</span><span style="color:#657b83;">:
+    </span><span style="color:#b58900;">Switch</span><span style="color:#657b83;">(Switchable </span><span style="color:#859900;">&amp;</span><span style="color:#268bd2;">sw</span><span style="color:#657b83;">): </span><span style="color:#268bd2;">switchable</span><span style="color:#657b83;">(sw) {}
+    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">toggle</span><span style="color:#657b83;">() {
+        </span><span style="color:#859900;">if </span><span style="color:#657b83;">(state) {
+            state = </span><span style="color:#b58900;">false</span><span style="color:#657b83;">;
+            switchable.</span><span style="color:#b58900;">off</span><span style="color:#657b83;">();
+        }
+        </span><span style="color:#859900;">else </span><span style="color:#657b83;">{
+            state = </span><span style="color:#b58900;">true</span><span style="color:#657b83;">;
+            switchable.</span><span style="color:#b58900;">on</span><span style="color:#657b83;">();
+        }
+    }
+};
+
+</span><span style="color:#268bd2;">class </span><span style="color:#b58900;">Lamp</span><span style="color:#657b83;">: </span><span style="color:#859900;">public </span><span style="color:#268bd2;">Switchable </span><span style="color:#657b83;">{
+</span><span style="color:#859900;">public</span><span style="color:#657b83;">:
+    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">on</span><span style="color:#657b83;">() </span><span style="color:#859900;">override </span><span style="color:#657b83;">{
+
+    }
+    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">off</span><span style="color:#657b83;">() </span><span style="color:#859900;">override </span><span style="color:#657b83;">{
+
+    }
+};
+</span></code></pre>
+<p>这样，Lamp 就与 Switch 进行了解耦，扩展比如 Fan Radiator 就变得非常简单</p>
+<h3 id="be-careful-with-optimizations">Be Careful with Optimizations</h3>
+<p>不要过早优化，如果没有现象表明需要优化，那就不要优化</p>
+<p>如果一定要优化，不要凭借直觉进行优化，使用 Profile 工具(比如<a href="https://github.com/brendangregg/FlameGraph">火焰图</a>)对代码进行性能测试，结果可能与你直觉迥然不同</p>
+<h3 id="principle-of-least-astonishment-pla">Principle of Least Astonishment (PLA)</h3>
+<p>更知名的名称为 <em>Principle of Least Surprice(POLS)</em>，用户接口设计中，不要让用户吃惊，比如 Ctrl-C 通常是复制的意思，这已经被广泛接受，不要重定义为比如退出程序的逻辑</p>
+<h3 id="the-boy-scout-rule">The Boy Scout Rule</h3>
+<p>这个原则是关于开发者的。表示只要你发现了不干净的代码，马上整理它。比如：</p>
+<ul>
+<li>重命名命名很失败的类，函数，方法，成员</li>
+<li>将大函数拆分成小的逻辑单位</li>
+<li>删除没必要的注释</li>
+<li>清理复杂的if-else</li>
+<li>删除重复代码</li>
+</ul>
+<p>这与迭代重构是一个意思，一次重构一点，逐步重构整个系统，其中关键的是没一点修改都要经过单元测试</p>
+<p>实际中重要的一点，就是共有代码权限，所有人可以修改所有代码 ---- 这通常在国内的公司有部分实现不了:) 逃</p>
+
+            </div>
+        </div>
+    </body>
+  
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var gitalk = new Gitalk({
+            id: 'Clean C++ 读书笔记1',
+            clientID: 'a17500877ddbb2dd70b9',
+            clientSecret: '77e1c5816e97e2473c0a617bd0e3ece99f33559f',
+            repo: 'wendajiang.github.io',
+            owner: 'wendajiang',
+            admin: ['wendajiang'],
+            perPage: 50,
+
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</html>

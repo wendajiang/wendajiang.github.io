@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+    
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+
+        <title>
+            分布式算法路线图
+        </title>
+
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;page.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;page_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;navigatebar_mobile.css">
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;highlight.css">
+
+        
+
+        
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="https:&#x2F;&#x2F;wendajiang.github.io">David</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="https:&#x2F;&#x2F;wendajiang.github.io/tags">Tags</a>
+    </div>
+    
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;essay&#x2F;">Essay</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;ddia&#x2F;">ddia</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;http2ia&#x2F;">http2ia</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;QA&#x2F;">Q&amp;A</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;about&#x2F;">About</a>
+        </div>
+    
+    <div class="navigatebar-button">
+        <a href = "https:&#x2F;&#x2F;wendajiang.github.io/about/archive">Archive</a>
+    </div>
+</div>
+
+
+        <div class="content-area">
+            <div class="title">
+                分布式算法路线图
+            </div>
+            
+            <div class="category-area">
+                「
+                <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;tags/distribute">
+                    <div class="category">
+                        distribute
+                    </div>
+                </a>
+                
+                <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;tags/algorithms">
+                    <div class="category">
+                        algorithms
+                    </div>
+                </a>
+                」
+            </div>
+            
+            <div class="char-counter">
+                字数922 2021-02-03T01:02:18
+            </div>
+            <div class="content">
+                
+                <ul>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/distribute-algs-roadmap/#yi-zhi-xing">一致性</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/distribute-algs-roadmap/#ke-yong-xing">可用性</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/distribute-algs-roadmap/#xing-neng">性能</a>
+                    
+                </li>
+                
+                </ul>
+                
+                <p>开发分布式系统最关键的是根据场景特点，选择合适的算法，在一致性和可用性之间折中</p>
+<p>分布式算法的四度空间：</p>
+<table><thead><tr><th align="center">协议</th><th align="center">拜占庭容错</th><th align="center">一致性</th><th align="center">性能</th><th align="center">可用性</th></tr></thead><tbody>
+<tr><td align="center">2PC（2阶段提交协议）</td><td align="center">否</td><td align="center">强一致性</td><td align="center">低</td><td align="center">低</td></tr>
+<tr><td align="center">TCC</td><td align="center">否</td><td align="center">最终一致性</td><td align="center">低</td><td align="center">低</td></tr>
+<tr><td align="center">Paxos</td><td align="center">否</td><td align="center">强一致性</td><td align="center">中</td><td align="center">中</td></tr>
+<tr><td align="center">ZAB</td><td align="center">否</td><td align="center">最终一致性</td><td align="center">中</td><td align="center">中</td></tr>
+<tr><td align="center">Raft</td><td align="center">否</td><td align="center">强一致性</td><td align="center">中</td><td align="center">中</td></tr>
+<tr><td align="center">Gossip</td><td align="center">否</td><td align="center">最终一致性</td><td align="center">高</td><td align="center">高</td></tr>
+<tr><td align="center">Quorum NWR</td><td align="center">否</td><td align="center">强一致性</td><td align="center">中</td><td align="center">中</td></tr>
+<tr><td align="center">PBFT</td><td align="center">是</td><td align="center">N/A</td><td align="center">低</td><td align="center">中</td></tr>
+<tr><td align="center">POW</td><td align="center">是</td><td align="center">N/A</td><td align="center">低</td><td align="center">中</td></tr>
+</tbody></table>
+<h3 id="yi-zhi-xing">一致性</h3>
+<ul>
+<li>强一致性：保证写操作完成后，任何后续访问都能读到更新后的值</li>
+<li>弱一致性：写操作完成后，系统不能保证后续访问都能读到更新后的值</li>
+<li>最终一致性：保证如果某个对象没有新的写操作了，最终所有后续访问都能读到相同的最近更新的值</li>
+</ul>
+<p>强一致性是具有多种含义的。</p>
+<p>首先，在埃里克·布鲁尔的猜想中，CAP 中的强一致性（也就是 C）是指 ACID 的 C，系统状态的一致性，而这种一致性，可以通过二阶段提交协议来实现。</p>
+<p>其次，在 CAP 定理中，CAP 中的强一致性（也就是 C）是指原子一致性（也就是线性一致性）。其中，Paxos、Raft 能实现线性一致性，而 ZooKeeper 基于读性能的考虑，它通过 ZAB 协议提供的是最终一致性。</p>
+<p>一般而言，在需要系统状态的一致性时，你可以考虑采用二阶段提交协议、TCC。在需要数据访问是的强一致性时，你可考虑 Raft 算法。在可用性优先的系统，你可以采用 Gossip 协议来实现最终一致性，并实现 Quorum NWR 来提供强一致性。</p>
+<h3 id="ke-yong-xing">可用性</h3>
+<p>可用性强调的是服务可用</p>
+<p>一般来讲，采用Gossip协议实现最终一致性的系统，可用性最高。其次是Paxos、ZAB、Raft、Quorum NWR、PBFT、POW，可以容忍一定数量节点故障</p>
+<p>最后是二阶段提交协议、TCC，只有当所有节点都运行时，才能工作，可用性最低</p>
+<h3 id="xing-neng">性能</h3>
+<p>一般来讲，采用 Gossip 协议的 AP 型分布式系统，具备水平扩展能力，读写性能是最高的。其次是 Paxos 算法、ZAB 协议、Raft 算法，因为它们都是领导者模型，写性能受限于领导者，读性能取决于一致性实现。最后是二阶段提交协议和 TCC，因为在实现事务时，需要预留和锁定资源，性能相对低。</p>
+<p><img src="https://wendajiang.github.io/pics/2021-02-03-distribute-algs-roadmap/%E5%88%86%E5%B8%83%E5%BC%8F%E5%8D%8F%E8%AE%AE%E5%92%8C%E7%AE%97%E6%B3%95%E5%AE%9E%E6%88%98.png" alt="111" /></p>
+
+            </div>
+        </div>
+    </body>
+  
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var gitalk = new Gitalk({
+            id: '分布式算法路线图',
+            clientID: 'a17500877ddbb2dd70b9',
+            clientSecret: '77e1c5816e97e2473c0a617bd0e3ece99f33559f',
+            repo: 'wendajiang.github.io',
+            owner: 'wendajiang',
+            admin: ['wendajiang'],
+            perPage: 50,
+
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</html>

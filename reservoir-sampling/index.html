@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+    
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+
+        <title>
+            蓄水池采样
+        </title>
+
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;page.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;page_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;navigatebar_mobile.css">
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;highlight.css">
+
+        
+        <script>
+        function initMermaid() {
+          var config = {
+            startOnLoad: true,
+            theme: "forest",
+            flowchart:{
+              useMaxWidth: true,
+              htmlLabels: true
+            }
+          };
+          mermaid.initialize(config);
+          window.mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+        }
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/mermaid/8.9.1/mermaid.min.js"
+          async
+          onload="initMermaid()">
+        </script>
+        
+
+        
+        <!-- Math rendering -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="https:&#x2F;&#x2F;wendajiang.github.io">David</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="https:&#x2F;&#x2F;wendajiang.github.io/tags">Tags</a>
+    </div>
+    
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;essay&#x2F;">Essay</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;ddia&#x2F;">ddia</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;http2ia&#x2F;">http2ia</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;QA&#x2F;">Q&amp;A</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;about&#x2F;">About</a>
+        </div>
+    
+    <div class="navigatebar-button">
+        <a href = "https:&#x2F;&#x2F;wendajiang.github.io/about/archive">Archive</a>
+    </div>
+</div>
+
+
+        <div class="content-area">
+            <div class="title">
+                蓄水池采样
+            </div>
+            
+            <div class="category-area">
+                「
+                <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;tags/math">
+                    <div class="category">
+                        math
+                    </div>
+                </a>
+                
+                <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;tags/alg">
+                    <div class="category">
+                        alg
+                    </div>
+                </a>
+                」
+            </div>
+            
+            <div class="char-counter">
+                字数6810 2021-03-29T12:50:38
+            </div>
+            <div class="content">
+                
+                <ul>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/reservoir-sampling/#dong-ji">动机</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/reservoir-sampling/#jian-dan-suan-fa">简单算法</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/reservoir-sampling/#yi-ge-you-hua-suan-fa">一个优化算法</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/reservoir-sampling/#sui-ji-pai-xu-reservoir-sampling-with-radnom-sort">随机排序(Reservoir Sampling with Radnom Sort)</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/reservoir-sampling/#quan-zhong-xu-shui-chi">权重蓄水池</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/reservoir-sampling/#algorithm-a-res">Algorithm A-Res</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/reservoir-sampling/#algorithms-a-expj">Algorithms A-ExpJ</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/reservoir-sampling/#algorithm-a-chao">Algorithm A-Chao</a>
+                            
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/reservoir-sampling/#relation-to-fisher-yates-shuffle">Relation to Fisher-Yates shuffle</a>
+                    
+                </li>
+                
+                </ul>
+                
+                <!--
+mermaid example:
+
+<div class="mermaid">
+    mermaid program
+</div>
+-->
+<p>https://en.wikipedia.org/wiki/Reservoir_sampling</p>
+<p>蓄水池采样是随机算法中选择一次随机采样的算法，从未知数据规模中挑选一次采样的算法。算法不知道数据的规模 n，并且算法不存储过去的数值，只能在当前的数中作出选择--选还是不选。</p>
+<h3 id="dong-ji">动机</h3>
+<p>假设我们看到一个序列，一次看到序列的一项。我们想要将10项存储在内存中，然后从10项中随机挑选出1项。如果我们知道序列的大小n，即一共有多少项，这很容易，问题是我们不知道n的大小。</p>
+<h3 id="jian-dan-suan-fa">简单算法</h3>
+<p>简单但是比较慢的算法，被称为 <em>Aligorithm R</em></p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-python" data-lang="python"><span style="color:#b58900;">ReservoirSample</span><span style="color:#657b83;">(S</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1.</span><span style="color:#657b83;">..n</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">, R</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1.</span><span style="color:#657b83;">..k</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">)
+	// fill the reservoir array
+	</span><span style="color:#859900;">for </span><span style="color:#657b83;">i := 1 to k
+    R</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">] </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> S</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">]
+  
+  </span><span style="color:#859900;">for </span><span style="color:#657b83;">i := k + 1 to n
+    j </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> </span><span style="color:#b58900;">randomInteger</span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">, i)
+    </span><span style="color:#859900;">if </span><span style="color:#657b83;">j &lt;= k
+    	R</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">j</span><span style="color:#268bd2;">] </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> S</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">]
+</span></code></pre>
+<p>该算法建立了 size k 的蓄水池，开始保存输入的 k项。随着输入的迭代，按照条件更新蓄水池。对于第$i^{th}$元素来说，被选上的概率为 $\frac{k}{i}$。对于蓄水池的项，被代替的概率为 $ \frac{1}{k} \times \frac{k}{i} = \frac{1}{i} $。当算法结束时，每个输入项被选到蓄水池的概率相等$\frac{k}{n}$ （$\frac{k}{i} \times (1 - \frac{1}{i+1}) \times (1 - \frac{1}{i + 2}) \times ... \times (1 - \frac{1}{n}) = \frac{k}{n}$），算法时间复杂度为 O(n)</p>
+<h3 id="yi-ge-you-hua-suan-fa">一个优化算法</h3>
+<p><em>Algorithm L</em> 优化了这个算法，通过计算下一个item进入蓄水池之前已经丢弃了多少项。关键点在于这个值满足<strong>几何分布</strong>，因此可以在常数时间计算</p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-python" data-lang="python"><span style="color:#657b83;">/* S has items to sample, R will contain the result */
+</span><span style="color:#b58900;">ReservoirSample</span><span style="color:#657b83;">(S</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1.</span><span style="color:#657b83;">.n</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">, R</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1.</span><span style="color:#657b83;">.k</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">)
+  // fill the reservoir array
+  </span><span style="color:#859900;">for </span><span style="color:#657b83;">i = 1 to k
+      R</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">] </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> S</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">]
+
+  </span><span style="color:#657b83;">/* </span><span style="color:#b58900;">random</span><span style="color:#657b83;">() generates a </span><span style="color:#b58900;">uniform </span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">0</span><span style="color:#657b83;">,</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">) random number */
+  W </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> </span><span style="color:#b58900;">exp</span><span style="color:#657b83;">(</span><span style="color:#b58900;">log</span><span style="color:#657b83;">(</span><span style="color:#b58900;">random</span><span style="color:#657b83;">())/k)
+
+  </span><span style="color:#859900;">while </span><span style="color:#657b83;">i &lt;= n
+      i </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> i + </span><span style="color:#b58900;">floor</span><span style="color:#657b83;">(</span><span style="color:#b58900;">log</span><span style="color:#657b83;">(</span><span style="color:#b58900;">random</span><span style="color:#657b83;">())/</span><span style="color:#b58900;">log</span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">-W)) + </span><span style="color:#6c71c4;">1
+      </span><span style="color:#859900;">if </span><span style="color:#657b83;">i &lt;= n
+          /* replace a random item of the reservoir </span><span style="color:#859900;">with </span><span style="color:#657b83;">item i */
+          R</span><span style="color:#268bd2;">[</span><span style="color:#b58900;">randomInteger</span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">,k)</span><span style="color:#268bd2;">] </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> S</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">]  </span><span style="color:#657b83;">// random index between </span><span style="color:#6c71c4;">1 </span><span style="color:#859900;">and </span><span style="color:#657b83;">k, inclusive
+          W </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> W * </span><span style="color:#b58900;">exp</span><span style="color:#657b83;">(</span><span style="color:#b58900;">log</span><span style="color:#657b83;">(</span><span style="color:#b58900;">random</span><span style="color:#657b83;">())/k)
+</span></code></pre>
+<p>这个算法在不会被选中的项上不花时间，算法时间复杂度为 O(k(1 + log(n/k)))</p>
+<h3 id="sui-ji-pai-xu-reservoir-sampling-with-radnom-sort">随机排序(Reservoir Sampling with Radnom Sort)</h3>
+<p>如果将输入的每项绑定其对应的随机数，然后在选中的k项中看随机数大小取用，比如选随机数最大的，可以通过优先队列维护k的蓄水池</p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-python" data-lang="python"><span style="color:#657b83;">/*
+  S </span><span style="color:#859900;">is </span><span style="color:#657b83;">a stream of items to sample
+  S.Current returns current item </span><span style="color:#859900;">in </span><span style="color:#657b83;">stream
+  S.Next advances stream to </span><span style="color:#859900;">next </span><span style="color:#657b83;">position
+  </span><span style="color:#859900;">min</span><span style="color:#657b83;">-priority-queue supports:
+    Count -&gt; number of items </span><span style="color:#859900;">in </span><span style="color:#657b83;">priority queue
+    Minimum -&gt; returns minimum key value of </span><span style="color:#859900;">all </span><span style="color:#657b83;">items
+    Extract-</span><span style="color:#b58900;">Min</span><span style="color:#657b83;">() -&gt; Remove the item </span><span style="color:#859900;">with </span><span style="color:#657b83;">minimum key
+    </span><span style="color:#b58900;">Insert</span><span style="color:#657b83;">(key, Item) -&gt; Adds item </span><span style="color:#859900;">with </span><span style="color:#657b83;">specified key
+ */
+</span><span style="color:#b58900;">ReservoirSample</span><span style="color:#657b83;">(S</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1.</span><span style="color:#657b83;">.?</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">)
+  H </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> new </span><span style="color:#859900;">min</span><span style="color:#657b83;">-priority-queue
+  </span><span style="color:#859900;">while </span><span style="color:#657b83;">S has data
+    r </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> </span><span style="color:#b58900;">random</span><span style="color:#657b83;">()   // uniformly random between </span><span style="color:#6c71c4;">0 </span><span style="color:#859900;">and </span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">, exclusive
+    </span><span style="color:#859900;">if </span><span style="color:#657b83;">H.Count &lt; k
+      H.</span><span style="color:#b58900;">Insert</span><span style="color:#657b83;">(r, S.Current)
+    </span><span style="color:#859900;">else
+      </span><span style="color:#657b83;">// keep k items </span><span style="color:#859900;">with </span><span style="color:#657b83;">largest associated keys
+      </span><span style="color:#859900;">if </span><span style="color:#657b83;">r &gt; H.Minimum
+        H.Extract-</span><span style="color:#b58900;">Min</span><span style="color:#657b83;">()
+        H.</span><span style="color:#b58900;">Insert</span><span style="color:#657b83;">(r, S.Current)
+    S.Next
+  </span><span style="color:#859900;">return </span><span style="color:#657b83;">items </span><span style="color:#859900;">in </span><span style="color:#657b83;">H
+</span></code></pre>
+<p>期望复杂度为 O(n + klogklog(n/k)) ，这个算法意义在于容易扩展到有权重的item</p>
+<h3 id="quan-zhong-xu-shui-chi">权重蓄水池</h3>
+<p>Some applications require items' sampling probabilities to be according to weights associated with each item. For example, it might be required to sample queries in a search engine with weight as number of times they were performed so that the sample can be analyzed for overall impact on user experience. Let the weight of item <em>i</em> be $$, and the sum of all weights be <em>W</em>. There are two ways to interpret weights assigned to each item in the set:[<a href="https://en.wikipedia.org/wiki/Reservoir_sampling#cite_note-efraimidis-4">4]</a></p>
+<ol>
+<li>In each round, the probability of every <em>unselected</em> item to be selected in that round is proportional to its weight relative to the weights of all unselected items. If <em>X</em> is the current sample, then the probability of an item $i \notin X$ to be selected in the current round is $\frac{w_i}{W - \sum_{j \in X}w_j}$</li>
+<li>The probability of each item to be included in the random sample is proportional to its relative weight, i.e. $\frac{w_i}{W}$. Note that this interpretation might not be achievable in some cases, e.g., $k = n$.</li>
+</ol>
+<h4 id="algorithm-a-res">Algorithm A-Res</h4>
+<pre style="background-color:#fdf6e3;">
+<code class="language-python" data-lang="python"><span style="color:#657b83;">/*
+  S </span><span style="color:#859900;">is </span><span style="color:#657b83;">a stream of items to sample
+  S.Current returns current item </span><span style="color:#859900;">in </span><span style="color:#657b83;">stream
+  S.Weight  returns weight of current item </span><span style="color:#859900;">in </span><span style="color:#657b83;">stream
+  S.Next advances stream to </span><span style="color:#859900;">next </span><span style="color:#657b83;">position
+  The power operator </span><span style="color:#859900;">is </span><span style="color:#657b83;">represented by ^
+  </span><span style="color:#859900;">min</span><span style="color:#657b83;">-priority-queue supports:
+    Count -&gt; number of items </span><span style="color:#859900;">in </span><span style="color:#657b83;">priority queue
+    </span><span style="color:#b58900;">Minimum</span><span style="color:#657b83;">() -&gt; returns minimum key value of </span><span style="color:#859900;">all </span><span style="color:#657b83;">items
+    Extract-</span><span style="color:#b58900;">Min</span><span style="color:#657b83;">() -&gt; Remove the item </span><span style="color:#859900;">with </span><span style="color:#657b83;">minimum key
+    </span><span style="color:#b58900;">Insert</span><span style="color:#657b83;">(key, Item) -&gt; Adds item </span><span style="color:#859900;">with </span><span style="color:#657b83;">specified key
+ */
+</span><span style="color:#b58900;">ReservoirSample</span><span style="color:#657b83;">(S</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1.</span><span style="color:#657b83;">.?</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">)
+  H </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> new </span><span style="color:#859900;">min</span><span style="color:#657b83;">-priority-queue
+  </span><span style="color:#859900;">while </span><span style="color:#657b83;">S has data
+    r </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> </span><span style="color:#b58900;">random</span><span style="color:#657b83;">() ^ (</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">/S.Weight)   // </span><span style="color:#b58900;">random</span><span style="color:#657b83;">() produces a uniformly random number </span><span style="color:#859900;">in </span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">0</span><span style="color:#657b83;">,</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">)
+    </span><span style="color:#859900;">if </span><span style="color:#657b83;">H.Count &lt; k
+      H.</span><span style="color:#b58900;">Insert</span><span style="color:#657b83;">(r, S.Current)
+    </span><span style="color:#859900;">else
+      </span><span style="color:#657b83;">// keep k items </span><span style="color:#859900;">with </span><span style="color:#657b83;">largest associated keys
+      </span><span style="color:#859900;">if </span><span style="color:#657b83;">r &gt; H.Minimum
+        H.Extract-</span><span style="color:#b58900;">Min</span><span style="color:#657b83;">()
+        H.</span><span style="color:#b58900;">Insert</span><span style="color:#657b83;">(r, S.Current)
+    S.Next
+  </span><span style="color:#859900;">return </span><span style="color:#657b83;">items </span><span style="color:#859900;">in </span><span style="color:#657b83;">H
+</span></code></pre>
+<p>此算法除了item key的生成与 Reservoir Sampling with Radnom Sort 是一样的。算法等于为每个item赋值一个key $r^{\frac{1}{w_i}}$，$r$是随机数，然后选择k个item最大key的那个。数学上是相等的计算key $ln(r) / w_i$</p>
+<h4 id="algorithms-a-expj">Algorithms A-ExpJ</h4>
+<pre style="background-color:#fdf6e3;">
+<code class="language-python" data-lang="python"><span style="color:#657b83;">/*
+  S </span><span style="color:#859900;">is </span><span style="color:#657b83;">a stream of items to sample
+  S.Current returns current item </span><span style="color:#859900;">in </span><span style="color:#657b83;">stream
+  S.Weight  returns weight of current item </span><span style="color:#859900;">in </span><span style="color:#657b83;">stream
+  S.Next advances stream to </span><span style="color:#859900;">next </span><span style="color:#657b83;">position
+  The power operator </span><span style="color:#859900;">is </span><span style="color:#657b83;">represented by ^
+  </span><span style="color:#859900;">min</span><span style="color:#657b83;">-priority-queue supports:
+    Count -&gt; number of items </span><span style="color:#859900;">in </span><span style="color:#657b83;">the priority queue
+    Minimum -&gt; minimum key of </span><span style="color:#859900;">any </span><span style="color:#657b83;">item </span><span style="color:#859900;">in </span><span style="color:#657b83;">the priority queue
+    Extract-</span><span style="color:#b58900;">Min</span><span style="color:#657b83;">() -&gt; Remove the item </span><span style="color:#859900;">with </span><span style="color:#657b83;">minimum key
+    </span><span style="color:#b58900;">Insert</span><span style="color:#657b83;">(Key, Item) -&gt; Adds item </span><span style="color:#859900;">with </span><span style="color:#657b83;">specified key
+ */
+</span><span style="color:#b58900;">ReservoirSampleWithJumps</span><span style="color:#657b83;">(S</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1.</span><span style="color:#657b83;">.?</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">)
+  H </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> new </span><span style="color:#859900;">min</span><span style="color:#657b83;">-priority-queue
+  </span><span style="color:#859900;">while </span><span style="color:#657b83;">S has data </span><span style="color:#859900;">and </span><span style="color:#657b83;">H.Count &lt; k
+    r </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> </span><span style="color:#b58900;">random</span><span style="color:#657b83;">() ^ (</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">/S.Weight)   // </span><span style="color:#b58900;">random</span><span style="color:#657b83;">() produces a uniformly random number </span><span style="color:#859900;">in </span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">0</span><span style="color:#657b83;">,</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">)
+    H.</span><span style="color:#b58900;">Insert</span><span style="color:#657b83;">(r, S.Current)
+    S.Next
+  X </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> </span><span style="color:#b58900;">log</span><span style="color:#657b83;">(</span><span style="color:#b58900;">random</span><span style="color:#657b83;">()) / </span><span style="color:#b58900;">log</span><span style="color:#657b83;">(H.Minimum) // this </span><span style="color:#859900;">is </span><span style="color:#657b83;">the amount of weight that needs to be jumped over
+  </span><span style="color:#859900;">while </span><span style="color:#657b83;">S has data
+    X </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> X - S.Weight
+    </span><span style="color:#859900;">if </span><span style="color:#657b83;">X &lt;= </span><span style="color:#6c71c4;">0
+      </span><span style="color:#657b83;">t </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> H.Minimum ^ S.Weight
+      r </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> </span><span style="color:#b58900;">random</span><span style="color:#657b83;">(t, </span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">) ^ (</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">/S.Weight) // </span><span style="color:#b58900;">random</span><span style="color:#657b83;">(x, y) produces a uniformly random number </span><span style="color:#859900;">in </span><span style="color:#657b83;">(x, y)
+    
+      H.Extract-</span><span style="color:#b58900;">Min</span><span style="color:#657b83;">()
+      H.</span><span style="color:#b58900;">Insert</span><span style="color:#657b83;">(r, S.Current)
+
+      X </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> </span><span style="color:#b58900;">log</span><span style="color:#657b83;">(</span><span style="color:#b58900;">random</span><span style="color:#657b83;">()) / </span><span style="color:#b58900;">log</span><span style="color:#657b83;">(H.Minimum)
+    S.Next
+  </span><span style="color:#859900;">return </span><span style="color:#657b83;">items </span><span style="color:#859900;">in </span><span style="color:#657b83;">H
+</span></code></pre>
+<p>这个版本比A-Res效率高些，但是基本原理相同，不像A-Res版本无论这个item是不是被选中到蓄水池中，为每个item计算key，A-Expl 只计算被选中的 item。</p>
+<h4 id="algorithm-a-chao">Algorithm A-Chao</h4>
+<pre style="background-color:#fdf6e3;">
+<code class="language-python" data-lang="python"><span style="color:#657b83;">/*
+  S has items to sample, R will contain the result
+  S</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">.Weight contains weight </span><span style="color:#859900;">for </span><span style="color:#657b83;">each item
+ */
+WeightedReservoir-</span><span style="color:#b58900;">Chao</span><span style="color:#657b83;">(S</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1.</span><span style="color:#657b83;">.n</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">, R</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1.</span><span style="color:#657b83;">.k</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">)
+  WSum </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> </span><span style="color:#6c71c4;">0
+  </span><span style="color:#657b83;">// fill the reservoir array
+  </span><span style="color:#859900;">for </span><span style="color:#657b83;">i := 1 to k
+      R</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">] </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> S</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">]
+      </span><span style="color:#657b83;">WSum </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> WSum + S</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">.Weight
+  </span><span style="color:#859900;">for </span><span style="color:#657b83;">i := k+1 to n
+    WSum </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> WSum + S</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">.Weight
+    p </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> S</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">.Weight / WSum // probability </span><span style="color:#859900;">for </span><span style="color:#657b83;">this item
+    j </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> </span><span style="color:#b58900;">random</span><span style="color:#657b83;">();          // uniformly random between </span><span style="color:#6c71c4;">0 </span><span style="color:#859900;">and </span><span style="color:#6c71c4;">1
+    </span><span style="color:#859900;">if </span><span style="color:#657b83;">j &lt;= p               // select item according to probability
+        R</span><span style="color:#268bd2;">[</span><span style="color:#b58900;">randomInteger</span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">,k)</span><span style="color:#268bd2;">] </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> S</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">]  </span><span style="color:#657b83;">//uniform selection </span><span style="color:#859900;">in </span><span style="color:#657b83;">reservoir </span><span style="color:#859900;">for </span><span style="color:#657b83;">replacement
+</span></code></pre>
+<p>对于每个item，都会计算其权重，并用于决定item是不是被加入蓄水池。如果item被选中，蓄水池中的一个item要被替换掉。这里的窍门是如果所有蓄水池的item概率已经与权重成比例，那归一化之后比例不变</p>
+<h3 id="relation-to-fisher-yates-shuffle">Relation to Fisher-Yates shuffle</h3>
+<p>Fihser-Yates shuffle</p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-python" data-lang="python"><span style="color:#b58900;">Shuffle</span><span style="color:#657b83;">(S</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1.</span><span style="color:#657b83;">..n</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">, R</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1.</span><span style="color:#657b83;">..n</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">)
+	R</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1</span><span style="color:#268bd2;">] </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> S</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1</span><span style="color:#268bd2;">]
+  </span><span style="color:#859900;">for </span><span style="color:#657b83;">i </span><span style="background-color:#ec9489;color:#657b83;">from</span><span style="color:#657b83;"> 2 to n do
+  	j </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> </span><span style="color:#b58900;">randomInteger</span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">, i)
+    R</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">] </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> R</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">j</span><span style="color:#268bd2;">]
+    </span><span style="color:#657b83;">R</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">j</span><span style="color:#268bd2;">] </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> S</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">]
+</span></code></pre>
+<p>但是当只需要取k张牌时，将洗牌的全部结果保存浪费空间，所以可以节省空间</p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-python" data-lang="python"><span style="color:#b58900;">ReservoirSample</span><span style="color:#657b83;">(S</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1.</span><span style="color:#657b83;">.n</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">, R</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1.</span><span style="color:#657b83;">.k</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">)
+  R</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1</span><span style="color:#268bd2;">] </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> S</span><span style="color:#268bd2;">[</span><span style="color:#6c71c4;">1</span><span style="color:#268bd2;">]
+  </span><span style="color:#859900;">for </span><span style="color:#657b83;">i </span><span style="background-color:#ec9489;color:#657b83;">from</span><span style="color:#657b83;"> 2 to k do
+      j </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> </span><span style="color:#b58900;">randomInteger</span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">, i)  // inclusive </span><span style="color:#859900;">range
+      </span><span style="color:#657b83;">R</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">] </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> R</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">j</span><span style="color:#268bd2;">]
+      </span><span style="color:#657b83;">R</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">j</span><span style="color:#268bd2;">] </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> S</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">]
+  </span><span style="color:#859900;">for </span><span style="color:#657b83;">i </span><span style="background-color:#ec9489;color:#657b83;">from</span><span style="color:#657b83;"> k + 1 to n do
+      j </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> </span><span style="color:#b58900;">randomInteger</span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">, i)  // inclusive </span><span style="color:#859900;">range
+      if </span><span style="color:#657b83;">(j &lt;= k)
+          R</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">j</span><span style="color:#268bd2;">] </span><span style="background-color:#ec9489;color:#657b83;">:=</span><span style="color:#657b83;"> S</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">i</span><span style="color:#268bd2;">]
+</span></code></pre>
+            </div>
+        </div>
+    </body>
+  
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var gitalk = new Gitalk({
+            id: '蓄水池采样',
+            clientID: 'a17500877ddbb2dd70b9',
+            clientSecret: '77e1c5816e97e2473c0a617bd0e3ece99f33559f',
+            repo: 'wendajiang.github.io',
+            owner: 'wendajiang',
+            admin: ['wendajiang'],
+            perPage: 50,
+
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</html>

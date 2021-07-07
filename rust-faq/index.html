@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+    
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+
+        <title>
+            Rust FAQ collection
+        </title>
+
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;page.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;page_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;navigatebar_mobile.css">
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;highlight.css">
+
+        
+        <script>
+        function initMermaid() {
+          var config = {
+            startOnLoad: true,
+            theme: "forest",
+            flowchart:{
+              useMaxWidth: true,
+              htmlLabels: true
+            }
+          };
+          mermaid.initialize(config);
+          window.mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+        }
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/mermaid/8.9.1/mermaid.min.js"
+          async
+          onload="initMermaid()">
+        </script>
+        
+
+        
+        <!-- Math rendering -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="https:&#x2F;&#x2F;wendajiang.github.io">David</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="https:&#x2F;&#x2F;wendajiang.github.io/tags">Tags</a>
+    </div>
+    
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;essay&#x2F;">Essay</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;ddia&#x2F;">ddia</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;http2ia&#x2F;">http2ia</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;QA&#x2F;">Q&amp;A</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;about&#x2F;">About</a>
+        </div>
+    
+    <div class="navigatebar-button">
+        <a href = "https:&#x2F;&#x2F;wendajiang.github.io/about/archive">Archive</a>
+    </div>
+</div>
+
+
+        <div class="content-area">
+            <div class="title">
+                Rust FAQ collection
+            </div>
+            
+            <div class="char-counter">
+                字数408 2021-06-18T15:13:08
+            </div>
+            <div class="content">
+                
+                <ul>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/rust-faq/#module-system">module system</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/rust-faq/#link-lib-compile">Link&amp;lib&amp;compile</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/rust-faq/#collection">collection</a>
+                    
+                </li>
+                
+                </ul>
+                
+                <!--
+mermaid example:
+<div class="mermaid">
+    mermaid program
+</div>
+-->
+<h2 id="module-system">module system</h2>
+<ul>
+<li><a href="http://www.sheshbabu.com/posts/rust-module-system/">Clear explanation of Rust’s module system</a></li>
+<li><a href="https://doc.rust-lang.org/cargo/guide/project-layout.html">Cargo Package Layout</a></li>
+<li><a href="https://stackoverflow.com/questions/57756927/rust-modules-confusion-when-there-is-main-rs-and-lib-rs">Rust modules confusion when there is main.rs and lib.rs</a></li>
+<li><a href="https://doc.rust-lang.org/edition-guide/rust-2018/module-system/path-clarity.html">Path clarity</a></li>
+<li><a href="https://manishearth.github.io/blog/2017/05/14/mentally-modelling-modules/">Mentally Modelling Modules</a></li>
+</ul>
+<h2 id="link-lib-compile">Link&amp;lib&amp;compile</h2>
+<ul>
+<li><a href="https://cloud.tencent.com/developer/article/1583081">Rust中的 bin, lib, rlib, a, so概念介绍</a></li>
+<li><a href="https://doc.rust-lang.org/reference/linkage.html">Rust reference linkage</a></li>
+<li><a href="https://rustc-dev-guide.rust-lang.org/overview.html">Overview of the Compiler</a></li>
+<li>https://users.rust-lang.org/t/the-big-picture-of-compilation-in-rust/6380/3</li>
+</ul>
+<h2 id="collection">collection</h2>
+<ul>
+<li><a href="https://ibraheem.ca/writings/rust-interior-mutability-understanding-cell/">Why we need Cell</a></li>
+</ul>
+
+            </div>
+        </div>
+    </body>
+  
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var gitalk = new Gitalk({
+            id: 'Rust FAQ collection',
+            clientID: 'a17500877ddbb2dd70b9',
+            clientSecret: '77e1c5816e97e2473c0a617bd0e3ece99f33559f',
+            repo: 'wendajiang.github.io',
+            owner: 'wendajiang',
+            admin: ['wendajiang'],
+            perPage: 50,
+
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</html>

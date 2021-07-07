@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+    
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+
+        <title>
+            namespace 一知半解
+        </title>
+
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;page.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;page_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;navigatebar_mobile.css">
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;highlight.css">
+
+        
+        <script>
+        function initMermaid() {
+          var config = {
+            startOnLoad: true,
+            theme: "forest",
+            flowchart:{
+              useMaxWidth: true,
+              htmlLabels: true
+            }
+          };
+          mermaid.initialize(config);
+          window.mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+        }
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/mermaid/8.9.1/mermaid.min.js"
+          async
+          onload="initMermaid()">
+        </script>
+        
+
+        
+        <!-- Math rendering -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="https:&#x2F;&#x2F;wendajiang.github.io">David</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="https:&#x2F;&#x2F;wendajiang.github.io/tags">Tags</a>
+    </div>
+    
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;essay&#x2F;">Essay</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;ddia&#x2F;">ddia</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;http2ia&#x2F;">http2ia</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;QA&#x2F;">Q&amp;A</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;about&#x2F;">About</a>
+        </div>
+    
+    <div class="navigatebar-button">
+        <a href = "https:&#x2F;&#x2F;wendajiang.github.io/about/archive">Archive</a>
+    </div>
+</div>
+
+
+        <div class="content-area">
+            <div class="title">
+                namespace 一知半解
+            </div>
+            
+            <div class="category-area">
+                「
+                <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;tags/cpp">
+                    <div class="category">
+                        cpp
+                    </div>
+                </a>
+                」
+            </div>
+            
+            <div class="char-counter">
+                字数4747 2021-06-23T18:59:13
+            </div>
+            <div class="content">
+                
+                <ul>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/namespace-learn/#ji-ben-shi-yong">基本使用</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/namespace-learn/#zhu-yi">注意</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/namespace-learn/#using-declarations">Using-declarations</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/namespace-learn/#using-directives">Using-directives</a>
+                            
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/namespace-learn/#yi-xie-li-zi">一些例子</a>
+                    
+                </li>
+                
+                </ul>
+                
+                <!--
+mermaid example:
+<div class="mermaid">
+    mermaid program
+</div>
+-->
+<h2 id="ji-ben-shi-yong">基本使用</h2>
+<ol>
+<li>namespace ns_name { declarations }
+命名空间定义</li>
+<li>inline namespace ns_name { declarations } (since C++11)
+类似于 class private 成员，只有在定义的 namespace 中才可见</li>
+<li>namespace { declarations } 
+匿名命名空间类似声明 static 函数，只在本编译单元(文件)内可见</li>
+<li>ns_name::name
+命名空间内成员的使用</li>
+<li>using namspace ns_name;
+using-directive 将 ns_name 中的名字提升到使用这个语句的 scope </li>
+<li>using ns_name::name;
+using-declaration 将 ns_name 中的 name 提升到这个语句的 scope</li>
+<li>namespace name = qualified-namespace;
+命名空间的别名，嵌套很深的命名空间可以这样方便使用</li>
+<li>namespace ns:name::inline(since C++20)(optional) name {declarations } (since C++17)
+嵌套定义
+<code>namespace A::B::C {...}</code> 等于 <code>namespace A{ namespace B { namespace C {...} } }</code>
+<code>namespace A::B::inline C {...}</code> 等于 <code>namespace A::B{inline namespace C {...} } </code>
+<code>inline</code> 要在除了第一个 namespace 的前面</li>
+</ol>
+<h2 id="zhu-yi">注意</h2>
+<ul>
+<li>
+<p>命名空间必须在全局命名空间或者其他命名内定义，<em>比如不能在函数内定义</em></p>
+</li>
+<li>
+<p>命名空间的扩展 <em>extension-namespace-definition</em></p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#859900;">namespace </span><span style="color:#b58900;">A </span><span style="color:#657b83;">{
+</span><span style="color:#657b83;">	</span><span style="color:#268bd2;">int</span><span style="color:#657b83;"> a = </span><span style="color:#6c71c4;">0</span><span style="color:#657b83;">;
+</span><span style="color:#657b83;">}
+</span><span style="color:#657b83;">
+</span><span style="color:#859900;">namespace </span><span style="color:#b58900;">A </span><span style="color:#657b83;">{
+</span><span style="color:#657b83;">  </span><span style="color:#268bd2;">int</span><span style="color:#657b83;"> b = </span><span style="color:#6c71c4;">0</span><span style="color:#657b83;">;
+</span><span style="color:#657b83;">}
+</span></code></pre></li>
+<li>
+<p>命名空间成员的定义会影响 name-lookup</p>
+</li>
+</ul>
+<h3 id="using-declarations">Using-declarations</h3>
+<p>Introduce a name that is defined elsewhere into the declarative region where this using-declaration appears</p>
+<ol>
+<li>
+<p>using name 将 name 引入到特定命名空间，<strong>有点类似 Rust 模块系统的模块提升</strong></p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">();
+</span><span style="color:#859900;">namespace </span><span style="color:#b58900;">A </span><span style="color:#657b83;">{
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">g</span><span style="color:#657b83;">();
+</span><span style="color:#657b83;">}
+</span><span style="color:#657b83;"> 
+</span><span style="color:#859900;">namespace </span><span style="color:#b58900;">X </span><span style="color:#657b83;">{
+</span><span style="color:#657b83;">    </span><span style="color:#859900;">using </span><span style="color:#657b83;">::f;        </span><span style="color:#93a1a1;">// global f is now visible as ::X::f
+</span><span style="color:#657b83;">    </span><span style="color:#859900;">using</span><span style="color:#657b83;"> A::g;       </span><span style="color:#93a1a1;">// A::g is now visible as ::X::g
+</span><span style="color:#657b83;">    </span><span style="color:#859900;">using</span><span style="color:#657b83;"> A::g, A::g; </span><span style="color:#93a1a1;">// (C++17) OK: double declaration allowed at namespace scope
+</span><span style="color:#657b83;">}
+</span><span style="color:#657b83;"> 
+</span><span style="color:#268bd2;">void </span><span style="color:#b58900;">h</span><span style="color:#657b83;">()
+</span><span style="color:#657b83;">{
+</span><span style="color:#657b83;">    X::</span><span style="color:#b58900;">f</span><span style="color:#657b83;">(); </span><span style="color:#93a1a1;">// calls ::f
+</span><span style="color:#657b83;">    X::</span><span style="color:#b58900;">g</span><span style="color:#657b83;">(); </span><span style="color:#93a1a1;">// calls A::g
+</span><span style="color:#657b83;">}
+</span></code></pre></li>
+<li>
+<p>using 之后 reopen 命名空间的内容不生效</p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#859900;">namespace </span><span style="color:#b58900;">A </span><span style="color:#657b83;">{
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">int</span><span style="color:#657b83;">);
+</span><span style="color:#657b83;">}
+</span><span style="color:#859900;">using</span><span style="color:#657b83;"> A::f; </span><span style="color:#93a1a1;">// ::f is now a synonym for A::f(int)
+</span><span style="color:#657b83;"> 
+</span><span style="color:#859900;">namespace </span><span style="color:#b58900;">A </span><span style="color:#657b83;">{     </span><span style="color:#93a1a1;">// namespace extension
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">char</span><span style="color:#657b83;">); </span><span style="color:#93a1a1;">// does not change what ::f means
+</span><span style="color:#657b83;">}
+</span><span style="color:#657b83;"> 
+</span><span style="color:#268bd2;">void </span><span style="color:#b58900;">foo</span><span style="color:#657b83;">() {
+</span><span style="color:#657b83;">    </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#839496;">&#39;</span><span style="color:#2aa198;">a</span><span style="color:#839496;">&#39;</span><span style="color:#657b83;">); </span><span style="color:#93a1a1;">// calls f(int), even though f(char) exists.
+</span><span style="color:#657b83;">}
+</span><span style="color:#657b83;"> 
+</span><span style="color:#268bd2;">void </span><span style="color:#b58900;">bar</span><span style="color:#657b83;">() {
+</span><span style="color:#657b83;">    </span><span style="color:#859900;">using</span><span style="color:#657b83;"> A::f; </span><span style="color:#93a1a1;">// this f is a synonym for both A::f(int) and A::f(char)
+</span><span style="color:#657b83;">    </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#839496;">&#39;</span><span style="color:#2aa198;">a</span><span style="color:#839496;">&#39;</span><span style="color:#657b83;">);     </span><span style="color:#93a1a1;">// calls f(char)
+</span><span style="color:#657b83;">}
+</span></code></pre></li>
+<li>
+<p>不能引入命名空间，只能引入命名空间内的一个名字，并且在同一个 scope 内的所有限制都一样</p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#859900;">namespace </span><span style="color:#b58900;">A </span><span style="color:#657b83;">{
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">int</span><span style="color:#657b83;"> x;
+</span><span style="color:#657b83;">}
+</span><span style="color:#657b83;"> 
+</span><span style="color:#859900;">namespace </span><span style="color:#b58900;">B </span><span style="color:#657b83;">{
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">int</span><span style="color:#657b83;"> i;
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">struct </span><span style="color:#b58900;">g </span><span style="color:#657b83;">{ };
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">struct </span><span style="color:#b58900;">x </span><span style="color:#657b83;">{ };
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">int</span><span style="color:#657b83;">);
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">double</span><span style="color:#657b83;">);
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">g</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">char</span><span style="color:#657b83;">); </span><span style="color:#93a1a1;">// OK: function name g hides struct g
+</span><span style="color:#657b83;">}
+</span><span style="color:#657b83;"> 
+</span><span style="color:#268bd2;">void </span><span style="color:#b58900;">func</span><span style="color:#657b83;">() {
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">int</span><span style="color:#657b83;"> i;
+</span><span style="color:#657b83;">    </span><span style="color:#859900;">using</span><span style="color:#657b83;"> B::i;   </span><span style="color:#93a1a1;">// error: i declared twice
+</span><span style="color:#657b83;"> 
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">char</span><span style="color:#657b83;">);
+</span><span style="color:#657b83;">    </span><span style="color:#859900;">using</span><span style="color:#657b83;"> B::f;   </span><span style="color:#93a1a1;">// OK: f(char), f(int), f(double) are overloads
+</span><span style="color:#657b83;">    </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">3.5</span><span style="color:#657b83;">);       </span><span style="color:#93a1a1;">// calls B::f(double)
+</span><span style="color:#657b83;"> 
+</span><span style="color:#657b83;">    </span><span style="color:#859900;">using</span><span style="color:#657b83;"> B::g;
+</span><span style="color:#657b83;">    </span><span style="color:#b58900;">g</span><span style="color:#657b83;">(</span><span style="color:#839496;">&#39;</span><span style="color:#2aa198;">a</span><span style="color:#839496;">&#39;</span><span style="color:#657b83;">);       </span><span style="color:#93a1a1;">// calls B::g(char)
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">struct</span><span style="color:#657b83;"> g g1;  </span><span style="color:#93a1a1;">// declares g1 to have type struct B::g
+</span><span style="color:#657b83;"> 
+</span><span style="color:#657b83;">    </span><span style="color:#859900;">using</span><span style="color:#657b83;"> B::x;
+</span><span style="color:#657b83;">    </span><span style="color:#859900;">using</span><span style="color:#657b83;"> A::x;   </span><span style="color:#93a1a1;">// OK: hides struct B::x
+</span><span style="color:#657b83;">    x = </span><span style="color:#6c71c4;">99</span><span style="color:#657b83;">;       </span><span style="color:#93a1a1;">// assigns to A::x
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">struct</span><span style="color:#657b83;"> x x1;  </span><span style="color:#93a1a1;">// declares x1 to have type struct B::x
+</span><span style="color:#657b83;">}
+</span><span style="color:#657b83;">
+</span><span style="color:#93a1a1;">//-------- 分隔
+</span><span style="color:#859900;">namespace </span><span style="color:#b58900;">B </span><span style="color:#657b83;">{
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">int</span><span style="color:#657b83;">);
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">double</span><span style="color:#657b83;">);
+</span><span style="color:#657b83;">}
+</span><span style="color:#657b83;"> 
+</span><span style="color:#859900;">namespace </span><span style="color:#b58900;">C </span><span style="color:#657b83;">{
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">int</span><span style="color:#657b83;">);
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">double</span><span style="color:#657b83;">);
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">char</span><span style="color:#657b83;">);
+</span><span style="color:#657b83;">}
+</span><span style="color:#657b83;"> 
+</span><span style="color:#268bd2;">void </span><span style="color:#b58900;">h</span><span style="color:#657b83;">() {
+</span><span style="color:#657b83;">    </span><span style="color:#859900;">using</span><span style="color:#657b83;"> B::f;  </span><span style="color:#93a1a1;">// introduces B::f(int), B::f(double)
+</span><span style="color:#657b83;">    </span><span style="color:#859900;">using</span><span style="color:#657b83;"> C::f;  </span><span style="color:#93a1a1;">// introduces C::f(int), C::f(double), and C::f(char)
+</span><span style="color:#657b83;">    </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#839496;">&#39;</span><span style="color:#2aa198;">h</span><span style="color:#839496;">&#39;</span><span style="color:#657b83;">);      </span><span style="color:#93a1a1;">// calls C::f(char)
+</span><span style="color:#657b83;">    </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">);        </span><span style="color:#93a1a1;">// error: B::f(int) or C::f(int)?
+</span><span style="color:#657b83;">    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">int</span><span style="color:#657b83;">); </span><span style="color:#93a1a1;">// error: f(int) conflicts with C::f(int) and B::f(int)
+</span><span style="color:#657b83;">}
+</span></code></pre></li>
+</ol>
+<h3 id="using-directives">Using-directives</h3>
+<p>Using-directives are allowed only in namespace <a href="https://en.cppreference.com/w/cpp/language/scope">scope</a> and in block scope</p>
+<p>Using-directive does not add any names to the declarative region in which it appears (unlike the using-declaration), and thus does not prevent identical names from being declared.</p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#859900;">namespace </span><span style="color:#b58900;">D </span><span style="color:#657b83;">{
+    </span><span style="color:#268bd2;">int</span><span style="color:#657b83;"> d1;
+    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">char</span><span style="color:#657b83;">);
+}
+</span><span style="color:#859900;">using namespace</span><span style="color:#657b83;"> D; </span><span style="color:#93a1a1;">// introduces D::d1, D::f, D::d2, D::f,
+                   //  E::e, and E::f into global namespace!
+ 
+</span><span style="color:#268bd2;">int</span><span style="color:#657b83;"> d1;            </span><span style="color:#93a1a1;">// OK: no conflict with D::d1 when declaring
+</span><span style="color:#859900;">namespace </span><span style="color:#b58900;">E </span><span style="color:#657b83;">{
+    </span><span style="color:#268bd2;">int</span><span style="color:#657b83;"> e;
+    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">int</span><span style="color:#657b83;">);
+}
+ 
+</span><span style="color:#859900;">namespace </span><span style="color:#b58900;">D </span><span style="color:#657b83;">{          </span><span style="color:#93a1a1;">// namespace extension
+    </span><span style="color:#268bd2;">int</span><span style="color:#657b83;"> d2;
+    </span><span style="color:#859900;">using namespace</span><span style="color:#657b83;"> E; </span><span style="color:#93a1a1;">// transitive using-directive
+    </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#268bd2;">int</span><span style="color:#657b83;">);
+}
+ 
+</span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">() {
+    d1++;    </span><span style="color:#93a1a1;">// error: ambiguous ::d1 or D::d1?
+    </span><span style="color:#657b83;">::d1++;  </span><span style="color:#93a1a1;">// OK
+</span><span style="color:#657b83;">    D::d1++; </span><span style="color:#93a1a1;">// OK
+</span><span style="color:#657b83;">    d2++;    </span><span style="color:#93a1a1;">// OK, d2 is D::d2
+</span><span style="color:#657b83;">    e++;     </span><span style="color:#93a1a1;">// OK: e is E::e due to transitive using
+    </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">);    </span><span style="color:#93a1a1;">// error: ambiguous: D::f(int) or E::f(int)?
+    </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(</span><span style="color:#839496;">&#39;</span><span style="color:#2aa198;">a</span><span style="color:#839496;">&#39;</span><span style="color:#657b83;">);  </span><span style="color:#93a1a1;">// OK: the only f(char) is D::f(char)
+</span><span style="color:#657b83;">}
+
+</span></code></pre><h2 id="yi-xie-li-zi">一些例子</h2>
+<pre style="background-color:#fdf6e3;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#859900;">namespace </span><span style="color:#b58900;">Q </span><span style="color:#657b83;">{
+    </span><span style="color:#859900;">namespace </span><span style="color:#b58900;">V </span><span style="color:#657b83;">{   </span><span style="color:#93a1a1;">// V is a member of Q, and is fully defined within Q
+// namespace Q::V { // C++17 alternative to the above two lines
+        </span><span style="color:#268bd2;">class </span><span style="color:#b58900;">C </span><span style="color:#657b83;">{ </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">m</span><span style="color:#657b83;">(); }; </span><span style="color:#93a1a1;">// C is a member of V and is fully defined within V
+                               // C::m is only declared
+        </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">f</span><span style="color:#657b83;">(); </span><span style="color:#93a1a1;">// f is a member of V, but is only declared here
+    </span><span style="color:#657b83;">}
+ 
+    </span><span style="color:#268bd2;">void </span><span style="color:#657b83;">V::</span><span style="color:#b58900;">f</span><span style="color:#657b83;">() </span><span style="color:#93a1a1;">// definition of V&#39;s member f outside of V
+                // f&#39;s enclosing namespaces are still the global namespace, Q, and Q::V
+    </span><span style="color:#657b83;">{
+        </span><span style="color:#859900;">extern </span><span style="color:#268bd2;">void </span><span style="color:#b58900;">h</span><span style="color:#657b83;">(); </span><span style="color:#93a1a1;">// This declares ::Q::V::h
+    </span><span style="color:#657b83;">}
+ 
+    </span><span style="color:#268bd2;">void </span><span style="color:#657b83;">V::C::</span><span style="color:#b58900;">m</span><span style="color:#657b83;">() </span><span style="color:#93a1a1;">// definition of V::C::m outside of the namespace (and the class body)
+                   // enclosing namespaces are the global namespace, Q, and Q::V
+    </span><span style="color:#657b83;">{}
+}
+</span></code></pre>
+            </div>
+        </div>
+    </body>
+  
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var gitalk = new Gitalk({
+            id: 'namespace 一知半解',
+            clientID: 'a17500877ddbb2dd70b9',
+            clientSecret: '77e1c5816e97e2473c0a617bd0e3ece99f33559f',
+            repo: 'wendajiang.github.io',
+            owner: 'wendajiang',
+            admin: ['wendajiang'],
+            perPage: 50,
+
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</html>

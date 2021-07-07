@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+    
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+
+        <title>
+            Lock-Free Single-Producer - Single Consumer Circular Queue[翻译]
+        </title>
+
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;page.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;page_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;navigatebar_mobile.css">
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;highlight.css">
+
+        
+
+        
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="https:&#x2F;&#x2F;wendajiang.github.io">David</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="https:&#x2F;&#x2F;wendajiang.github.io/tags">Tags</a>
+    </div>
+    
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;essay&#x2F;">Essay</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;ddia&#x2F;">ddia</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;http2ia&#x2F;">http2ia</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;QA&#x2F;">Q&amp;A</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;about&#x2F;">About</a>
+        </div>
+    
+    <div class="navigatebar-button">
+        <a href = "https:&#x2F;&#x2F;wendajiang.github.io/about/archive">Archive</a>
+    </div>
+</div>
+
+
+        <div class="content-area">
+            <div class="title">
+                Lock-Free Single-Producer - Single Consumer Circular Queue[翻译]
+            </div>
+            
+            <div class="category-area">
+                「
+                <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;tags/translate">
+                    <div class="category">
+                        translate
+                    </div>
+                </a>
+                
+                <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;tags/queue">
+                    <div class="category">
+                        queue
+                    </div>
+                </a>
+                
+                <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;tags/lock-free">
+                    <div class="category">
+                        lock-free
+                    </div>
+                </a>
+                」
+            </div>
+            
+            <div class="char-counter">
+                字数4084 2021-02-07
+            </div>
+            <div class="content">
+                
+                <ul>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#part-i">Part I</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#introduction">Introduction</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#background-circular-fifo-queue">Background: Circular FIFO Queue</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#background-article-rationale">Background: Article Rationale</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#disclaimer">Disclaimer</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#memory-model-sequential-or-relaxed-acquire-release">Memory model: sequential or relaxed&#x2F;acquire&#x2F;release?</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#using-the-code">Using the code</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#code-explained-circularfifo-type-size">Code Explained: Circularfifo‹Type, Size›</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#how-it-works">How it works</a>
+                            
+                            <ul>
+                                
+                                <li>
+                                    <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#empty">Empty</a>
+                                    
+                                </li>
+                                
+                                <li>
+                                    <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#producer-adds-items">Producer adds items</a>
+                                    
+                                </li>
+                                
+                                <li>
+                                    <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#consumer-retrieves-item">Consumer retrieves item</a>
+                                    
+                                </li>
+                                
+                                <li>
+                                    <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#full">Full</a>
+                                    
+                                </li>
+                                
+                            </ul>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#thread-safe-use-and-implementation">Thread Safe Use and Implementation</a>
+                            
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#part-ii-todo-ccia">Part II（@todo, ccia）</a>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#making-it-work">Making It Work</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#atomic-operations-and-the-different-memory-models">Atomic operations and the different Memory Models</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#sequential-consistent">Sequential Consistent</a>
+                            
+                            <ul>
+                                
+                                <li>
+                                    <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#rules-for-sequential-consistent-memory-model-and-operations">Rules for Sequential Consistent Memory Model and Operations</a>
+                                    
+                                </li>
+                                
+                                <li>
+                                    <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#sequential-consistent-atmic-code">Sequential Consistent Atmic Code</a>
+                                    
+                                </li>
+                                
+                                <li>
+                                    <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#caveats-with-the-sequential-memory-model">Caveats with the Sequential Memory Model</a>
+                                    
+                                </li>
+                                
+                                <li>
+                                    <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#simplified-atomic-sequential-operations">Simplified Atomic Sequential operations</a>
+                                    
+                                </li>
+                                
+                            </ul>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#refined-memory-order">Refined Memory Order</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#relaxed-memory-model">Relaxed-Memory Model</a>
+                            
+                            <ul>
+                                
+                                <li>
+                                    <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#rules-for-the-relaxed-memory-model-and-operations">Rules for the Relaxed Memory Model and Operations</a>
+                                    
+                                </li>
+                                
+                            </ul>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#acquire-release-memory-model">Acquire-Release Memory model</a>
+                            
+                            <ul>
+                                
+                                <li>
+                                    <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#rules-for-the-acquire-release-memory-model-and-operations">Rules for the Acquire-Release Memory Model and Operations</a>
+                                    
+                                </li>
+                                
+                            </ul>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#code-explained-acquire-release-relaxed-circularfifo">Code Explained: Acquire-Release&#x2F;Relaxed Circularfifo</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#x86-x64-comparison-sequential-vs-refined-memory-order">x86-x64 Comparison: Sequential vs Refined Memory Order</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#conclusion">Conclusion</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#history">History</a>
+                            
+                        </li>
+                        
+                        <li>
+                            <a href="https://wendajiang.github.io/single-p-single-c-lock-free-cricular-queue/#references">References</a>
+                            
+                        </li>
+                        
+                    </ul>
+                    
+                </li>
+                
+                </ul>
+                
+                <p><a href="https://www.codeproject.com/articles/43510/lock-free-single-producer-single-consumer-circular">原文链接</a></p>
+<h1 id="part-i">Part I</h1>
+<h2 id="introduction">Introduction</h2>
+<p>对于时间和内存敏感的系统，wait-free 和 lock-free 循环队列是一种有用的技术。队列的 wait-free 特性使每个操作以固定次步骤完成。 lock-free 特性使得单生产线程和单消费线程通信不需要锁。</p>
+<p>Wait-free 和  lock-free 的特性可以应用于广泛的领域，比如实时系统的中断和信号处理或者其他时间敏感软件。</p>
+<h2 id="background-circular-fifo-queue">Background: Circular FIFO Queue</h2>
+<p>这里的循环 FIFO 队列只能适用于最多两个线程的通信，这个场景一般是单生产者单消费者问题。</p>
+<p><strong>问题描述</strong>：高优先级任务不能延迟处理，并且要求处理数据是按照开始的FIFO顺序产生结果。比如，中断/信号处理程序，GUI事件，数据记录。</p>
+<p><strong>解决方案</strong>：使用FIFO队列将任务发送给另一个线程（消费者），当任务从生产者传递到消费者时，使用FIFO队列可以将使得异步委派和处理提供可预测的行为。
+生产者可以在队列没有满时，将任务加入到队列中，消费者可以从队列中将任务取出。对队列执行添加和取出操作时，不需要等待。如果消费者处理完一个任务，可以继续执行其他任务，当队列已满，生产者也不会阻塞。
+显然队列满对于生产者不是什么好的事情，所以必须仔细考虑其最大尺寸以及满队列的不良影响。涉及此问题的方法，比如覆盖旧数据、多个优先级队列或其他处理方式。</p>
+<h2 id="background-article-rationale">Background: Article Rationale</h2>
+<p>略</p>
+<h2 id="disclaimer">Disclaimer</h2>
+<p>【译者注：免责声明以及一些类似 lock-free guarante 的内容】略</p>
+<h2 id="memory-model-sequential-or-relaxed-acquire-release">Memory model: sequential or relaxed/acquire/release?</h2>
+<p>本文提供了两种内存模型的队列：<code>memory_order_seq_cst</code>默认的，还有结合了<code>memory_order_acquire, memory_order_release, memory_order_relaxed</code>三种的，然后讨论了默认的不仅简单而且在x86架构的服务器上还很快</p>
+<h2 id="using-the-code">Using the code</h2>
+<p>牢记：单生产者，单消费者</p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#657b83;">CicularFifo&lt;Message, </span><span style="color:#6c71c4;">128</span><span style="color:#657b83;">&gt; queue;
+
+Message m = </span><span style="color:#859900;">...
+if </span><span style="color:#657b83;">(</span><span style="color:#b58900;">false </span><span style="color:#657b83;">== queue.</span><span style="color:#b58900;">push</span><span style="color:#657b83;">(m)) { </span><span style="color:#93a1a1;">/*false equals full queue */</span><span style="color:#657b83;">}
+
+Message m;
+</span><span style="color:#859900;">if </span><span style="color:#657b83;">(</span><span style="color:#b58900;">false </span><span style="color:#657b83;">== queue.</span><span style="color:#b58900;">pop</span><span style="color:#657b83;">(m)) { </span><span style="color:#93a1a1;">/*false equals empty queue */</span><span style="color:#657b83;">}
+</span></code></pre><h2 id="code-explained-circularfifo-type-size">Code Explained: Circularfifo‹Type, Size›</h2>
+<p>简化的代码如下：</p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#268bd2;">template</span><span style="color:#657b83;">‹</span><span style="color:#859900;">typename</span><span style="color:#657b83;"> Element, </span><span style="color:#859900;">size_t Size</span><span style="color:#657b83;">› 
+</span><span style="color:#268bd2;">class </span><span style="color:#b58900;">CircularFifo</span><span style="color:#657b83;">{
+public</span><span style="color:#859900;">:
+  </span><span style="color:#268bd2;">enum </span><span style="color:#657b83;">{ Capacity = </span><span style="color:#859900;">Size</span><span style="color:#657b83;">+</span><span style="color:#6c71c4;">1 </span><span style="color:#657b83;">};
+
+  </span><span style="color:#b58900;">CircularFifo</span><span style="color:#657b83;">() </span><span style="color:#859900;">: </span><span style="color:#b58900;">_tail</span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">0</span><span style="color:#657b83;">), </span><span style="color:#b58900;">_head</span><span style="color:#657b83;">(</span><span style="color:#6c71c4;">0</span><span style="color:#657b83;">){}   
+  </span><span style="color:#859900;">virtual </span><span style="color:#657b83;">~</span><span style="color:#b58900;">CircularFifo</span><span style="color:#657b83;">() {}
+
+  </span><span style="color:#268bd2;">bool </span><span style="color:#b58900;">push</span><span style="color:#657b83;">(</span><span style="color:#859900;">const</span><span style="color:#657b83;"> Element</span><span style="color:#859900;">&amp;</span><span style="color:#657b83;"> item); 
+  </span><span style="color:#268bd2;">bool </span><span style="color:#b58900;">pop</span><span style="color:#657b83;">(Element</span><span style="color:#859900;">&amp;</span><span style="color:#657b83;"> item);
+
+  </span><span style="color:#268bd2;">bool </span><span style="color:#b58900;">wasEmpty</span><span style="color:#657b83;">() </span><span style="color:#859900;">const</span><span style="color:#657b83;">;
+  </span><span style="color:#268bd2;">bool </span><span style="color:#b58900;">wasFull</span><span style="color:#657b83;">() </span><span style="color:#859900;">const</span><span style="color:#657b83;">;
+  </span><span style="color:#268bd2;">bool </span><span style="color:#b58900;">isLockFree</span><span style="color:#657b83;">() </span><span style="color:#859900;">const</span><span style="color:#657b83;">;
+
+private</span><span style="color:#859900;">:
+  size_t </span><span style="color:#b58900;">increment</span><span style="color:#657b83;">(</span><span style="color:#859900;">size_t</span><span style="color:#657b83;"> idx) </span><span style="color:#859900;">const</span><span style="color:#657b83;">; 
+
+  std::atomic‹</span><span style="color:#859900;">size_t</span><span style="color:#657b83;">›  _tail;  
+  Element              _array</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">Capacity</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">;
+  std::atomic‹</span><span style="color:#859900;">size_t</span><span style="color:#657b83;">›  _head; 
+};
+</span></code></pre><h2 id="how-it-works">How it works</h2>
+<p>第一个版本使用默认顺序原子操作，顺序模型使得程序容易理解并轻松推断出原子操作在各个线程中的顺序。在硬件强内存序结构的x86和x64架构上，使用顺序原子操作相比后面提到的弱内存序是有开销的</p>
+<p>在弱内存架构的处理器上，这个差异会更明显。</p>
+<h3 id="empty">Empty</h3>
+<p>队列为空，头尾相等</p>
+<pre style="background-color:#fdf6e3;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#268bd2;">bool </span><span style="color:#b58900;">wasEmpty</span><span style="color:#657b83;">() </span><span style="color:#859900;">const 
+</span><span style="color:#657b83;">{
+  </span><span style="color:#859900;">return </span><span style="color:#657b83;">(_head.</span><span style="color:#b58900;">load</span><span style="color:#657b83;">()) == (_tail.</span><span style="color:#b58900;">load</span><span style="color:#657b83;">());
+}
+</span></code></pre><h3 id="producer-adds-items">Producer adds items</h3>
+<pre style="background-color:#fdf6e3;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#93a1a1;">/* Producer only: updates tail index after setting the element in place */
+</span><span style="color:#268bd2;">bool </span><span style="color:#b58900;">push</span><span style="color:#657b83;">(Element</span><span style="color:#859900;">&amp; </span><span style="color:#268bd2;">item_</span><span style="color:#657b83;">)
+{	
+  </span><span style="color:#268bd2;">auto</span><span style="color:#657b83;"> current_tail = _tail.</span><span style="color:#b58900;">load</span><span style="color:#657b83;">();            
+  </span><span style="color:#268bd2;">auto</span><span style="color:#657b83;"> next_tail = </span><span style="color:#b58900;">increment</span><span style="color:#657b83;">(current_tail);    
+  </span><span style="color:#859900;">if</span><span style="color:#657b83;">(next_tail != _head.</span><span style="color:#b58900;">load</span><span style="color:#657b83;">())                         
+  {
+    _array</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">current_tail</span><span style="color:#268bd2;">] </span><span style="color:#657b83;">= item;               
+    _tail.</span><span style="color:#b58900;">store</span><span style="color:#657b83;">(next_tail);                    
+    </span><span style="color:#859900;">return </span><span style="color:#b58900;">true</span><span style="color:#657b83;">;
+  }
+  
+  </span><span style="color:#859900;">return </span><span style="color:#b58900;">false</span><span style="color:#657b83;">;  </span><span style="color:#93a1a1;">// full queue
+</span><span style="color:#657b83;">}
+</span></code></pre><h3 id="consumer-retrieves-item">Consumer retrieves item</h3>
+<pre style="background-color:#fdf6e3;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#93a1a1;">/* Consumer only: updates head index after retrieving the element */
+</span><span style="color:#268bd2;">bool </span><span style="color:#b58900;">pop</span><span style="color:#657b83;">(Element</span><span style="color:#859900;">&amp; </span><span style="color:#268bd2;">item</span><span style="color:#657b83;">)
+{
+  </span><span style="color:#859900;">const </span><span style="color:#268bd2;">auto</span><span style="color:#657b83;"> current_head = _head.</span><span style="color:#b58900;">load</span><span style="color:#657b83;">();  
+  </span><span style="color:#859900;">if</span><span style="color:#657b83;">(current_head == _tail.</span><span style="color:#b58900;">load</span><span style="color:#657b83;">())  
+    </span><span style="color:#859900;">return </span><span style="color:#b58900;">false</span><span style="color:#657b83;">;   </span><span style="color:#93a1a1;">// empty queue
+
+</span><span style="color:#657b83;">  item = _array</span><span style="color:#268bd2;">[</span><span style="color:#657b83;">current_head</span><span style="color:#268bd2;">]</span><span style="color:#657b83;">; 
+  _head.</span><span style="color:#b58900;">store</span><span style="color:#657b83;">(</span><span style="color:#b58900;">increment</span><span style="color:#657b83;">(current_head)); 
+  </span><span style="color:#859900;">return </span><span style="color:#b58900;">true</span><span style="color:#657b83;">;
+}
+</span></code></pre><h3 id="full">Full</h3>
+<pre style="background-color:#fdf6e3;">
+<code class="language-cpp" data-lang="cpp"><span style="color:#268bd2;">bool </span><span style="color:#b58900;">wasFull</span><span style="color:#657b83;">() </span><span style="color:#859900;">const
+</span><span style="color:#657b83;">{
+  </span><span style="color:#859900;">const </span><span style="color:#268bd2;">auto</span><span style="color:#657b83;"> next_tail = </span><span style="color:#b58900;">increment</span><span style="color:#657b83;">(_tail.</span><span style="color:#b58900;">load</span><span style="color:#657b83;">());
+  </span><span style="color:#859900;">return </span><span style="color:#657b83;">(next_tail == _head.</span><span style="color:#b58900;">load</span><span style="color:#657b83;">());
+}
+
+</span><span style="color:#859900;">size_t </span><span style="color:#b58900;">increment</span><span style="color:#657b83;">(</span><span style="color:#859900;">size_t </span><span style="color:#268bd2;">idx</span><span style="color:#657b83;">) </span><span style="color:#859900;">const
+</span><span style="color:#657b83;">{
+  </span><span style="color:#859900;">return </span><span style="color:#657b83;">(idx + </span><span style="color:#6c71c4;">1</span><span style="color:#657b83;">) % Capacity;
+}
+</span></code></pre><h2 id="thread-safe-use-and-implementation">Thread Safe Use and Implementation</h2>
+<p>略</p>
+<h1 id="part-ii-todo-ccia">Part II（@todo, ccia）</h1>
+<h2 id="making-it-work">Making It Work</h2>
+<p>在元素被读取和写入（pop或者push）后马上更新头或者尾index是必要的。因此，任何对于头尾index的更新必须保证正确，所以这需要是原子操作并且不能被重排序。</p>
+<h2 id="atomic-operations-and-the-different-memory-models">Atomic operations and the different Memory Models</h2>
+<p>Below is described a subset of the functionality that you can get from the different C++11 memory models and atomic operations. It is in no way comprehensive but contains the necessary pieces to explain both types of the C++11 empowered wait-free, lock-free circular queue.</p>
+<p>There are <strong>three different memory-ordering models</strong> in C++11 and with them six ordering options.</p>
+<ol>
+<li>Sequentially consistent model
+<ul>
+<li><code>memory_order_seq_cst</code></li>
+</ul>
+</li>
+<li>acquire-release model
+<ul>
+<li><code>memory_order_consume</code></li>
+<li><code>memory_order_acquire</code></li>
+<li><code>memory_order_release</code></li>
+<li><code>memory_order_acq_rel</code></li>
+</ul>
+</li>
+<li>relaxed model
+<ul>
+<li><code>memory_order_relaxed</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="sequential-consistent">Sequential Consistent</h2>
+<h3 id="rules-for-sequential-consistent-memory-model-and-operations">Rules for Sequential Consistent Memory Model and Operations</h3>
+<h3 id="sequential-consistent-atmic-code">Sequential Consistent Atmic Code</h3>
+<h3 id="caveats-with-the-sequential-memory-model">Caveats with the Sequential Memory Model</h3>
+<h3 id="simplified-atomic-sequential-operations">Simplified Atomic Sequential operations</h3>
+<h2 id="refined-memory-order">Refined Memory Order</h2>
+<h2 id="relaxed-memory-model">Relaxed-Memory Model</h2>
+<h3 id="rules-for-the-relaxed-memory-model-and-operations">Rules for the Relaxed Memory Model and Operations</h3>
+<h2 id="acquire-release-memory-model">Acquire-Release Memory model</h2>
+<h3 id="rules-for-the-acquire-release-memory-model-and-operations">Rules for the Acquire-Release Memory Model and Operations</h3>
+<h2 id="code-explained-acquire-release-relaxed-circularfifo">Code Explained: Acquire-Release/Relaxed Circularfifo</h2>
+<h2 id="x86-x64-comparison-sequential-vs-refined-memory-order">x86-x64 Comparison: Sequential vs Refined Memory Order</h2>
+<h2 id="conclusion">Conclusion</h2>
+<h2 id="history">History</h2>
+<h2 id="references">References</h2>
+
+            </div>
+        </div>
+    </body>
+  
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var gitalk = new Gitalk({
+            id: 'Lock-Free Single-Producer - Single Consumer Circ…',
+            clientID: 'a17500877ddbb2dd70b9',
+            clientSecret: '77e1c5816e97e2473c0a617bd0e3ece99f33559f',
+            repo: 'wendajiang.github.io',
+            owner: 'wendajiang',
+            admin: ['wendajiang'],
+            perPage: 50,
+
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</html>

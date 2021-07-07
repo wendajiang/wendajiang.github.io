@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+    
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="https://cdn1.lncld.net/static/js/av-min-1.5.0.js"></script>
+
+        <title>
+            GNU gcc 工具集整理, GNU Binutils
+        </title>
+
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;font.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;page.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;page_mobile.css">
+        <link rel="stylesheet" media="screen and (min-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;navigatebar.css">
+        <link rel="stylesheet" media="screen and (max-width: 600px)" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;navigatebar_mobile.css">
+        <link rel="stylesheet" href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;css&#x2F;highlight.css">
+
+        
+        <script>
+        function initMermaid() {
+          var config = {
+            startOnLoad: true,
+            theme: "forest",
+            flowchart:{
+              useMaxWidth: true,
+              htmlLabels: true
+            }
+          };
+          mermaid.initialize(config);
+          window.mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+        }
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/mermaid/8.9.1/mermaid.min.js"
+          async
+          onload="initMermaid()">
+        </script>
+        
+
+        
+        <!-- Math rendering -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+        <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+        </script>
+        
+    </head>
+    <body>
+        <div class="navigatebar">
+    <div class="navigatebar-button navigatebar-mine">
+        <a href="https:&#x2F;&#x2F;wendajiang.github.io">David</a>
+    </div>
+    <div class="navigatebar-button">
+        <a href="https:&#x2F;&#x2F;wendajiang.github.io/tags">Tags</a>
+    </div>
+    
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;essay&#x2F;">Essay</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;ddia&#x2F;">ddia</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;http2ia&#x2F;">http2ia</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;QA&#x2F;">Q&amp;A</a>
+        </div>
+    
+        
+        <div class="navigatebar-button">
+            <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;about&#x2F;">About</a>
+        </div>
+    
+    <div class="navigatebar-button">
+        <a href = "https:&#x2F;&#x2F;wendajiang.github.io/about/archive">Archive</a>
+    </div>
+</div>
+
+
+        <div class="content-area">
+            <div class="title">
+                GNU gcc 工具集整理, GNU Binutils
+            </div>
+            
+            <div class="category-area">
+                「
+                <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;tags/gcc">
+                    <div class="category">
+                        gcc
+                    </div>
+                </a>
+                
+                <a href="https:&#x2F;&#x2F;wendajiang.github.io&#x2F;tags/tool">
+                    <div class="category">
+                        tool
+                    </div>
+                </a>
+                」
+            </div>
+            
+            <div class="char-counter">
+                字数1518 2021-04-20T16:44:55
+            </div>
+            <div class="content">
+                
+                <ul>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/gnu-binutils-md/#gnu-binutils">GNU Binutils</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/gnu-binutils-md/#can-kao">参考</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://wendajiang.github.io/gnu-binutils-md/#fu-lu">附录</a>
+                    
+                </li>
+                
+                </ul>
+                
+                <!--
+mermaid example:
+<div class="mermaid">
+    mermaid program
+</div>
+-->
+<p><a href="https://www.gnu.org/software/binutils/">GNU Binutils</a></p>
+<h3 id="gnu-binutils">GNU Binutils</h3>
+<p>GNU Binutils 是一套二进制工具集，主要由：</p>
+<ul>
+<li><strong>ld</strong> -- 链接器 </li>
+<li><strong>as</strong> -- 汇编器</li>
+</ul>
+<p>还包括</p>
+<ul>
+<li>
+<p><strong>addr2line</strong> - Converts addresses into filenames and line numbers.
+backtrace/backtrace_symbol 输出的地址可以使用addr2line转化为 </p>
+</li>
+<li>
+<p><strong>ar</strong> - A utility for creating, modifying and extracting from archives.
+ar，Linux系统的一个备份压缩命令，用于创建、修改备存文件（archive），或从备存文件中提取成员文件。ar命令最常见的用法是将目标文件打包为静态链接库。</p>
+</li>
+<li>
+<p><strong>c++filt</strong> - Filter to demangle encoded C++ symbols.
+将符号转为代码,比如 
+c++filt    _Z6myfunci    -&gt; myfunc(int)   (centos 系统示例)</p>
+</li>
+<li>
+<p><strong>gold</strong> - A new, faster, ELF only linker, still in beta test.
+暂时忽略</p>
+</li>
+<li>
+<p><strong>gprof</strong> - Displays profiling information.</p>
+</li>
+<li>
+<p><strong>nlmconv</strong> - Converts object code into an NLM.</p>
+</li>
+<li>
+<p><strong>nm</strong> - Lists symbols from object files.</p>
+</li>
+<li>
+<p><strong>objcopy</strong> - Copies and translates object files.</p>
+</li>
+<li>
+<p><strong>objdump</strong> - Displays information from object files.</p>
+</li>
+<li>
+<p><strong>ranlib</strong> - Generates an index to the contents of an archive.</p>
+</li>
+<li>
+<p><strong>readelf</strong> - Displays information from any ELF format object file.</p>
+</li>
+<li>
+<p><strong>size</strong> - Lists the section sizes of an object or archive file.
+例子：
+size bt_test
+text    data     bss     dec     hex filename
+2553     672      16    3241     ca9 bt_test</p>
+</li>
+<li>
+<p><strong>strings</strong> - Lists printable strings from files.</p>
+</li>
+<li>
+<p><strong>strip</strong> - Discards symbols.
+&quot;脱裤&quot;，将文件中的符号表脱掉，&quot;脱裤&quot;后的文件无法使用addr2line来转化代码位置</p>
+</li>
+</ul>
+<p>windows？暂时不管</p>
+<ul>
+<li><strong>dlltool</strong> - Creates files for building and using DLLs.</li>
+<li><strong>windmc</strong> - A Windows compatible message compiler.</li>
+<li><strong>windres</strong> - A compiler for Windows resource files.</li>
+</ul>
+<p>大多数程序使用 BFD(Binary File Descriptor library)来做 manipulation。其中很多还是用 opcodes 库来汇编和反汇编机器指令</p>
+<h3 id="can-kao">参考</h3>
+<p><a href="https://www.jianshu.com/p/2ec7ee43e3a1">ar,nm,ranlib使用详解</a></p>
+<h3 id="fu-lu">附录</h3>
+<p>nl -- 列出文件以及行数</p>
+
+            </div>
+        </div>
+    </body>
+  
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var gitalk = new Gitalk({
+            id: 'GNU gcc 工具集整理, GNU Binutils',
+            clientID: 'a17500877ddbb2dd70b9',
+            clientSecret: '77e1c5816e97e2473c0a617bd0e3ece99f33559f',
+            repo: 'wendajiang.github.io',
+            owner: 'wendajiang',
+            admin: ['wendajiang'],
+            perPage: 50,
+
+        })
+        gitalk.render('gitalk-container')
+    </script>
+</html>
