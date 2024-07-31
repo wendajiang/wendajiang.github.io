@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>「靡不有初，鲜克有终」 - llvm</title>
+    <subtitle>blog of david</subtitle>
+    <link href="https://wendajiang.github.io/tags/llvm/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://wendajiang.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2023-12-21T14:46:37+00:00</updated>
+    <id>https://wendajiang.github.io/tags/llvm/atom.xml</id>
+    <entry xml:lang="en">
+        <title>pointers are complicated</title>
+        <published>2023-12-21T14:46:37+00:00</published>
+        <updated>2023-12-21T14:46:37+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://wendajiang.github.io/pointers-are-complicated/" type="text/html"/>
+        <id>https://wendajiang.github.io/pointers-are-complicated/</id>
+        <content type="html">&lt;p&gt;Provenance notion for LLVM IR is important when implementing compiler which has pointer(e.g. Rust, C, C++).&lt;&#x2F;p&gt;
+&lt;p&gt;Otherwise, compiler optimization would cause error result.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;reference&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#reference&quot; aria-label=&quot;Anchor link for: reference&quot;&gt;reference&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.ralfj.de&#x2F;blog&#x2F;2020&#x2F;12&#x2F;14&#x2F;provenance.html&quot;&gt;src&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.open-std.org&#x2F;jtc1&#x2F;sc22&#x2F;wg14&#x2F;www&#x2F;docs&#x2F;n3005.pdf&quot;&gt;open-std Aprovenance-aware Memory Object Model for C&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gcc.gnu.org&#x2F;bugzilla&#x2F;show_bug.cgi?id=82282s&quot;&gt;gcc(6.4.0) bug report&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+    </entry>
+</feed>

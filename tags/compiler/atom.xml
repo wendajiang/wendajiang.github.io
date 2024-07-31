@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+    <title>「靡不有初，鲜克有终」 - compiler</title>
+    <subtitle>blog of david</subtitle>
+    <link href="https://wendajiang.github.io/tags/compiler/atom.xml" rel="self" type="application/atom+xml"/>
+    <link href="https://wendajiang.github.io"/>
+    <generator uri="https://www.getzola.org/">Zola</generator>
+    <updated>2024-07-31T11:50:08+00:00</updated>
+    <id>https://wendajiang.github.io/tags/compiler/atom.xml</id>
+    <entry xml:lang="en">
+        <title>faster compile</title>
+        <published>2024-07-31T11:50:08+00:00</published>
+        <updated>2024-07-31T11:50:08+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://wendajiang.github.io/faster-compile/" type="text/html"/>
+        <id>https://wendajiang.github.io/faster-compile/</id>
+        <content type="html">&lt;h1 id=&quot;profile&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#profile&quot; aria-label=&quot;Anchor link for: profile&quot;&gt;profile&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;clang -ftime-trace would output one json file, that can generate flame graph&lt;&#x2F;li&gt;
+&lt;li&gt;gcc -ftime-report would output the phase time and percent&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;h1 id=&quot;speed-up&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#speed-up&quot; aria-label=&quot;Anchor link for: speed-up&quot;&gt;speed up&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;h2 id=&quot;do-not-change-the-code&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#do-not-change-the-code&quot; aria-label=&quot;Anchor link for: do-not-change-the-code&quot;&gt;do not change the code&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;faster linker 
+lld faster than gnu bsd linker&lt;&#x2F;li&gt;
+&lt;li&gt;PCH(pre-compiled header)
+&lt;code&gt;target_precompile_headers(&amp;lt;target&amp;gt; PUBLIC &amp;lt;headers&amp;gt;)&lt;&#x2F;code&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;cache compile result
+&lt;ul&gt;
+&lt;li&gt;ccache&lt;&#x2F;li&gt;
+&lt;li&gt;sccache(cache shareing)&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;unity builds
+&lt;code&gt;cmake -DCMAKE_UNITY_BUILD=ON&lt;&#x2F;code&gt; when cmake 3.16+&lt;&#x2F;li&gt;
+&lt;li&gt;LTO (link time optimization)
+&lt;code&gt;cmake -DLLVM_ENABLE_LTO=Thin&lt;&#x2F;code&gt; for clang&lt;&#x2F;li&gt;
+&lt;li&gt;PGO(profile guided optimization)&lt;pre data-lang=&quot;markdown&quot; style=&quot;background-color:#282a36;color:#f8f8f2;&quot; class=&quot;language-markdown &quot;&gt;&lt;code class=&quot;language-markdown&quot; data-lang=&quot;markdown&quot;&gt;&lt;span&gt;build clang with cmake -DLLVM_BUILD_INSTRUMENTED=IR
+&lt;&#x2F;span&gt;&lt;span&gt;use this to train the compiler
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff79c6;&quot;&gt;- &lt;&#x2F;span&gt;&lt;span&gt;we build some application
+&lt;&#x2F;span&gt;&lt;span&gt;  &lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff79c6;&quot;&gt;-&lt;&#x2F;span&gt;&lt;span&gt; generate a profraw file
+&lt;&#x2F;span&gt;&lt;span&gt;merge all profraw files with llvm-prodata
+&lt;&#x2F;span&gt;&lt;span&gt;feed output to clang cmake with -DLLVM_PROFDATA_FILE=&amp;lt;&lt;&#x2F;span&gt;&lt;span style=&quot;color:#ff79c6;&quot;&gt;path&lt;&#x2F;span&gt;&lt;span&gt;&amp;gt;
+&lt;&#x2F;span&gt;&lt;span&gt;combine with LTO for best results
+&lt;&#x2F;span&gt;&lt;&#x2F;code&gt;&lt;&#x2F;pre&gt;
+&lt;&#x2F;li&gt;
+&lt;li&gt;Post link optimization
+&lt;ul&gt;
+&lt;li&gt;LLVM-BOLT&lt;&#x2F;li&gt;
+&lt;li&gt;LLVM-Propeller&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h2 id=&quot;grab-bag&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#grab-bag&quot; aria-label=&quot;Anchor link for: grab-bag&quot;&gt;Grab bag&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;-fvisibility=hidden&lt;&#x2F;li&gt;
+&lt;li&gt;-fexperimental-new-pass-manager&lt;&#x2F;li&gt;
+&lt;li&gt;distcc&lt;&#x2F;li&gt;
+&lt;li&gt;LTO on your code&lt;&#x2F;li&gt;
+&lt;li&gt;-ftime-trace&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;p&gt;&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;google&#x2F;bloaty&quot;&gt;bloaty&lt;&#x2F;a&gt; a size profiler for binaries&lt;&#x2F;p&gt;
+&lt;h2 id=&quot;change-the-code&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#change-the-code&quot; aria-label=&quot;Anchor link for: change-the-code&quot;&gt;change the code&lt;&#x2F;a&gt;&lt;&#x2F;h2&gt;
+&lt;ol&gt;
+&lt;li&gt;split one large file into many small file , so that is benefit from parallel compiling&lt;&#x2F;li&gt;
+&lt;li&gt;PIMPL&lt;&#x2F;li&gt;
+&lt;li&gt;fwd class instead of include header&lt;&#x2F;li&gt;
+&lt;&#x2F;ol&gt;
+&lt;h1 id=&quot;reference&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#reference&quot; aria-label=&quot;Anchor link for: reference&quot;&gt;reference&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=X4pyOtawqjg&quot;&gt;youtube&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;onqtam.com&#x2F;programming&#x2F;2019-12-20-pch-unity-cmake-3-16&#x2F;&quot;&gt;cmake3.16 introduce and something&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+    </entry>
+    <entry xml:lang="en">
+        <title>pointers are complicated</title>
+        <published>2023-12-21T14:46:37+00:00</published>
+        <updated>2023-12-21T14:46:37+00:00</updated>
+        <author>
+          <name>Unknown</name>
+        </author>
+        <link rel="alternate" href="https://wendajiang.github.io/pointers-are-complicated/" type="text/html"/>
+        <id>https://wendajiang.github.io/pointers-are-complicated/</id>
+        <content type="html">&lt;p&gt;Provenance notion for LLVM IR is important when implementing compiler which has pointer(e.g. Rust, C, C++).&lt;&#x2F;p&gt;
+&lt;p&gt;Otherwise, compiler optimization would cause error result.&lt;&#x2F;p&gt;
+&lt;h1 id=&quot;reference&quot;&gt;&lt;a class=&quot;zola-anchor&quot; href=&quot;#reference&quot; aria-label=&quot;Anchor link for: reference&quot;&gt;reference&lt;&#x2F;a&gt;&lt;&#x2F;h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.ralfj.de&#x2F;blog&#x2F;2020&#x2F;12&#x2F;14&#x2F;provenance.html&quot;&gt;src&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;www.open-std.org&#x2F;jtc1&#x2F;sc22&#x2F;wg14&#x2F;www&#x2F;docs&#x2F;n3005.pdf&quot;&gt;open-std Aprovenance-aware Memory Object Model for C&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;li&gt;&lt;a href=&quot;https:&#x2F;&#x2F;gcc.gnu.org&#x2F;bugzilla&#x2F;show_bug.cgi?id=82282s&quot;&gt;gcc(6.4.0) bug report&lt;&#x2F;a&gt;&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+    </entry>
+</feed>
