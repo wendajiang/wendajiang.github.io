@@ -1,7 +1,60 @@
 @use "./base.scss";
 
 // put your custom CSS here!
-@use "./variables.scss" as *;
+
+// body[data-slug="index"] img {
+//   filter: invert(0%);
+//   opacity: 0.85;
+// }
+
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+// [saved-theme="dark"] #texture {
+  // mix-blend-mode: overlay;
+// }
+
+// body[data-slug="thoughts/craft"] {
+//   & li:has(> img, > video) {
+//     list-style-type: none;
+
+//     & > img,
+//     & > video {
+//       margin: 1rem 0;
+//     }
+//   }
+
+//   article > ul {
+//     padding-left: 0;
+
+//     & > li {
+//       list-style-type: none;
+//       margin: 1rem 0;
+//     }
+//   }
+// }
+
+
+hr {
+  overflow: visible;
+  padding: 0;
+  height: 0;
+  margin: 4em auto;
+  border: none;
+  text-align: center;
+  width: 100%;
+
+  &:after {
+    content: "* * *";
+    display: inline-block;
+    margin: -1em 0 0.5em;
+    font-size: 1.5em;
+    padding: 0.5em 1em;
+    color: var(--gray);
+  }
+}
 
 pre.poetry {
   font-size: 1.2rem;
@@ -11,5 +64,13 @@ pre.poetry {
   position: unset;
 }
 
+.meta,
+.content-meta {
+  font-family: biro_script_standardRgus, var(--bodyFont);
+}
+
+audio::-webkit-media-controls-panel {
+  background-color: var(--lightgray);
+}
 
 
