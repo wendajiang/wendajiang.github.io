@@ -21,6 +21,10 @@ $boldWeight: 700;
 $semiBoldWeight: 600;
 $normalWeight: 400;
 
+$mobileBreakpoint: 600px;
+$tabletBreakpoint: 1000px;
+$fullPageWidth: $pageWidth + 2 * $sidePanelWidth;
+
 $mobileGrid: (
   templateRows: "auto auto auto auto auto",
   templateColumns: "auto",
