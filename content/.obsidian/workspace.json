@@ -1,0 +1,255 @@
+{
+  "main": {
+    "id": "46d0582220f09156",
+    "type": "split",
+    "children": [
+      {
+        "id": "f0ee19af802bd216",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "225f2650f9b65992",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "blog/zero_copy.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "fe27d4d75def99d1",
+    "type": "split",
+    "children": [
+      {
+        "id": "6f7a7ac4123867f0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e18dd418cb73b360",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "655cdfebc8a5801f",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "](",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ea4dd7ea7bc5869c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 256.5
+  },
+  "right": {
+    "id": "a80dc2df7ad57bd9",
+    "type": "split",
+    "children": [
+      {
+        "id": "0b7056979130017a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c15a092bc40ed4ef",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "blog/zero_copy.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": false
+              }
+            }
+          },
+          {
+            "id": "1a15ce0cc855b2e4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "blog/zero_copy.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "0a4359cf20a1697f",
+            "type": "leaf",
+            "state": {
+              "type": "localgraph",
+              "state": {
+                "file": "blog/zero_copy.md",
+                "options": {
+                  "collapse-filter": true,
+                  "search": "",
+                  "localJumps": 1,
+                  "localBacklinks": true,
+                  "localForelinks": true,
+                  "localInterlinks": false,
+                  "showTags": false,
+                  "showAttachments": false,
+                  "hideUnresolved": false,
+                  "collapse-color-groups": true,
+                  "colorGroups": [],
+                  "collapse-display": true,
+                  "showArrow": false,
+                  "textFadeMultiplier": 0,
+                  "nodeSizeMultiplier": 1,
+                  "lineSizeMultiplier": 1,
+                  "collapse-forces": true,
+                  "centerStrength": 0.518713248970312,
+                  "repelStrength": 10,
+                  "linkStrength": 1,
+                  "linkDistance": 250,
+                  "scale": 1,
+                  "close": true
+                }
+              }
+            }
+          },
+          {
+            "id": "8f34e089c31cde07",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "a9efe38f48a9a749",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "blog/zero_copy.md"
+              }
+            }
+          },
+          {
+            "id": "be0b262373609bc2",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {}
+            }
+          },
+          {
+            "id": "84a877eaa75d4c01",
+            "type": "leaf",
+            "state": {
+              "type": "timeline",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 314.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-kanban:创建新看板": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-day-planner:Timeline": false
+    }
+  },
+  "active": "225f2650f9b65992",
+  "lastOpenFiles": [
+    "blog/mysql_transaction.md",
+    "blog/streaming102.md",
+    "blog/streaming101.md",
+    "blog/raft-extended.md",
+    "blog/dataflow_model.md",
+    "blog/bitcask.md",
+    "blog/yet-another-implement-of-lock-free-circular-array-queue.md",
+    "blog/redis-distribute-lock.md",
+    "blog/welcome-to-david.md",
+    "blog/2021-02-02-welcome-to-david.md",
+    "_index.md",
+    "books/list.md",
+    "thinking/_index.md",
+    "books.md",
+    "miao.md",
+    "templates/tags/single.html",
+    "templates/tags/list.html",
+    "templates/shortcodes/mermaid.html",
+    "templates/macros/section-navigation.html",
+    "templates/macros/page-toc.html",
+    "templates/macros/page-publish-metadata.html",
+    "templates/macros/mermaid.html",
+    "templates/macros/math.html",
+    "templates/macros/books-sidebar.html",
+    "templates/macros/head.html",
+    "static/pics/zero_copy/image-20211020191755511.png",
+    "static/pics/zero_copy/image-20211019200216564.png",
+    "static/pics/zero_copy/image-20211019194434427.png",
+    "static/pics/zero_copy/image-20211019174214718.png",
+    "static/pics/zero_copy/image-20211019192834679.png",
+    "static/pics/zero_copy/007S8ZIlgy1ggj9hmikddj30gy0c4mys.png",
+    "static/pics/yingji/640.png",
+    "static/pics/winter_sleep_record/IMG_5589.png",
+    "static/pics/winter_sleep_record/IMG_5588.png",
+    "static/pics/winter_sleep_record/IMG_5587.png",
+    "sass/bootstrap/README.md",
+    "content/zero_copy.md",
+    "content/why_impl_network_stack_in_kernel.md",
+    "content/visitor.md",
+    "content/ulimit.md",
+    "content/type_erasure.md",
+    "content/turtle/yingji.md",
+    "content/turtle/winter_sleep_record.md",
+    "content/turtle/lq.md",
+    "content/turtle/hy_turtle.md",
+    "content/turtle/chang_yong_yao.md",
+    "未命名.canvas"
+  ]
+}
