@@ -1,21 +1,11 @@
 ---
 title: semaphore
 description: ''
-template: blog/page.html
 date: 2023-06-15 09:28:10
 updated: 2023-06-15 09:28:10
 typora-copy-images-to: ../../static/pics/${filename}
-taxonomies:
-  tags: ["ostep"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: 'the understand of ostep chapter 31'
-
-# mermaid example: 
-# {% mermaid() %}
-#     mermaid program
-# {% end %}
+tags: ["ostep"]
+lead: 'the understand of ostep chapter 31'
 ---
 
 Indeed, Dijkstra and colleagues invented the semaphore as a single primitive for all things related to synchronization; as you will see, one can use semaphores as both locks and condition variables.

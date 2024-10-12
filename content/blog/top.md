@@ -1,14 +1,10 @@
-+++
-template = "blog/page.html"
-date = "2021-04-02 14:41:56"
-title = "Linux top"
-[taxonomies]
-tags = ["linux", "tool"]
-
-[extra]
-mermaid = true
-usemathjax = true
-+++
+---
+date: 2021-04-02 14:41:56
+title: Linux top
+tags: 
+    - linux
+    - tool
+---
 <!--
 mermaid example:
 <div class="mermaid">

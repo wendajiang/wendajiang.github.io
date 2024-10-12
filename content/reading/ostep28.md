@@ -1,16 +1,11 @@
 ---
 title: threads-locks
 description: 'ostep 28 chapter understand'
-template: blog/page.html
 date: 2023-02-28 10:33:25
 updated: 2023-02-28 10:33:25
 typora-copy-images-to: ../../static/pics/${filename}
-taxonomies:
-  tags: ["ostep"]
-extra:
-  mermaid: false
-  usemathjax: true
-  lead: 'the understanding of ostep chapter 28'
+tags: ["ostep"]
+lead: 'the understanding of ostep chapter 28'
 ---
 
 
@@ -85,7 +80,7 @@ void unlock(lock_t *mutex) {
 
 The idea is simple: use a simple variable to indicate whether some thread has possession of a lock.
 
-![image-20230228130631762](https://wendajiang.github.io/pics/ostep28/image-20230228130631762.png)
+![image-20230228130631762](/pics/ostep28/image-20230228130631762.png)
 
 But it's wrong. As you can see the above pic, both threads set the flag to 1 and both threads are thus bale to enter the critical secion.
 

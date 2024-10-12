@@ -1,18 +1,7 @@
 ---
-template: blog/page.html
 date: 2022-12-16 09:43:00
 title: Signal and sigaction
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: []
-extra:
-  mermaid: true
-  usemathjax: true
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
 ---
 
 
@@ -68,4 +57,4 @@ signal 通常使用一个 32 位无符号整数( *man 7 signal*), 使用单 bit 
 
 signal 中断当前进程进入内核原理在于 do_signal() 函数：
 
-![signal.drawio](https://wendajiang.github.io/pics/signal_and_sigaction/signal.drawio.png)
+![signal.drawio](/pics/signal_and_sigaction/signal.drawio.png)

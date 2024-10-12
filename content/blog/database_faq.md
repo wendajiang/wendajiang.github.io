@@ -1,14 +1,10 @@
-+++
-template = "blog/page.html"
-date = "2021-08-13 15:47:48"
-title = "DataBase Faq"
-[taxonomies]
-tags = ["database", "pingcap"]
-
-[extra]
-mermaid = true
-usemathjax = true
-+++
+---
+date: 2021-08-13 15:47:48
+title: DataBase Faq
+tags: 
+    - database
+    - pingcap
+---
 <!--
 mermaid example:
 <div class="mermaid">

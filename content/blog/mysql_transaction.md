@@ -1,13 +1,9 @@
-+++
-template = "blog/page.html"
-date = "2021-03-04 12:23:02"
-title = "mysql_transaction"
+---
+date: 2021-03-04 12:23:02
+title: mysql_transaction
 
-[taxonomies]
-tags = ["reprint"]
-[extra]
-mermaid = true
-+++
+tags: reprint
+---
 
 这篇文章属于转载，原链接 https://draveness.me/mysql-transaction/
 原链接作者如要求删除，请联系 wendajiang1993@gmail.com
@@ -109,7 +105,7 @@ graph LR
 
 到目前为止，所有的事务都只是串行执行的，一直都没有考虑过并行执行的问题；然而在实际工作中，并行执行的事务才是常态，然而并行任务下，却可能出现非常复杂的问题：
 
-![image-20200820153119619](https://wendajiang.github.io/pics/mysql-transaction/transaction1.png)
+![image-20200820153119619](/pics/mysql-transaction/transaction1.png)
 
 当 Transaction1 在执行的过程中对 `id = 1` 的用户进行了读写，但是没有将修改的内容进行提交或者回滚，在这时 Transaction2 对同样的数据进行了读操作并提交了事务；也就是说 Transaction2 是依赖于 Transaction1 的，当 Transaction1 由于一些错误需要回滚时，因为要保证事务的原子性，需要对 Transaction2 进行回滚，但是由于我们已经提交了 Transaction2，所以我们已经没有办法进行回滚操作，在这种问题下我们就发生了问题，**Database System Concepts** 一书中将这种现象称为*不可恢复安排*（Nonrecoverable Schedule），那什么情况下是可以恢复的呢？
 
@@ -125,7 +121,7 @@ graph LR
 
 与原子性一样，事务的持久性也是通过日志来实现的，MySQL 使用重做日志（redo log）实现事务的持久性，redo log 由两个部分组成，一是内存中的重做日志缓冲区，因为重做日志缓冲区在内存中，所以是易失的，另一个就是在磁盘上的重做日志文件，是持久的。
 
-![image-20200820213642125](https://wendajiang.github.io/pics/mysql-transaction/redolog.png)
+![image-20200820213642125](/pics/mysql-transaction/redolog.png)
 
 当我们在一个事务中尝试对数据进行修改时，它会先将数据从磁盘读入内存，并更新内存中缓存的数据，然后生成一条 redo log 并写入 redo log 缓存，当事务真正提交时，MySQL 会将重做日志缓冲中的内容刷新到重做日志文件，在将内存中的数据更新到磁盘上，图上的 4、5 步就是在事务提交时执行的。
 
@@ -177,7 +173,7 @@ graph LR
 
 展示各个隔离级别对于脏读，不可重复读，幻读的解决情况：
 
-![image-20200821103436656](https://wendajiang.github.io/pics/mysql-transaction/tranisolationmatrix.png)
+![image-20200821103436656](/pics/mysql-transaction/tranisolationmatrix.png)
 
 ### 隔离级别的实现
 

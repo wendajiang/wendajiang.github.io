@@ -1,14 +1,10 @@
-+++
-template = "blog/page.html"
-date = "2021-06-23 18:59:13"
-title = "namespace 一知半解"
-[taxonomies]
-tags = ["cpp"]
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
+date: 2021-06-23 18:59:13
+title: namespace 一知半解
+
+tags: cpp
+---
 <!--
 mermaid example:
 <div class="mermaid">

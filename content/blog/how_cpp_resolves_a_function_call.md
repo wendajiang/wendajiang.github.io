@@ -1,26 +1,16 @@
 ---
 title: How C++ resolves a function call
 description: ''
-template: blog/page.html
 date: 2023-05-05 18:21:42
 updated: 2023-05-05 18:21:42
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["reprint"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: 'hidden algorithm that runs for every function call at compile time'
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
+tags: reprint
+lead: 'hidden algorithm that runs for every function call at compile time'
 ---
 
 [src](https://preshing.com/20210315/how-cpp-resolves-a-function-call/)
 
-![function_call](https://wendajiang.github.io/pics/how_cpp_resolves_a_function_call/function_call.png)
+![function_call](/pics/how_cpp_resolves_a_function_call/function_call.png)
 
 This is how the compiler, given a function call expression, figures out exactly which function to call. These steps are enshrined in the C++ standard. Every C++ compiler must follow them, and the whole thing happens at compile time for every function call expression evaluated by the program. 
 

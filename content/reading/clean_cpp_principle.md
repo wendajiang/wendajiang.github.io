@@ -1,14 +1,10 @@
-+++
-template = "blog/page.html"
-date = "2021-04-25 22:45:06"
-title = "Clean C++ 读书笔记1"
-[taxonomies]
-tags = ["book note"]
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
+date: 2021-04-25 22:45:06
+title: Clean C++ 读书笔记1
+
+tags: book_note
+---
 <!--
 mermaid example:
 <div class="mermaid">

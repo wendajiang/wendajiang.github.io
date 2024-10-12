@@ -1,21 +1,9 @@
 ---
 title: cusomization point object
 description: ''
-template: blog/page.html
 date: 2023-12-21 14:54:34
 updated: 2023-12-21 14:54:34
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: []
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
-
-# mermaid example: 
-# {% mermaid() %}
-#     mermaid program
-# {% end %}
 ---
 
 Derivation:

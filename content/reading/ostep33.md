@@ -1,21 +1,11 @@
 ---
 title: Event-based Concurrency
 description: ''
-template: blog/page.html
 date: 2023-03-09 11:00:08
 updated: 2023-03-09 11:00:08
 typora-copy-images-to: ../../static/pics/${filename}
-taxonomies:
-  tags: ["ostep"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: 'the understanding of ostep chapter 33'
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
+tags: ["ostep"]
+lead: 'the understanding of ostep chapter 33'
 ---
 
 Specifically, a different style of concurrent programming is often used in both GUI-based applications as well as some types of internet servers. This style, known as event-based concurrency.

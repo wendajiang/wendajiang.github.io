@@ -1,16 +1,10 @@
 ---
 title: strip
 description: ''
-template: blog/page.html
 date: 2023-06-08 00:07:57
 updated: 2023-06-08 00:07:57
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ['binutils', 'strip', 'link', 'so']
-extra:
-  mermaid: false
-  usemathjax: true
-  lead: ''
+tags: ["binutils", "strip", "link", "so"]
 ---
 
 # real-world scenario

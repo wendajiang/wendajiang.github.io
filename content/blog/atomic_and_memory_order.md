@@ -1,21 +1,13 @@
 ---
 title: atomic and memory order in c++11
 description: ''
-template: blog/page.html
 date: 2023-03-14 20:58:47
 updated: 2023-03-14 20:58:47
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["atomic", "memory order"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
+tags: 
+  - atomic
+  - memory_order
 
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
 ---
 
 [reprint](https://changkun.de/modern-cpp/en-us/07-thread/#7-5-Atomic-Operation-and-Memory-Model)

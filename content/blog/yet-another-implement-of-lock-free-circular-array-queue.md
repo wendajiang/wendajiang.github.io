@@ -1,10 +1,12 @@
-+++
-template = "blog/page.html"
-title =  "lock-free circular array queue[翻译]"
-date =   "2021-02-05 17:26:18"
-[taxonomies]
-tags=["translate", "lock-free", "ABA", "queue"]
-+++
+---
+title: lock-free circular array queue[翻译]
+date: 2021-02-05 17:26:18
+tags: 
+    - translate
+    - lock-free
+    - ABA
+    - queue
+---
 
 [原链接](https://www.codeproject.com/Articles/153898/Yet-another-implementation-of-a-lock-free-circul)
 
@@ -256,7 +258,7 @@ queue 基于 array 和三个 index：
 - `readIndex`:下一个被弹出的元素位置
 - `maximumReadIndex`:上一个已经‘commit’要插入的元素位置。如果与`writeIndex`位置不同，意味着有写入被挂起，也意味着这个位置已经被声明占用了，但是数据还没有写进去到队列里，所以试图读的线程需要等待数据被填入
 
-值得一提的是，三个index是必要的，因为队列允许多生产者和多消费者。有[文章](https://wendajiang.github.io/translate/queue/lock-free/2021/02/07/single-p-single-c-lock-free-cricular-queue.html)研究了单生产者单消费者，这篇文章值得一读（我一直很喜欢 [KISS 原则](https://en.wikipedia.org/wiki/KISS_principle)）。这里的事情变得复杂很多，因为队列必须对于各种线程配置都要线程安全。
+值得一提的是，三个index是必要的，因为队列允许多生产者和多消费者。有[文章](/translate/queue/lock-free/2021/02/07/single-p-single-c-lock-free-cricular-queue.html)研究了单生产者单消费者，这篇文章值得一读（我一直很喜欢 [KISS 原则](https://en.wikipedia.org/wiki/KISS_principle)）。这里的事情变得复杂很多，因为队列必须对于各种线程配置都要线程安全。
 
 #### 3.1.1 The CAS operation 
 
@@ -332,31 +334,31 @@ bool ArrayLockFreeQueue<ELEM_T>::push(const ELEM_T &a_data)
 
 下图描述了一个queue的初始状态，每个格子表示queue的位置，如果标记了 X 表示包含了数据，空白格子就是空的。图中表示当前queue已经插入了两个元素。`writeIndex`指向新元素将要插入的位置，`readIndex`指向下次`pop`弹出的元素位置
 
-![image-20210205150248827](https://wendajiang.github.io/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205150248827.png)
+![image-20210205150248827](/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205150248827.png)
 
 基本上，当新元素被`push`操作写入队列时，writeIndex increment。MaximumReadIndex指向最新的有效数据
 
-![image-20210205150433877](https://wendajiang.github.io/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205150433877.png)
+![image-20210205150433877](/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205150433877.png)
 
 一旦新空间被占用，当前线程就会开始将数据拷贝进queue。然后increment maximumReadIndex
 
-![image-20210205150546567](https://wendajiang.github.io/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205150546567.png)
+![image-20210205150546567](/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205150546567.png)
 
 此时，队列中有了三个被插入的元素。下一步，另一个任务试图继续插入新元素
 
-![image-20210205150728199](https://wendajiang.github.io/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205150728199.png)
+![image-20210205150728199](/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205150728199.png)
 
 已经腾出了数据的空间，但是这时被其它线程抢占也要插入一个元素（再占用一个）
 
-![image-20210205150852717](https://wendajiang.github.io/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205150852717.png)
+![image-20210205150852717](/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205150852717.png)
 
 此时，线程开始往占用的位置拷贝数据，但是**必须**按照**严格的顺序**：第一个生产者线程 increment maximumReadIndex，然后第二个线程再 increment。这个顺序很重要，因为在允许消费线程将其从队列中`pop`之前，要确保数据被保存到'commited'的位置。【译者注：这个顺序通过CAS对于maximumReadIndex保证】
 
-![image-20210205151841109](https://wendajiang.github.io/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205151841109.png)
+![image-20210205151841109](/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205151841109.png)
 
 第一个生产者【译者注：1，2的先后顺序由reversed位置定义】将数据提交位置。现在该第二个线程继续自己的任务了
 
-![image-20210205151944816](https://wendajiang.github.io/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205151944816.png)
+![image-20210205151944816](/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205151944816.png)
 
 现在队列插入了5个元素
 
@@ -416,15 +418,15 @@ bool ArrayLockFreeQueue<ELEM_T>::pop(ELEM_T &a_data)
 
 还是用插入数据一节的queue的初始状态。有两个元素已经插入队列。
 
-![image-20210205152150470](https://wendajiang.github.io/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205152150470.png)
+![image-20210205152150470](/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205152150470.png)
 
 消费线程，从`readIndex`复制数据，然后尝试在相同的`readIndex`执行`CAS`操作。如果线程执行`CAS`成功，表示数据已经从队列取出，因为`CAS`是原子的。如果`CAS`失败，下次尝试就会从新的位置重复这个过程，如下图
 
-![image-20210205152645278](https://wendajiang.github.io/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205152645278.png)
+![image-20210205152645278](/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205152645278.png)
 
 结果就是下图
 
-![image-20210205152726271](https://wendajiang.github.io/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205152726271.png)
+![image-20210205152726271](/pics/2021-02-05-yet-another-implement-of-lock-free-circular-array-queue/image-20210205152726271.png)
 
 如果这个时候还有线程要读取数据，就会失败，因为队列已空。
 
@@ -540,7 +542,7 @@ return false;
 }
 ```
 
-如果你要在单生产者，单消费者场景使用，再次推荐[此文章](https://wendajiang.github.io/translate/queue/lock-free/2021/02/07/single-p-single-c-lock-free-cricular-queue.html)，用了类似的环形队列设计。
+如果你要在单生产者，单消费者场景使用，再次推荐[此文章](/translate/queue/lock-free/2021/02/07/single-p-single-c-lock-free-cricular-queue.html)，用了类似的环形队列设计。
 
 ### 4.2 Using the queue with smart pointers
 

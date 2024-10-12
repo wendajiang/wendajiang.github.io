@@ -1,21 +1,12 @@
 ---
 title: coroutine learn
 description: ''
-template: blog/page.html
 date: 2023-06-12 12:29:41
 updated: 2023-06-12 12:29:41
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["cpp", "coroutine"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
+tags: 
+  - cpp
+  - coroutine
 ---
 
 https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2021/p2464r0.html

@@ -1,16 +1,10 @@
 ---
 title: faster compile
 description: 'how to speed up compile time '
-template: blog/page.html
 date: 2024-07-31 11:50:08
 updated: 2024-07-31 11:50:08
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["compiler"]
-extra:
-  mermaid: false
-  usemathjax: true
-  lead: ''
+tags: compiler
 ---
 
 # profile

@@ -1,21 +1,13 @@
 ---
 title: Error modle and handle
-description: 'error model and handle thinking from boost.outcome'
-template: blog/page.html
+description: error model and handle thinking from boost.outcome
 date: 2023-07-19 16:21:51
 updated: 2023-07-19 16:22:51
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ['error model', 'error handle', 'cpp']
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
-
-# mermaid example: 
-# {% mermaid() %}
-#     mermaid program
-# {% end %}
+tags:
+  - error_handle
+  - cpp
+  - error_model
 ---
 
 # The origin

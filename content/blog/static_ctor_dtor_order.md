@@ -1,18 +1,8 @@
 ---
-template: blog/page.html
 date: 2023-01-03 13:33:19
 title: Static object initialization and deinitialization
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["cpp", "fap", "singleton"]
-extra:
-  mermaid: true
-  usemathjax: true
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
+tags: ["cpp", "fap", "singleton"]
 ---
 
 ## 引言

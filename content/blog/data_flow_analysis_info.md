@@ -1,21 +1,12 @@
 ---
 title: Data flow analysis
-description: ''
-template: blog/page.html
 date: 2024-04-25 17:07:42
 updated: 2024-04-25 17:07:42
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["compiler", "dataflow", "spa"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
-
-# mermaid example: 
-# {% mermaid() %}
-#     mermaid program
-# {% end %}
+tags: 
+  - compiler
+  - dataflow
+  - spa
 ---
 
 

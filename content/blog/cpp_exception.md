@@ -1,21 +1,9 @@
 ---
 title: c++ exception that is how to implement in zero-cost?
 description: ''
-template: blog/page.html
 date: 2024-07-14 17:19:09
 updated: 2024-07-14 17:19:09
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: []
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
-
-# mermaid example: 
-# {% mermaid() %}
-#     mermaid program
-# {% end %}
 ---
 
 # introduction
@@ -39,7 +27,7 @@ The origins of exception handling lie in the problems experienced managing a var
   - [the C++ ABI](https://itanium-cxx-abi.github.io/cxx-abi/)
 - [.eh_frame](https://www.airs.com/blog/archives/460)
 - [.gcc_except_table](https://www.airs.com/blog/archives/464)
-- [Compiler Internals: Exceptions and RTTI. 2012. windows and Unix-like system](https://wendajiang.github.io/pdf/Compiler-Internals-exception.pdf)
-- [C++ Exception Handling for IA-64](https://wendajiang.github.io/pdf/exception.pdf)
-- [C++ exceptions and alternatives.Bjarne Stroustrup](https://wendajiang.github.io/pdf/p1947r0exception.pdf)
+- [Compiler Internals: Exceptions and RTTI. 2012. windows and Unix-like system](/pdf/Compiler-Internals-exception.pdf)
+- [C++ Exception Handling for IA-64](/pdf/exception.pdf)
+- [C++ exceptions and alternatives.Bjarne Stroustrup](/pdf/p1947r0exception.pdf)
 - a tour of c++, 3rd edition chapter 4.

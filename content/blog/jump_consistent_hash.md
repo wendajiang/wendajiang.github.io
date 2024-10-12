@@ -1,14 +1,14 @@
-+++
-template = "blog/page.html"
-date = "2021-05-11 19:30:38"
-title = "A Fast Minimal Memory, Consistent Hash Algorithm"
-[taxonomies]
-tags = ["awesomepaper", "alg", "translate"]
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
+date: 2021-05-11 19:30:38
+title: A Fast Minimal Memory, Consistent Hash Algorithm
+
+tags: 
+    - awesomepaper
+    - alg
+    - translate
+
+---
 <!--
 mermaid example:
 <div class="mermaid">
@@ -75,7 +75,7 @@ int ch(int key, int num_buckets) {
     return b;
 }
 ```
-![image-20210512113501760](https://wendajiang.github.io/pics/ddia/jump_consistent_hash/image-20210512113501760.png)
+![image-20210512113501760](/pics/ddia/jump_consistent_hash/image-20210512113501760.png)
 
 本图是对这个函数的演绎。n 从1变化到5的过程中，$k_1$ 和 $k_2$ 每次都要根据随机序列与目标分布 $1/n$比较，来决定是留在原来桶还是移动到新桶。需要注意的是，一旦 k 确定，随机序列就确定。每次计算 ch 函数，for 循环就是在遍历一个确定的序列。所以，k 给定，n 确定，ch 的结果唯一确定，就可以保持 “一致”。
 
@@ -93,7 +93,7 @@ int ch(int key, int num_buckets) {
 
 $$P(stay_until_j) = \frac{b+1}{b+2} \times \frac{b+2}{b+3} \times ... \times \frac{j-1}{j} = \frac{b+1}{j}$$
 
-![image-20210512114358163](https://wendajiang.github.io/pics/ddia/jump_consistent_hash/image-20210512114358163.png)
+![image-20210512114358163](/pics/ddia/jump_consistent_hash/image-20210512114358163.png)
 
 虚线框表示不变桶，概率就是乘积。
 

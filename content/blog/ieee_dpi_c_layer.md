@@ -1,22 +1,11 @@
 ---
-template: blog/page.html
 date: 2022-09-14 20:49:31
 title: DPI C Layer
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["ieee1800"]
-extra:
-  mermaid: true
-  usemathjax: true
-  toc: true
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
+tags: ieee1800
 ---
 
-[svdpi.h](https://wendajiang.github.io/svdpi.h)
+[svdpi.h](/svdpi.h)
 
 # Overview
 
@@ -37,10 +26,10 @@ DPI 在 SV 数据类型表征上加入了如下约束：
 - unpakced 的 SV 类型和不包含 packed 元素的类型兼容 C 表征
 - 基本整数和实数类型在[这里](#basic-types)定义
 - packed 类型，包括 time ，整数和用户定义类型，使用[这里](#mapping-between-sv-ranges-and-c-ranges) 定义的规范形式
-- ![image-20220913185228713](https://wendajiang.github.io/pics/ieee_dpi_c_layer/image-20220913185228713.png)
+- ![image-20220913185228713](/pics/ieee_dpi_c_layer/image-20220913185228713.png)
 - 嵌入 structure 的 unpacked array 与 C 的 layout 兼容。类似的标准 array 作为实参传递给定长形参也是可以的
-- ![image-20220913185517604](https://wendajiang.github.io/pics/ieee_dpi_c_layer/image-20220913185517604.png)
-- ![image-20220913185541864](https://wendajiang.github.io/pics/ieee_dpi_c_layer/image-20220913185541864.png)
+- ![image-20220913185517604](/pics/ieee_dpi_c_layer/image-20220913185517604.png)
+- ![image-20220913185541864](/pics/ieee_dpi_c_layer/image-20220913185541864.png)
 
 ### Basic types
 
@@ -67,7 +56,7 @@ packed array 是一维的；unpacked 是多维的。归一化 ranges 意味着 [
 
 ### Mapping between SV ranges and C ranges
 
-![image-20220914192359417](https://wendajiang.github.io/pics/ieee_dpi_c_layer/image-20220914192359417.png)
+![image-20220914192359417](/pics/ieee_dpi_c_layer/image-20220914192359417.png)
 
 比如 `logic[2:3][1:3][2:0] b[1:10][31:0]` 的归一化版本 `logic[17:0] b[0:9][0:31]`
 
@@ -185,13 +174,13 @@ typedef void* svOpenArrayHandle;
 
 辅助函数查询数组的范围。
 
-![image-20220914200459670](https://wendajiang.github.io/pics/ieee_dpi_c_layer/image-20220914200459670.png)
+![image-20220914200459670](/pics/ieee_dpi_c_layer/image-20220914200459670.png)
 
 还有辅助函数可以从 open array 中复制数据。
 
 访问数据辅助函数
 
-![image-20220914200639050](https://wendajiang.github.io/pics/ieee_dpi_c_layer/image-20220914200639050.png)
+![image-20220914200639050](/pics/ieee_dpi_c_layer/image-20220914200639050.png)
 
 # SV3.1a-compatible access to packed data(deprecated functionallity)
 

@@ -1,16 +1,12 @@
 ---
 title: visitor pattern
 description: ''
-template: blog/page.html
 date: 2024-04-06 21:36:41
 updated: 2024-04-06 21:36:41
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["visitor", "design pattern"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: 'Visitor design pattern explanation.'
+tags: 
+  - visitor
+  - design pattern
 
 # mermaid example: 
 # {% mermaid() %}

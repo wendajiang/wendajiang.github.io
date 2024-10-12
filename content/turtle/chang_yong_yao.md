@@ -1,29 +1,22 @@
 ---
 title: 常用药
 description: ''
-template: blog/page.html
 date: 2023-12-21 16:05:36
 updated: 2023-12-21 16:05:36
 typora-copy-images-to: ../../static/pics/${filename}
-taxonomies:
-  tags: []
-extra:
-  mermaid: false
-  usemathjax: true
-  lead: ''
 ---
 
 【转载声明】（来自龟问公众号，记录于个人 blog 方便查阅）
 
 ## 常备小药箱
 
-![img](https://wendajiang.github.io/pics/chang_yong_yao/640-20231221160651399.png)
+![img](/pics/chang_yong_yao/640-20231221160651399.png)
 
-![img](https://wendajiang.github.io/pics/chang_yong_yao/640-20231221160701517.png)
+![img](/pics/chang_yong_yao/640-20231221160701517.png)
 
-![img](https://wendajiang.github.io/pics/chang_yong_yao/640-20231221160711109.png)
+![img](/pics/chang_yong_yao/640-20231221160711109.png)
 
-![img](https://wendajiang.github.io/pics/chang_yong_yao/640-20231221160727406.png)
+![img](/pics/chang_yong_yao/640-20231221160727406.png)
 
 ## 文章介绍几种常用药
 
@@ -45,7 +38,7 @@ extra:
 
 1. 口服补液盐III
 
-![img](https://wendajiang.github.io/pics/chang_yong_yao/640-20231221160600693.png)
+![img](/pics/chang_yong_yao/640-20231221160600693.png)
 
 - 用途：新龟到家补水、拉稀龟补液、脱水/肾功能bug的龟补液/外伤干养补液/一般疾病补液
 
@@ -72,7 +65,7 @@ extra:
 
 3.甲硝唑
 
-![图片](https://wendajiang.github.io/pics/chang_yong_yao/640-20231221160559435.png)
+![图片](/pics/chang_yong_yao/640-20231221160559435.png)
 
 - 用途：杀原虫药、消炎药
 - 用量：一次性用量50mg/kg；重复用量25mg/kg五至七日
@@ -85,7 +78,7 @@ extra:
 
 4.阿苯达唑
 
-![图片](https://wendajiang.github.io/pics/chang_yong_yao/640-20231221160559277.png)
+![图片](/pics/chang_yong_yao/640-20231221160559277.png)
 
 - 用途：内寄杀虫
 - 用量：一次性用量50mg/kg；若持续排出虫体或虫卵则14天后重复给药
@@ -100,7 +93,7 @@ extra:
 
 说到显微镜，龟友们可能下意识反应是小题大做。实际上，显微镜不仅有效，且便宜。
 
-![图片](https://wendajiang.github.io/pics/chang_yong_yao/640-20231221160559492.png)
+![图片](/pics/chang_yong_yao/640-20231221160559492.png)
 
 如果仅用于看龟粪便原虫的话，一两百的预算就足够了。（甚至几十）
 
@@ -110,7 +103,7 @@ extra:
 
 6.洗必泰&F10软膏
 
-![图片](https://wendajiang.github.io/pics/chang_yong_yao/640-20231221160559529.png)
+![图片](/pics/chang_yong_yao/640-20231221160559529.png)
 
 
 
@@ -122,7 +115,7 @@ extra:
 
 7.鞣酸软膏
 
-![图片](https://wendajiang.github.io/pics/chang_yong_yao/640-20231221160559410.png)
+![图片](/pics/chang_yong_yao/640-20231221160559410.png)
 
 - 用途：甲壳真菌
 - 用法：抹就完事了
@@ -131,7 +124,7 @@ extra:
 
 8.水飞蓟
 
-![图片](https://wendajiang.github.io/pics/chang_yong_yao/640-20231221160559357.png)
+![图片](/pics/chang_yong_yao/640-20231221160559357.png)
 
 
 

@@ -1,20 +1,9 @@
 ---
-template: blog/page.html
 date: 2022-11-28 10:20:07
 updated: 2024-01-05 10:20:00
 title: pimpl
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["C++", "Idiom"]
-extra:
-  mermaid: true
-  usemathjax: true
-  toc: true
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
+tags: ["C++", "Idiom"]
 ---
 
 from [GotW100](https://herbsutter.com/gotw/_100/)

@@ -1,16 +1,9 @@
 ---
 title: 应激
 description: ''
-template: blog/page.html
 date: 2023-12-21 15:57:05
 updated: 2023-12-21 15:57:05
 typora-copy-images-to: ../../static/pics/${filename}
-taxonomies:
-  tags: []
-extra:
-  mermaid: false
-  usemathjax: true
-  lead: ''
 ---
 
 【转载声明】
@@ -176,7 +169,7 @@ extra:
 - 7%脱水——口渴程度增加，拒食，迟钝，拉扯皮肤回弹缓慢，角膜浑浊
 - 10%脱水——迟钝甚至昏迷，皮肤拉扯无法回弹，粘膜变干，眼球凹陷，无排尿
 
-![Image](https://wendajiang.github.io/pics/yingji/640.png)
+![Image](/pics/yingji/640.png)
 
 ------
 

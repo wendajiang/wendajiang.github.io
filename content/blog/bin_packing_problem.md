@@ -1,21 +1,9 @@
 ---
 title: bin packing problem
 description: ''
-template: blog/page.html
 date: 2023-12-08 17:48:23
 updated: 2023-12-08 17:48:23
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: []
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
-
-# mermaid example: 
-# {% mermaid() %}
-#     mermaid program
-# {% end %}
 ---
 
 problem:

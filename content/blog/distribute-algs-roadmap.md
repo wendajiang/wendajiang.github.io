@@ -1,11 +1,13 @@
-+++
-template = "blog/page.html"
-title = "分布式算法路线图"
-date = "2021-02-03T01:02:18"
-[taxonomies]
-tags = ["distribute", "alg"]
+---
 
-+++
+title: 分布式算法路线图
+date: 2021-02-03T01:02:18
+
+tags: 
+    - distribute
+    - alg
+
+---
 
 
 
@@ -51,4 +53,4 @@ tags = ["distribute", "alg"]
 
 一般来讲，采用 Gossip 协议的 AP 型分布式系统，具备水平扩展能力，读写性能是最高的。其次是 Paxos 算法、ZAB 协议、Raft 算法，因为它们都是领导者模型，写性能受限于领导者，读性能取决于一致性实现。最后是二阶段提交协议和 TCC，因为在实现事务时，需要预留和锁定资源，性能相对低。
 
-![111](https://wendajiang.github.io/pics/2021-02-03-distribute-algs-roadmap/分布式协议和算法实战.png)
+![111](/pics/2021-02-03-distribute-algs-roadmap/分布式协议和算法实战.png)

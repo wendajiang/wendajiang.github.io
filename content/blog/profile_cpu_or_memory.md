@@ -1,21 +1,10 @@
 ---
 title: Profile (CPU or Memory)
 description: ''
-template: blog/page.html
 date: 2023-08-10 00:18:41
 updated: 2023-08-10 00:18:41
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["profile"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
-
-# mermaid example: 
-# {% mermaid() %}
-#     mermaid program
-# {% end %}
+tags: ["profile"]
 ---
 
 # introduction

@@ -1,21 +1,10 @@
 ---
 title: thinking async
 description: 'clutter thinking about async'
-template: blog/page.html
 date: 2023-07-19 15:22:51
 updated: 2023-07-19 15:22:51
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ['async', 'cpp']
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
-
-# mermaid example: 
-# {% mermaid() %}
-#     mermaid program
-# {% end %}
+tags: ['async', 'cpp']
 ---
 
 This blog is only my clutter thinking about async(ASIO / SR model comparison) and record the resouces that I readed.

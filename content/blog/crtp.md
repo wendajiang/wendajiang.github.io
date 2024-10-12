@@ -1,21 +1,13 @@
 ---
 title: CRTP
 description: ''
-template: blog/page.html
 date: 2023-06-08 15:45:06
 updated: 2023-06-08 15:45:06
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ['templates', 'cpp']
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: 'The Curiously Recurring Template Pattern (CRTP) is a C++ idiom whose name was coined by James Coplien in 1996, in early C++ template code.'
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
+tags: 
+  - templates
+  - cpp
+lead: 'The Curiously Recurring Template Pattern (CRTP) is a C++ idiom whose name was coined by James Coplien in 1996, in early C++ template code.'
 ---
 
 # What CRTP is 

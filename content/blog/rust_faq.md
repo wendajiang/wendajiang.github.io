@@ -1,14 +1,8 @@
-+++
-template = "blog/page.html"
-date = "2021-06-18 15:13:08"
-title = "Rust FAQ collection"
-[taxonomies]
-tags = []
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
+date: 2021-06-18 15:13:08
+title: Rust FAQ collection
+---
 <!--
 mermaid example:
 <div class="mermaid">

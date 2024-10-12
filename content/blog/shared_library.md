@@ -1,21 +1,11 @@
 ---
 title: shared library
 description: ''
-template: blog/page.html
 date: 2023-03-04 09:07:19
 updated: 2024-04-25 11:01:19
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["so", "link"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: 'summary of shared library'
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
+tags: ["so", "link"]
+lead: 'summary of shared library'
 ---
 
 update at 2023-06-15

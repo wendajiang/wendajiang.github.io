@@ -1,14 +1,14 @@
-+++
-template = "blog/page.html"
-date = "2022-02-16 09:20:44"
-title = "【翻译】async what is blocking"
-[taxonomies]
-tags = ["Rust", "async", "translate"]
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
+date: 2022-02-16 09:20:44
+title: 【翻译】async what is blocking
+
+tags: 
+    - Rust
+    - async
+    - translate
+
+---
 <!--
 mermaid example:
 <div class="mermaid">

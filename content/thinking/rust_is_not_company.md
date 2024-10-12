@@ -1,14 +1,12 @@
-+++
-template = "blog/page.html"
-date = "2021-06-21 17:44:16"
-title = "Rust is not company 读后感"
-[taxonomies]
-tags = ["open source", "thinking"]
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
+date: 2021-06-21 17:44:16
+title: Rust is not company 读后感
+
+tags: 
+    - open_source
+    - thinking
+---
 <!--
 mermaid example:
 <div class="mermaid">

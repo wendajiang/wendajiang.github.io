@@ -1,16 +1,13 @@
 ---
 title: How to check the port if used in unix/linux
 description: ''
-template: blog/page.html
 date: 2024-02-23 19:25:01
 updated: 2024-02-23 19:25:01
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["report", "linux", "tool"]
-extra:
-  mermaid: false
-  usemathjax: true
-  lead: ''
+tags: 
+  - report
+  - linux
+  - tool
 ---
 
 ## [How to check if port is in use](https://www.cyberciti.biz/faq/unix-linux-check-if-port-is-in-use-command/)

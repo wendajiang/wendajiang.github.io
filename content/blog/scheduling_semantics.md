@@ -1,21 +1,11 @@
 ---
 title: Scheduling semantics
 description: ''
-template: blog/page.html
 date: 2023-04-11 15:02:54
 updated: 2023-04-11 15:02:54
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["ieee1800"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: 'event-based simulation scheduling semantics'
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
+tags: ["ieee1800"]
+lead: 'event-based simulation scheduling semantics'
 ---
 
 # 4.1 General
@@ -70,7 +60,7 @@ evaluation event 也包括 PLI callback
 
 PS. *NBA (nonblocking assignment update)*
 
-![image-20230411163845834](https://wendajiang.github.io/pics/scheduling_semantics/image-20230411163845834.png)
+![image-20230411163845834](/pics/scheduling_semantics/image-20230411163845834.png)
 
 # 4.5 SystemVerilog simulation reference algorithm
 ```cpp

@@ -1,14 +1,11 @@
-+++
-template = "blog/page.html"
-date =  "2021-03-07 14:15:27"
-title = "The Chubby lock service for loosely-coupled distributed systems"
-[taxonomies]
-tags=["awesomepaper", "translate"]
+---
+date: 2021-03-07 14:15:27
+title: The Chubby lock service for loosely-coupled distributed systems
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
+tags: 
+    - awesomepaper
+    - translate
+---
 
 ## 参考文章
 [chubby vs zookeeper](https://catkang.github.io/2017/10/10/zookeeper-vs-chubby.html)
@@ -37,7 +34,7 @@ lock service 的目的是，可以使能 client 同步它们的逻辑，以及�
 
 1. 首先，我们开发者并不会预期一样考虑高可用性，通常系统以原型启动，使用较少的负载并且没有过多的可用性保证，代码的结构也不方便使用共识协议。当服务开始真正的服务客户端时，可用性变得很重要，复制，选主就要被加到设计中。当然这些可以使用提供了分布式一致性的库做到，但是 lock 服务使得这些变得更容易，不用改变现有的代码结构和通信方式。比如，选主然后写到文件服务需要添加两个状态和一个 RPC 参数到现有系统：一个请求 lock 称为主，传递一个额外的整数（lock acquisition count）到 write RPC，加一个 if 状态来拒绝如果 acquisition count 小于当前值的请求（防止包延迟导致问题）。我们发现这种技术方案比在服务中引入共识协议更简单，尤其是还要在过渡期间维护兼容性
 2. 我们的一些服务，比如选主或者在组件之间分割数据需要一个机制来发布结果。所有我们需要 client 可以存储，拉取少量数据--就是读写小文件。这可以使用名字服务完成，但是我们的经验告诉我们 lock service 本身就适合完成这个任务，不仅可以减少服务依赖，还因为共识协议的共享特性。 Chubby 成功作为名字服务由于使用一致性的 client 缓存，而不是基于时间的缓存。尤其是，我们发现开发者非常喜欢这种不基于时间的缓存设计，比如基于时间的 DNS 缓存，如果选择不当，可能会导致 DNS 负载过大或者客户端延迟严重。
-3. 开发者更熟悉 lock-based 的接口设计。Paxos 的复制状态机和排它锁可以为开发者提供顺序编程的错觉。但是，很多开发者使用锁，讽刺的是，这样的开发者通常会错误，尤其是在分布式系统中，很少人能考虑独立计算机故障对于异步通信系统中的锁的影响。尽管如此，锁的熟悉说服了开发者利用分布式的可靠机制【译者注：对于分布式系统中的锁服务，也必须使用共识协议，单机的锁，比如简单的 redis 作为分布式锁，如果单机 redis 挂了，对系统的影响是很严重的，比如 redis 作者也意识到了这一点，设计分布式锁给出了 redlock 的方案，关于 redis 分布式锁，可以前往 [Redis 分布式锁以及相关讨论](https://wendajiang.github.io/redis-distribute-lock/)】
+3. 开发者更熟悉 lock-based 的接口设计。Paxos 的复制状态机和排它锁可以为开发者提供顺序编程的错觉。但是，很多开发者使用锁，讽刺的是，这样的开发者通常会错误，尤其是在分布式系统中，很少人能考虑独立计算机故障对于异步通信系统中的锁的影响。尽管如此，锁的熟悉说服了开发者利用分布式的可靠机制【译者注：对于分布式系统中的锁服务，也必须使用共识协议，单机的锁，比如简单的 redis 作为分布式锁，如果单机 redis 挂了，对系统的影响是很严重的，比如 redis 作者也意识到了这一点，设计分布式锁给出了 redlock 的方案，关于 redis 分布式锁，可以前往 [Redis 分布式锁以及相关讨论](/redis-distribute-lock/)】
 4. 最后，分布共识算法使用 Quorums 来决策，所以它们使用多个副本来达到高可用性。比如 Chubby 本身每个 cell 有 5 个副本，至少 3 个运行这个 cell 才可用。相比之下，如果客户端使用 lock service， 即使单个 client 也可以获取 lock。因此 lock service 减少了一个 client 系统所需的服务器数量。
 
 这些讨论引出了两个核心设计决策：
@@ -63,7 +60,7 @@ Chubby 只提供粗粒度的锁定。幸运的是，客户端可以直接实现�
 
 Chubby 有两个通过 RPC 通信的主要组件：服务器和客户端应用程序链接的库；如下图。Chubby 客户端和服务器之间的所有通信都由客户端库进行中介。第 3.1 节讨论了可选的第三个组件，即代理服务器
 
-![image-20210508181756052](https://wendajiang.github.io/pics/chubby/image-20210508181756052.png)
+![image-20210508181756052](/pics/chubby/image-20210508181756052.png)
 
 一个 Chubby cell 由一组称为副本 (replicas) 的服务器（通常是 5 个）组成，放置这些服务器是为了减少相关故障的可能性（例如，放在不同的机架上）。副本使用一个分布式共识协议来选举一个 Master ；Master 必须从大多数副本中获得选票，并保证这些副本在 Master 租用的几秒钟内不会选择其他的 Master。主租赁由副本定期更新，前提是主租赁继续赢得多数选票。
 
@@ -211,7 +208,7 @@ Chubby 会话是 Chubby cell 和 Chubby 的客户端之间的一种关系；它�
 
 当 Master 失败或丢失 Master 身份时，它将丢弃关于会话、句柄和锁的内存状态。会话租约的权威计时器在 Master 上运行，因此，在选出新的 Master 之前，会话租约计时器将停止；这是合法的，因为它相当于延长客户的租约。如果 Master 选举发生得很快，客户端可以在本地（近似）租约到期之前联系新 Master 。如果选举需要很长时间，客户端就会清空他们的缓存，等待宽限期 (grace period)，同时试图找到新的 Master 。因此，宽限期允许在超过正常租约超时的故障恢复间维护会话。
 
-![image-20210508182616486](https://wendajiang.github.io/pics/chubby/image-20210508182616486.png)
+![image-20210508182616486](/pics/chubby/image-20210508182616486.png)
 
 上图显示了一个漫长的故障恢复事件中的事件序列，在这个事件中，客户端必须使用其宽限期来保存其会话。时间从左到右递增，但时间不是按比例递增的。客户端会话租约以粗箭头显示，新旧 Master （上面的 M1-3) 和客户端（下面的 C13) 都是这样看的。向上的箭头表示 KeepAlive 请求，向下的箭头表示应答。原始的 Master 为客户端提供了会话租赁 M1，而客户端则有一个保守的近似 C1。 Master 承诺在通过 KeepAlive reply 2 通知客户前租赁 M2；客户端能够扩展其对租约 C2 的视图。原 Master 在应答下一个 KeepAlive 之前死掉了，过了一段时间后另一个 Master 被选出。最终客户端的近似租约 (C2) 到期。然后客户端刷新它的缓存并为宽限期启动一个计时器。
 

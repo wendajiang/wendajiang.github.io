@@ -1,21 +1,14 @@
 ---
 title: Type Erasure
 description: ''
-template: blog/page.html
 date: 2024-02-20 08:58:12
 updated: 2024-02-20 08:58:12
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["design pattern", "cpp", "GoF", "llvm"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
-
-# mermaid example: 
-# {% mermaid() %}
-#     mermaid program
-# {% end %}
+tags: 
+  - design pattern
+  - cpp
+  - GoF
+  - llvm
 ---
 # What is type erasure
 Type erasure, in general, is a programming technique by which the explicit type information is removed from the program. It is a type of abstraction that ensures that the program does not explicitly depend on some of the data types.

@@ -1,14 +1,14 @@
-+++
-template = "blog/page.html"
-date = "2021-05-08 11:56:06"
-title = "Memory Faq(landley.net)"
-[taxonomies]
-tags = ["memory", "reprint", "linux kernel"]
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
+date: 2021-05-08 11:56:06
+title: Memory Faq(landley.net)
+
+tags: 
+  - memory
+  - reprint
+  - linux_kernel
+
+---
 <!--
 mermaid example:
 <div class="mermaid">

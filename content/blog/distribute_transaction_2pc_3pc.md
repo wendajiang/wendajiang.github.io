@@ -1,18 +1,13 @@
-+++
-template = "blog/page.html"
-date = "2021-03-16 15:32:32"
-title = "分布式事务:两阶段提交与三阶段提交"
-[taxonomies]
-tags = ["reprint", "distribute transaction"]
-[extra]
-mermaid = true
-+++
-<!--
-mermaid example:
-<div class="mermaid"
-    mermaid program
-</div>
--->
+---
+
+date: 2021-03-16 15:32:32
+title: 分布式事务:两阶段提交与三阶段提交
+
+tags: 
+   - reprint
+   - distribute_transaction
+---
+
 [转载](https://segmentfault.com/a/1190000012534071)
 
 在分布式系统中著有 CAP 理论，该理论由加州大学伯克利分校的 [Eric Brewer](https://en.wikipedia.org/wiki/Eric_Brewer_(scientist)) 教授提出，阐述了在一个分布式系统中不可能同时满足一致性（ **C** onsistency）、可用性（ **A** vailability），以及分区容错性（ **P** artition Tolerance）。

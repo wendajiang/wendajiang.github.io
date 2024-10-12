@@ -1,21 +1,9 @@
 ---
 title: file locking
 description: ''
-template: blog/page.html
 date: 2023-12-12 13:21:53
 updated: 2023-12-12 13:21:53
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: []
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
-
-# mermaid example: 
-# {% mermaid() %}
-#     mermaid program
-# {% end %}
 ---
 
 # overview

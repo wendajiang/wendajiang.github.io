@@ -1,20 +1,8 @@
-+++
-template = "blog/page.html"
-date = "2021-10-20 17:39:41"
-title = "【翻译】为什么协议栈在内核中实现"
-[taxonomies]
-tags = []
+---
+date: 2021-10-20 17:39:41
+title: 【翻译】为什么协议栈在内核中实现
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
-<!--
-mermaid example:
-<div class="mermaid">
-    mermaid program
-</div>
--->
 
 为什么TCP协议栈实现在Linux内核中
 

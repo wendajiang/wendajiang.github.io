@@ -1,10 +1,10 @@
-+++
-template = "blog/page.html"
-date = "2021-03-02"
-title = "streaming102"
-[taxonomies]
-tags = ["awesomepaper", "translate"]
-+++
+---
+date: 2021-03-02
+title: streaming102
+tags: 
+  - awesomepaper
+  - translate
+---
 
 原文：https://www.oreilly.com/radar/the-world-beyond-batch-streaming-102/
 
@@ -69,7 +69,7 @@ tags = ["awesomepaper", "translate"]
 - PCollection，表示可能要执行并行转换（因此以“P”打头）的数据集。
 - PTransform，处理 PCollection 并创建新的 PCollection。PTransform 可以执行元素转换，它们可以将多个元素聚合在一起，或者它们可以是其他 PTransform 的组合。
 
-![img](https://wendajiang.github.io/pics/streamprocess/v2-76788cf66e79c8422fb72034b9bc854f_720w.jpg)
+![img](/pics/streamprocess/v2-76788cf66e79c8422fb72034b9bc854f_720w.jpg)
 
 <center>图1. 转换类型</center>
 
@@ -96,7 +96,7 @@ PCollection<KV<String, Integer>> scores = input
 
 当 Pipeline 处理到某一个值的时候，会将其累加并记录在 State 中，并最终将聚合结果作为输出。State和输出由矩形表示，矩形顶部不断变化的数字表示累加值，矩形覆盖的区域表示到当前处理时刻，所有矩形中的数据已经被处理。对于清单1中的 Pipeline，在经典批处理引擎上执行时，会看起来像这样（请注意，点击下面的图片启动动画，然后会一直循环播放）：
 
-![image-20200924163454383](https://wendajiang.github.io/pics/streamprocess/image-20200924163454383.png)
+![image-20200924163454383](/pics/streamprocess/image-20200924163454383.png)
 
 <center>图2. 经典的批处理</center>
 
@@ -106,7 +106,7 @@ PCollection<KV<String, Integer>> scores = input
 
 窗口是把数据在时间上进行切分。常见的窗口策略有：固定窗口、滑动窗口、会话窗口。
 
-![img](https://wendajiang.github.io/pics/streamprocess/v2-0654171e5af72b5ff6a71906589116e6_720w.jpg)
+![img](/pics/streamprocess/v2-0654171e5af72b5ff6a71906589116e6_720w.jpg)
 
 <center>图3. 窗口策略</center>
 
@@ -122,7 +122,7 @@ PCollection<KV<String, Integer>> scores = input
 
 回想一下，Dataflow提供了一种统一的批处理和流式处理模型，因为语义上，批处理只是流式处理的一个子集。因此，首先在批处理引擎上执行此Pipeline；在批处理引擎上执行此Pipeline，原理简单明了，可以很好的跟在流式处理引擎上执行做对比。
 
-![image-20200924163551278](https://wendajiang.github.io/pics/streamprocess/image-20200924163551278.png)
+![image-20200924163551278](/pics/streamprocess/image-20200924163551278.png)
 
 <center>图4. 批处理上窗口的求和</center>
 
@@ -151,7 +151,7 @@ PCollection<KV<String, Integer>> scores = input
 
 水位线是一个有趣和复杂的话题，未来会写一篇新的文章专门阐述。现在，为了更好地了解水位线的作用以及缺点，我们来看一下使用水位线的流式处理引擎的两个例子，以确定何时在清单2中执行使用窗口的Pipeline时实现输出。左边的例子使用理想的水位线；右边的一个使用启发式水位线。
 
-![image-20200924163653862](https://wendajiang.github.io/pics/streamprocess/image-20200924163653862.png)
+![image-20200924163653862](/pics/streamprocess/image-20200924163653862.png)
 
 <center>图6. 理想的与推测的水位线</center>
 
@@ -232,7 +232,7 @@ PCollection<KV<String, Integer>> scores = input
 
 在流式处理引擎上执行清单4 或清单5 中的示例（包含了理想的水位线和启发式的Watermak），如下所示：
 
-![image-20200924163747760](https://wendajiang.github.io/pics/streamprocess/image-20200924163747760.png)
+![image-20200924163747760](/pics/streamprocess/image-20200924163747760.png)
 
 <center>图7. 提前和延迟触发</center>
 
@@ -274,7 +274,7 @@ PCollection<KV<String, Integer>> scores = input
 
 在这个图中，为第一个窗口添加了一个额外的延迟数据6。6相对窗口是迟到的，但仍然在允许的最大延迟时间范围内，所以6被累加修正计算结果为11。然而，9 超过了最大允许延迟，直接被丢弃掉。
 
-![image-20200924163828993](https://wendajiang.github.io/pics/streamprocess/image-20200924163828993.png)
+![image-20200924163828993](/pics/streamprocess/image-20200924163828993.png)
 
 <center>图8. 提前和推迟触发及允许延迟</center>
 
@@ -300,7 +300,7 @@ PCollection<KV<String, Integer>> scores = input
 
 放在一起看时，每个类型的累积语义会更清晰。考虑图7中第二个窗口的三个窗格（事件时间范围[12:02，12:04））。下表显示了三个支持的累积模式（每个窗格的值）将在三种支持的累积模式中显示（累积模式是图7中使用的特定模式）：
 
-![img](https://wendajiang.github.io/pics/streamprocess/v2-f4349623d5efb7fc7688963dd87587c7_720w.jpg)
+![img](/pics/streamprocess/v2-f4349623d5efb7fc7688963dd87587c7_720w.jpg)
 
 表1. 使用图7的第二个窗口比较累积模式
 
@@ -325,7 +325,7 @@ PCollection<KV<String, Integer>> scores = input
 
 在流式处理引擎上使用启发式水位线的效果如下所示：
 
-![image-20200924164229012](https://wendajiang.github.io/pics/streamprocess/image-20200924164229012.png)
+![image-20200924164229012](/pics/streamprocess/image-20200924164229012.png)
 
 <center>图9. 提前/推迟触发的丢弃模式</center>
 
@@ -348,7 +348,7 @@ PCollection<KV<String, Integer>> scores = input
 
 在流式处理引擎的执行如下所示：
 
-![image-20200924164301217](https://wendajiang.github.io/pics/streamprocess/image-20200924164301217.png)
+![image-20200924164301217](/pics/streamprocess/image-20200924164301217.png)
 
 <center>图10. 提前/推迟触发的累积撤回</center>
 
@@ -356,7 +356,7 @@ PCollection<KV<String, Integer>> scores = input
 
 将图9,7（启发式）和10的三张图动画效果的最终图放在一起，提供了三种模式的很好的视觉对比：
 
-![image-20200925160508695](https://wendajiang.github.io/pics/streamprocess/image-20200925160508695.png)
+![image-20200925160508695](/pics/streamprocess/image-20200925160508695.png)
 
 <center>图11. 丢弃模式、累积模式、累积和撤回模式的对比</center>
 
@@ -399,7 +399,7 @@ PCollection<KV<String, Integer>> scores = input
 
 我们将每个窗口应用到两个不同的输入数据集（总共有6个变体）。 两个输入数据包含完全相同的事件（即相同的值，发生在相同的事件时间），但顺序不同。 第1个数据集跟我们之前例子中的顺序一致，颜色为白色；第二个数据集调整了事件的处理顺序，如下图12所示，为紫色。
 
-![image-20200924164831304](https://wendajiang.github.io/pics/streamprocess/image-20200924164831304.png)
+![image-20200924164831304](/pics/streamprocess/image-20200924164831304.png)
 
 <img src="https://wendajiang.github.io/pics/streamprocess/image-20200925160925836.png" style="zoom:68%;" />
 
@@ -409,7 +409,7 @@ PCollection<KV<String, Integer>> scores = input
 
 为了建立一个基线，我们首先将基于事件时间的使用启发式Watermark的固定窗口处理两个顺序不同的数据集。 我们将重用清单5 / 图7 中的提前/延迟处理的代码，从而得到如下结果。 左边实际上是我们以前看到的; 右边是第二个数据集的结果。 这里要注意的一点是：尽管输出的整体形状不同（由于处理时间不同），**四个窗口的最终结果保持不变**：14,22,3和12：
 
-![image-20200924164906636](https://wendajiang.github.io/pics/streamprocess/image-20200924164906636.png)
+![image-20200924164906636](/pics/streamprocess/image-20200924164906636.png)
 
 <center>图13. 处理时间顺序不同的事件时间窗口</center>
 
@@ -438,7 +438,7 @@ PCollection<KV<String, Integer>> scores = input
 - 由于我们基于事件时间的窗格模拟处理时间窗口，所以在处理时间轴中勾画了“窗口”，这意味着窗口宽度是在Y轴上度量而不是X轴。
 - 由于处理时间窗口对输入数据的顺序敏感，在两个数据集中，每个窗口包含的数据都是不同的，即时事件发生的时间相同。 在左边我们得到12,21,18，而在右边我们得到7,36,4。
 
-![image-20200924164934945](https://wendajiang.github.io/pics/streamprocess/image-20200924164934945.png)
+![image-20200924164934945](/pics/streamprocess/image-20200924164934945.png)
 
 <center>图14. 处理时间顺序不同的处理时间窗口</center>
 
@@ -470,7 +470,7 @@ PCollection<KV<String, Integer>> scores = input
 - 尽管如此，由于使用了Watermark，触发器仍然在与之前的处理时间示例完全相同的时间触发。此外，所产生的输出值与该示例相同，如左侧的12,21,18，右侧的7,36,4。
 - 由于使用入口时间，所以理想的Watermark是可能的，所以实际的Watermark与理想的Watermark相匹配，斜率为1，向右上方延伸。
 
-![image-20200924165003099](https://wendajiang.github.io/pics/streamprocess/image-20200924165003099.png)
+![image-20200924165003099](/pics/streamprocess/image-20200924165003099.png)
 
 <center>图15. 使用入口时间的处理时间窗口，处理两个内容一样但顺序不同的数据集</center>
 
@@ -493,7 +493,7 @@ PCollection<KV<String, Integer>> scores = input
 
 提供一般会话支持的关键是，根据定义，完整的会话窗口是一组较小的重叠窗口的组合，每个窗口包含单个记录，每个记录中的每个记录与下一个记录的间隔不超过预先定义的间隔。因此，即使会话中的数据乱序了，也可以简单地通过将各个数据的重叠窗口合并在一起来构建最终会话。
 
-![img](https://wendajiang.github.io/pics/streamprocess/v2-32af9ecb9ae779eaafb3bb39524834b1_720w.jpg)
+![img](/pics/streamprocess/v2-32af9ecb9ae779eaafb3bb39524834b1_720w.jpg)
 
 <center>图16. 未合并的原始会话窗口和合并之后的会话窗口</center>
 
@@ -514,7 +514,7 @@ PCollection<KV<String, Integer>> scores = input
 
 **在流处理引擎上执行如下所示：**
 
-![image-20200924165052916](https://wendajiang.github.io/pics/streamprocess/image-20200924165052916.png)
+![image-20200924165052916](/pics/streamprocess/image-20200924165052916.png)
 
 <center>图17. 基于会话窗口，提前和延迟触发，使用累加和撤销模式</center>
 
@@ -548,6 +548,6 @@ PCollection<KV<String, Integer>> scores = input
 
 第三，最后一点，这种流处理模式所带来的灵活性（最终，需要做的是在处理数据的各种要素之间取得平衡，如正确性，延迟和成本），回顾一下，通过少量的代码修改，对相同的数据集处理而得到的输出的变化如下：
 
-![image-20200925162921517](https://wendajiang.github.io/pics/streamprocess/image-20200925162921517.png)
+![image-20200925162921517](/pics/streamprocess/image-20200925162921517.png)
 
 感谢您的耐心与兴趣，下次再会！

@@ -1,14 +1,12 @@
-+++
-template = "blog/page.html"
-date = "2021-04-03 11:46:30"
-title = "无锁算法"
-[taxonomies]
-tags = ['distribute', 'ABA']
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
+date: 2021-04-03 11:46:30
+title: 无锁算法
+
+tags: 
+ - distribute
+ - ABA
+---
 <!--
 mermaid example:
 <div class="mermaid">
@@ -24,11 +22,11 @@ mermaid example:
 
 ### what is it
 
-![image-20210405160006637](https://wendajiang.github.io/pics/lock_free/image-20210405160006637.png)
+![image-20210405160006637](/pics/lock_free/image-20210405160006637.png)
 
 ### techniques
 
-![image-20210405160054136](https://wendajiang.github.io/pics/lock_free/image-20210405160054136.png)
+![image-20210405160054136](/pics/lock_free/image-20210405160054136.png)
 
 ------------------
 

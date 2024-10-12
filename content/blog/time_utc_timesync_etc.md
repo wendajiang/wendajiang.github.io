@@ -1,21 +1,9 @@
-+++
-template = "blog/page.html"
-date = "2021-04-06 21:13:52"
-title = "时间，时间同步"
-[taxonomies]
-tags = ["time", "time sync"]
-
-[extra]
-mermaid = true
-usemathjax = true
-+++
-<!--
-mermaid example:
-<div class="mermaid">
-    mermaid program
-</div>
--->
-
+---
+date: 2021-04-06 21:13:52
+title: time & time sync
+tags:
+  - 分布式
+---
 ## 1.前言
 
 由计算机网络系统组成的`分布式系统`，若想协调一致进行：IT行业的“整点开拍”、“秒杀”、“Leader选举”，通信行业的“同步组网”之类业务处理，毫秒级甚至微秒级的`时间同步`是重要基础之一。
@@ -320,7 +308,7 @@ int main( void )
 
 贴个维基的图：
 
-> ![image-20210406211933550](https://wendajiang.github.io/pics/time_utc_timesync_etc/image-20210406211933550.png)
+> ![image-20210406211933550](/pics/time_utc_timesync_etc/image-20210406211933550.png)
 
 - 时差计算
 
@@ -364,7 +352,7 @@ int main( void )
 
 下图是两OC主从时钟之间的同步过程：
 
-> ![image-20210406211952436](https://wendajiang.github.io/pics/time_utc_timesync_etc/image-20210406211952436.png)
+> ![image-20210406211952436](/pics/time_utc_timesync_etc/image-20210406211952436.png)
 >
 > - a.主时钟向从时钟发送Sync报文，并在本地记录发送时间t1；从时钟收到该报文后，记录接收时间t2。
 > - b.时钟发送Sync报文之后，紧接着发送一个携带有t1的Follow_Up报文。
@@ -435,7 +423,7 @@ Device B作为NTP时间服务器，即Device A将使自己的时钟与Device B�
 
 NTP报文在Device A和Device B之间单向传输所需要的时间为1秒。
 
-![img](https://wendajiang.github.io/pics/time_utc_timesync_etc/v2-2640ead977cc734e8f2f3052c4dd615f_720w.jpg)
+![img](/pics/time_utc_timesync_etc/v2-2640ead977cc734e8f2f3052c4dd615f_720w.jpg)
 
 
 
@@ -463,7 +451,7 @@ NTP有两种不同类型的报文，一种是时钟同步报文，另一种是�
 
 
 
-![img](https://wendajiang.github.io/pics/time_utc_timesync_etc/v2-ec990f14b5b5c75e3e36492af4f091be_720w.jpg)
+![img](/pics/time_utc_timesync_etc/v2-ec990f14b5b5c75e3e36492af4f091be_720w.jpg)
 
 
 
@@ -502,7 +490,7 @@ NTP有两种不同类型的报文，一种是时钟同步报文，另一种是�
 
 
 
-![img](https://wendajiang.github.io/pics/time_utc_timesync_etc/v2-d694ec05c9ab0b41ba3e6177b6686807_720w.jpg)
+![img](/pics/time_utc_timesync_etc/v2-d694ec05c9ab0b41ba3e6177b6686807_720w.jpg)
 
 
 
@@ -514,7 +502,7 @@ NTP有两种不同类型的报文，一种是时钟同步报文，另一种是�
 
 
 
-![img](https://wendajiang.github.io/pics/time_utc_timesync_etc/v2-1406d1e675183feb54d77e7b1e38766a_720w.jpg)
+![img](/pics/time_utc_timesync_etc/v2-1406d1e675183feb54d77e7b1e38766a_720w.jpg)
 
 
 
@@ -524,7 +512,7 @@ NTP有两种不同类型的报文，一种是时钟同步报文，另一种是�
 
 
 
-![img](https://wendajiang.github.io/pics/time_utc_timesync_etc/v2-633b0a85f12b403f2ea2c688172b9070_720w.jpg)
+![img](/pics/time_utc_timesync_etc/v2-633b0a85f12b403f2ea2c688172b9070_720w.jpg)
 
 
 
@@ -534,7 +522,7 @@ NTP有两种不同类型的报文，一种是时钟同步报文，另一种是�
 
 
 
-![img](https://wendajiang.github.io/pics/time_utc_timesync_etc/v2-2990d3f0489bbef18aacc8b7a6b409d6_720w.jpg)
+![img](/pics/time_utc_timesync_etc/v2-2990d3f0489bbef18aacc8b7a6b409d6_720w.jpg)
 
 
 
@@ -559,7 +547,7 @@ NTP最典型的授时方式是Client/Server方式。如下图1所示，客户机
 
 如图：Client/Server方式下NTP授时原理
 
-![image-20200807200121018](https://wendajiang.github.io/pics/time_utc_timesync_etc/ntp1.png)
+![image-20200807200121018](/pics/time_utc_timesync_etc/ntp1.png)
 
 T1为客户发送NTP请求时间戳(以客户时间为参照)；T2为服务器收到NTP请求时间戳(以服务器时间为参照)；T3为服务器回复NTP请求时间戳(以服务器时间为参照)；T4为客户收到NTP回复包时间戳(以客户时间为参照)；d1为NTP请求包传送延时，d2为NTP回复包传送延时；t为服务器和客户端之间的时间偏差，d为NTP包的往返时间。
 

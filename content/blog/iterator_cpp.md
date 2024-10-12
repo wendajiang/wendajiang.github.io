@@ -1,18 +1,8 @@
 ---
-template: blog/page.html
 date: 2022-12-22 16:39:52
 title: Cpp Iterator
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["C++", "iterator"]
-extra:
-  mermaid: true
-  usemathjax: true
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
+tags: iterator
 ---
 
 C++17 has deprecated a few components that has been in C++ since its beginning, and std::iterator is one of them.

@@ -1,14 +1,13 @@
-+++
-template = "blog/page.html"
-date = "2022-01-20 17:26:39"
-title = "protobuffer etc."
-[taxonomies]
-tags = ["protobuf", "capn proto", "flatterproto"]
+---
+date: 2022-01-20 17:26:39
+title: protobuffer etc.
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
+tags: 
+  - protobuf
+  - capn proto
+  - flatterproto
+
+---
 <!--
 mermaid example:
 <div class="mermaid">

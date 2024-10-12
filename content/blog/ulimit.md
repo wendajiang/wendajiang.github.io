@@ -1,20 +1,11 @@
-+++
-template = "blog/page.html"
-date = "2021-04-02 14:39:37"
-title = "Linux ulimit"
-[taxonomies]
-tags = ["linux", "tool"]
+---
+date: 2021-04-02 14:39:37
+title: Linux ulimit
+tags: 
+  - linux
+  - tool
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
-<!--
-mermaid example:
-<div class="mermaid">
-    mermaid program
-</div>
--->
 
 命  令：ulimit
 

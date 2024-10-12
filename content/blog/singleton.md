@@ -1,21 +1,11 @@
 ---
 title: singleton
 description: ''
-template: blog/page.html
 date: 2021-05-07 12:12:17
 updated: 2023-06-15 14:24:10
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["singleton", "thread safe"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: 'The singleton design pattern'
-
-# mermaid example: 
-# {% mermaid() %}
-#     mermaid program
-# {% end %}
+tags: ["singleton", "thread_safe"]
+lead: 'The singleton design pattern'
 ---
 
 The singleton is a pattern that's used to restrict the number of class instantiations to exactly one.

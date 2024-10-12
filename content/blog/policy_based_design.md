@@ -1,21 +1,10 @@
 ---
 title: strategy / policy based design
 description: ''
-template: blog/page.html
 date: 2023-03-10 10:16:24
 updated: 2023-03-10 10:16:24
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["design pattern"]
-extra:
-  mermaid: true
-  usemathjax: true 
-  lead: 'The Policy-Based Design'
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
+tags: ["design_pattern"]
 ---
 
 # Strategy pattern and policy-based design

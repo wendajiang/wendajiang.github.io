@@ -1,12 +1,12 @@
-+++
-title = "Lock-Free Single-Producer - Single Consumer Circular Queue[翻译]"
-template = "blog/page.html"
-date = "2021-02-07 10:36:06"
-updated = "2023-02-28 10:36:06"
-[taxonomies]
-tags = ["translate", "queue", "lock-free"]
+---
+title: Lock-Free Single-Producer - Single Consumer Circular Queue[翻译]
 
-+++
+date: 2021-02-07 10:36:06
+updated: 2023-02-28 10:36:06
+
+tags: ["translate", "queue", "lock-free"]
+
+---
 
 [原文链接](https://www.codeproject.com/articles/43510/lock-free-single-producer-single-consumer-circular)
 

@@ -1,19 +1,11 @@
 ---
-template: blog/page.html
 date: 2023-02-09 16:22:43
 title: Testing Framework
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["unit test", "testing framework", "C++"]
-extra:
-  mermaid: true
-  usemathjax: true
-  toc: true
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
+tags: 
+  - unit test
+  - testing framework
+  - C++
 ---
 
 # From Catch2

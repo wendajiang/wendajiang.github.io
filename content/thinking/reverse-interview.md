@@ -1,14 +1,10 @@
-+++
-template = "blog/page.html"
-date = "2021-10-14 10:44:47"
-title = "反向面试"
-[taxonomies]
-tags = ["interview"]
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
+date: 2021-10-14 10:44:47
+title: 反向面试
+
+tags: interview
+---
 <!--
 mermaid example:
 <div class="mermaid">

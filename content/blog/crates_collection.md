@@ -1,14 +1,7 @@
-+++
-template = "blog/page.html"
-date = "2022-03-04 00:31:53"
-title = "crates collection"
-[taxonomies]
-tags = []
-
-[extra]
-mermaid = true
-usemathjax = true
-+++
+---
+date: 2022-03-04 00:31:53
+title: crates collection
+---
 <!--
 mermaid example:
 <div class="mermaid">

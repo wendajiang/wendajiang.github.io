@@ -1,14 +1,9 @@
-+++
-template = "blog/page.html"
-date = "2021-08-20 17:30:55"
-title = "everyone should know time latency"
-[taxonomies]
-tags = []
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
+date: 2021-08-20 17:30:55
+title: everyone should know time latency
+
+---
 
 [source article](https://medium.com/walmartglobaltech/https-medium-com-kharekartik-rocksdb-and-embedded-databases-1a0f8e6ea74f)
 

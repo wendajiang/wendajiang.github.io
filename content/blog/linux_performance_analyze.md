@@ -1,14 +1,9 @@
-+++
-template = "blog/page.html"
-date = "2021-11-15 16:02:06"
-title = "linux性能工具与分析"
-[taxonomies]
-tags = []
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
+date: 2021-11-15 16:02:06
+title: linux性能工具与分析
+
+---
 <!--
 mermaid example:
 <div class="mermaid">
@@ -18,6 +13,6 @@ mermaid example:
 
 
 
-![linux_performance_method](https://wendajiang.github.io/pics/linux_performance_analyze/linux_performance_method.png)
+![linux_performance_method](/pics/linux_performance_analyze/linux_performance_method.png)
 
-![Linux_performance_tools](https://wendajiang.github.io/pics/linux_performance_analyze/Linux_performance_tools.png)
+![Linux_performance_tools](/pics/linux_performance_analyze/Linux_performance_tools.png)

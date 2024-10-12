@@ -1,14 +1,8 @@
-+++
-template = "blog/page.html"
-date = "2022-06-18 20:31:22"
-title = "【译】server design"
-[taxonomies]
-tags = []
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
+date: 2022-06-18 20:31:22
+title: 【译】server design
+---
 <!--
 mermaid example:
 <div class="mermaid">

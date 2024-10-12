@@ -1,21 +1,11 @@
 ---
 title: Adapters and Decorators
 description: 'adapters and decorator pattern'
-template: blog/page.html
 date: 2023-03-20 13:18:47
 updated: 2023-03-20 13:18:47
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["design pattern"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
+tags: 
+  - design_pattern
 ---
 
 # the decorator pattern

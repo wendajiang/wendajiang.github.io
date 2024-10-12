@@ -1,21 +1,10 @@
 ---
 title: flexible array member
 description: ''
-template: blog/page.html
 date: 2024-01-12 14:59:41
 updated: 2024-01-12 14:59:41
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["c"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
-
-# mermaid example: 
-# {% mermaid() %}
-#     mermaid program
-# {% end %}
+tags: c
 ---
 
 # Introduction

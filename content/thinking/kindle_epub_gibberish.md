@@ -1,14 +1,10 @@
 ---
 title: kindle epub gibberish
 description: ''
-template: blog/page.html
 date: 2023-03-01 15:24:12
 updated: 2023-03-01 15:24:12
 typora-copy-images-to: ../../static/pics/${filename}
-taxonomies:
-  tags: []
-extra:
-  lead: 'kindle open epub gibberish'
+lead: 'kindle open epub gibberish'
 ---
 
 soltion:

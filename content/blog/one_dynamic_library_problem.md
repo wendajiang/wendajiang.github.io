@@ -1,19 +1,9 @@
 ---
-template: blog/page.html
 date: 2023-01-11 15:43:29
 title: One dynamic library problem
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["so"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: library link, export symbol control
-
-# mermaid example: 
-# <div class="mermaid">
-#     mermaid program
-# </div>
+tags: so
+lead: library link, export symbol control
 ---
 
 记一次库连接的问题。
@@ -56,7 +46,7 @@ ld 中有 `--exclude-libs` 这个选项，可以 man 查看详情，会移除 ar
 ```
 liba.so 只会暴露 script 指定的 symbol，grpc public 的只剩下两个
 
-![image-20230111174331686](https://wendajiang.github.io/pics/one_dynamic_library_problem/image-20230111174331686.png)
+![image-20230111174331686](/pics/one_dynamic_library_problem/image-20230111174331686.png)
 
 ## 番外
 

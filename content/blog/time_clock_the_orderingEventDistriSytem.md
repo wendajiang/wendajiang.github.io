@@ -1,20 +1,10 @@
-+++
-template = "blog/page.html"
-date = "2021-04-06 21:31:59"
-title = "【考古】【必读】分布式理论奠基 paper"
-[taxonomies]
-tags = ["awesomepaper", "translate"]
-
-[extra]
-mermaid = true
-usemathjax = true
-+++
-<!--
-mermaid example:
-<div class="mermaid">
-    mermaid program
-</div>
--->
+---
+date: 2021-04-06 21:31:59
+title: 【考古】【必读】分布式理论奠基 paper
+tags: 
+    - awesomepaper
+    - translate
+---
 
 原文标题：Time, Clocks, and the Ordering of Events in a Distributed System
 原文作者：Leslie Lamport
@@ -60,7 +50,7 @@ mermaid example:
 
 对于任意事件$a$，$a \nrightarrow a$。这意味着$\rightarrow$就可以表示系统中所有事件的局部顺序。
 
-![image-20210409111648200](https://wendajiang.github.io/pics/time_clock_the_orderingEventDistriSytem/image-20210409111648200.png)
+![image-20210409111648200](/pics/time_clock_the_orderingEventDistriSytem/image-20210409111648200.png)
 
 <center>图一</center>
 
@@ -87,11 +77,11 @@ Clock Condtion（$\rightarrow$）满足如下条件：
 
 通过 tick 可以将图一划线为图二，**条件一**意味着同一个进程的两个事件之间要有一条 tick 的线，**条件二**意味着消息传递线必然与一条 tick 线相交。我们可以调整图二，让 tick 线平行，重画为图三
 
-![image-20210411010454500](https://wendajiang.github.io/pics/time_clock_the_orderingEventDistriSytem/image-20210411010454500.png)
+![image-20210411010454500](/pics/time_clock_the_orderingEventDistriSytem/image-20210411010454500.png)
 
 <center>图二</center>
 
-![image-20210411010818485](https://wendajiang.github.io/pics/time_clock_the_orderingEventDistriSytem/image-20210411010818485.png)
+![image-20210411010818485](/pics/time_clock_the_orderingEventDistriSytem/image-20210411010818485.png)
 
 <center>图三</center>
 

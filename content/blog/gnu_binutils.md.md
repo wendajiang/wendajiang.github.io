@@ -1,20 +1,12 @@
-+++
-template = "blog/page.html"
-date = "2021-04-20 16:44:55"
-title = "GNU gcc 工具集整理, GNU Binutils"
-[taxonomies]
-tags = ["gcc", "tool"]
+---
 
-[extra]
-mermaid = true
-usemathjax = true
-+++
-<!--
-mermaid example:
-<div class="mermaid">
-    mermaid program
-</div>
--->
+date: 2021-04-20 16:44:55
+title: GNU gcc 工具集整理, GNU Binutils
+
+tags: 
+  - gcc
+  - tool
+---
 
 [GNU Binutils](https://www.gnu.org/software/binutils/)
 

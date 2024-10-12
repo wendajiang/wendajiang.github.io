@@ -1,16 +1,10 @@
 ---
 title: pointers are complicated
 description: ''
-template: blog/page.html
 date: 2023-12-21 14:46:37
 updated: 2023-12-21 14:46:37
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags: ["compiler", "gcc", "llvm"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
+tags: ["compiler", "gcc", "llvm"]
 
 # mermaid example: 
 # {% mermaid() %}

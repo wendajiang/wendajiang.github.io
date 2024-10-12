@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/zero_copy.md",
+                "file": "blog/policy_based_design.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blog/zero_copy.md",
+                "file": "blog/policy_based_design.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "blog/zero_copy.md",
+                "file": "blog/policy_based_design.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "blog/zero_copy.md",
+                "file": "blog/policy_based_design.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -160,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/zero_copy.md"
+                "file": "blog/policy_based_design.md"
               }
             }
           },
@@ -202,8 +202,19 @@
       "obsidian-day-planner:Timeline": false
     }
   },
-  "active": "225f2650f9b65992",
+  "active": "e18dd418cb73b360",
   "lastOpenFiles": [
+    "thinking/beyond-feeling.md",
+    "blog/parallel_patterns.md",
+    "blog/faster_compile.md",
+    "reading/pp_fromjourneyman_to_master.md",
+    "reading/clean_cpp_principle.md",
+    "blog/fam.md",
+    "blog/error_model_or_handle.md",
+    "blog/zero_copy.md",
+    "blog/reservoir_sampling.md",
+    "blog/paxosstore.md",
+    "blog/distribute_transaction_2pc_3pc.md",
     "blog/mysql_transaction.md",
     "blog/streaming102.md",
     "blog/streaming101.md",
@@ -239,17 +250,6 @@
     "static/pics/winter_sleep_record/IMG_5589.png",
     "static/pics/winter_sleep_record/IMG_5588.png",
     "static/pics/winter_sleep_record/IMG_5587.png",
-    "sass/bootstrap/README.md",
-    "content/zero_copy.md",
-    "content/why_impl_network_stack_in_kernel.md",
-    "content/visitor.md",
-    "content/ulimit.md",
-    "content/type_erasure.md",
-    "content/turtle/yingji.md",
-    "content/turtle/winter_sleep_record.md",
-    "content/turtle/lq.md",
-    "content/turtle/hy_turtle.md",
-    "content/turtle/chang_yong_yao.md",
     "未命名.canvas"
   ]
 }

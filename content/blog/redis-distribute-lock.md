@@ -1,10 +1,11 @@
-+++
-template = "blog/page.html"
-title =  "Redis 分布式锁 [翻译]"
-date =   "2021-02-03 01:26:18"
-[taxonomies]
-tags = ["translate", "redis", "reprint"]
-+++
+---
+title: Redis 分布式锁 [翻译]
+date: 2021-02-03 01:26:18
+tags: 
+    - translate
+    - redis
+    - reprint
+---
 
 # 翻译
 
@@ -160,7 +161,7 @@ Martin 在这篇文章中谈及了分布式系统的很多基础性的问题（�
 
 首先我们讨论一下前半部分的关键点。Martin 给出了下面这样一份时序图：
 
-![image-20200804204605476](https://wendajiang.github.io/pics/redis-distribute-lock/image-20200804204605476.png)
+![image-20200804204605476](/pics/redis-distribute-lock/image-20200804204605476.png)
 
 在上面的时序图中，假设锁服务本身是没有问题的，它总是能保证任一时刻最多只有一个客户端获得锁。上图中出现的 lease 这个词可以暂且认为就等同于一个带有自动过期功能的锁。客户端 1 在获得锁之后发生了很长时间的 GC pause，在此期间，它获得的锁过期了，而客户端 2 获得了锁。当客户端 1 从 GC pause 中恢复过来的时候，它不知道自己持有的锁已经过期了，它依然向共享资源（上图中是一个存储服务）发起了写数据请求，而这时锁实际上被客户端 2 持有，因此两个客户端的写请求就有可能冲突（锁的互斥作用失效了）。
 
@@ -172,7 +173,7 @@ Martin 在这篇文章中谈及了分布式系统的很多基础性的问题（�
 
 那怎么解决这个问题呢？Martin 给出了一种方法，称为 fencing token。fencing token 是一个单调递增的数字，当客户端成功获取锁的时候它随同锁一起返回给客户端。而客户端访问共享资源的时候带着这个 fencing token，这样提供共享资源的服务就能根据它进行检查，拒绝掉延迟到来的访问请求（避免了冲突）。如下图：
 
-![image-20200804204717901](https://wendajiang.github.io/pics/redis-distribute-lock/image-20200804204717901.png)
+![image-20200804204717901](/pics/redis-distribute-lock/image-20200804204717901.png)
 
 在上图中，客户端 1 先获取到的锁，因此有一个较小的 fencing token，等于 33，而客户端 2 后获取到的锁，有一个较大的 fencing token，等于 34。客户端 1 从 GC pause 中恢复过来之后，依然是向存储服务发送访问请求，但是带了 fencing token = 33。存储服务发现它之前已经处理过 34 的请求，所以会拒绝掉这次 33 的请求。这样就避免了冲突。
 

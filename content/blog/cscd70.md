@@ -1,17 +1,11 @@
 ---
 title: compiler optimization
 description: ""
-template: blog/page.html
 date: 2024-06-01 20:37:02
 updated: 2024-06-01 20:37:02
 typora-copy-images-to: ../static/pics/${filename}
-taxonomies:
-  tags:
+tags:
     - compiler
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ""
 ---
 
 [course](https://www.cs.toronto.edu/~pekhimenko/courses/cscd70-w19/content.html)

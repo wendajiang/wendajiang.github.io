@@ -1,21 +1,10 @@
 ---
 title: team topologies review
 description: ''
-template: blog/page.html
 date: 2024-09-28 18:16:59
 updated: 2024-09-28 18:16:59
 typora-copy-images-to: ../../static/pics/${filename}
-taxonomies:
-  tags: ["team design"]
-extra:
-  mermaid: true
-  usemathjax: true
-  lead: ''
-
-# mermaid example: 
-# {% mermaid() %}
-#     mermaid program
-# {% end %}
+tags: ["team_design"]
 ---
 
 ## conway's law and why it matters
