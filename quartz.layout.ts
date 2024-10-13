@@ -47,7 +47,6 @@ export const defaultContentPageLayout: PageLayout = {
         linkToMore: "reading/" as SimpleSlug,
       }),
     ),
-    Component.DesktopOnly(Component.TableOfContents()),
   ],
   right: [
       Component.Graph({
