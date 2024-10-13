@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "f0ee19af802bd216",
+        "id": "439d8adc9d157ddd",
         "type": "tabs",
         "children": [
           {
-            "id": "9860a4a0dcf4e668",
+            "id": "1a4080f959e387ea",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "turtle/index.md",
+                "file": "books/effective_modern_cpp.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "](",
+                "query": "google",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "turtle/index.md",
+                "file": "books/effective_modern_cpp.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "turtle/index.md",
+                "file": "books/effective_modern_cpp.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "turtle/index.md",
+                "file": "books/effective_modern_cpp.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -160,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "turtle/index.md"
+                "file": "books/effective_modern_cpp.md"
               }
             }
           },
@@ -180,7 +180,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -201,31 +202,35 @@
       "obsidian-day-planner:Timeline": false
     }
   },
-  "active": "9860a4a0dcf4e668",
+  "active": "e18dd418cb73b360",
   "lastOpenFiles": [
+    "books/ddia.md",
     "books/index.md",
+    "books/list.md",
+    "reading/time_clock_the_orderingEventDistriSytem.md",
+    "reading/timestamp.md",
     "blog/index.md",
+    "reading/index.md",
+    "未命名.md",
+    "reading/chubby.md",
+    "reading/streaming102.md",
+    "reading/streaming101.md",
+    "reading/raft-extended.md",
+    "reading/paxosstore.md",
+    "reading/jump_consistent_hash.md",
+    "reading/dataflow_model.md",
+    "reading/bitcask.md",
+    "blog/cpp_exception.md",
+    "pdf/Compiler-Internals-exception.pdf",
+    "thoughts/busi_thinking.md",
+    "todo.md",
+    "thoughts/beyond-feeling.md",
+    "reading/pp_fromjourneyman_to_master.md",
+    "reading/ostep28.md",
+    "reading/clean_cpp_principle.md",
+    "turtle/index.md",
     "blog/yet-another-implement-of-lock-free-circular-array-queue.md",
     "blog/welcome-to-david.md",
-    "blog/streaming102.md",
-    "blog/streaming101.md",
-    "blog/reservoir_sampling.md",
-    "blog/redis-distribute-lock.md",
-    "blog/raft-extended.md",
-    "blog/paxosstore.md",
-    "blog/mysql_transaction.md",
-    "blog/distribute_transaction_2pc_3pc.md",
-    "blog/dataflow_model.md",
-    "blog/bitcask.md",
-    "thinking/team_topo_review.md",
-    "thinking/rust_is_not_company.md",
-    "thinking/reverse-interview.md",
-    "thinking/pp_fromjourneyman_to_master.md",
-    "thinking/kindle_epub_gibberish.md",
-    "thinking/clean_cpp_principle.md",
-    "thinking/buy_a_house1.md",
-    "thinking/busi_thinking.md",
-    "thinking/2021-02-06-beyond-feeling.md",
     "thinking",
     "pics/streamprocess/v2-aecdc6366f06894c580da4cab2afeff1_720w.jpg",
     "pics/streamprocess/v2-a55432fc17fe70f896047a2484a88a26_720w.jpg",
@@ -245,10 +250,6 @@
     "pics/ostep28",
     "pics/one_dynamic_library_problem",
     "pics/mysql-transaction",
-    "pics/lq",
-    "blog/2021-03-29-reservoir_sampling.md",
-    "blog/2021-03-17-paxosstore.md",
-    "blog/2021-03-16-distribute_transaction_2pc_3pc.md",
     "未命名.canvas"
   ]
 }
