@@ -42,7 +42,8 @@ export const defaultContentPageLayout: PageLayout = {
         title: "Recent Notes",
         limit: 2,
         showTags: false,
-        filter: (f) => f.slug!.startsWith("reading/"),
+        filter: (f) =>
+          f.slug!.startsWith("reading/") && f.slug! !== "reading/index" && !f.frontmatter?.noindex,
         linkToMore: "reading/" as SimpleSlug,
       }),
     ),
