@@ -1,10 +1,9 @@
 ---
 title: hy_turtle
-description: ''
 date: 2023-12-07 16:13:20
 updated: 2023-12-07 16:13:20
 typora-copy-images-to: ../../static/pics/${filename}
-lead: '黄缘龟'
+lead: 黄缘龟
 ---
 [大别山黄缘龟形态分析](https://www.reptilestar.com/3963/)
 [龟鳖养殖销售证明办理](https://www.reptilestar.com/1949/)
@@ -60,6 +59,7 @@ lead: '黄缘龟'
 ![img](/pics/hy_turtle/8c1a140e27ec403fa7fd9ddebbd9449d.jpeg)
 
 目前学术界还没有将它们进行“亚种级”区分（个人认为是早晚之事）。不同产地的黄缘，在品相上小有区别，各具特色，但外观大致相同，而且都是很聪明漂亮和生命力顽强的龟种，因此不必刻意去搞“种族歧视”，可以根据个人喜好和经济条件放心选择。
+[[lq]] 琉球龟并没有成为独立种
 
 # 三、黄缘的优点及其鉴别
 
