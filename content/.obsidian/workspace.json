@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "225f2650f9b65992",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "books/index.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "9860a4a0dcf4e668",
             "type": "leaf",
             "state": {
@@ -97,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "books/index.md",
+                "file": "turtle/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "books/index.md",
+                "file": "turtle/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +114,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "books/index.md",
+                "file": "turtle/index.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -172,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "books/index.md"
+                "file": "turtle/index.md"
               }
             }
           },
@@ -213,54 +201,54 @@
       "obsidian-day-planner:Timeline": false
     }
   },
-  "active": "225f2650f9b65992",
+  "active": "9860a4a0dcf4e668",
   "lastOpenFiles": [
-    "reading/index.md",
     "books/index.md",
-    "thoughts/index.md",
-    "turtle/index.md",
-    "thoughts/busi_thinking.md",
-    "thoughts/team_topo_review.md",
-    "thoughts/rust_is_not_company.md",
-    "thoughts/kindle_epub_gibberish.md",
-    "thoughts/buy_a_house1.md",
-    "thoughts/reverse-interview.md",
-    "thoughts/beyond-feeling.md",
-    "thoughts",
-    "_index.md",
-    "turtle.md",
     "blog/index.md",
-    "blog/index",
-    "books/ddia.md",
-    "turtle/hy_turtle.md",
-    "turtle/winter_sleep_record.md",
-    "turtle/lq.md",
-    "turtle/chang_yong_yao.md",
-    "turtle/yingji.md",
-    "blog/policy_based_design.md",
-    "thinking/beyond-feeling.md",
-    "blog/parallel_patterns.md",
-    "blog/faster_compile.md",
-    "reading/pp_fromjourneyman_to_master.md",
-    "reading/clean_cpp_principle.md",
-    "templates/tags/single.html",
-    "templates/tags/list.html",
-    "templates/shortcodes/mermaid.html",
-    "templates/macros/section-navigation.html",
-    "templates/macros/page-toc.html",
-    "templates/macros/page-publish-metadata.html",
-    "templates/macros/mermaid.html",
-    "templates/macros/math.html",
-    "static/pics/zero_copy/image-20211020191755511.png",
-    "static/pics/zero_copy/image-20211019200216564.png",
-    "static/pics/zero_copy/image-20211019194434427.png",
-    "static/pics/zero_copy/image-20211019174214718.png",
-    "static/pics/zero_copy/image-20211019192834679.png",
-    "static/pics/zero_copy/007S8ZIlgy1ggj9hmikddj30gy0c4mys.png",
-    "static/pics/yingji/640.png",
-    "static/pics/winter_sleep_record/IMG_5589.png",
-    "static/pics/winter_sleep_record/IMG_5588.png",
-    "static/pics/winter_sleep_record/IMG_5587.png",
+    "blog/yet-another-implement-of-lock-free-circular-array-queue.md",
+    "blog/welcome-to-david.md",
+    "blog/streaming102.md",
+    "blog/streaming101.md",
+    "blog/reservoir_sampling.md",
+    "blog/redis-distribute-lock.md",
+    "blog/raft-extended.md",
+    "blog/paxosstore.md",
+    "blog/mysql_transaction.md",
+    "blog/distribute_transaction_2pc_3pc.md",
+    "blog/dataflow_model.md",
+    "blog/bitcask.md",
+    "thinking/team_topo_review.md",
+    "thinking/rust_is_not_company.md",
+    "thinking/reverse-interview.md",
+    "thinking/pp_fromjourneyman_to_master.md",
+    "thinking/kindle_epub_gibberish.md",
+    "thinking/clean_cpp_principle.md",
+    "thinking/buy_a_house1.md",
+    "thinking/busi_thinking.md",
+    "thinking/2021-02-06-beyond-feeling.md",
+    "thinking",
+    "pics/streamprocess/v2-aecdc6366f06894c580da4cab2afeff1_720w.jpg",
+    "pics/streamprocess/v2-a55432fc17fe70f896047a2484a88a26_720w.jpg",
+    "pics/streamprocess/v2-a13eb70a554501ba3a653ca65ee6e1d2_720w.jpg",
+    "pics/streamprocess/v2-a12c1960a227f8b7866a9224b717b776_720w.jpg",
+    "pics/streamprocess/v2-969ece4764996258ceef28bbbc9d67d9_720w.jpg",
+    "pics/streamprocess/v2-947094ef1f6dc432cf7e1599297b4bff_720w.jpg",
+    "pics/streamprocess/v2-8b8ef9c6ecf79e1d3b100226cd0afe3b_720w.jpg",
+    "pics/streamprocess/v2-85d463cf4fc4446a63694e33f832edc1_720w.jpg",
+    "pics/streamprocess/v2-76788cf66e79c8422fb72034b9bc854f_720w.jpg",
+    "pics/streamprocess/v2-720db47cda67af2450491b66960702e4_720w.jpg",
+    "pics/signal_and_sigaction",
+    "pics/scheduling_semantics",
+    "pics/redis-distribute-lock",
+    "pics/raft-extended",
+    "pics/parallel_patterns",
+    "pics/ostep28",
+    "pics/one_dynamic_library_problem",
+    "pics/mysql-transaction",
+    "pics/lq",
+    "blog/2021-03-29-reservoir_sampling.md",
+    "blog/2021-03-17-paxosstore.md",
+    "blog/2021-03-16-distribute_transaction_2pc_3pc.md",
     "未命名.canvas"
   ]
 }

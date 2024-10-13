@@ -29,8 +29,9 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Darkmode(),
     Component.DesktopOnly(
       Component.RecentNotes({
-        title: "Recent Writing",
+        title: "Recent Blogs",
         limit: 4,
+        showTags: false,
         filter: (f) =>
           f.slug!.startsWith("blog/") && f.slug! !== "blog/index" && !f.frontmatter?.noindex,
         linkToMore: "blog/" as SimpleSlug,
@@ -40,6 +41,7 @@ export const defaultContentPageLayout: PageLayout = {
       Component.RecentNotes({
         title: "Recent Notes",
         limit: 2,
+        showTags: false,
         filter: (f) => f.slug!.startsWith("reading/"),
         linkToMore: "reading/" as SimpleSlug,
       }),
