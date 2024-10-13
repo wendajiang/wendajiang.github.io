@@ -218,6 +218,6 @@ PC2. 对于所有的$i,j$，$|C_i(t) - C_j(t)| < \epsilon$
 3. 阿里数据库的 HLC https://database.51cto.com/art/201911/606198.htm
 4. https://lrita.github.io/2018/10/19/communication-model-in-distribution/
 5. http://zhangtielei.com/posts/blog-distributed-causal-consistency.html 【推荐】
-6. [[timestamp]]
+6. [[reading/timestamp|timestamp]]
 
 
