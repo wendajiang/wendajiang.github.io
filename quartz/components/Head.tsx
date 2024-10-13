@@ -41,6 +41,8 @@ export default (() => {
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
         <meta name="generator" content="Quartz" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href={fontStylePath} rel="stylesheet" type="text/css" spa-preserve />
         {css.map((href) => (
           <link key={href} href={href} rel="stylesheet" type="text/css" spa-preserve />
