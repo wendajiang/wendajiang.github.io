@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/policy_based_design.md",
+                "file": "books/index.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "9860a4a0dcf4e668",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "turtle/index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blog/policy_based_design.md",
+                "file": "books/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "blog/policy_based_design.md",
+                "file": "books/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,7 +126,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "blog/policy_based_design.md",
+                "file": "books/index.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -160,7 +172,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/policy_based_design.md"
+                "file": "books/index.md"
               }
             }
           },
@@ -180,8 +192,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "horizontal",
@@ -202,34 +213,36 @@
       "obsidian-day-planner:Timeline": false
     }
   },
-  "active": "e18dd418cb73b360",
+  "active": "225f2650f9b65992",
   "lastOpenFiles": [
+    "reading/index.md",
+    "books/index.md",
+    "thoughts/index.md",
+    "turtle/index.md",
+    "thoughts/busi_thinking.md",
+    "thoughts/team_topo_review.md",
+    "thoughts/rust_is_not_company.md",
+    "thoughts/kindle_epub_gibberish.md",
+    "thoughts/buy_a_house1.md",
+    "thoughts/reverse-interview.md",
+    "thoughts/beyond-feeling.md",
+    "thoughts",
+    "_index.md",
+    "turtle.md",
+    "blog/index.md",
+    "blog/index",
+    "books/ddia.md",
+    "turtle/hy_turtle.md",
+    "turtle/winter_sleep_record.md",
+    "turtle/lq.md",
+    "turtle/chang_yong_yao.md",
+    "turtle/yingji.md",
+    "blog/policy_based_design.md",
     "thinking/beyond-feeling.md",
     "blog/parallel_patterns.md",
     "blog/faster_compile.md",
     "reading/pp_fromjourneyman_to_master.md",
     "reading/clean_cpp_principle.md",
-    "blog/fam.md",
-    "blog/error_model_or_handle.md",
-    "blog/zero_copy.md",
-    "blog/reservoir_sampling.md",
-    "blog/paxosstore.md",
-    "blog/distribute_transaction_2pc_3pc.md",
-    "blog/mysql_transaction.md",
-    "blog/streaming102.md",
-    "blog/streaming101.md",
-    "blog/raft-extended.md",
-    "blog/dataflow_model.md",
-    "blog/bitcask.md",
-    "blog/yet-another-implement-of-lock-free-circular-array-queue.md",
-    "blog/redis-distribute-lock.md",
-    "blog/welcome-to-david.md",
-    "blog/2021-02-02-welcome-to-david.md",
-    "_index.md",
-    "books/list.md",
-    "thinking/_index.md",
-    "books.md",
-    "miao.md",
     "templates/tags/single.html",
     "templates/tags/list.html",
     "templates/shortcodes/mermaid.html",
@@ -238,8 +251,6 @@
     "templates/macros/page-publish-metadata.html",
     "templates/macros/mermaid.html",
     "templates/macros/math.html",
-    "templates/macros/books-sidebar.html",
-    "templates/macros/head.html",
     "static/pics/zero_copy/image-20211020191755511.png",
     "static/pics/zero_copy/image-20211019200216564.png",
     "static/pics/zero_copy/image-20211019194434427.png",
