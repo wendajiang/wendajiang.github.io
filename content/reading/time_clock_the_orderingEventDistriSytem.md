@@ -1,20 +1,20 @@
 ---
 date: 2021-04-06 21:31:59
-title: 【考古】【必读】分布式理论奠基 paper
-tags: 
-    - awesomepaper
-    - translate
+title: Time, Clocks, and the Ordering of Events in a Distributed System
+tags:
+  - awesomepaper
+  - 考古
+  - distribute
 ---
 
-原文标题：Time, Clocks, and the Ordering of Events in a Distributed System
 原文作者：Leslie Lamport
-[原文链接](https://lamport.azurewebsites.net/pubs/time-clocks.pdf)
+[origin pdf](https://lamport.azurewebsites.net/pubs/time-clocks.pdf)
 
 译者声明：
 
 本文中的进程（process）表示过程，不是典型意义上计算机的进程
 
-偏序、局部顺序 partial ordering
+偏序、局部顺序 <-> partial ordering
 
 ## Abstract
 
@@ -218,8 +218,6 @@ PC2. 对于所有的$i,j$，$|C_i(t) - C_j(t)| < \epsilon$
 3. 阿里数据库的 HLC https://database.51cto.com/art/201911/606198.htm
 4. https://lrita.github.io/2018/10/19/communication-model-in-distribution/
 5. http://zhangtielei.com/posts/blog-distributed-causal-consistency.html 【推荐】
-6. [分布式事务中的时间戳](https://ericfu.me/timestamp-in-distributed-trans) 【推荐】
+6. [[timestamp]]
 
 
-## 更新记录
-- 2020-4-21 更新，加入参考文章【分布式事务中的时间戳】

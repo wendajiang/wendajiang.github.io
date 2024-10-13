@@ -5,12 +5,7 @@ title: Clean C++ 读书笔记1
 
 tags: book_note
 ---
-<!--
-mermaid example:
-<div class="mermaid">
-    mermaid program
-</div>
--->
+
 
 ## 原则
 

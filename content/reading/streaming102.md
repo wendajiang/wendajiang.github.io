@@ -6,7 +6,7 @@ tags:
   - translate
 ---
 
-原文：https://www.oreilly.com/radar/the-world-beyond-batch-streaming-102/
+[原文](https://www.oreilly.com/radar/the-world-beyond-batch-streaming-102/)
 
 闲话少说，下面进入主题。先总结下，上次的内容主要分三块：
 

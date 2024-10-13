@@ -9,12 +9,6 @@ tags:
     - translate
 
 ---
-<!--
-mermaid example:
-<div class="mermaid">
-    mermaid program
-</div>
--->
 
 [原文](https://arxiv.org/pdf/1406.2294.pdf)
 
