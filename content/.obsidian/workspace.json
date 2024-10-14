@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "books/ddia.md",
+                "file": "reading/quartz.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "books/ddia.md",
+                "file": "reading/quartz.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "books/ddia.md",
+                "file": "reading/quartz.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "books/ddia.md",
+                "file": "reading/quartz.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -160,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "books/ddia.md"
+                "file": "reading/quartz.md"
               }
             }
           },
@@ -202,10 +202,11 @@
       "obsidian-day-planner:Timeline": false
     }
   },
-  "active": "e18dd418cb73b360",
+  "active": "1a4080f959e387ea",
   "lastOpenFiles": [
-    "books/effective_modern_cpp.md",
     "books/ddia.md",
+    "reading/quartz.md",
+    "books/effective_modern_cpp.md",
     "books/index.md",
     "books/list.md",
     "reading/time_clock_the_orderingEventDistriSytem.md",
@@ -230,7 +231,6 @@
     "reading/ostep28.md",
     "reading/clean_cpp_principle.md",
     "turtle/index.md",
-    "blog/yet-another-implement-of-lock-free-circular-array-queue.md",
     "thinking",
     "pics/streamprocess/v2-aecdc6366f06894c580da4cab2afeff1_720w.jpg",
     "pics/streamprocess/v2-a55432fc17fe70f896047a2484a88a26_720w.jpg",
