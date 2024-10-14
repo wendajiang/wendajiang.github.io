@@ -1,5 +1,6 @@
 ---
 title: V8 engine
+date: 2024-10-14 18:19
 ---
 When i learn about [[reading/quartz|quartz]] , I'm curious about the JS runtime env. And I already know about [deno](https://github.com/denoland/deno) is a modern runtime for JavaScript and TypeScript. Its [official docs](https://docs.deno.com/runtime/) describe that it's built on [V8](https://v8.dev/docs), Rust and Tokio.
 

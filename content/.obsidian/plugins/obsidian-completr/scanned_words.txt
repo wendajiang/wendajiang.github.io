@@ -153,6 +153,12 @@ terms
 taken
 tick
 timestamp
+transpilers
+tool
+transformation
+tools
+transformations
+transpiler
 description
 date
 div
@@ -306,6 +312,9 @@ definition
 described
 defined
 did
+dependency
+dependencies
+detects
 books
 blog
 barrier
@@ -469,6 +478,11 @@ basics
 bff
 batch
 bits
+bundler
+brower
+bundlers
+bundle
+browser
 page
 pics
 program
@@ -660,6 +674,10 @@ pane
 partial
 pragmatic
 performed
+prevents
+plugin
+pretty
+part
 html
 happen
 has
@@ -768,6 +786,7 @@ hook
 holes
 happened
 high
+hand
 updated
 url
 uncombine
@@ -880,6 +899,7 @@ uYf
 uj
 uzO
 update
+unused
 weight
 wendajiang
 window
@@ -998,6 +1018,9 @@ web
 wombat
 ways
 wide
+workflow
+written
+website
 copy
 class
 checkpoint
@@ -1197,6 +1220,14 @@ clock
 considering
 crashed
 curious
+confused
+constructed
+conflicts
+choose
+combine
+converts
+content
+complex
 images
 id
 integersPerKey
@@ -1349,6 +1380,9 @@ input
 invariant
 implemention
 incremental
+impl
+improve
+identifies
 static
 set
 same
@@ -1559,6 +1593,10 @@ span
 sjw
 seJ
 sHh
+site
+superset
+shorts
+slug
 filename
 first
 from
@@ -1704,6 +1742,8 @@ fdb
 follower
 familiar
 formulation
+functions
+files
 extra
 example
 event
@@ -1878,6 +1918,9 @@ ecb
 eaafb
 engine
 env
+easily
+efficient
+explains
 Http
 Hadoop
 Hive
@@ -1964,6 +2007,7 @@ Horizon
 HBase
 HLC
 Hybrid
+HTTP
 In
 If
 It
@@ -2353,6 +2397,9 @@ metadata
 micro
 messages
 method
+mostly
+map
+minimize
 RustDoc
 RAM
 RPC
@@ -2738,6 +2785,7 @@ logic
 logical
 low
 lc
+loaded
 The
 TelegraphCQ
 Trident
@@ -2849,6 +2897,7 @@ Time
 Totally
 TSO
 Timestamp
+TypeScript
 Blog
 Be
 But
@@ -2957,6 +3006,7 @@ Batched
 BigTable
 Behavior
 Blogs
+Bundler
 Dataflow
 Disk
 DoFn
@@ -3149,6 +3199,7 @@ Made
 Messaging
 Matching
 Marz
+Mapping
 Pig
 Pulsar
 Punctuation
@@ -3409,6 +3460,8 @@ String
 State
 Sequence
 Sub
+Slugify
+SSG
 FlumeJava
 Flink
 From
@@ -3507,6 +3560,7 @@ File
 Files
 Fail
 Follower
+Find
 Niagara
 NetTS
 Niebler
@@ -4308,6 +4362,7 @@ JQX
 Joint
 Jay
 JFIF
+JavaScript
 UDF
 UV
 UNLCK
@@ -4411,6 +4466,7 @@ UNIX
 Use
 UDP
 UoK
+URL
 value
 vs
 video
@@ -4985,6 +5041,7 @@ actually
 ack
 appendix
 already
+allowing
 of
 object
 one
@@ -5211,6 +5268,8 @@ generation
 grace
 group
 gRPC
+goal
+generator
 your
 you
 yong
@@ -5456,6 +5515,10 @@ reality
 reader
 relativity
 rPH
+rest
+requested
+rid
+requests
 query
 question
 quite
@@ -5535,6 +5598,7 @@ qpl
 qNd
 qAr
 quit
+quartz
 OS
 Optimization
 Operation
@@ -6050,6 +6114,7 @@ QxZ
 Quorums
 QPS
 Qc
+Quartz
 XecYa
 XQ
 XptReA

@@ -1,5 +1,6 @@
 ---
 title: timestamp in distributed system
+date: 2024-10-13 18:19
 ---
  [分布式事务中的时间戳](https://ericfu.me/timestamp-in-distributed-trans) 
 
