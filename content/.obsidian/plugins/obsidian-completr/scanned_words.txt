@@ -1196,6 +1196,7 @@ cfb
 clock
 considering
 crashed
+curious
 images
 id
 integersPerKey
@@ -1555,6 +1556,9 @@ shuffle
 special
 sent
 span
+sjw
+seJ
+sHh
 filename
 first
 from
@@ -1872,6 +1876,8 @@ edc
 efb
 ecb
 eaafb
+engine
+env
 Http
 Hadoop
 Hive
@@ -2731,6 +2737,7 @@ late
 logic
 logical
 low
+lc
 The
 TelegraphCQ
 Trident
@@ -3589,6 +3596,7 @@ Networking
 NSDI
 Nathan
 NTP
+NvG
 Esper
 ExpandToElements
 Eric
@@ -3698,6 +3706,7 @@ Echo
 Evaluation
 Effectiveness
 Entry
+Es
 CEDR
 Cloud
 CPU
@@ -3820,6 +3829,7 @@ Clock
 Condition
 Condtion
 Conditon
+CDEFGHIJSTUVWXYZcdefghijstuvwxyz
 Lambda
 Li
 LazyFuture
@@ -3920,6 +3930,7 @@ Lamport
 Leader
 Lateness
 Logical
+LpO
 Google
 GroupByKey
 GroupByKeyAndWindow
@@ -4296,6 +4307,7 @@ JlM
 JQX
 Joint
 Jay
+JFIF
 UDF
 UV
 UNLCK
@@ -4398,6 +4410,7 @@ URI
 UNIX
 Use
 UDP
+UoK
 value
 vs
 video
@@ -4677,6 +4690,7 @@ YKo
 YH
 YNY
 YN
+Ybl
 name
 no
 networking
@@ -4970,6 +4984,7 @@ appear
 actually
 ack
 appendix
+already
 of
 object
 one
@@ -5440,6 +5455,7 @@ region
 reality
 reader
 relativity
+rPH
 query
 question
 quite
@@ -5610,6 +5626,7 @@ Or
 OrFinally
 Ordering
 Oracle
+OYS
 just
 java
 journal
@@ -5799,6 +5816,7 @@ zRU
 zWf
 zL
 zoom
+zWWG
 VD
 VA
 VE
@@ -5958,6 +5976,7 @@ Zf
 Zi
 ZooKeeper
 Zookeeper
+ZAk
 QR
 QJD
 QicErAlw
@@ -6030,6 +6049,7 @@ QwtgWm
 QxZ
 Quorums
 QPS
+Qc
 XecYa
 XQ
 XptReA
@@ -6122,6 +6142,7 @@ XIqQa
 Xr
 Xfbk
 Xeon
+XExif
 äüöß
 Äq
 üv

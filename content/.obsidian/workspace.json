@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "439d8adc9d157ddd",
+        "id": "ef83a279addf0e48",
         "type": "tabs",
         "children": [
           {
-            "id": "1a4080f959e387ea",
+            "id": "27f5b9c28bb27eca",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "reading/quartz.md",
+                "file": "reading/v8_runtime.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "reading/quartz.md",
+                "file": "reading/v8_runtime.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "reading/quartz.md",
+                "file": "reading/v8_runtime.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,7 +114,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "reading/quartz.md",
+                "file": "reading/v8_runtime.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -160,7 +160,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "reading/quartz.md"
+                "file": "reading/v8_runtime.md"
               }
             }
           },
@@ -202,10 +202,13 @@
       "obsidian-day-planner:Timeline": false
     }
   },
-  "active": "1a4080f959e387ea",
+  "active": "e18dd418cb73b360",
   "lastOpenFiles": [
-    "books/ddia.md",
+    "david.png",
+    "().md",
+    "reading/v8_runtime.md",
     "reading/quartz.md",
+    "books/ddia.md",
     "books/effective_modern_cpp.md",
     "books/index.md",
     "books/list.md",
@@ -228,9 +231,6 @@
     "todo.md",
     "thoughts/beyond-feeling.md",
     "reading/pp_fromjourneyman_to_master.md",
-    "reading/ostep28.md",
-    "reading/clean_cpp_principle.md",
-    "turtle/index.md",
     "thinking",
     "pics/streamprocess/v2-aecdc6366f06894c580da4cab2afeff1_720w.jpg",
     "pics/streamprocess/v2-a55432fc17fe70f896047a2484a88a26_720w.jpg",
