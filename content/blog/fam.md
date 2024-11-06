@@ -8,7 +8,7 @@ tags: c
 ---
 
 # Introduction
-Rencently, I raise one crash on coding about IPC (inter-process communication).
+Recently, I raise one crash on coding about IPC (inter-process communication).
 
 The scenario is we have one struct which need to place on shared memory, and the struct size tha I want it to be determined on the runtime. 
 

@@ -118,7 +118,6 @@ class C: public not_euqal<C> {
 };
 ```
 
-
 # ref
 - [fluentcpp](https://www.fluentcpp.com/2017/05/16/what-the-crtp-brings-to-code/)
 - Hands-on Design Patterns with C++ Chapter 8

@@ -9,12 +9,7 @@ tags:
     - translate
 
 ---
-<!--
-mermaid example:
-<div class="mermaid">
-    mermaid program
-</div>
--->
+
 
 [The Post](https://ryhl.io/blog/async-what-is-blocking/)
 

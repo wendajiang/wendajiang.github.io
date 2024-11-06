@@ -1,15 +1,14 @@
 ---
 title: cusomization point object
-description: ''
+description: ""
 date: 2023-12-21 14:54:34
 updated: 2023-12-21 14:54:34
-typora-copy-images-to: ../static/pics/${filename}
+typora-copy-images-to: ../pics/${filename}
 ---
 
 Derivation:
 
-When imitate format code liking fmt library for SystemVerilog $display, using gcc9.2.0 compile the code, throw compile error,
-the ambiguous error the `to_string_view` which in fmt namespace and svfmt namespace.
+When dev SystemVerilog $display that is inspired by fmt library, using gcc9.2.0 compile the code, throw compile error, the ambiguous error the `to_string_view` which in fmt namespace and svfmt namespace.
 
 So to fix this, I search the result of ADL mechanism.
 

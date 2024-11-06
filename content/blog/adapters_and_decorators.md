@@ -1,10 +1,10 @@
 ---
 title: Adapters and Decorators
-description: 'adapters and decorator pattern'
+description: adapters and decorator pattern
 date: 2023-03-20 13:18:47
 updated: 2023-03-20 13:18:47
-typora-copy-images-to: ../static/pics/${filename}
-tags: 
+typora-copy-images-to: ../pics/${filename}
+tags:
   - design_pattern
 ---
 

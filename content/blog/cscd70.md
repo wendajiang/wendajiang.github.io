@@ -3,9 +3,9 @@ title: compiler optimization
 description: ""
 date: 2024-06-01 20:37:02
 updated: 2024-06-01 20:37:02
-typora-copy-images-to: ../static/pics/${filename}
+typora-copy-images-to: ../pics/${filename}
 tags:
-    - compiler
+  - compiler
 ---
 
 [course](https://www.cs.toronto.edu/~pekhimenko/courses/cscd70-w19/content.html)

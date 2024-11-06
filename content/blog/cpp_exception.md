@@ -1,9 +1,9 @@
 ---
 title: c++ exception that is how to implement in zero-cost?
-description: ''
+description: ""
 date: 2024-07-14 17:19:09
 updated: 2024-07-14 17:19:09
-typora-copy-images-to: ../static/pics/${filename}
+typora-copy-images-to: ../pics/${filename}
 ---
 
 # introduction
