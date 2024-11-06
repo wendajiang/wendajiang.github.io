@@ -13,13 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "reading/v8_runtime.md",
+                "file": "reading/scheduling_semantics.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "scheduling_semantics"
+            }
+          },
+          {
+            "id": "e9be29cd2ed217dc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "reading/ieee_1800_2017_chapter35.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ieee_1800_2017_chapter35"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -39,7 +56,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
             }
           },
           {
@@ -48,13 +67,15 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "google",
+                "query": "ieee",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
             }
           },
           {
@@ -62,7 +83,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
             }
           }
         ]
@@ -85,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "reading/v8_runtime.md",
+                "file": "reading/ieee_1800_2017_chapter35.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +116,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": false
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "ieee_1800_2017_chapter35 的反向链接列表"
             }
           },
           {
@@ -102,10 +127,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "reading/v8_runtime.md",
+                "file": "reading/ieee_1800_2017_chapter35.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "ieee_1800_2017_chapter35 的出链列表"
             }
           },
           {
@@ -114,7 +141,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "reading/v8_runtime.md",
+                "file": "reading/ieee_1800_2017_chapter35.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -140,7 +167,9 @@
                   "scale": 1,
                   "close": true
                 }
-              }
+              },
+              "icon": "lucide-git-fork",
+              "title": "ieee_1800_2017_chapter35 的关系图"
             }
           },
           {
@@ -151,7 +180,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
             }
           },
           {
@@ -160,8 +191,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "reading/v8_runtime.md"
-              }
+                "file": "reading/ieee_1800_2017_chapter35.md"
+              },
+              "icon": "lucide-list",
+              "title": "ieee_1800_2017_chapter35 的大纲"
             }
           },
           {
@@ -169,7 +202,9 @@
             "type": "leaf",
             "state": {
               "type": "calendar",
-              "state": {}
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           },
           {
@@ -177,11 +212,13 @@
             "type": "leaf",
             "state": {
               "type": "timeline",
-              "state": {}
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Timeline"
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -204,33 +241,34 @@
   },
   "active": "e18dd418cb73b360",
   "lastOpenFiles": [
-    "reading/timestamp.md",
-    "reading/quartz.md",
-    "reading/v8_runtime.md",
-    "david.png",
-    "().md",
-    "books/ddia.md",
-    "books/effective_modern_cpp.md",
-    "books/index.md",
-    "books/list.md",
-    "reading/time_clock_the_orderingEventDistriSytem.md",
-    "blog/index.md",
-    "reading/index.md",
-    "未命名.md",
-    "reading/chubby.md",
-    "reading/streaming102.md",
-    "reading/streaming101.md",
-    "reading/raft-extended.md",
-    "reading/paxosstore.md",
-    "reading/jump_consistent_hash.md",
-    "reading/dataflow_model.md",
-    "reading/bitcask.md",
+    "reading/scheduling_semantics.md",
+    "reading/assignment_statements.md",
+    "reading/ieee_1800_2017_chapter35.md",
+    "reading/ostep26.md",
+    "reading/ostep31.md",
+    "reading/ostep33.md",
+    "reading/ostep28.md",
+    "reading/ostep30.md",
+    "blog/strip.md",
+    "blog/single-p-single-c-lock-free-cricular-queue.md",
+    "blog/crtp.md",
+    "blog/file_locking.md",
+    "blog/faster_compile.md",
+    "blog/fam.md",
+    "blog/data_flow_analysis_info.md",
+    "blog/customization_point_object.md",
+    "blog/cscd70.md",
     "blog/cpp_exception.md",
+    "blog/async_what_is_blocking.md",
+    "blog/atomic_and_memory_order.md",
+    "blog/bin_packing_problem.md",
+    "blog/adapters_and_decorators.md",
+    "blog/crates_collection.md",
+    "blog/coroutine_learn.md",
+    "reading/v8_runtime.md",
+    "reading/timestamp.md",
+    "david.png",
     "pdf/Compiler-Internals-exception.pdf",
-    "thoughts/busi_thinking.md",
-    "todo.md",
-    "thoughts/beyond-feeling.md",
-    "reading/pp_fromjourneyman_to_master.md",
     "thinking",
     "pics/streamprocess/v2-aecdc6366f06894c580da4cab2afeff1_720w.jpg",
     "pics/streamprocess/v2-a55432fc17fe70f896047a2484a88a26_720w.jpg",
