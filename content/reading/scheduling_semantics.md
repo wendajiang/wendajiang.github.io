@@ -135,6 +135,8 @@ end
 输出1 0 都对。
 
 # 4.9 Scheduling implication of assignments
+## 4.9.4 nonblocking assignment
+[[reading/assignment_statements|assignment_statements|assignment statements]]  always computes the updated value and schedules the update as an NBA update event, either in the current time step if the delay is zero or as a future event if the delay is nonzero. The values in effect when the udpate is placed in the event region are used to compute both the right-hand value and the left-hand target.
 
 # 4.10 PLI callback control points
 两种 PLI cb：特定事件出现时执行；注册为 one-shot evaluation event
