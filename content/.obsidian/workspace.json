@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "reading/scheduling_semantics.md",
+                "file": "reading/assignment_statements.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "scheduling_semantics"
+              "title": "assignment_statements"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "reading/ieee_1800_2017_chapter35.md",
+                "file": "reading/ieee1800_chapter11.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ieee_1800_2017_chapter35"
+              "title": "ieee1800_chapter11"
             }
           }
         ],
@@ -67,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "ieee",
+                "query": "ieee1800",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -108,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "reading/ieee_1800_2017_chapter35.md",
+                "file": "reading/assignment_statements.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +118,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "ieee_1800_2017_chapter35 的反向链接列表"
+              "title": "assignment_statements 的反向链接列表"
             }
           },
           {
@@ -127,12 +127,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "reading/ieee_1800_2017_chapter35.md",
+                "file": "reading/assignment_statements.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "ieee_1800_2017_chapter35 的出链列表"
+              "title": "assignment_statements 的出链列表"
             }
           },
           {
@@ -141,7 +141,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "reading/ieee_1800_2017_chapter35.md",
+                "file": "reading/ieee1800_chapter11.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -169,7 +169,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "ieee_1800_2017_chapter35 的关系图"
+              "title": "ieee1800_chapter11 的关系图"
             }
           },
           {
@@ -191,10 +191,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "reading/ieee_1800_2017_chapter35.md"
+                "file": "reading/assignment_statements.md"
               },
               "icon": "lucide-list",
-              "title": "ieee_1800_2017_chapter35 的大纲"
+              "title": "assignment_statements 的大纲"
             }
           },
           {
@@ -218,7 +218,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -239,10 +239,11 @@
       "obsidian-day-planner:Timeline": false
     }
   },
-  "active": "e18dd418cb73b360",
+  "active": "e9be29cd2ed217dc",
   "lastOpenFiles": [
-    "reading/scheduling_semantics.md",
     "reading/assignment_statements.md",
+    "reading/ieee1800_chapter11.md",
+    "reading/scheduling_semantics.md",
     "reading/ieee_1800_2017_chapter35.md",
     "reading/ostep26.md",
     "reading/ostep31.md",
@@ -266,7 +267,6 @@
     "blog/crates_collection.md",
     "blog/coroutine_learn.md",
     "reading/v8_runtime.md",
-    "reading/timestamp.md",
     "david.png",
     "pdf/Compiler-Internals-exception.pdf",
     "thinking",
