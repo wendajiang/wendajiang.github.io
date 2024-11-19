@@ -35,8 +35,7 @@
               "title": "ieee1800_chapter11"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -141,7 +140,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "reading/ieee1800_chapter11.md",
+                "file": "reading/assignment_statements.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -169,7 +168,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "ieee1800_chapter11 的关系图"
+              "title": "assignment_statements 的关系图"
             }
           },
           {
@@ -239,10 +238,10 @@
       "obsidian-day-planner:Timeline": false
     }
   },
-  "active": "e9be29cd2ed217dc",
+  "active": "27f5b9c28bb27eca",
   "lastOpenFiles": [
-    "reading/assignment_statements.md",
     "reading/ieee1800_chapter11.md",
+    "reading/assignment_statements.md",
     "reading/scheduling_semantics.md",
     "reading/ieee_1800_2017_chapter35.md",
     "reading/ostep26.md",
