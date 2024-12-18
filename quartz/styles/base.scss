@@ -9,8 +9,7 @@ html {
   width: 100vw;
 }
 
-body,
-section {
+body {
   margin: 0;
   box-sizing: border-box;
   background-color: var(--light);
@@ -41,6 +40,7 @@ ul,
 .math {
   color: var(--darkgray);
   fill: var(--darkgray);
+  overflow-wrap: break-word;
   hyphens: auto;
 }
 
@@ -58,6 +58,7 @@ ul,
 }
 
 .math {
+  font-size: 1rem;
   &.math-display {
     text-align: center;
   }
@@ -98,7 +99,7 @@ a {
 
   &.external .external-icon {
     height: 1ex;
-    margin: 0 0.15em;
+    margin: 0 0.2em;
 
     > path {
       fill: var(--dark);
@@ -156,7 +157,7 @@ a {
     column-gap: #{map-get($desktopGrid, columnGap)};
     row-gap: #{map-get($desktopGrid, rowGap)};
     grid-template-areas: #{map-get($desktopGrid, templateAreas)};
-    @media all and ($desktop) {
+    @media all and ($tablet) {
       grid-template-columns: #{map-get($tabletGrid, templateColumns)};
       grid-template-rows: #{map-get($tabletGrid, templateRows)};
       column-gap: #{map-get($tabletGrid, columnGap)};
@@ -171,7 +172,7 @@ a {
       grid-template-areas: #{map-get($mobileGrid, templateAreas)};
     }
 
-    @media all and ($desktop) {
+    @media all and not ($desktop) {
       padding: 0 1rem;
     }
     @media all and ($mobile) {
@@ -212,7 +213,7 @@ a {
         margin-left: inherit;
         margin-right: inherit;
       }
-      @media all and ($desktop) {
+      @media all and not ($desktop) {
         position: initial;
         height: unset;
         width: 100%;
@@ -254,10 +255,11 @@ a {
       min-width: 100%;
       margin-left: auto;
       margin-right: auto;
-      @media all and ($desktop) {
+      @media all and ($tablet) {
         margin-right: 0;
       }
       @media all and ($mobile) {
+        margin-right: 0;
         margin-left: 0;
       }
     }
@@ -544,7 +546,7 @@ div:has(> .overflow) {
 
 ul.overflow,
 ol.overflow {
-  max-height: 100%;
+  max-height: 350px;
   overflow-y: auto;
 
   // clearfix
