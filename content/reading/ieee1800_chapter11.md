@@ -1,6 +1,8 @@
 ---
 title: operators and expressions
 date: 2024-11-18
+tags:
+  - ieee1800
 ---
 # 11.1 general
 - expression semantics

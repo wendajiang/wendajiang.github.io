@@ -2,6 +2,8 @@
 title: Verilog Static Elaborator
 date: 2024-12-18
 typora-copy-images-to: ../pics/${filename}
+tags:
+  - ieee1800
 ---
 # introduction
 After a Verilog design has been parsed, the design must have the modules being instantiated linked to modules being defined, the parameters propagated among the various modules and hierarchical references resolved. This phase is called static elaboration.
