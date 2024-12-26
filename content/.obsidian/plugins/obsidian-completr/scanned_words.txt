@@ -203,6 +203,7 @@ text
 top
 target
 terminated
+textual
 description
 date
 div
@@ -603,6 +604,7 @@ byte
 body
 buying
 blk
+better
 page
 pics
 program
@@ -996,6 +998,7 @@ house
 hier
 hierarchical
 hierarchic
+had
 updated
 url
 uncombine
@@ -1586,6 +1589,8 @@ compatible
 convertible
 created
 correctness
+corresponding
+computers
 images
 id
 integersPerKey
@@ -2321,6 +2326,7 @@ fully
 func
 functinos
 functionallity
+fundamentally
 extra
 example
 event
@@ -2639,6 +2645,7 @@ Hybrid
 HTTP
 Here
 Hierarchical
+Haskell
 In
 If
 It
@@ -2757,6 +2764,7 @@ Instead
 Including
 Inside
 Identifier
+ISA
 Action
 Aurora
 AI
@@ -2920,6 +2928,8 @@ ASCII
 APP
 Arrays
 Assertion
+Assembly
+Architectures
 mermaid
 model
 making
@@ -3094,6 +3104,7 @@ modules
 maintaining
 modes
 manipulation
+mysterious
 RustDoc
 RAM
 RPC
@@ -3533,6 +3544,8 @@ literals
 lengths
 loft
 linearized
+lowest
+leading
 The
 TelegraphCQ
 Trident
@@ -3652,6 +3665,7 @@ Types
 Think
 Tasks
 Try
+Thanks
 Blog
 Be
 But
@@ -4596,6 +4610,8 @@ Exported
 Expression
 Elaborator
 Elaboration
+Every
+Each
 CEDR
 Cloud
 CPU
@@ -5345,6 +5361,7 @@ Under
 Unlike
 Unqualified
 Unsized
+Unserstanding
 value
 vs
 video
@@ -6024,6 +6041,8 @@ analyze
 assertions
 assertion
 along
+assembly
+anymore
 of
 object
 one
@@ -6162,6 +6181,7 @@ override
 operand
 operands
 outlined
+overall
 go
 get
 generate
@@ -6607,6 +6627,9 @@ relational
 reaches
 referenced
 reg
+reputation
+rare
+relatively
 query
 question
 quite

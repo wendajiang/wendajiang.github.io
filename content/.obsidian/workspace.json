@@ -13,15 +13,30 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/SVA_Synthesis.md",
+                "file": "blog/llvm_ir.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SVA_Synthesis"
+              "title": "llvm_ir"
+            }
+          },
+          {
+            "id": "66bde40d89150a8b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "blog/linker_script_you_should_know.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "linker_script_you_should_know"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -126,7 +141,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "blog/SVA_Synthesis.md",
+                "file": "blog/linker_script_you_should_know.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -149,12 +164,12 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 1,
+                  "scale": 1.1785176144438894,
                   "close": true
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "SVA_Synthesis 的关系图"
+              "title": "linker_script_you_should_know 的关系图"
             }
           },
           {
@@ -176,10 +191,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "reading/assignment_statements.md"
+                "file": "blog/linker_script_you_should_know.md"
               },
               "icon": "lucide-list",
-              "title": "assignment_statements 的大纲"
+              "title": "linker_script_you_should_know 的大纲"
             }
           },
           {
@@ -203,7 +218,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
@@ -224,13 +239,18 @@
       "obsidian-day-planner:Timeline": false
     }
   },
-  "active": "e9be29cd2ed217dc",
+  "active": "66bde40d89150a8b",
   "lastOpenFiles": [
+    "pics/Pasted image 20241226103908.png",
+    "blog/llvm_ir.md",
+    "blog/understanding_assembly.md",
+    "blog/linker_script_you_should_know.md",
+    "blog/coroutine_learn.md",
+    "blog/SVA_Synthesis.md",
     "reading/verilog_static_elaborator.md",
     "reading/ieee_1800_2017_chapter35.md",
     "reading/ieee1800_chapter11.md",
     "reading/ieee_dpi_c_layer.md",
-    "blog/SVA_Synthesis.md",
     "pics/image-20241218133401.png",
     "pics/verilog_static_elaborator/image-20241218132645600.png",
     "reading/bitcask.md",
@@ -252,11 +272,6 @@
     "blog/crtp.md",
     "blog/file_locking.md",
     "blog/faster_compile.md",
-    "blog/fam.md",
-    "blog/data_flow_analysis_info.md",
-    "blog/customization_point_object.md",
-    "blog/cscd70.md",
-    "blog/cpp_exception.md",
     "david.png",
     "pdf/Compiler-Internals-exception.pdf",
     "thinking",
