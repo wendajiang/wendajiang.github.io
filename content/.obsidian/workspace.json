@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/linker_script_you_should_know.md",
+                "file": "blog/call_once.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "linker_script_you_should_know"
+              "title": "call_once"
             }
           }
         ],
@@ -67,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "IEEE",
+                "query": "concurrent asser",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -141,7 +141,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "blog/linker_script_you_should_know.md",
+                "file": "blog/call_once.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -169,7 +169,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "linker_script_you_should_know 的关系图"
+              "title": "call_once 的关系图"
             }
           },
           {
@@ -191,10 +191,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/linker_script_you_should_know.md"
+                "file": "blog/call_once.md"
               },
               "icon": "lucide-list",
-              "title": "linker_script_you_should_know 的大纲"
+              "title": "call_once 的大纲"
             }
           },
           {
@@ -241,12 +241,14 @@
   },
   "active": "66bde40d89150a8b",
   "lastOpenFiles": [
+    "blog/SVA_Synthesis.md",
+    "blog/call_once.md",
+    "reading/assignment_statements.md",
+    "blog/linker_script_you_should_know.md",
     "pics/Pasted image 20241226103908.png",
     "blog/llvm_ir.md",
     "blog/understanding_assembly.md",
-    "blog/linker_script_you_should_know.md",
     "blog/coroutine_learn.md",
-    "blog/SVA_Synthesis.md",
     "reading/verilog_static_elaborator.md",
     "reading/ieee_1800_2017_chapter35.md",
     "reading/ieee1800_chapter11.md",
@@ -260,7 +262,6 @@
     "pics/verilog_static_elaborator",
     "reading/verilog_static_elaborator~.md",
     "Pasted image 20241218131958.png",
-    "reading/assignment_statements.md",
     "reading/scheduling_semantics.md",
     "reading/ostep26.md",
     "reading/ostep31.md",
@@ -279,7 +280,6 @@
     "pics/streamprocess/v2-a55432fc17fe70f896047a2484a88a26_720w.jpg",
     "pics/streamprocess/v2-a13eb70a554501ba3a653ca65ee6e1d2_720w.jpg",
     "pics/streamprocess/v2-a12c1960a227f8b7866a9224b717b776_720w.jpg",
-    "pics/streamprocess/v2-969ece4764996258ceef28bbbc9d67d9_720w.jpg",
     "pics/signal_and_sigaction",
     "pics/scheduling_semantics",
     "pics/redis-distribute-lock",
