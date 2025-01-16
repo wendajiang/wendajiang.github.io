@@ -1,14 +1,11 @@
 ---
-title: threads-locks
-description: 'ostep 28 chapter understand'
+title: Locks
 date: 2023-02-28 10:33:25
-updated: 2023-02-28 10:33:25
-typora-copy-images-to: ../../static/pics/${filename}
-tags: ["ostep"]
-lead: 'the understanding of ostep chapter 28'
+updated: 2025-01-16 10:56:25
+tags:
+  - ostep
+lead: the understanding of ostep chapter 28
 ---
-
-
 # Basic Idea
 
 We would like to execute a series of instructions atomically, but due to the presence of interrupts on a single processor (or multiple threads executing on multiple processors concurrently), we couldn't. So we need the lock. Programmers annotate source code with locks, putting them around critical sections, and thus ensure that any such critical section executes as if it were a single atomic instruction.
@@ -25,7 +22,7 @@ unlock(&mutex);
 
 By now, you should have some understanding of how a lock works, from the perspective of a programmer. But how should we build a lock? What hardware support is needed? What OS support? 
 
-## Evaluating Locks
+## Evaluating Locks 
 
 - The first is whether the lock does its basic task, which is to provide **mutual exclusion**. 
 - The second is **fairness**. Does each thread contending for the lock get a fair shot at acquiring it once it is free? 
@@ -34,7 +31,7 @@ By now, you should have some understanding of how a lock works, from the perspec
   - multiple threads are contending for the lock on a single CPU
   - how does the lock perform when there are multiple CPUs involved, and threads on each contending for the lock?
 
-## Controlling Interrputs
+## Controlling Interrupts
 
 The earliest solutions used to provide mutual exclusion was to disable interrupts for critical sections. *This solution was invented for single-processor systems.*
 
@@ -281,7 +278,7 @@ void mutex_unlock(int *mutex) {
 }
 ```
 
-### Two-phase locks
+## Two-phase locks
 
 One final note: the Linux approach has the flavor the an old approach , and is now referred to as a **two-phase lock**. A two-phase lock realizes that spinning can be useful, particularly if the lock is about to be released. So in the first phase, the lock spins for a while, hoping that is can acquire the lock.
 

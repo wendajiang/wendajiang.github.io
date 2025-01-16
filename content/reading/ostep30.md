@@ -1,11 +1,10 @@
 ---
 title: condition variable
-description: 'ostep 30 chapter understand'
 date: 2023-06-14 11:08:39
-updated: 2023-06-14 11:08:39
-typora-copy-images-to: ../../static/pics/${filename}
-tags: ["ostep"]
-lead: 'the understanding of ostep chapter 30'
+updated: 2025-01-16 10:58:39
+tags:
+  - ostep
+lead: the understanding of ostep chapter 30
 ---
 
 In particular, there are many cases where a thread wishes to check whether a condition is true before continuing its execution. For example, a parent thread might wish to check whether a child thread has completed before continuing (this is often called a `join`); how should such a wait be implemented? Let's look at one example:
@@ -26,7 +25,7 @@ int main() {
 }
 ```
 
-The first approach is using a shared varaible, like follow:
+The first approach is using a shared variable, like follow:
 ```cpp
 volatile int done = 0;
 void *child(void *arg) {
@@ -43,13 +42,15 @@ int main() {
   return 0;
 }
 ```
-But it is inefficient as parent spins and wastes CPU time. What we would like here insead is some way to put the parent to sleep until the condition we are waiting for (e.g. the child is done executing) comes ture.
+But it is inefficient as **parent spins and wastes CPU time**. What we would like here instead is some way to put the parent to sleep until the condition we are waiting for (e.g. the child is done executing) comes true.
 
 # Definition and Routines
 
-To wait for a condition to become true, a thread can make use of what is known as a **conditino variable.** *A **condition variable** is an explicit queue that threads can put themselves on when some state of execution(i.e. some condition) is not as desired(by waiting on the condition); some other thread, when it changes said state, can then wake one(or more) of those waiting threads and thus allow them to continue(by signaling on the condition).*
+To wait for a condition to become true, a thread can make use of what is known as a **condition variable.** 
 
-The idea goes back to Dijkstra's use of `private semaphores`.
+> A **condition variable** is an explicit queue that threads can put themselves on when some state of execution(i.e. some condition) is not as desired(by waiting on the condition); some other thread, when it changes said state, can then wake one(or more) of those waiting threads and thus allow them to continue(by signaling on the condition).
+
+The idea goes back to Dijkstra's use of `private semaphores`, a similar idea was later named a "condition variable" by Hoare in his work on monitors.
 
 A condition variable has two operations associated with it: wait() and signal().
 - the wait() call is executed when a thread wishes to put itself to sleep
@@ -95,29 +96,32 @@ One thing you might notice about the wait() call is that it also takes a mutex a
 
 There are two case that maybe happen:
 
-{% mermaid() %}
+```mermaid
 sequenceDiagram
   parent->>child: thr_join
   parent->parent: wait() and release the lock
   child->>child: acquire the lock and set done
   parent->parent: return from wait() wich lock held and continue
-{% end %}
+```
 
-{% mermaid() %}
+```mermaid
 sequenceDiagram
   child ->> child: acquire the lock and set done
   parent -> parent: wait() directly return and continue
-{% end %}
 
-One last noe: you might observe that the parent use a `while` loop instead of just an `if` stmt when deciding whether to wait on the condition. 
+```
+
+One last note: you might observe that the parent use a `while` loop instead of just an `if` stmt when deciding whether to wait on the condition. 
 
 1. If we remove the state variable done, what is happened?
    Think about, first child calls `thr_exit` immediately; in this case, the child will signal, but there is no thread asleep on the condition. When the parent runs, it will simply call wait and be stuck; no thread will ever wake it.
-2. If we remove the mutext ? The issue here is a subtle race condition. 
+2. If we remove the mutex ? The issue here is a subtle race condition. 
 
 # Let's explain if stmt problem in the bounded-buffer problem(producer/consumer)
 
+The first (broken) try is here: 
 ```cpp
+// single cv and if statement 
 int buffer;
 int count = 0;
 
@@ -164,9 +168,9 @@ void *consumer(void *arg) {
 
 one-producer and one-consumer this works. However, if we have more than one of these threads, the solution has two critical problems. What are they?
 
-If stmt cause race conditon:
+### If stmt cause race conditon:
 
-| TC1 State | TC2 State | TP       | count | Comment                             |
+| TC1 State | TC2 State | TP State | count | Comment                             |
 | --------- | --------- | -------- | ----- | ----------------------------------- |
 | c1  run   | ready     | ready    | 0     |                                     |
 | c2  run   | ready     | ready    | 0     |                                     |
@@ -186,9 +190,10 @@ If stmt cause race conditon:
 | ready     | c6 run    | ready    | 0     |                                     |
 | c4 run    | ready     | ready    | 0     | Oh ho! No data                      |
 
-Changing p2 and c2 if stmt to while will fix the issue. But there is another problem, as there is only one condition variable.
+Changing p2 and c2 if stmt to while will fix the issue. But there is another problem.
+### as there is only one condition variable.
 
-| TC1 State  | TC2 State | TP        | count | Comment                    |
+| TC1 State  | TC2 State | TP State  | count | Comment                    |
 | ---------- | --------- | --------- | ----- | -------------------------- |
 | c1  run    | ready     | ready     | 0     |                            |
 | c2  run    | ready     | ready     | 0     |                            |
@@ -206,7 +211,7 @@ Changing p2 and c2 if stmt to while will fix the issue. But there is another pro
 | ready      | sleep     | P3 sleep  | 1     | must sleep (full)          |
 | c2 run     | sleep     | sleep     | 1     | recheck condition          |
 | c4 run     | sleep     | sleep     | 0     | TC1 grab data              |
-| **c5 run** | **ready** | **sleep** | **0** | **Oops! Woek TC2**         |
+| **c5 run** | **ready** | **sleep** | **0** | **Oops! Woke TC2**         |
 | c6 run     | ready     | sleep     | 0     |                            |
 | c1 run     | ready     | sleep     | 0     |                            |
 | c2 run     | ready     | sleep     | 0     |                            |
@@ -216,9 +221,58 @@ Changing p2 and c2 if stmt to while will fix the issue. But there is another pro
 
 The problem happen at the blackbody line. TC1 awake TC2, as there is only one condition variable.
 
+The correct code is :
+```cpp
+int buffer[MAX];
+int fill_ptr = 0;
+int use_ptr = 0;
+int count = 0;
 
+void put(int value) {
+	buffer[fill_ptr] = value;
+	fill_ptr = (fill_ptr + 1) % MAX;
+	count++;
+}
 
-# Summary about using
+void get() {
+	 int tmp = buffer[use_ptr];
+	 use_ptr = (use_ptr + 1) % MAX;
+	 count--;
+	 return tmp;
+}
+
+cond_t empty, fill;
+mutex_t mtx;
+
+void *producer(void *arg) {
+	int i;
+	for (i = 0; i < loops; i++) {
+		Pthread_mutex_lock(&mtx);
+		while (count == MAX) {
+			Pthread_cond_wait(&empty, &mtx);
+		}
+		put(i);
+		Pthread_cond_signal(&fill);
+		Pthread_mutex_unloc(&mtx);
+	}
+}
+
+void *consumer(void *arg) {
+	int i;
+	for (i = 0; i < loops; i++) {
+		Pthread_mutex_lock(&mtx);
+		while (count == 0) {
+			Pthread_cond_wait(&fill, &mtx);
+		}
+		int tmp = get();
+		Pthread_cond_signal(&empty);
+		Pthread_mutex_unloc(&mtx);
+		printf("%d\n", tmp);
+	}
+}
+```
+
+# Summary about using cv
 
 - Using mutex with condition variable
 - When checking for a condition in a multi-threaded program, using while loop is always correct.
@@ -252,13 +306,11 @@ void free(void *ptr, int size) {
 // threadc free(50);
 ```
 
-As comments, threadc free 50 bytes memory, if it awake threadb, the result is correct, but if it awake threada, it's error. The sollution is introduce the `pthread_cond_broadcase` semantic. 
+As comments, `threadc` free 50 bytes memory, if it awake `threadb`, the result is correct, but if it awake `threada`, it's error. The solution is introduce the `pthread_cond_broadcase` semantic. 
 
-In general, if you find that your program only works when you change your signals to broadcasts (but you don't think it should need to), you probably have a buf, fix it!
+In general, if you find that your program only works when you change your signals to broadcasts (but you don't think it should need to), you probably have a bug, fix it!
 
-
-
-# Implementation uing mutex
+# Implementation using mutex
 
 ```cpp
 struct condition {
@@ -302,7 +354,6 @@ void boradcast(condition *c) {
   mutex_release(&c->mx);
 }
 ```
-
 
 
 # reference
