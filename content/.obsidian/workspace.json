@@ -8,35 +8,20 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e9be29cd2ed217dc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "blog/llvm_ir.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "llvm_ir"
-            }
-          },
-          {
             "id": "66bde40d89150a8b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/call_once.md",
+                "file": "reading/ostep31.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "call_once"
+              "title": "ostep31"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -67,7 +52,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "concurrent asser",
+                "query": "how c++ resolve",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -191,10 +176,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/call_once.md"
+                "file": "reading/ostep31.md"
               },
               "icon": "lucide-list",
-              "title": "call_once 的大纲"
+              "title": "ostep31 的大纲"
             }
           },
           {
@@ -241,8 +226,17 @@
   },
   "active": "66bde40d89150a8b",
   "lastOpenFiles": [
-    "blog/SVA_Synthesis.md",
+    "pics/Pasted image 20250116134336.png",
+    "reading/ostep30.md",
+    "reading/ostep31.md",
+    "blog/singleton.md",
+    "reading/ostep33.md",
+    "reading/ostep28.md",
+    "reading/ostep26.md",
+    "blog/lock_free.md",
+    "blog/how_cpp_resolves_a_function_call.md",
     "blog/call_once.md",
+    "blog/SVA_Synthesis.md",
     "reading/assignment_statements.md",
     "blog/linker_script_you_should_know.md",
     "pics/Pasted image 20241226103908.png",
@@ -263,16 +257,7 @@
     "reading/verilog_static_elaborator~.md",
     "Pasted image 20241218131958.png",
     "reading/scheduling_semantics.md",
-    "reading/ostep26.md",
-    "reading/ostep31.md",
-    "reading/ostep33.md",
-    "reading/ostep28.md",
-    "reading/ostep30.md",
     "blog/strip.md",
-    "blog/single-p-single-c-lock-free-cricular-queue.md",
-    "blog/crtp.md",
-    "blog/file_locking.md",
-    "blog/faster_compile.md",
     "david.png",
     "pdf/Compiler-Internals-exception.pdf",
     "thinking",
