@@ -65,7 +65,7 @@ A simple (but obviously impractical) way to achieve sequential consistency is to
 ### Memory ordering 
 As the flowchart suggests, any time you do lock-free programming for multicore, and your environment does not guarantee sequential consistency, you must consider how to prevent memory reordering.
 
-On today’s architectures, the tools to enforce correct memory ordering generally fall into three categories, which prevent both [compiler reordering](http://preshing.com/20120625/memory-ordering-at-compile-time) and [processor reordering](http://preshing.com/20120710/memory-barriers-are-like-source-control-operations):
+On today’s architectures, the tools to enforce correct memory ordering generally fall into three categories, which prevent both [[blog/memory_ordering_at_compile_time|compiler reordering]] and [processor reordering](http://preshing.com/20120710/memory-barriers-are-like-source-control-operations):
 
 - A lightweight sync or fence instruction, which I’ll talk about in [future posts](http://preshing.com/20120913/acquire-and-release-semantics);
 - A full memory fence instruction, which I’ve [demonstrated previously](http://preshing.com/20120522/lightweight-in-memory-logging);
