@@ -210,6 +210,7 @@ throughput
 tidy
 tiebreaker
 tiebreakers
+turns
 description
 date
 div
@@ -421,6 +422,7 @@ directive
 details
 decided
 deisng
+diabolical
 books
 blog
 barrier
@@ -895,6 +897,7 @@ preempted
 places
 proceeds
 prefers
+perhaps
 html
 happen
 has
@@ -1027,6 +1030,8 @@ had
 hence
 helps
 higher
+handful
+half
 updated
 url
 uncombine
@@ -1637,6 +1642,7 @@ custom
 coming
 checked
 checks
+codebase
 images
 id
 integersPerKey
@@ -1856,6 +1862,7 @@ identified
 incompatible
 instantiations
 initialized
+indivisible
 static
 set
 same
@@ -2407,6 +2414,9 @@ fm
 figures
 filter
 fails
+fall
+flowchart
+families
 extra
 example
 event
@@ -2642,6 +2652,7 @@ extent
 eliminate
 earlier
 ents
+entirely
 Http
 Hadoop
 Hive
@@ -3321,6 +3332,7 @@ Region
 RHS
 Runtime
 Restrictions
+Read
 Welcome
 Window
 What
@@ -3475,6 +3487,7 @@ Wait
 Woek
 WYSIWYG
 Woke
+Write
 lead
 looks
 like
@@ -3648,6 +3661,7 @@ leading
 live
 locate
 lets
+loops
 The
 TelegraphCQ
 Trident
@@ -3772,6 +3786,7 @@ They
 Technically
 Tiebreakers
 Third
+Typically
 Blog
 Be
 But
@@ -4101,6 +4116,7 @@ Models
 Modelsim
 Moreover
 Meyer
+Modify
 Pig
 Pulsar
 Punctuation
@@ -4614,6 +4630,7 @@ Normialized
 Normally
 Nonetheless
 Needless
+Nobody
 Esper
 ExpandToElements
 Eric
@@ -6201,6 +6218,7 @@ among
 advantage
 against
 accessible
+avoiding
 of
 object
 one
@@ -6802,6 +6820,7 @@ resolves
 resort
 resolved
 resolving
+relate
 query
 question
 quite
