@@ -1,11 +1,11 @@
 ---
 title: singleton
-description: ''
 date: 2021-05-07 12:12:17
 updated: 2023-06-15 14:24:10
-typora-copy-images-to: ../static/pics/${filename}
-tags: ["singleton", "thread_safe"]
-lead: 'The singleton design pattern'
+tags:
+  - singleton
+  - thread_safe
+lead: The singleton design pattern
 ---
 
 The singleton is a pattern that's used to restrict the number of class instantiations to exactly one.

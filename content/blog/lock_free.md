@@ -7,26 +7,76 @@ tags:
  - distribute
  - ABA
 ---
-<!--
-mermaid example:
-<div class="mermaid">
-    mermaid program
-</div>
--->
-
--------------
-
 # An Introduction to Lock-Free Programming
 
 [链接](https://preshing.com/20120612/an-introduction-to-lock-free-programming/)
 
+
 ### what is it
 
 ![image-20210405160006637](/pics/lock_free/image-20210405160006637.png)
+Nobody expects a large application to be entirely lock-free. Typically, we identify a specific set of lock-free operations out of the whole codebase. For example, in a lock-free queue, there might be handful of lock-free operations such as `push`,`pop`, perhaps `is_empty`, and so on.
+
 
 ### techniques
+It turns out that when you attempt to satisfy the non-blocking condition of lock-free programming, a whole family of techniques fall out: atomic operations, memory barriers, avoiding the ABA problem, to name a few. This is where things quickly become diabolical.
+
+So how do these technique relate to one another? to illustrate, the following flowchart.
 
 ![image-20210405160054136](/pics/lock_free/image-20210405160054136.png)
+### Atomic Read-Modify-Write operations
+Atomic operations are ones which manipulate memory in a way that appears indivisible: No thread can observe the operation half-complete. On modern processors, lots of operations are already atomic. For example, aligned reads and writes of simple types are usually atomic.
+
+Read-modify-write(RMW) operations go a step further, allowing you to perform more complex transactions atomically. They're especially useful when a lock-free algorithm must support multiple writers, because when multiple threads attempt an RMW on the same address, they’ll effectively line up in a row and execute those operations one-at-a-time.
+
+Examples of RMW operations include `std::atomic<int>::fetch_add` in C++11. Be aware that the C++11 atomic standard does not guarantee that the implementation will be lock-free on every platform. You can call `std::atomic<>::is_lock_free` to make sure.
+
+As illustrated by the flowchart, atomic RMWs are a necessary part of lock-free programming even on single-processor systems. Without atomicity, a thread could be interrupted halfway through the transaction, possibly leading to an inconsistent state.
+
+### compare-and-swap loops 
+Perhaps the most often-discussed RMW operation is compare-and-swap (CAS). Often, programmers perform compare-and-swap in a loop to repeatedly attempt a transaction. This pattern typically involves copying a shared variable to a local variable, performing some speculative work, and attempting to publish the changes using CAS.
+```cpp
+void LockFreeQueue::push(Node* newHead)
+{
+    for (;;)
+    {
+        // Copy a shared variable (m_Head) to a local.
+        Node* oldHead = m_Head;
+
+        // Do some speculative work, not yet visible to other threads.
+        newHead->next = oldHead;
+
+        // Next, attempt to publish our changes to the shared variable.
+        // If the shared variable hasn't changed, the CAS succeeds and we return.
+        // Otherwise, repeat.
+        if (CAS(&m_Head, newHead, oldHead) == oldHead)
+            return;
+    }
+}
+```
+
+Whenever implementing a CAS loop, special care must be taken to avoid the [ABA problem](http://en.wikipedia.org/wiki/ABA_problem).
+
+### Sequential consistency 
+Sequential consistency means that all threads agree on the order in which memory operations occurred, and that order is consistent with the order of operations in the program source code.
+
+A simple (but obviously impractical) way to achieve sequential consistency is to **disable compiler optimizations** and force all your threads to run on a single processor. A processor never sees its own memory effects out of order, even when threads are pre-empted and scheduled at arbitrary times.
+
+### Memory ordering 
+As the flowchart suggests, any time you do lock-free programming for multicore, and your environment does not guarantee sequential consistency, you must consider how to prevent memory reordering.
+
+On today’s architectures, the tools to enforce correct memory ordering generally fall into three categories, which prevent both [compiler reordering](http://preshing.com/20120625/memory-ordering-at-compile-time) and [processor reordering](http://preshing.com/20120710/memory-barriers-are-like-source-control-operations):
+
+- A lightweight sync or fence instruction, which I’ll talk about in [future posts](http://preshing.com/20120913/acquire-and-release-semantics);
+- A full memory fence instruction, which I’ve [demonstrated previously](http://preshing.com/20120522/lightweight-in-memory-logging);
+- Memory operations which provide acquire or release semantics.
+
+Acquire semantics prevent memory reordering of operations which follow it in program order, and release semantics prevent memory reordering of operations preceding it. These semantics are particularly suitable in cases when there’s a producer/consumer relationship, where one thread publishes some information and the other reads it. I’ll also talk about this more in a [future post](http://preshing.com/20120913/acquire-and-release-semantics).
+
+### different processors have different memory models
+different CPU families have different habits when it comes to memory reordering. The rules are documented by each CPU vendor and followed strictly by the hardware. For instance, PowerPC and ARM processors can change the order of memory stores relative to the instructions themselves, but normally, the x86/64 family of processors from Intel and AMD do not. We say the former processors have a more relaxed memory model.
+
+In any case, keep in mind that memory reordering can also occur due to compiler reordering of instructions.
 
 ------------------
 
@@ -99,6 +149,8 @@ thread1继续执行，发现期望值与“原值”（其实被修改过了）�
 解决方案
 ABAʹ：添加额外的标记用来指示是否被修改。
 从Java1.5开始JDK的atomic包里提供了一个类AtomicStampedReference来解决ABA问题。这个类的compareAndSet方法作用是首先检查当前引用是否等于预期引用，并且当前标志是否等于预期标志，如果全部相等，则以原子方式将该引用和该标志的值设置为给定的更新值。
+
+[Hazard pointer](https://en.wikipedia.org/wiki/Hazard_pointer) 可以解决
 
 ## CAS引发的两个问题
 
