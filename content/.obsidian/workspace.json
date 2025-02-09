@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/memory_barriers_are_like_source_control_operations.md",
+                "file": "blog/why_impl_network_stack_in_kernel.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "memory_barriers_are_like_source_control_operations"
+              "title": "why_impl_network_stack_in_kernel"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blog/memory_barriers_are_like_source_control_operations.md",
+                "file": "blog/why_impl_network_stack_in_kernel.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "memory_barriers_are_like_source_control_operations 的反向链接列表"
+              "title": "why_impl_network_stack_in_kernel 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "blog/memory_barriers_are_like_source_control_operations.md",
+                "file": "blog/why_impl_network_stack_in_kernel.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "memory_barriers_are_like_source_control_operations 的出链列表"
+              "title": "why_impl_network_stack_in_kernel 的出链列表"
             }
           },
           {
@@ -127,7 +127,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "blog/memory_barriers_are_like_source_control_operations.md",
+                "file": "blog/why_impl_network_stack_in_kernel.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -155,7 +155,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "memory_barriers_are_like_source_control_operations 的关系图"
+              "title": "why_impl_network_stack_in_kernel 的关系图"
             }
           },
           {
@@ -177,13 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/memory_barriers_are_like_source_control_operations.md",
+                "file": "blog/why_impl_network_stack_in_kernel.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "memory_barriers_are_like_source_control_operations 的大纲"
+              "title": "why_impl_network_stack_in_kernel 的大纲"
             }
           },
           {
@@ -229,11 +229,12 @@
       "marp-slides:Show Slide Preview": false
     }
   },
-  "active": "a9efe38f48a9a749",
+  "active": "66bde40d89150a8b",
   "lastOpenFiles": [
+    "blog/singleton.md",
+    "blog/memory_barriers_are_like_source_control_operations.md",
     "blog/memory_ordering_at_compile_time.md",
     "blog/memory_ordering_at_runtime.md",
-    "blog/memory_barriers_are_like_source_control_operations.md",
     "pics/Pasted image 20250209161132.png",
     "pics/Pasted image 20250209102339.png",
     "blog/lock_free.md",
@@ -241,7 +242,6 @@
     "reading/ostep31.md",
     "pics/Pasted image 20250116134336.png",
     "reading/ostep30.md",
-    "blog/singleton.md",
     "reading/ostep33.md",
     "reading/ostep28.md",
     "reading/ostep26.md",

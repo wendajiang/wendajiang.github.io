@@ -1,6 +1,8 @@
 ---
 date: 2021-10-20 17:39:41
 title: 【翻译】为什么协议栈在内核中实现
+tags:
+  - translate
 ---
 
 
@@ -79,5 +81,4 @@ CloudFlare提出工作经验在于大量的生产环境的机器，尝试在这�
 
 对于大多数用户Linux内核协议栈就是很好的选择。尽管没有重写TCP协议栈那么让人兴奋，we should focus on [understanding the Linux stack performance](https://blog.cloudflare.com/how-to-achieve-low-latency/) and fixing its problems.There are some [serious initiatives underway](http://lists.openwall.net/netdev/2016/01/15/51) to improve the performance of the good old Linux TCP stack.
 
-@todo其中的链接看一下
 
