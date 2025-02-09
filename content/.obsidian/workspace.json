@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/lock_free.md",
+                "file": "blog/memory_barriers_are_like_source_control_operations.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "lock_free"
+              "title": "memory_barriers_are_like_source_control_operations"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "how c++ resolve",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "reading/assignment_statements.md",
+                "file": "blog/memory_barriers_are_like_source_control_operations.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "assignment_statements 的反向链接列表"
+              "title": "memory_barriers_are_like_source_control_operations 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "reading/assignment_statements.md",
+                "file": "blog/memory_barriers_are_like_source_control_operations.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "assignment_statements 的出链列表"
+              "title": "memory_barriers_are_like_source_control_operations 的出链列表"
             }
           },
           {
@@ -127,7 +127,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "blog/call_once.md",
+                "file": "blog/memory_barriers_are_like_source_control_operations.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -155,7 +155,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "call_once 的关系图"
+              "title": "memory_barriers_are_like_source_control_operations 的关系图"
             }
           },
           {
@@ -177,13 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/lock_free.md",
+                "file": "blog/memory_barriers_are_like_source_control_operations.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "lock_free 的大纲"
+              "title": "memory_barriers_are_like_source_control_operations 的大纲"
             }
           },
           {
@@ -229,8 +229,15 @@
       "marp-slides:Show Slide Preview": false
     }
   },
-  "active": "66bde40d89150a8b",
+  "active": "a9efe38f48a9a749",
   "lastOpenFiles": [
+    "blog/memory_ordering_at_compile_time.md",
+    "blog/memory_ordering_at_runtime.md",
+    "blog/memory_barriers_are_like_source_control_operations.md",
+    "pics/Pasted image 20250209161132.png",
+    "pics/Pasted image 20250209102339.png",
+    "blog/lock_free.md",
+    "blog/call_once.md",
     "reading/ostep31.md",
     "pics/Pasted image 20250116134336.png",
     "reading/ostep30.md",
@@ -238,9 +245,7 @@
     "reading/ostep33.md",
     "reading/ostep28.md",
     "reading/ostep26.md",
-    "blog/lock_free.md",
     "blog/how_cpp_resolves_a_function_call.md",
-    "blog/call_once.md",
     "blog/SVA_Synthesis.md",
     "reading/assignment_statements.md",
     "blog/linker_script_you_should_know.md",
@@ -261,14 +266,10 @@
     "pics/verilog_static_elaborator",
     "reading/verilog_static_elaborator~.md",
     "Pasted image 20241218131958.png",
-    "reading/scheduling_semantics.md",
-    "blog/strip.md",
     "david.png",
     "pdf/Compiler-Internals-exception.pdf",
     "thinking",
     "pics/streamprocess/v2-aecdc6366f06894c580da4cab2afeff1_720w.jpg",
-    "pics/streamprocess/v2-a55432fc17fe70f896047a2484a88a26_720w.jpg",
-    "pics/streamprocess/v2-a13eb70a554501ba3a653ca65ee6e1d2_720w.jpg",
     "pics/signal_and_sigaction",
     "pics/scheduling_semantics",
     "pics/redis-distribute-lock",

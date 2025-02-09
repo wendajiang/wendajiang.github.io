@@ -93,3 +93,7 @@ void send_value(int x) {
 	is_published.store(1, std::memory_order_release);
 }
 ```
+
+
+## more memory barriers
+[[blog/memory_barriers_are_like_source_control_operations|memory_barriers_are_like_source_control_operations]] describe memory barrier in analogy.
