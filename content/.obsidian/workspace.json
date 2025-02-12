@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ef83a279addf0e48",
+        "id": "b4d9c4e498662477",
         "type": "tabs",
         "children": [
           {
-            "id": "66bde40d89150a8b",
+            "id": "e19cdb81ef8a0cc2",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/why_impl_network_stack_in_kernel.md",
+                "file": "blog/hazard_pointer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "why_impl_network_stack_in_kernel"
+              "title": "hazard_pointer"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "haza",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "blog/why_impl_network_stack_in_kernel.md",
+                "file": "blog/hazard_pointer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": false
               },
               "icon": "links-coming-in",
-              "title": "why_impl_network_stack_in_kernel 的反向链接列表"
+              "title": "hazard_pointer 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "blog/why_impl_network_stack_in_kernel.md",
+                "file": "blog/hazard_pointer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "why_impl_network_stack_in_kernel 的出链列表"
+              "title": "hazard_pointer 的出链列表"
             }
           },
           {
@@ -127,7 +127,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "blog/why_impl_network_stack_in_kernel.md",
+                "file": "blog/hazard_pointer.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -155,7 +155,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "why_impl_network_stack_in_kernel 的关系图"
+              "title": "hazard_pointer 的关系图"
             }
           },
           {
@@ -177,13 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/why_impl_network_stack_in_kernel.md",
+                "file": "blog/hazard_pointer.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "why_impl_network_stack_in_kernel 的大纲"
+              "title": "hazard_pointer 的大纲"
             }
           },
           {
@@ -229,15 +229,18 @@
       "marp-slides:Show Slide Preview": false
     }
   },
-  "active": "66bde40d89150a8b",
+  "active": "e19cdb81ef8a0cc2",
   "lastOpenFiles": [
+    "pics/hp.png",
+    "blog/hazard_pointer.md",
+    "blog/lock_free.md",
     "blog/singleton.md",
+    "blog/why_impl_network_stack_in_kernel.md",
     "blog/memory_barriers_are_like_source_control_operations.md",
     "blog/memory_ordering_at_compile_time.md",
     "blog/memory_ordering_at_runtime.md",
     "pics/Pasted image 20250209161132.png",
     "pics/Pasted image 20250209102339.png",
-    "blog/lock_free.md",
     "blog/call_once.md",
     "reading/ostep31.md",
     "pics/Pasted image 20250116134336.png",
@@ -260,11 +263,8 @@
     "pics/image-20241218133401.png",
     "pics/verilog_static_elaborator/image-20241218132645600.png",
     "reading/bitcask.md",
-    "reading/clean_cpp_principle.md",
-    "thoughts/buy_a_house1.md",
     "pics/verilog_static_elaborator/image-20241218132300329.png",
     "pics/verilog_static_elaborator",
-    "reading/verilog_static_elaborator~.md",
     "Pasted image 20241218131958.png",
     "david.png",
     "pdf/Compiler-Internals-exception.pdf",

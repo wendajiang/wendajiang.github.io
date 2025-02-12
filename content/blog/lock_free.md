@@ -150,7 +150,7 @@ thread1继续执行，发现期望值与“原值”（其实被修改过了）�
 ABAʹ：添加额外的标记用来指示是否被修改。
 从Java1.5开始JDK的atomic包里提供了一个类AtomicStampedReference来解决ABA问题。这个类的compareAndSet方法作用是首先检查当前引用是否等于预期引用，并且当前标志是否等于预期标志，如果全部相等，则以原子方式将该引用和该标志的值设置为给定的更新值。
 
-[Hazard pointer](https://en.wikipedia.org/wiki/Hazard_pointer) 可以解决
+[[blog/hazard_pointer|Hazard Pointer]]可以解决
 
 ## CAS引发的两个问题
 
