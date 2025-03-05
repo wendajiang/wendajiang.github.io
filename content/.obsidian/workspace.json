@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/hazard_pointer.md",
+                "file": "reading/learn_cuda.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "hazard_pointer"
+              "title": "learn_cuda"
             }
           }
         ]
@@ -177,13 +177,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/hazard_pointer.md",
+                "file": "reading/learn_cuda.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "hazard_pointer 的大纲"
+              "title": "learn_cuda 的大纲"
             }
           },
           {
@@ -222,17 +222,24 @@
       "templates:插入模板": false,
       "command-palette:打开命令面板": false,
       "obsidian-excalidraw-plugin:新建绘图文件": false,
-      "templater-obsidian:Templater": false,
-      "obsidian-kanban:创建新看板": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-day-planner:Timeline": false,
-      "marp-slides:Show Slide Preview": false
+      "obsidian-day-planner:Timeline": false
     }
   },
   "active": "e19cdb81ef8a0cc2",
   "lastOpenFiles": [
-    "pics/hp.png",
+    "reading/nju_spa.md",
+    "reading/learn_cuda.md",
+    "pics/Pasted image 20250305110308.png",
+    "pics/Pasted image 20250305110236.png",
+    "pics/Pasted image 20250305110215.png",
+    "reading/tvm_and_mlc.md",
+    "pics/Pasted image 20250305105314.png",
+    "pics/Pasted image 20250305105252.png",
+    "reading/about_zhihu_mackler.md",
+    "reading/assignment_statements.md",
+    "reading/what_is_mlir.md",
     "blog/hazard_pointer.md",
+    "pics/hp.png",
     "blog/lock_free.md",
     "blog/singleton.md",
     "blog/why_impl_network_stack_in_kernel.md",
@@ -250,26 +257,15 @@
     "reading/ostep26.md",
     "blog/how_cpp_resolves_a_function_call.md",
     "blog/SVA_Synthesis.md",
-    "reading/assignment_statements.md",
     "blog/linker_script_you_should_know.md",
     "pics/Pasted image 20241226103908.png",
     "blog/llvm_ir.md",
     "blog/understanding_assembly.md",
     "blog/coroutine_learn.md",
     "reading/verilog_static_elaborator.md",
-    "reading/ieee_1800_2017_chapter35.md",
-    "reading/ieee1800_chapter11.md",
-    "reading/ieee_dpi_c_layer.md",
-    "pics/image-20241218133401.png",
-    "pics/verilog_static_elaborator/image-20241218132645600.png",
-    "reading/bitcask.md",
-    "pics/verilog_static_elaborator/image-20241218132300329.png",
     "pics/verilog_static_elaborator",
-    "Pasted image 20241218131958.png",
-    "david.png",
     "pdf/Compiler-Internals-exception.pdf",
     "thinking",
-    "pics/streamprocess/v2-aecdc6366f06894c580da4cab2afeff1_720w.jpg",
     "pics/signal_and_sigaction",
     "pics/scheduling_semantics",
     "pics/redis-distribute-lock",
