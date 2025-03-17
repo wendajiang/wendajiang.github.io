@@ -39,3 +39,12 @@ The infrastructures of deep learning compilers include frontend importers, high-
 Optimization of deep learning compilers enables better mapping of the neural network workload to hardware [110](https://spj.science.org/doi/10.34133/icomputing.0040#core-B110) , [121](https://spj.science.org/doi/10.34133/icomputing.0040#core-B121),[122](https://spj.science.org/doi/10.34133/icomputing.0040#core-B122). Deep learning compilers typically split the entire DNN model into subgraphs and then apply graph-level optimization technologies to the subgraphs [104](https://spj.science.org/doi/10.34133/icomputing.0040#core-B104)， such as layout optimization, operator fusion, and constant folding. Subsequently, the IR is converted to a lower abstraction level for loop-level and hardware-related optimization [103](https://spj.science.org/doi/10.34133/icomputing.0040#core-B103), such as loop reordering, loop tiling, and memory-related optimization.
 
 To improve development efficiency, deep learning compilers are on the way of forming a unified ecosystem. Currently, the two major deep learning compiler ecosystems are tensor virtual machine (TVM) [15](https://spj.science.org/doi/10.34133/icomputing.0040#core-B15) and MLIR [13](https://spj.science.org/doi/10.34133/icomputing.0040#core-B13). The remainder of this section discusses these two ecosystems.
+
+## hardware lottery
+https://hardwarelottery.github.io/
+
+在摩尔定律仍然有效的时代，软件和硬件的发展基本是各自为战。写软件的人几乎不用考虑硬件的特性，因为硬件性能每隔两年翻一倍，软件的性能自然也会跟着变快。然而，摩尔定律的黄金年代已经结束。虽然NVIDIA的“黄氏定律”仍在推动硬件性能增长，但这种增长更多体现在专用领域。如果算法没有利用那些特化的硬件特性，就像没抽中“硬件彩票”——注定很难跑赢时代的红利。例如，Hinton提出的capsule network，由于对GPU不友好，目前尚未得到广泛应用。
+
+硬件亲和性，已经成为决定算法成功的关键。
+
+或许，最理想的情况，就像那个影响了FP8的男人那样，必须算法、软件、硬件协同设计。

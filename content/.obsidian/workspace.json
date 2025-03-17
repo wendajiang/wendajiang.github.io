@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "reading/learn_cuda.md",
+                "file": "reading/about_CR.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "learn_cuda"
+              "title": "about_CR"
+            }
+          },
+          {
+            "id": "9d63d5728189797b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "reading/ray_distributed_computation_framework.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "ray_distributed_computation_framework"
             }
           }
         ]
@@ -177,13 +191,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "reading/learn_cuda.md",
+                "file": "reading/about_CR.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "learn_cuda 的大纲"
+              "title": "about_CR 的大纲"
             }
           },
           {
@@ -227,17 +241,20 @@
   },
   "active": "e19cdb81ef8a0cc2",
   "lastOpenFiles": [
-    "reading/nju_spa.md",
+    "reading/about_vllm.md",
+    "reading/about_CR.md",
+    "reading/ray_distributed_computation_framework.md",
+    "reading/about_zhihu_mackler.md",
+    "reading/tvm_and_mlc.md",
+    "reading/what_is_mlir.md",
     "reading/learn_cuda.md",
+    "reading/nju_spa.md",
     "pics/Pasted image 20250305110308.png",
     "pics/Pasted image 20250305110236.png",
     "pics/Pasted image 20250305110215.png",
-    "reading/tvm_and_mlc.md",
     "pics/Pasted image 20250305105314.png",
     "pics/Pasted image 20250305105252.png",
-    "reading/about_zhihu_mackler.md",
     "reading/assignment_statements.md",
-    "reading/what_is_mlir.md",
     "blog/hazard_pointer.md",
     "pics/hp.png",
     "blog/lock_free.md",
@@ -260,9 +277,6 @@
     "blog/linker_script_you_should_know.md",
     "pics/Pasted image 20241226103908.png",
     "blog/llvm_ir.md",
-    "blog/understanding_assembly.md",
-    "blog/coroutine_learn.md",
-    "reading/verilog_static_elaborator.md",
     "pics/verilog_static_elaborator",
     "pdf/Compiler-Internals-exception.pdf",
     "thinking",
