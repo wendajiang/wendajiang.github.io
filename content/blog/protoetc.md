@@ -1,12 +1,11 @@
 ---
 date: 2022-01-20 17:26:39
 title: protobuffer etc.
-
-tags: 
+tags:
   - protobuf
-  - capn proto
-  - flatterproto
-
+  - capn
+  - proto
+  - serialization
 ---
 <!--
 mermaid example:
@@ -975,6 +974,8 @@ protobuf 协议使用二进制格式表示 Tag 字段；对 value 而言，不�
 
 # cpp-serializers 对比 benchmark
 [github](https://github.com/thekvs/cpp-serializers)
+
+https://en.wikipedia.org/wiki/Comparison_of_data-serialization_formats
 
 # 更新记录
 2021-05-07 init 翻译 protobuffer 官网 encode 的文档

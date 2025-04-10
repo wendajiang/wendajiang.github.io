@@ -1,10 +1,10 @@
 ---
 date: 2022-01-19 14:38:11
 title: Rust Protobuf 对比分析(prost vs rust-protobuf)
-tags: 
+tags:
   - protobuf
   - rust
-
+  - serialization
 ---
 <!--
 mermaid example:

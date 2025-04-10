@@ -8,31 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "e19cdb81ef8a0cc2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "reading/about_CR.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "about_CR"
-            }
-          },
-          {
             "id": "9d63d5728189797b",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "reading/ray_distributed_computation_framework.md",
+                "file": "blog/protoetc.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ray_distributed_computation_framework"
+              "title": "protoetc"
             }
           }
         ]
@@ -67,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "haza",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -88,7 +74,8 @@
               "title": "书签"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -141,7 +128,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "blog/hazard_pointer.md",
+                "file": "blog/protoetc.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -164,12 +151,12 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 1.1785176144438894,
+                  "scale": 0.33305681192891906,
                   "close": true
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "hazard_pointer 的关系图"
+              "title": "protoetc 的关系图"
             }
           },
           {
@@ -191,13 +178,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "reading/about_CR.md",
+                "file": "blog/protoetc.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "about_CR 的大纲"
+              "title": "protoetc 的大纲"
             }
           },
           {
@@ -239,11 +226,17 @@
       "obsidian-day-planner:Timeline": false
     }
   },
-  "active": "e19cdb81ef8a0cc2",
+  "active": "9d63d5728189797b",
   "lastOpenFiles": [
-    "reading/about_vllm.md",
-    "reading/about_CR.md",
+    "blog/crates_collection.md",
+    "blog/protoetc.md",
     "reading/ray_distributed_computation_framework.md",
+    "blog/rust_protobuf.md",
+    "blog/code_reuse_in_xepic.md",
+    "blog/type_erasure.md",
+    "blog/crtp.md",
+    "reading/about_CR.md",
+    "reading/about_vllm.md",
     "reading/about_zhihu_mackler.md",
     "reading/tvm_and_mlc.md",
     "reading/what_is_mlir.md",
@@ -270,13 +263,7 @@
     "pics/Pasted image 20250116134336.png",
     "reading/ostep30.md",
     "reading/ostep33.md",
-    "reading/ostep28.md",
-    "reading/ostep26.md",
-    "blog/how_cpp_resolves_a_function_call.md",
-    "blog/SVA_Synthesis.md",
-    "blog/linker_script_you_should_know.md",
     "pics/Pasted image 20241226103908.png",
-    "blog/llvm_ir.md",
     "pics/verilog_static_elaborator",
     "pdf/Compiler-Internals-exception.pdf",
     "thinking",

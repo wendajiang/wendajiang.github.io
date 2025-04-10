@@ -1,11 +1,12 @@
 ---
 title: Type Erasure
-description: ''
+description: type erase blog
 date: 2024-02-20 08:58:12
 updated: 2024-02-20 08:58:12
 typora-copy-images-to: ../static/pics/${filename}
-tags: 
-  - design pattern
+tags:
+  - design
+  - pattern
   - cpp
   - GoF
   - llvm
@@ -135,9 +136,9 @@ class smartptr {
 }
 ```
 
-Befor we learn the other (usually more efficient) way to implement type erasure, we have to address one glaringly obvious inefficiency in our design: every time we create or delete a shared pointer or a `std::function` object that is implemented as described above, we must allocate and deallocate memory for the derived object that conceals the erased type.
+Before we learn the other (usually more efficient) way to implement type erasure, we have to address one glaringly obvious inefficiency in our design: every time we create or delete a shared pointer or a `std::function` object that is implemented as described above, we must allocate and deallocate memory for the derived object that conceals the erased type.
 
-### Type erasue without memory allocation
+### Type erase without memory allocation
 ```cpp
 template<typename T>
 class smartptr {
