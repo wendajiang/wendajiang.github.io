@@ -13,12 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "blog/protoetc.md",
+                "file": "blog/cpp_reflection_and_code_generation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "protoetc"
+              "title": "cpp_reflection_and_code_generation"
+            }
+          },
+          {
+            "id": "6c8d602c152014e8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "blog/code_reuse_in_xepic.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "code_reuse_in_xepic"
             }
           }
         ]
@@ -74,8 +88,7 @@
               "title": "书签"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -178,13 +191,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/protoetc.md",
+                "file": "blog/cpp_reflection_and_code_generation.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "protoetc 的大纲"
+              "title": "cpp_reflection_and_code_generation 的大纲"
             }
           },
           {
@@ -228,11 +241,12 @@
   },
   "active": "9d63d5728189797b",
   "lastOpenFiles": [
-    "blog/crates_collection.md",
+    "blog/code_reuse_in_xepic.md",
+    "blog/cpp_reflection_and_code_generation.md",
     "blog/protoetc.md",
+    "blog/crates_collection.md",
     "reading/ray_distributed_computation_framework.md",
     "blog/rust_protobuf.md",
-    "blog/code_reuse_in_xepic.md",
     "blog/type_erasure.md",
     "blog/crtp.md",
     "reading/about_CR.md",
@@ -262,7 +276,6 @@
     "reading/ostep31.md",
     "pics/Pasted image 20250116134336.png",
     "reading/ostep30.md",
-    "reading/ostep33.md",
     "pics/Pasted image 20241226103908.png",
     "pics/verilog_static_elaborator",
     "pdf/Compiler-Internals-exception.pdf",
