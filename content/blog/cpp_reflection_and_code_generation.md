@@ -14,3 +14,7 @@ I find [Andrei Alexandrescu representation about: Reflection and code generation
 > Rust does not actually have any introspection facilities _at all_, but it does have a mature code generation facility in the form of its declarative and procedural macros.
 
 So after some solid thinking, I basically agree this viewpoint.
+
+Rust programmers don't have to deal with writing this **boilerplate code**, my purpose is avoid to write boilerplate code using cpp.
+
+reflect-cpp is using template to avoid boilerplate code. And if code-generation is existed in cpp, we can easily do this.
