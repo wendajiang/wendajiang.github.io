@@ -1,8 +1,8 @@
 ---
-title: cusomization point object
+title: cusomization point object(CPO)
 description: ""
 date: 2023-12-21 14:54:34
-updated: 2023-12-21 14:54:34
+updated: 2025-05-13 14:54:34
 typora-copy-images-to: ../pics/${filename}
 ---
 
@@ -11,6 +11,8 @@ Derivation:
 When dev SystemVerilog $display that is inspired by fmt library, using gcc9.2.0 compile the code, throw compile error, the ambiguous error the `to_string_view` which in fmt namespace and svfmt namespace.
 
 So to fix this, I search the result of ADL mechanism.
+
+[这个知乎回答梳理的很好](https://www.zhihu.com/question/518132411/answer/2360830245) 认真阅读此回答，可以不用看下面的文章了。
 
 # ADL
 
@@ -115,7 +117,7 @@ auto g = std::ranges::copy;
 
 # [tag_invoke model](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1895r0.pdf)
 
-
+[[blog/cpp_standard_execution|cpp_standard_execution]] 中提到的 cpp 标准 execution 的引入需要 tag_invoke 解决 customization point 的问题。
 # reference
 - [cpp reference](https://en.cppreference.com/w/cpp/ranges/cpo)
 - [tag invoke and cpo](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2019/p1895r0.pdf)
@@ -127,3 +129,4 @@ auto g = std::ranges::copy;
 - [CPF: proposal replacement of the ADL](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2018/p1292r0.html)
 - [Customization Point Design in C++11 and Beyond](http://ericniebler.com/2014/10/21/customization-point-design-in-c11-and-beyond/)
 - [what is ADL](https://stackoverflow.com/questions/8111677/what-is-argument-dependent-lookup-aka-adl-or-koenig-lookup)
+- [重点：CPO 与 tag_invoke](https://zhuanlan.zhihu.com/p/431032074)

@@ -1,20 +1,17 @@
 ---
 title: coroutine learn
-description: ''
+description: ""
 date: 2023-06-12 12:29:41
-updated: 2023-06-12 12:29:41
+updated: 2025-05-13 12:29:41
 typora-copy-images-to: ../static/pics/${filename}
-tags: 
+tags:
   - cpp
   - coroutine
 ---
 
-https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2021/p2464r0.html
-反对 asio 进入标准
-
 # Coroutine Theory
 ## Coroutines are Functions are Coroutines
-A coroutine is a generalisation of a function that allows the function to be suspended and then later resumed.
+A coroutine is a generalization of a function that allows the function to be suspended and then later resumed.
 
 ### "Normal" Functions
 A normal function can be thought of as having two operations: **Call** and **Return**(note that I'm lumping "throwing an exception" here broadly under the Return operation)
@@ -31,7 +28,7 @@ The **Return** operation passes the return-value to the caller, destroys the act
 > With "normal" functions, all activation frames have strictly nested lifetimes. This strict nesting allows use of a highly efficient memory allocation data-structure for allocating and freeing the activation frames for each of the function calls. This data-structure is commonly refered to as "the stack".
 
 #### The 'Call' operation
-When a funtion calls another function, the caller must first prepare itself for suspension.
+When a function calls another function, the caller must first prepare itself for suspension.
 
 
 #### The 'Return' operation
@@ -47,7 +44,7 @@ And finally, it resumes execution of the caller by:
 - jumping to the resume-point of the caller that was stored during the 'Call' operation.
 
 ## Coroutines
-Coroutines generalise the operations of a function by separating out some of the steps performed in the Call and Return operations into three extra operations: **Suspend, Resume, Destroy**.
+Coroutines generalize the operations of a function by separating out some of the steps performed in the Call and Return operations into three extra operations: **Suspend, Resume, Destroy**.
 
 The **Suspend** operation suspends execution of the coroutine at the current point within the function and transfers execution back to the caller or resumer without destroying the activation frame. Any Objects in-scope at the point of suspension remain alive after the coroutine execution is suspended.
 
@@ -68,8 +65,15 @@ You can logically think of the activation frame of a corouine as being comprised
 
 The 'coroutine frame' holds part of the coroutine's activation frame that **persists** while the coroutine if suspended and the 'stack frame' part only exists while the coroutine is executing and is freed when the coroutine suspends and transfers execution back to the caller/resumer.
 
+# cpp standard about coroutine and networking
 
+[[blog/cpp_standard_execution|cpp_standard_execution]] show the history about executor (P0443 proposal) deprecated and new sender/receivers model.
+
+# C++20 coroutine
+C++20 的 coroutine 并不是完全的编译器设计，也不完全是库实现。当然在 C++20 的版本来看，使用难度还是有，而且 coro 基本是为了性能设计，当前的学习材料可能还是 asio 为主力即可。
 
 # reference
 - https://devblogs.microsoft.com/oldnewthing/20210504-01/?p=105178
 - https://lewissbaker.github.io/
+- https://www.bluepuni.com/archives/cpp20-coroutine-and-asio-coroutine/#%E5%89%8D%E8%A8%80
+- https://nihil.cc/posts/cpp_coroutine_rust_async/
