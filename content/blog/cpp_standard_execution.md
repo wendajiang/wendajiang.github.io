@@ -37,6 +37,8 @@ P2300R1的发布意味着 executor 的迭代稳定了下来
 ## 这个问题的争论历史
 https://www.zhihu.com/question/518043735/answer/2929787089
 
+https://www.zhihu.com/question/631459764
+
 各回答站 Chris (executor 的抽象可以基于当前的 coro)的很多，大概是实事求是吧，所以当前使用的话 asio 可以作为不错的选择，至于以后 networking 的发展，可能真的要很多年了。
 
 
