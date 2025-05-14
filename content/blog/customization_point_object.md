@@ -15,6 +15,7 @@ So to fix this, I search the result of ADL mechanism.
 [这个知乎回答梳理的很好](https://www.zhihu.com/question/518132411/answer/2360830245) 认真阅读此回答，可以不用看下面的文章了。
 
 # ADL
+对于非成员函数的使用，会根据实参寻找命名空间内的函数
 
 First, we should introduce the principle of ADL. Argument-dependent lookup, also known as ADL, or Koenig lookup, is the set of rules for looking up the unqualified function names in function-call expressions, including implicit function calls to overloaded operators. These function names are looked up in the namespaces of their arguments in addition to the scopes and namespaces considered by the usual unqualified name lookup.
 
@@ -41,6 +42,7 @@ swap(a, b); // not std::swap(a, b); as if this namespace define the swap, first 
 
 More detailed rules, please see [cpp-reference](https://en.cppreference.com/w/cpp/language/adl).
 
+关联在一起的 idiom 是  [Hidden friend](https://www.modernescpp.com/index.php/argument-dependent-lookup-and-hidden-friends)
 ## Name lookup
 [src](https://en.cppreference.com/w/cpp/language/lookup)
 

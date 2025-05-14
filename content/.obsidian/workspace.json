@@ -49,8 +49,7 @@
               "title": "coroutine_learn"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -156,7 +155,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "blog/cpp_standard_execution.md",
+                "file": "blog/customization_point_object.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -184,7 +183,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "cpp_standard_execution 的关系图"
+              "title": "customization_point_object 的关系图"
             }
           },
           {
@@ -206,13 +205,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/cpp_standard_execution.md",
+                "file": "blog/customization_point_object.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "cpp_standard_execution 的大纲"
+              "title": "customization_point_object 的大纲"
             }
           },
           {
@@ -254,10 +253,10 @@
       "obsidian-day-planner:Timeline": false
     }
   },
-  "active": "c359cb951534c02c",
+  "active": "9d63d5728189797b",
   "lastOpenFiles": [
-    "blog/customization_point_object.md",
     "blog/cpp_standard_execution.md",
+    "blog/customization_point_object.md",
     "blog/coroutine_learn.md",
     "blog/code_reuse_in_xepic.md",
     "未命名.md",
