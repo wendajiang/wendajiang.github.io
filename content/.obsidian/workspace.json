@@ -49,7 +49,8 @@
               "title": "coroutine_learn"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -155,7 +156,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "blog/customization_point_object.md",
+                "file": "blog/coroutine_learn.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -183,7 +184,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "customization_point_object 的关系图"
+              "title": "coroutine_learn 的关系图"
             }
           },
           {
@@ -205,13 +206,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "blog/customization_point_object.md",
+                "file": "blog/coroutine_learn.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "customization_point_object 的大纲"
+              "title": "coroutine_learn 的大纲"
             }
           },
           {
@@ -253,7 +254,7 @@
       "obsidian-day-planner:Timeline": false
     }
   },
-  "active": "9d63d5728189797b",
+  "active": "593c9e81e4eff68d",
   "lastOpenFiles": [
     "blog/cpp_standard_execution.md",
     "blog/customization_point_object.md",

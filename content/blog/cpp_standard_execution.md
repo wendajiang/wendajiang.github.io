@@ -16,6 +16,9 @@ date: 2025-5-13
 
 P2300R1的发布意味着 executor 的迭代稳定了下来
 
+
+[ericniebler本人的 blog](https://ericniebler.com/2024/02/04/what-are-senders-good-for-anyway/) 
+
 ## 阅读 [P2300 latest](https://cplusplus.github.io/sender-receiver/execution.html)
 
 其中说明了 [coroutine 并不是异步算法的基石](https://cplusplus.github.io/sender-receiver/execution.html#intro-prior-art-coroutines)。
