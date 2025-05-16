@@ -8,7 +8,12 @@ tags:
   - cpp
   - coroutine
 ---
+# 为什么需要 coro
+HPC 领域可能大概不太需要 coro，thread 级别的抽象足以让调度发挥作用
 
+但是重 IO 的程序设计中， coro 是必不可少的 component。
+
+------
 [ref](https://lewissbaker.github.io/)
 # Coroutine Theory
 ## Coroutines are Functions are Coroutines
@@ -272,3 +277,4 @@ C++20 的 coroutine 并不是完全的编译器设计，也不完全是库实现
 - https://devblogs.microsoft.com/oldnewthing/20210504-01/?p=105178
 - https://www.bluepuni.com/archives/cpp20-coroutine-and-asio-coroutine/#%E5%89%8D%E8%A8%80
 - https://nihil.cc/posts/cpp_coroutine_rust_async/
+- [rust stackless coro](https://ruststack.org/stackless-coroutine/)
