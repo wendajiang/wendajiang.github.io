@@ -7,14 +7,25 @@ typora-copy-images-to: ../static/pics/${filename}
 tags:
   - cpp
   - coroutine
+  - asio
 ---
 # 为什么需要 coro
 HPC 领域可能大概不太需要 coro，thread 级别的抽象足以让调度发挥作用
 
 但是重 IO 的程序设计中， coro 是必不可少的 component。
 
+The art of programming (Knuth) 的第一卷 1.4.1 和 1.4.2 中描述了 subroutine 和 coroutine 的区别，以及 coroutine 要解决什么样的问题，书中定义 subroutine 实际是一种特殊的 coroutine，不愧是大佬，subroutine 是必须有 caller 和 callee ，coroutine 更多定义为协作者，没有 caller 和 callee 的关系。
+
+## [Lewis Baker 在 2019 年的演讲](https://www.youtube.com/watch?v=1Wy5sq3s2rg&t=129s) 总结
+
+首先引述了 [[reading/time_clock_the_orderingEventDistriSytem|计算机系统中的 time 以及前后关系的定义]] 里面说明的 happen before 概念，引入了不存在 happen before 的操作有 concurrency 的可能：
+- operator A and B have overlapping time
+
+关于[[blog/structured_concurrency|结构化并发]]是 2016 年由很古老的结构化编程(Dijstra)概念引申提出
+
+
 ------
-[ref](https://lewissbaker.github.io/)
+[lewissbaker](https://lewissbaker.github.io/)
 # Coroutine Theory
 ## Coroutines are Functions are Coroutines
 A coroutine is a generalization of a function that allows the function to be suspended and then later resumed.

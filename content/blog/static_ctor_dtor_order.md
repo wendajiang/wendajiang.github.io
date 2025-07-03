@@ -1,8 +1,10 @@
 ---
 date: 2023-01-03 13:33:19
 title: Static object initialization and deinitialization
-typora-copy-images-to: ../static/pics/${filename}
-tags: ["cpp", "fap", "singleton"]
+tags:
+  - cpp
+  - fap
+  - singleton
 ---
 
 ## 引言

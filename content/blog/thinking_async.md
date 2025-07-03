@@ -1,10 +1,13 @@
 ---
 title: thinking async
-description: 'clutter thinking about async'
+description: clutter thinking about async
 date: 2023-07-19 15:22:51
 updated: 2023-07-19 15:22:51
 typora-copy-images-to: ../static/pics/${filename}
-tags: ['async', 'cpp']
+tags:
+  - async
+  - cpp
+  - asio
 ---
 
 This blog is only my clutter thinking about async(ASIO / SR model comparison) and record the resouces that I readed.
