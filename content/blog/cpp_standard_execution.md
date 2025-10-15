@@ -1,6 +1,10 @@
 ---
 title: CPP standard networking proposal(execution)
 date: 2025-5-13
+tags:
+  - asio
+  - network
+  - async
 ---
 ## 为什么需要 execution
 [这篇知乎文章](https://zhuanlan.zhihu.com/p/395250667) 很好阐述了为什么需要 execution。
