@@ -16,7 +16,6 @@ Currently, I'm class my second brain into blow tags:
 - [Area](/area/): long managed knowlage
 - [Resource](/resource/): my resource of attention
   - [Blogs](/blog/) : a collections of my tech writing.
-  - [Thoughts](/thoughts/): a collections of my essay.
 - [Archive](/archive/): inactive content
 
 And, [Books translation](/books/) is a collections of my translation of some books.
