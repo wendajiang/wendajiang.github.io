@@ -33,7 +33,7 @@ export const defaultContentPageLayout: PageLayout = {
         limit: 9,
         showTags: false,
         filter: (f) =>
-          f.slug!.startsWith("resource/blog/") && f.slug! !== "resource/blog/index" && !f.frontmatter?.noindex,
+          f.slug!.startsWith("area/blog/") && f.slug! !== "area/blog/index" && !f.frontmatter?.noindex,
         linkToMore: "blog/" as SimpleSlug,
       }),
     ),

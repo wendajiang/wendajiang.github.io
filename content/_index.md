@@ -14,8 +14,8 @@ And I'm a [[area/turtle/|turtlefan]].
 Currently, I'm class my second brain into blow tags:
 - [Project](/project/): current workspace
 - [Area](/area/): long managed knowlage
+  - [Blogs](/area/blog/) : a collections of my tech writing.
 - [Resource](/resource/): my resource of attention
-  - [Blogs](/blog/) : a collections of my tech writing.
 - [Archive](/archive/): inactive content
 
 And, [Books translation](/books/) is a collections of my translation of some books.
