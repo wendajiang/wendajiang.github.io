@@ -12,10 +12,14 @@ I'm David. This is my digital garden that is upgraded from [old blog](https://gi
 And I'm a [[turtle/|turtlefan]].
 
 Currently, I'm class my second brain into blow tags:
-- [Blogs](/blog/) : a collections of my tech writing.
-- [Thoughts](/thoughts/): a collections of my essay.
-- [Reading notes](/reading/): a collections of my reading notes.
-- [Books translation](/books/): a collections of my translation of some books.
+- [Project](/project/): current workspace
+- [Area](/area/): long managed knowlage
+- [Resource](/resource/): my resource of attention
+  - [Blogs](/blog/) : a collections of my tech writing.
+  - [Thoughts](/thoughts/): a collections of my essay.
+- [Archive](/archive/): inactive content
+
+And, [Books translation](/books/) is a collections of my translation of some books.
 
 
 ```poetry
