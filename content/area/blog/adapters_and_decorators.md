@@ -125,3 +125,4 @@ Converting an object from its current interface to the interface needed by a par
 - function adapter (std::bind)
 
 ## compile-time adapters
+@todo

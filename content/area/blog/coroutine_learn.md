@@ -18,7 +18,7 @@ The art of programming (Knuth) 的第一卷 1.4.1 和 1.4.2 中描述了 subrout
 
 ## [Lewis Baker 在 2019 年的演讲](https://www.youtube.com/watch?v=1Wy5sq3s2rg&t=129s) 总结
 
-首先引述了 [[reading/time_clock_the_orderingEventDistriSytem|计算机系统中的 time 以及前后关系的定义]] 里面说明的 happen before 概念，引入了不存在 happen before 的操作有 concurrency 的可能：
+首先引述了 [[area/network_async_distribute/time_clock_the_orderingEventDistriSytem|计算机系统中的 time 以及前后关系的定义]] 里面说明的 happen before 概念，引入了不存在 happen before 的操作有 concurrency 的可能：
 - operator A and B have overlapping time
 
 关于[[blog/structured_concurrency|结构化并发]]是 2016 年由很古老的结构化编程(Dijstra)概念引申提出

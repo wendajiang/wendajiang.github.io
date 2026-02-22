@@ -18,7 +18,7 @@ tags:
 > 发现了 [https://adventofcode.com/2024/day/1](https://adventofcode.com/2024/day/1) 这个圣诞节前后 25 天的解体训练
 
 ## 为什么要创造 MLIR？
-[[reading/about_zhihu_mackler|知乎上关于这个问题的解释]]
+[[about_zhihu_mackler|知乎上关于这个问题的解释]]
 
 ## 使用 MLIR 能做什么？
 

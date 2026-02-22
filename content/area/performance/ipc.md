@@ -5,7 +5,7 @@ tags:
   - os
   - IPC
 ---
-在研究工作中一个运行时组件性能时，关注到 IPC 性能，由于之前的实现在同一个 host 上的不同 process 仍然使用 [[reading/zmq_guide_read|zmq]] 的 tcp 协议进行进程间通信，通过统计各个步骤之间的时间占比，发现进程间通信大概占比 20%，是值得优化的一个点。
+在研究工作中一个运行时组件性能时，关注到 IPC 性能，由于之前的实现在同一个 host 上的不同 process 仍然使用 [[area/network_async_distribute/zmq_guide_read|zmq]] 的 tcp 协议进行进程间通信，通过统计各个步骤之间的时间占比，发现进程间通信大概占比 20%，是值得优化的一个点。
 
 
 ## shared memory

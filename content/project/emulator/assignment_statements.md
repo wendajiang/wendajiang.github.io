@@ -47,7 +47,7 @@ It shall be illegal to make nonblocking assignments to automatic variables.
 
 If variable_lvalue requires an evaluation, such as index expression, class handle, or virtual interface reference, it shall be evaluated at the same time as the expression on the right-hand side.
 
-The nonblocking procedural assignments shall be evaluated in two steps as discuss in [[reading/scheduling_semantics|scheduling_semantics|]].
+The nonblocking procedural assignments shall be evaluated in two steps as discuss in [[scheduling_semantics|scheduling_semantics|]].
 
 ```verilog
 module evaluates (out);
