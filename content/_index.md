@@ -9,7 +9,7 @@ Welcome!
 
 I'm David. This is my digital garden that is upgraded from [old blog](https://github.com/wendajiang/wendajiang.github.io.ar).
 
-And I'm a [[turtle/|turtlefan]].
+And I'm a [[area/turtle/|turtlefan]].
 
 Currently, I'm class my second brain into blow tags:
 - [Project](/project/): current workspace
