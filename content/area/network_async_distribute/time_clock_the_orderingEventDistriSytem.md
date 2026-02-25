@@ -7,7 +7,7 @@ tags:
   - distribute
 ---
 
-原文作者：Leslie Lamport
+原文作者：[[resource/leslie_lamport_writings|Leslie Lamport]]
 [origin pdf](https://lamport.azurewebsites.net/pubs/time-clocks.pdf)
 
 译者声明：
