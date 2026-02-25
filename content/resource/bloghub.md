@@ -1,0 +1,13 @@
+---
+title: BlogHub
+---
+- [BMPI](https://www.bmpi.dev/self/) plain text, PKM, 投资
+- [ArchGuard 架构治理模式](https://book.archguard.org/index.html)
+- [BeanCount](https://byvoid.com/zht/blog/beancount-bookkeeping-1/)
+- Emacs
+	- [emacs manuals online](https://www.gnu.org/software/emacs/manual/)
+	- [Org Mode - Organize Your Life In Plain Text!](https://doc.norang.ca/org-mode.html)
+- [SF-Zhou](https://sf-zhou.github.io/) maybe deepseek
+- [Software-Engineering-at-Google 翻译](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/?id=software-engineering-at-google)
+- [brendangregg](https://www.brendangregg.com/overview.html) performance monitor, eBPF, perf tools, FlameGraph
+- [Linux kernel doc](https://www.kernel.org/doc/html/latest/index.html)
