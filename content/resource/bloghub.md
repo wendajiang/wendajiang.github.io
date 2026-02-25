@@ -1,6 +1,7 @@
 ---
 title: BlogHub
 ---
+- [中文独立博客列表](https://github.com/timqian/chinese-independent-blogs)
 - [BMPI](https://www.bmpi.dev/self/) plain text, PKM, 投资
 - [ArchGuard 架构治理模式](https://book.archguard.org/index.html)
 - [BeanCount](https://byvoid.com/zht/blog/beancount-bookkeeping-1/)
