@@ -27,6 +27,9 @@ title: BlogHub
 	- https://asciiflow.com/#/
 	- https://excalidraw.com/
 	- https://app.diagrams.net/
+- design pattern
+	- [Game Programming Pattern](https://gameprogrammingpatterns.com/contents.html) [[area/blog/singleton|singleton]] [[area/blog/type_erasure|type_erasure]]
+	- [our pattern language](https://patterns.eecs.berkeley.edu/) parallel pattern
 ## OS
 - linux kernel
 	- [Linux kernel doc](https://www.kernel.org/doc/html/latest/index.html)
@@ -44,10 +47,29 @@ title: BlogHub
 ## CPP
 - [std::system linux impl](. https://codebrowser.dev/glibc/glibc/sysdeps/posix/system.c.html)
 - cpp toolbox
-	- []
+	- [Compiler Explorer](https://godbolt.org/)
+	- [wandbox](https://wandbox.org/)
+	- [cppinsights](https://cppinsights.io/)
+	- [C++ builds time compare](https://build-bench.com/b/47ciR2_jQ0RuAt2fy1Pnk66b3yM)
+	- [C++ benchmarks](https://quick-bench.com/q/-C5J-GRgxTm-6Rgu32yo5nmQY_I)
+	- [interactive cpp mem](http://svr-pes20-cppmem.cl.cam.ac.uk/cppmem/)
 - [dwarf5](https://dwarfstd.org/dwarf5std.html)
 - [install dependency cmake](https://github.com/msclock/cmake-modules/blob/master/cmake/install/InstallDependency.cmake)
-- 
+- regex
+	- [learn regex](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md#2-%E5%85%83%E5%AD%97%E7%AC%A6)
+	- [regexr](https://regexr.com/)
+	- [rexegg](https://www.rexegg.com/)
+- [cpp template 2nd](https://github.com/downdemo/Cpp-Templates-2ed?tab=readme-ov-file)
+- [C++ ABI](https://itanium-cxx-abi.github.io/cxx-abi/)
+- [ankerl library](https://github.com/martinus)
+- [ccia 内存模型 blog](http://zhengyi.me/2018/04/25/cpp-concurrency-in-action-reading-notes-cpp-memory-model/)
+- [learn modern c++ blog](https://learnmoderncpp.com/)
+- [fluentcpp](https://www.fluentcpp.com/)
+- [more Idioms C++](https://en.wikibooks.org/wiki/More_C%2B%2B_Idioms)
+- exception
+	- [.eh_frame](https://www.airs.com/blog/archives/460)
+	- [.gcc_except_table](https://www.airs.com/blog/archives/464)
+	- [How does gcc implement c++ exception handling](https://www.quora.com/How-does-gcc-implement-C++-exception-handling) @todo
 ## Database
 - [RocksDB blog](https://rocksdb.org/blog/)
 - [tikv distributed transaction](https://tikv.org/deep-dive/distributed-transaction/introduction/)
@@ -114,6 +136,12 @@ title: BlogHub
 - [trie树求两两异或最大值]
 - [动态规划计算字符串相似度](https://www.kancloud.cn/digest/pieces-algorithm/163629)
 - [LD_LIBRARY_PATH considered harmful](https://gms.tf/ld_library_path-considered-harmful.html)
+- [内存优化总结 ptmalloc tcmalloc jemalloc](https://www.tsingfun.com/it/os_kernel/memory-optimize.html?f=m) [another](https://www.mindthink.me/2024/01/18/%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%E5%99%A8-ptmalloc-vs-tcmalloc-vs-jemalloc/)
+- [gnu binutils](https://www.gnu.org/software/binutils/)
+- [gdb -> lldb command map](https://lldb.llvm.org/use/map.html)
+- [std::error_code](https://timothyqiu.com/archives/std-error-code-and-more/) @todo
+- [async gRPC in C++](https://www.sobyte.net/post/2022-05/grpc-cpp-async/)
+- 
 
 
 
