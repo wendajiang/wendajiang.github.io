@@ -12,7 +12,6 @@ title: BlogHub
 - [SF-Zhou](https://sf-zhou.github.io/) maybe deepseek
 - [Software-Engineering-at-Google 翻译](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/?id=software-engineering-at-google)
 - [brendangregg](https://www.brendangregg.com/overview.html) performance monitor, eBPF, perf tools, FlameGraph
-- [mit6.828](https://pdos.csail.mit.edu/6.828/2021/schedule.html)
 - [algorithm for competitive programming](https://cp-algorithms.com/)
 - [安全内参](https://www.secrss.com/) 网络攻防，网络安全
 - cs 自学
@@ -27,13 +26,22 @@ title: BlogHub
 	- [Linux kernel doc](https://www.kernel.org/doc/html/latest/index.html)
 	- [Linux memory management](https://linux-mm.org/)
 	- [linux kernel teaching](https://linux-kernel-labs.github.io/refs/heads/master/)
+- [CSAPP 3e](http://csapp.cs.cmu.edu/3e/labs.html)
+- [mit6.828](https://pdos.csail.mit.edu/6.828/2021/schedule.html)
+- ~~[linux HOWTO/ linux documention project](https://tldp.org/docs.html#howto)~~
+- [rCore Rust Os](https://rcore-os.cn/rCore-Tutorial-Book-v3/index.html) 从零开始用 Rust 写操作系统训练营
+- [DPDK doc](http://doc.dpdk.org/guides/prog_guide/index.html) 
+- [ABRT crash analyze](https://abrt.readthedocs.io/en/latest/howitworks.html)
+- [Open Source DNS (BIND)](https://gitlab.isc.org/isc-projects/bind9)
 ## Rust
 
 ## CPP
-- [std::system linux impl](https://codebrowser.dev/glibc/glibc/sysdeps/posix/system.c.html)
+- [std::system linux impl](. https://codebrowser.dev/glibc/glibc/sysdeps/posix/system.c.html)
 - cpp toolbox
 	- []
 - [dwarf5](https://dwarfstd.org/dwarf5std.html)
+- [install dependency cmake](https://github.com/msclock/cmake-modules/blob/master/cmake/install/InstallDependency.cmake)
+- 
 ## Database
 - [RocksDB blog](https://rocksdb.org/blog/)
 - [tikv distributed transaction](https://tikv.org/deep-dive/distributed-transaction/introduction/)
@@ -51,6 +59,8 @@ title: BlogHub
 	- [ABC pdf](/pdf/cav10_abc.pdf)
 	- [abc web](https://people.eecs.berkeley.edu/~alanmi/abc/)
 ## Compiler 
+- [control flow and data flow (ECE 4530 lecture 18)](https://schaumont.dyn.wpi.edu/ece4530f19/lectures/lecture18-notes.html)
+- [infix expression evaluation cpp impl](https://www.geeksforgeeks.org/dsa/expression-evaluation/)
 
 ## interview
 - [os](https://zhuanlan.zhihu.com/p/23755202)
