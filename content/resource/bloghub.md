@@ -59,8 +59,7 @@ title: BlogHub
 	- [learn regex](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md#2-%E5%85%83%E5%AD%97%E7%AC%A6)
 	- [regexr](https://regexr.com/)
 	- [rexegg](https://www.rexegg.com/)
-- [cpp template 2nd](https://github.com/downdemo/Cpp-Templates-2ed?tab=readme-ov-file)
-- [C++ ABI](https://itanium-cxx-abi.github.io/cxx-abi/)
+- [cpp template 2nd](https://github.com/downdemo/Cpp-Templates-2ed?tab=readme-ov-file
 - [ankerl library](https://github.com/martinus)
 - [ccia 内存模型 blog](http://zhengyi.me/2018/04/25/cpp-concurrency-in-action-reading-notes-cpp-memory-model/)
 - [learn modern c++ blog](https://learnmoderncpp.com/)
@@ -70,6 +69,18 @@ title: BlogHub
 	- [.eh_frame](https://www.airs.com/blog/archives/460)
 	- [.gcc_except_table](https://www.airs.com/blog/archives/464)
 	- [How does gcc implement c++ exception handling](https://www.quora.com/How-does-gcc-implement-C++-exception-handling) @todo
+		-  [C++ ABI](https://itanium-cxx-abi.github.io/cxx-abi/) background
+		- [c++ abi about exception](https://itanium-cxx-abi.github.io/cxx-abi/abi-eh.html)
+- [moderncpp](https://www.modernescpp.com/index.php/table-of-content/)
+- [Bjarne Stroustrup's homepage](https://www.stroustrup.com/)
+- [Sutter Mill](https://herbsutter.com/)
+- [Nicolai Josuttis](https://www.josuttis.com/)
+- [preshing blog](https://preshing.com/archives/)
+- [ericniebler](https://github.com/ericniebler) execution proposal
+- [coroutine series blog](https://lewissbaker.github.io/)
+- [asio io_context 调度](https://www.bluepuni.com/archives/asio-io-context/)
+	- [结构化并发与协程](https://www.bluepuni.com/archives/structured-concurrency-and-cpp-coroutine/)
+- [barry's c++ blog](https://brevzin.github.io/) reflection (member of the C++ standards committee)
 ## Database
 - [RocksDB blog](https://rocksdb.org/blog/)
 - [tikv distributed transaction](https://tikv.org/deep-dive/distributed-transaction/introduction/)
