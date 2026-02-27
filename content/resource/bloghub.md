@@ -21,6 +21,9 @@ title: BlogHub
 - [ansible](http://www.ansible.com.cn/docs/) IT 自动化工具
 - [程序员常用命令行工具](https://xiaozhou.net/learn-the-command-line-tools-md-2018-10-11.html)
 - [skiplist](https://lotabout.me/2018/skip-list/)
+- [The Art of Computer Programming (TAOCP)](https://www-cs-faculty.stanford.edu/~knuth/taocp.html)
+- [Software Foundations](https://softwarefoundations.cis.upenn.edu/)
+- 
 ## OS
 - linux kernel
 	- [Linux kernel doc](https://www.kernel.org/doc/html/latest/index.html)
@@ -61,7 +64,42 @@ title: BlogHub
 ## Compiler 
 - [control flow and data flow (ECE 4530 lecture 18)](https://schaumont.dyn.wpi.edu/ece4530f19/lectures/lecture18-notes.html)
 - [infix expression evaluation cpp impl](https://www.geeksforgeeks.org/dsa/expression-evaluation/)
-
+- [Why SSA? (mcyoung blog)](https://mcyoung.xyz/posts/)
+- [Chris Lattner's Resume](https://www.nondot.org/sabre/Resume.html#writing)
+- [The Hardware Lottery](https://arxiv.org/abs/2009.06489) https://hardwarelottery.github.io/ @todo 
+- [编程语言基础 Agda](https://agda-zh.github.io/PLFA-zh/Preface/)
+- [GCC Wiki ListOfCompilerBooks](https://gcc.gnu.org/wiki/ListOfCompilerBooks)
+- frontend
+	- [Practical parsing with flex and bison](https://begriffs.com/posts/2021-11-28-practical-parsing.html)
+	- [Why you should not use (f)lex, yacc and bison](https://tomassetti.me/why-you-should-not-use-flex-yacc-and-bison/)
+	- [EBNF](https://tomassetti.me/ebnf/) [BNF playground](https://bnfplayground.pauliankline.com/)
+	- [Understanding the clang AST](https://jonasdevlieghere.com/post/understanding-the-clang-ast/) @todo
+- [maskray blog](https://maskray.me/blog/) 工具链开发很多优质内容
+- [llvm beginner resource](https://discourse.llvm.org/t/beginner-resources-documentation/5872)
+- [Deep diving into LLVM loop unroll](https://yashwantsingh.in/posts/loop-unroll/)
+- [A Loop Flattening Pass in LLVM](https://www.cs.cornell.edu/courses/cs6120/2020fa/blog/loop-flatten/)
+- [Bloaty (size profiler for binaries)](https://blog.reverberate.org/2018/08/07/bloaty-1.0.html)
+- [cs343 Advanced Compiler](https://web.stanford.edu/class/cs343/) 
+	- [cs143 Compiler](https://web.stanford.edu/class/cs143/) [bilibili](https://www.bilibili.com/video/BV1sV411g7Vv/?vd_source=bca5aac95ba1ac296e437bcb3303e1f3)
+	- [cs243](http://infolab.stanford.edu/~ullman/dragon/w06/w06.html)
+	- [cs4120](https://www.cs.cornell.edu/courses/cs4120/2023sp/notes/)
+	- [cs6120](https://www.cs.cornell.edu/courses/cs6120/2020fa/lesson/)
+	- [CSCD70](https://www.cs.toronto.edu/~pekhimenko/courses/cscd70-w19/content.html)
+	- [CSE131](https://cseweb.ucsd.edu/~gbournou/CSE131/links.html)
+- [llvm constant expression interpreter in clang](https://developers.redhat.com/author/timm-baeder)
+- [halide-lang](https://halide-lang.org/)
+- [Linkers and Loaders](https://www.linuxjournal.com/article/6463)
+- [How to learn compilers: LLVM Edition](https://lowlevelbits.org/how-to-learn-compilers-llvm-edition/)
+- [Serene Programming Language - A Modern Lisp](https://serene-lang.org/)
+- [Language Programming engineer -> which parsing](https://tratt.net/laurie/blog/2020/which_parsing_approach.html)
+- [What is MLIR](http://lastweek.io/notes/MLIR/)
+- [AI compiler](https://openmlsys.github.io/chapter_preface_advanced/index.html)
+- [Programming Languages:Application and Interpretation](https://www.plai.org/)
+- [chenweiwei github.io Modular engineer](https://weiweichen.github.io/)
+- [CUDA compilation](https://leimao.github.io/blog/CUDA-Compilation/) 
+- [Why you need subtyping](https://blog.polybdenum.com/2025/03/26/why-you-need-subtyping.html)
+- [SPA nju](https://tai-e.pascal-lab.net/lectures.html)
+	- [SPA 奥胡斯大学 Aarhus University](https://cs.au.dk/~amoeller/spa/)
 ## interview
 - [os](https://zhuanlan.zhihu.com/p/23755202)
 - [network](https://zhuanlan.zhihu.com/p/24001696)
@@ -72,7 +110,7 @@ title: BlogHub
 - [webRTC](https://webrtc.org/)
 - [trie树求两两异或最大值]
 - [动态规划计算字符串相似度](https://www.kancloud.cn/digest/pieces-algorithm/163629)
-- 
+- [LD_LIBRARY_PATH considered harmful](https://gms.tf/ld_library_path-considered-harmful.html)
 
 
 
