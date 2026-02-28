@@ -81,6 +81,12 @@ title: BlogHub
 - [asio io_context 调度](https://www.bluepuni.com/archives/asio-io-context/)
 	- [结构化并发与协程](https://www.bluepuni.com/archives/structured-concurrency-and-cpp-coroutine/)
 - [barry's c++ blog](https://brevzin.github.io/) reflection (member of the C++ standards committee)
+- [c11 lock-free stack](https://nullprogram.com/blog/2014/09/02/)
+- [c++  内存模型](https://paul.pub/cpp-memory-model/)
+- [Using TLA+ to understand a glibc bug](https://probablydance.com/2020/10/31/using-tla-in-the-real-world-to-understand-a-glibc-bug/)
+- cmake
+	- [Introduction to Modern CMake](https://cliutils.gitlab.io/modern-cmake/README.html#)
+	- [modern cmake training](https://hsf-training.github.io/hsf-training-cmake-webpage/index.html)
 ## Database
 - [RocksDB blog](https://rocksdb.org/blog/)
 - [tikv distributed transaction](https://tikv.org/deep-dive/distributed-transaction/introduction/)
