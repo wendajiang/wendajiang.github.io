@@ -98,11 +98,6 @@ title: BlogHub
 	- [知乎评论如何学习 mit6.824](https://www.zhihu.com/question/29597104)
 	- [阿里为什么不用 zookeeper](https://www.infoq.cn/article/why-doesnot-alibaba-use-zookeeper) 注册中心（服务发现）在阿里的演进
 	- https://draven.co/consensus/
-## EDA
-- expression tree https://www.geeksforgeeks.org/dsa/expression-tree/
-- ABC
-	- [ABC pdf](/pdf/cav10_abc.pdf)
-	- [abc web](https://people.eecs.berkeley.edu/~alanmi/abc/)
 ## Compiler 
 - [control flow and data flow (ECE 4530 lecture 18)](https://schaumont.dyn.wpi.edu/ece4530f19/lectures/lecture18-notes.html)
 - [infix expression evaluation cpp impl](https://www.geeksforgeeks.org/dsa/expression-evaluation/)
