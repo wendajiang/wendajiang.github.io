@@ -8,7 +8,9 @@ title: BlogHub
 - [BeanCount](https://byvoid.com/zht/blog/beancount-bookkeeping-1/)
 - Emacs [prelude](https://github.com/bbatsov/prelude) [emacs.d](https://github.com/purcell/emacs.d)
 	- [emacs manuals online](https://www.gnu.org/software/emacs/manual/)
-	- [Org Mode - Organize Your Life In Plain Text!](https://doc.norang.ca/org-mode.html)
+	- ~~[Org Mode - Organize Your Life In Plain Text!](https://doc.norang.ca/org-mode.html)~~
+	- [Emacs Lisp Elements](https://protesilaos.com/emacs/emacs-lisp-elements#h:getting-started-with-emacs-lisp)
+	- ~~[mastering emacs in one year](https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-en.org#introduction)~~
 - [SF-Zhou](https://sf-zhou.github.io/) maybe deepseek
 - [Software-Engineering-at-Google 翻译](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/?id=software-engineering-at-google)
 - [brendangregg](https://www.brendangregg.com/overview.html) performance monitor, eBPF, perf tools, FlameGraph
@@ -137,6 +139,7 @@ title: BlogHub
 - [Why you need subtyping](https://blog.polybdenum.com/2025/03/26/why-you-need-subtyping.html)
 - [SPA nju](https://tai-e.pascal-lab.net/lectures.html)
 	- [SPA 奥胡斯大学 Aarhus University](https://cs.au.dk/~amoeller/spa/)
+- [deepwiki about llvm-project source](https://deepwiki.com/llvm/llvm-project/2.2-constant-expression-evaluation-and-bytecode-interpreter)
 ## interview
 - [os](https://zhuanlan.zhihu.com/p/23755202)
 - [network](https://zhuanlan.zhihu.com/p/24001696)
