@@ -67,6 +67,7 @@ const config: QuartzConfig = {
         keepBackground: false,
       }),
       Plugin.Poetry(),
+      Plugin.RoamFlavoredMarkdown(),
       Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false, parseTags: false }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
