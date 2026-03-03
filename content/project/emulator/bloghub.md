@@ -22,3 +22,4 @@ tags:
 - [CIRCT introduction](/pdf/2021-CIRCT-LiftingHardwareDevOutOfThe20thCentury.pdf)
 - ~~[loop in verilog](https://fpgainsights.com/blog/loops-in-verilog/)~~
 - ~~[for-loop in systemverilog](https://fpgainsights.com/blog/demystifying-system-verilogs-for-loop/)~~
+

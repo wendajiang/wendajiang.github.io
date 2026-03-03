@@ -136,6 +136,7 @@ title: BlogHub
 - [Programming Languages:Application and Interpretation](https://www.plai.org/)
 - [chenweiwei github.io Modular engineer](https://weiweichen.github.io/)
 - [CUDA compilation](https://leimao.github.io/blog/CUDA-Compilation/) 
+- [CUDA doc compilation from cu to executable](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/#cuda-compilation-from-cu-to-executable-figure)
 - [Why you need subtyping](https://blog.polybdenum.com/2025/03/26/why-you-need-subtyping.html)
 - [SPA nju](https://tai-e.pascal-lab.net/lectures.html)
 	- [SPA 奥胡斯大学 Aarhus University](https://cs.au.dk/~amoeller/spa/)
