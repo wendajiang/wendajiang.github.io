@@ -166,3 +166,4 @@ title: BlogHub
 - [楼天成男人八题](https://www.slideshare.net/slideshow/8-lou-tiancheng-poj-1737-1744/269776913#2) [vjudge POJ](https://vjudge.net/problem#OJId=POJ&probNum=&title=&source=loutiancheng&category=all)
 	- [pony.ai 新八题](https://vjudge.net/problem#OJId=LibreOJ&probNum=&title=&source=pony&category=all)
 - [C++ 对象模型](https://www.cnblogs.com/skynet/p/3343726.html)
+- [tmux 常用操作](https://www.cnblogs.com/kaiye/p/6275207.html)
