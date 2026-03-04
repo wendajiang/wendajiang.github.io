@@ -9,7 +9,7 @@ I'm David. This is my digital garden that is upgraded from [old blog](https://gi
 
 And I'm a [[area/turtle/|turtlefan]].
 
-Currently, I'm divide my second brain into blow subdirectory:
+Currently, I divide my second brain into blow subdirectory:
 - [Project](/project/): current workspace
 - [Area](/area/): long managed knowlage
   - [Blogs](/area/blog/) : a collections of my tech writing.
