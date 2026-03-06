@@ -22,4 +22,7 @@ tags:
 - [CIRCT introduction](/pdf/2021-CIRCT-LiftingHardwareDevOutOfThe20thCentury.pdf)
 - ~~[loop in verilog](https://fpgainsights.com/blog/loops-in-verilog/)~~
 - ~~[for-loop in systemverilog](https://fpgainsights.com/blog/demystifying-system-verilogs-for-loop/)~~
+- nju formal
+	- [spyglass synopsys](https://www.cnblogs.com/jzzg/p/18848725)
+	- [JasperGold Candence](https://www.wenhui.space/docs/07-ic-verify/formal/formal/)
 
