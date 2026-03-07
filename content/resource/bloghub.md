@@ -140,8 +140,10 @@ title: BlogHub
 	- [CUDA nvcc driver](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/#cuda-compilation-from-cu-to-executable-figure)
 	- [CUDA C++ programming](https://docs.nvidia.com/cuda/cuda-c-programming-guide/#what-is-the-cuda-c-programming-guide)
 - [Why you need subtyping](https://blog.polybdenum.com/2025/03/26/why-you-need-subtyping.html)
-- [SPA nju](https://tai-e.pascal-lab.net/lectures.html)
+- [SPA nju](https://tai-e.pascal-lab.net/lectures.html) [bilibili](https://space.bilibili.com/2919428/upload/video)
 	- [SPA 奥胡斯大学 Aarhus University](https://cs.au.dk/~amoeller/spa/)
+	- [nju 老师知乎](https://www.zhihu.com/people/tree-big-77/posts)
+	- [[area/ai_and_compiler/qihe| Qihe: static verilog analysis framework]]
 - [deepwiki about llvm-project source](https://deepwiki.com/llvm/llvm-project/2.2-constant-expression-evaluation-and-bytecode-interpreter)
 ## interview
 - [os](https://zhuanlan.zhihu.com/p/23755202)
