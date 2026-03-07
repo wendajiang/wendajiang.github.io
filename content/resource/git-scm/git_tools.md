@@ -177,7 +177,37 @@ You stash some work, and modified some file and committed, apply the stash maybe
 Finally, you may not want to stash some work or files in your working directory, but simply get rid of them; that’s what the `git clean` command is for.
 
 You’ll want to be pretty careful with this command, since it’s designed to remove files from your working directory that are not tracked. If you change your mind, there is often no retrieving the content of those files. A safer option is to run `git stash --all` to remove everything but save it in a stash.
-# Signing your work
+# \*Signing your work
+If you need to verify that commits are actually from a trusted source, git has a few ways to sign and verify work using GPG.
+
+## GPG Introduction
+
+First of all, if you want to sign anything you need to get GPG configured and your personal key installed.
+
+```bash
+$ gpg --list-keys
+/Users/schacon/.gnupg/pubring.gpg
+---------------------------------
+pub   2048R/0A46826A 2014-06-04
+uid                  Scott Chacon (Git signing key) <schacon@gmail.com>
+sub   2048R/874529A9 2014-06-04
+```
+
+If you don’t have a key installed, you can generate one with `gpg --gen-key`.
+
+```bash
+$ gpg --gen-key
+```
+
+Once you have a private key to sign with, you can configure Git to use it for signing things by setting the `user.signingkey` config setting.
+
+```bash
+$ git config --global user.signingkey 0A46826A!
+```
+
+Now Git will use your key by default to sign tags and commits if you want.
+
+We can **sign tags and individual commit.**
 
 # Searching
 ## Git Grep (where)
