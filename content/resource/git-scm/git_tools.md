@@ -257,7 +257,366 @@ Git as a system manages and manipulates three trees in its normal operation:
 | Working Directory | Sandbox                           |
 - HEAD is the pointer of the current branch reference, which is in turn a pointer to the last commit made on that branch.
 - index is your proposed next commit, We’ve also been referring to this concept as Git’s “Staging Area".
+- working directory, The other two trees store their content in an efficient but inconvenient manner, inside the `.git` folder. The working directory unpacks them into actual files, which makes it much easier for you to edit them.
+
+### Workflow
+```mermaid
+sequenceDiagram
+	participant Working-Directory
+	participant index
+	participant HEAD
+	HEAD ->> Working-Directory: Checkout the project
+	Working-Directory ->> index: Stage Files
+	index ->> HEAD: Commit
+```
+
+We touch one file `file.txt`
+```mermaid
+block
+	columns 3
+	a["HEAD"] b["Index"] c["Working Directory"]
+	e[" "] f[" "] g["file.txt"]
+
+```
+
+Now we want to commit this file, so we use `git add` to take content in the working directory and copy it to the index.
+```mermaid
+block
+	columns 3
+	a["HEAD"] b["Index"] c["Working Directory"]
+	e[" "] f["file.txt"] g["file.txt"]
+
+```
+Then we run `git commit`, which takes the contents of the index and saves it as a permanent snapshot, creates a commit project which points to that snapshot, and update `master` to point to that commit
+```mermaid
+block
+	columns 3
+	a["HEAD"] b["Index"] c["Working Directory"]
+	e["commit id + file.txt"] f["file.txt"] g["file.txt"]
+
+```
+
+Now we run `git status`, we'll see no changes, because all threes are the same.
+
+When you checkout a branch, it changes **HEAD** to point to the new branch ref, populates your **index** with the snapshot of that commit, then copied the contents of the **index** into your working directory.
+
+## The role of Reset
+
+The `reset` command makes more senses when viewed in this context.
+
+Let's say that we've modified `file.txt` third times, so now our history looks like this:
+```mermaid
+gitGraph
+	commit id: "file.txt v1"
+	commit id: "file.txt v2"
+	commit id: "file.txt v3"
+```
+Let’s now walk through exactly what `reset` does when you call it. It directly manipulates these three trees in a simple and predictable way. It does up to three basic operations.
+
+### step1: move HEAD
+not same as chaning HEAD itself(which is what `checkout` does), `reset` move the branch that HEAD is pointing to.
+`git reset --soft HEAD~`, with `--soft`, it will simply stop there
+```mermaid
+block
+	columns 3
+	a["HEAD"] b["Index"] c["Working Directory"]
+	e["file.txt.v2"] f["file.txt.v3"] g["file.txt.v3"]
+
+```
+
+### step2: updating the index (--mixed)
+Next thing `reset` will do is to update the index with contents of whatever snapshot HEAD now points to.
+`git reset --mixed HEAD~` or `git reset HEAD~`
+```mermaid
+block
+	columns 3
+	a["HEAD"] b["Index"] c["Working Directory"]
+	e["file.txt.v2"] f["file.txt.v2"] g["file.txt.v3"]
+
+```
+`--mixed` will stop at this point, this is also the default.
+### step3: updating the working directory (--hard)
+Third thing that `reset` will do is to make the working directory look like the index. if you use the `--hard` option, it will continue to this stage.
+```mermaid
+block
+	columns 3
+	a["HEAD"] b["Index"] c["Working Directory"]
+	e["file.txt.v2"] f["file.txt.v2"] g["file.txt.v2"]
+```
+Note that **this flag --hard** is the only way to make `reset` command dangerous. Any other invocation of `reset` can be pretty easily undone.
+
+## reset with a path
+if you specify a path, `reset` will skip step1, and limit the remainder of its actions to a specific file or set of files. **HEAD is just a pointer, you can't point to part of one commit, but index and working directory can be partially used.**
+
+We could just as easily not let Git assume we meant “pull the data from HEAD” by specifying a specific commit to pull that file version from. We would just run something like `git reset eb43bf file.txt`.
+
+## Squashing by reset
+```bash
+# three commit into one 
+$ git reset --soft HEAD~2
+$ git commit -m "something"
+```
+
+## Checkout
+### without paths
+`git checkout <branch> ` is pretty similar to `git reset --hard <branch>`, but there two important differences:
+- checkout is working directory safe
+- how `checkout` updates HEAD, `reset` will move the branch that HEAD points to, `checkout` will move HEAD itself to point to another branch
+  ![[/pics/Pasted image 20260307183618.png]]
+### with paths
+The other way to run `checkout` is with a file path, which, like `reset`, does not move HEAD. It is just like `git reset [branch] file` in that it updates the index with that file at that commit, but it also overwrites the file in the working directory. It would be exactly like `git reset --hard [branch] file` (if `reset` would let you run that) — it’s not working-directory safe, and it does not move HEAD.
+
+## Summary
+|                             | HEAD | Index | Workdir | WD Safe? |
+| --------------------------- | ---- | ----- | ------- | -------- |
+| **Commit Level**            |      |       |         |          |
+| `reset --soft [commit]`     | REF  | NO    | NO      | YES      |
+| `reset [commit]`            | REF  | YES   | NO      | YES      |
+| `reset --hard [commit]`     | REF  | YES   | YES     | **NO**   |
+| `checkout <commit>`         | HEAD | YES   | YES     | YES      |
+| **File Level**              |      |       |         |          |
+| `reset [commit] <paths>`    | NO   | YES   | NO      | YES      |
+| `checkout [commit] <paths>` | NO   | YES   | YES     | **NO**   |
 # Advanced Merging
+
+If you wait too long to merge two branches that diverge quickly, you can run into some issues.
+## merge conflicts
+This is a lifesaver if you have someone on your team who likes to occasionally reformat everything from spaces to tabs or vice-versa. 这种方法会残留 DOS 空格字符
+```bash
+$ git merge -Xignore-space-change/-Xignore-all-space <br>
+```
+
+如果不使用这个 option，我们需要手动 re-merge
+
+First，we get into the merge conflict state. Then we want to get copies of our version of the file.
+```bash
+$ git show :1:hello.rb > hello.common.rb
+$ git show :2:hello.rb > hello.ours.rb
+$ git show :3:hello.rb > hello.theirs.rb
+
+$ dos2unix hello.theirs.rb
+$ git merge-file -p \
+   hello.ours.rb hello.common.rb hello.theirs.rb > hello.rb
+```
+
+To compare your result to what you had in your branch before the merge, in other words, to see what the merge introduced, you can run `git diff --ours`
+
+If we want to see how the result of the merge differed from what was on their side, you can run `git diff --theirs`.
+
+Finally, you can see how the file has changed from both sides with `git diff --base`.
+
+We can use the `git clean` to clear out the extra files.
+```bash
+$ git clean -f
+Removing hello.common.rb
+Removing hello.ours.rb
+Removing hello.theirs.rb
+```
+## checking out conflicts
+Let’s change up the example a little. For this example, we have two longer lived branches that each have a few commits in them but create a legitimate content conflict when merged.
+
+```bash
+$ git log --graph --oneline --decorate --all
+* f1270f7 (HEAD, master) Update README
+* 9af9d3b Create README
+* 694971d Update phrase to 'hola world'
+| * e3eb223 (mundo) Add more tests
+| * 7cff591 Create initial testing script
+| * c3ffff1 Change text to 'hello mundo'
+|/
+* b7dcc89 Initial hello world code
+```
+We now have three unique commits that live only on the `master` branch and three others that live on the `mundo` branch. If we try to merge the `mundo` branch in, we get a conflict.
+
+```bash
+$ git merge mundo
+Auto-merging hello.rb
+CONFLICT (content): Merge conflict in hello.rb
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+We would like to see what the merge conflict is. If we open up the file, we’ll see something like this:
+
+```ruby
+#! /usr/bin/env ruby
+
+def hello
+<<<<<<< HEAD
+  puts 'hola world'
+=======
+  puts 'hello mundo'
+>>>>>>> mundo
+end
+
+hello()
+```
+
+Both sides of the merge added content to this file, but some of the commits modified the file in the same place that caused this conflict.
+
+One helpful tool is `git checkout` with the `--conflict` option. This will re-checkout the file again and replace the merge conflict markers. This can be useful if you want to reset the markers and try to resolve them again.
+
+You can pass `--conflict` either `diff3` or `merge` (which is the default). If you pass it `diff3`, Git will use a slightly different version of conflict markers, not only giving you the “ours” and “theirs” versions, but also the “base” version inline to give you more context.
+
+```bash
+$ git checkout --conflict=diff3 hello.rb
+```
+
+Once we run that, the file will look like this instead:
+
+```ruby
+#! /usr/bin/env ruby
+
+def hello
+<<<<<<< ours
+  puts 'hola world'
+||||||| base
+  puts 'hello world'
+=======
+  puts 'hello mundo'
+>>>>>>> theirs
+end
+
+hello()
+```
+
+If you like this format, you can set it as the default for future merge conflicts by setting the `merge.conflictstyle` setting to `diff3`.
+
+```bash
+$ git config --global merge.conflictstyle diff3
+```
+
+The `git checkout` command can also take `--ours` and `--theirs` options, which can be a really fast way of just choosing either one side or the other without merging things at all.
+
+This can be particularly useful for conflicts of binary files where you can simply choose one side, or where you only want to merge certain files in from another branch — you can do the merge and then checkout certain files from one side or the other before committing.
+
+## Merge Log
+
+Another useful tool when resolving merge conflicts is `git log`. This can help you get context on what may have contributed to the conflicts. Reviewing a little bit of history to remember why two lines of development were touching the same area of code can be really helpful sometimes.
+
+To get a full list of all of the unique commits that were included in either branch involved in this merge, we can use the “triple dot” syntax that we learned in [[resource/git-scm/git_tools#Triple Dot| Triple Dot]].
+
+```console
+$ git log --oneline --left-right HEAD...MERGE_HEAD
+< f1270f7 Update README
+< 9af9d3b Create README
+< 694971d Update phrase to 'hola world'
+> e3eb223 Add more tests
+> 7cff591 Create initial testing script
+> c3ffff1 Change text to 'hello mundo'
+```
+
+That’s a nice list of the six total commits involved, as well as which line of development each commit was on.
+
+We can further simplify this though to give us much more specific context. If we add the `--merge` option to `git log`, it will only show the commits in either side of the merge that touch a file that’s currently conflicted.
+
+```console
+$ git log --oneline --left-right --merge
+< 694971d Update phrase to 'hola world'
+> c3ffff1 Change text to 'hello mundo'
+```
+
+If you run that with the `-p` option instead, you get just the diffs to the file that ended up in conflict. This can be **really** helpful in quickly giving you the context you need to help understand why something conflicts and how to more intelligently resolve it.
+
+You can also get this from the `git log` for **any merge to see how something was resolved after the fact.** Git will output this format if you run `git show` on a merge commit, or if you add a `--cc` option to a `git log -p` (which by default only shows patches for non-merge commits).
+
+## Undoing merges
+```mermaid
+gitGraph
+	commit id: "C1"
+	commit id: "C2"
+	branch topic
+	commit id: "C3"
+	commit id: "C4"
+	checkout main
+	commit id: "C5"
+	commit id: "C6"
+	merge topic id: "M"
+```
+
+If the unwanted merge commit only exists on your local repository, the easiest and best solution is `git reset --hard HEAD~`, the branch would be like
+```mermaid
+gitGraph
+	commit id: "C1"
+	commit id: "C2"
+	branch topic
+	commit id: "C3"
+	commit id: "C4"
+	checkout main
+	commit id: "C5"
+	commit id: "C6"
+```
+
+The downside of this approach is that it’s rewriting history, which can be problematic with a shared repository.
+### revert commit
+`$ git revert -m 1 HEAD` would add one commit and undo all last commit changes.
+```mermaid
+gitGraph
+	commit id: "C1"
+	commit id: "C2"
+	branch topic
+	commit id: "C3"
+	commit id: "C4"
+	checkout main
+	commit id: "C5"
+	commit id: "C6"
+	merge topic id: "M"
+	commit id: "^M"
+```
+
+The new commit `^M`has exactly the same contents as `C6`. What's worse, if you add work to `topic` and merge again, Git will only bring in the changes since the reverted merge:
+
+```mermaid
+gitGraph
+	commit id: "C1"
+	commit id: "C2"
+	branch topic
+	commit id: "C3"
+	commit id: "C4"
+	checkout main
+	commit id: "C5"
+	commit id: "C6"
+	merge topic id: "M"
+	commit id: "^M"
+	checkout topic
+	commit id: "C7"
+	checkout main
+	merge topic id: "C8"
+```
+
+The content is bad, `C3` and `C4` in topic is not merged into `main`, wo the best way is to un-revert the original merge after `^M`
+```mermaid
+gitGraph
+	commit id: "C1"
+	commit id: "C2"
+	branch topic
+	commit id: "C3"
+	commit id: "C4"
+	checkout main
+	commit id: "C5"
+	commit id: "C6"
+	merge topic id: "M"
+	commit id: "^M"
+	commit id: "^^M"
+	checkout topic
+	commit id: "C7"
+	checkout main
+	merge topic id: "C8"
+```
+Now `topic` is fully merged.
+
+## Our or Theirs
+```bash
+# only conflict pick ours or theirs
+$ git merge -Xours <br>
+$ git merge -Xtheirs <br>
+# only use ours or theirs code but not merge actually, gen one merge commit
+$ git merge -s ours <br>
+$ git merge -s theirs <br>
+```
+`-s ours` This can often be useful to basically trick Git into thinking that a branch is already merged when doing a merge later on. 
+
+## subtree merging
+很少用，[link](https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging)
 
 # Rerere
 Reuse Recorded Resolution. As the name implies, it allows you to ask Git to remember how you’ve resolved a hunk conflict so that the next time it sees the same conflict, Git can resolve it for you automatically.
@@ -513,4 +872,3 @@ $ git log --oneline --decorate --graph --all
 So, `git bundle` can be really useful for sharing or doing network-type operations when you don’t have the proper network or shared repository to do so.
 # Replace
 
-# Credential Storage
