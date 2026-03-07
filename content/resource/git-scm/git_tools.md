@@ -619,8 +619,13 @@ $ git merge -s theirs <br>
 很少用，[link](https://git-scm.com/book/en/v2/Git-Tools-Advanced-Merging)
 
 # Rerere
-Reuse Recorded Resolution. As the name implies, it allows you to ask Git to remember how you’ve resolved a hunk conflict so that the next time it sees the same conflict, Git can resolve it for you automatically.
+**Reuse Recorded Resolution**. As the name implies, it allows you to ask Git to remember how you’ve resolved a hunk conflict so that the next time it sees the same conflict, Git can resolve it for you automatically.
 
+To enable `rerere` functionality, you simply have to run this config setting:
+
+```bash
+$ git config --global rerere.enabled true
+```
 
 
 # Debugging with Git
@@ -870,5 +875,4 @@ $ git log --oneline --decorate --graph --all
 ```
 
 So, `git bundle` can be really useful for sharing or doing network-type operations when you don’t have the proper network or shared repository to do so.
-# Replace
 
