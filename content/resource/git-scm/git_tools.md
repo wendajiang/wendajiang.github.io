@@ -146,8 +146,37 @@ Motivation: Often, when you’ve been working on part of your project, things ar
 
 Stashing takes the dirty state of your working directory — that is, your modified tracked files and staged changes — and saves it on a stack of unfinished changes that you can reapply at any time (even on a different branch).
 
-To push a new stash onto your stack, 
+To push a new stash onto your stack, run `git stash` or `git stash push`.
+```bash
+$ git stash list
+stash@{0}: WIP on master: 049d078 Create index file
+stash@{1}: WIP on master: c264051 Revert "Add file_size"
+stash@{2}: WIP on master: 21d80a5 Add number to log
 
+$ git stash apply [stash@{2}]
+# if you don't specify a stash, git assume the most recent stash and tries to apply it
+```
+The changes to your files were reapplied, **but the file you staged before wasn’t restaged**. To do that, you must run the `git stash apply` command with a `--index` option to tell the command to try to reapply the staged changes. If you had run that instead, you’d have gotten back to your original position.
+
+The `apply` option only tries to apply the stashed work — you continue to have it on your stack. To remove it, you can run `git stash drop` with the name of the stash to remove. You can also run `git stash pop` to apply the stash and then immediately drop it from your stack.
+
+## Creative stashing
+staged content excluded
+> There are a few stash variants that may also be helpful. The first option that is quite popular is the `--keep-index` option to the `git stash` command. This tells Git to not only include all staged content in the stash being created, but simultaneously leave it in the index.
+
+untracked files
+> Another common thing you may want to do with stash is to stash the untracked files as well as the tracked ones. By default, `git stash` will stash only modified and staged _tracked_ files. If you specify `--include-untracked` or `-u`, Git will include untracked files in the stash being created. However, including untracked files in the stash will still not include explicitly _ignored_ files; to additionally include ignored files, use `--all` (or just `-a`).
+
+stash patch
+> Finally, if you specify the `--patch` flag, Git will not stash everything that is modified but will instead prompt you interactively which of the changes you would like to stash and which you would like to keep in your working directory.
+
+## Creating a branch from a stash
+You stash some work, and modified some file and committed, apply the stash maybe error (conflict). If you want an easier way to test the stashed changes again, you can run `git stash branch <new-br>`, which creates a new branch for you with your selected branch name, checks out the commit you were on when you stashed your work, reapplies your work there, and drops the stash if it applies successfully.
+
+## Cleaning you working dir
+Finally, you may not want to stash some work or files in your working directory, but simply get rid of them; that’s what the `git clean` command is for.
+
+You’ll want to be pretty careful with this command, since it’s designed to remove files from your working directory that are not tracked. If you change your mind, there is often no retrieving the content of those files. A safer option is to run `git stash --all` to remove everything but save it in a stash.
 # Signing your work
 
 # Searching
