@@ -7,11 +7,6 @@ typora-copy-images-to: ../static/pics/${filename}
 tags: 
   - visitor
   - design pattern
-
-# mermaid example: 
-# {% mermaid() %}
-#     mermaid program
-# {% end %}
 ---
 
 # what is visitor pattern

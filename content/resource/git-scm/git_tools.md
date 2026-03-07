@@ -243,7 +243,20 @@ Don’t push your work until you’re happy with it.
 一般不用，大量修改 commit ，比如所有 commit 中删除某个文件，或者修改大量 commit 中的 email 地址。
 
 # Reset
+`reset` `checkout`
 
+## The Three Trees
+An easier way to think about `reset` and `checkout` is through the mental frame of Git being a content manager of three different trees. By “tree” here, we really mean “collection of files”, not specifically the data structure. There are a few cases where the index doesn’t exactly act like a tree, but for our purposes it is easier to think about it this way for now.
+
+Git as a system manages and manipulates three trees in its normal operation:
+
+| Tree              | Role                              |
+| ----------------- | --------------------------------- |
+| HEAD              | Last commit snapshot, next parent |
+| Index             | Proposed next commit snapshot     |
+| Working Directory | Sandbox                           |
+- HEAD is the pointer of the current branch reference, which is in turn a pointer to the last commit made on that branch.
+- index is your proposed next commit, We’ve also been referring to this concept as Git’s “Staging Area".
 # Advanced Merging
 
 # Rerere
