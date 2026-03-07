@@ -230,12 +230,26 @@ If you need to be more specific, you can provide a regular expression to search 
 `-L` will show you the history of a function or line of code in your codebase.
 
 # Rewriting History
+Don’t push your work until you’re happy with it.
+## changing the last commit
+`git commit --amend`
+
+## changing multiple commit messages
+`git rebase -i HEAD~3`
+
+[git rebase in depth](https://git-rebase.io/)
+
+## The Nuclear Option: filter-branch
+一般不用，大量修改 commit ，比如所有 commit 中删除某个文件，或者修改大量 commit 中的 email 地址。
 
 # Reset
 
 # Advanced Merging
 
 # Rerere
+Reuse Recorded Resolution. As the name implies, it allows you to ask Git to remember how you’ve resolved a hunk conflict so that the next time it sees the same conflict, Git can resolve it for you automatically.
+
+
 
 # Debugging with Git
 ## File Annotation (blame)
