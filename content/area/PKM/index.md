@@ -28,3 +28,5 @@ M-x named command eXtend
 ## Mode
 major mode, for example, lisp mode, text mode .etc.
 
+![[/pics/Pasted image 20260308224825.png]]
+
