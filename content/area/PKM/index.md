@@ -30,3 +30,4 @@ major mode, for example, lisp mode, text mode .etc.
 
 ![[/pics/Pasted image 20260308224825.png]]
 
+[emacs 知乎专栏](https://www.zhihu.com/column/c_1328282687241908224)
