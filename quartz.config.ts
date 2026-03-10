@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "wendajiang.github.io",
-    ignorePatterns: ["private", "templates", ".obsidian", "area/house_fitment"],
+    ignorePatterns: ["private", "templates", ".obsidian", "area/asset_manage"],
     defaultDateType: "created",
     theme: {
       fontOrigin: "googleFonts",
