@@ -9,7 +9,7 @@ tags:
 # 为什么 Income 是负数
 ![[/pics/Pasted image 20260310214556.png]]
 
-Her gross salary received in this example is recorded as $-2,905 (I’ll explain the sign in a moment). $905 is set aside for taxes. Her “net” salary of $2,000, the remainder, is deposited in her “Checking” account and the resulting balance of that account is $2,921 (the previous balance of $921 + $2,000 = $2,921). This transaction has three postings: (+2,000) + (-2,905) + (+905) = 0. The double-entry rule is respected.
+Her gross salary received in this example is recorded as \$-2,905 (I’ll explain the sign in a moment). \$905 is set aside for taxes. Her “net” salary of \$2,000, the remainder, is deposited in her “Checking” account and the resulting balance of that account is \$2,921 (the previous balance of \$921 + \$2,000 = \/$2,921). This transaction has three postings: (+2,000) + (-2,905) + (+905) = 0. The double-entry rule is respected.
 
 Now, you may ask: Why is her salary recorded as a negative number? The reasoning here is similar to that of the credit card above, though perhaps a bit more subtle. These accounts exist to track all the amounts from the owner’s point-of-view. The owner gives out work, and receives money and taxes in exchange for it (positive amounts). The work given away is denominated in dollar units. It “leaves” the owner (imagine that the owner has _potential work_ stored in her pocket and as she goes into work every day sprinkles that work potential giving it to the company). The owner _gave_ $2,905’s worth of work away. We want to track how much work was given, and it’s done with the “Salary” account. That’s her gross salary.
 
