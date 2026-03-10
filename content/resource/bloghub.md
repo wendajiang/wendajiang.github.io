@@ -5,7 +5,6 @@ title: BlogHub
 - [中文独立博客列表](https://github.com/timqian/chinese-independent-blogs)
 - [BMPI](https://www.bmpi.dev/self/) plain text, PKM, 投资
 - [ArchGuard 架构治理模式](https://book.archguard.org/index.html)
-- [BeanCount](https://byvoid.com/zht/blog/beancount-bookkeeping-1/)
 - [SF-Zhou](https://sf-zhou.github.io/) maybe deepseek
 - [Software-Engineering-at-Google 翻译](https://qiangmzsx.github.io/Software-Engineering-at-Google/#/?id=software-engineering-at-google)
 - [brendangregg](https://www.brendangregg.com/overview.html) performance monitor, eBPF, perf tools, FlameGraph
