@@ -19,3 +19,17 @@ https://www.cnblogs.com/Tokubara/p/16281955.html 写了 org-mode 支持，但是
 - 对 latex html 到处支持
 - 表格支持的完整度
 - 编辑大纲方便
+
+# Hub
+- https://sophiebos.io/posts/first-emacs-config/
+
+- Emacs [prelude](https://github.com/bbatsov/prelude) [emacs.d](https://github.com/purcell/emacs.d)
+	- [emacs manuals online](https://www.gnu.org/software/emacs/manual/)
+	- ~~[Org Mode - Organize Your Life In Plain Text!](https://doc.norang.ca/org-mode.html)~~
+	- [Emacs Lisp Elements](https://protesilaos.com/emacs/emacs-lisp-elements#h:getting-started-with-emacs-lisp)
+	- ~~[mastering emacs in one year](https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-en.org#introduction)~~
+
+# reference
+- https://nilesjohnson.net/org-roam-one-year.html
+- https://www.orgroam.com/manual.html
+- https://www.reddit.com/r/orgmode/comments/1by0hck/benefits_of_org_mode_over_obsidian/
