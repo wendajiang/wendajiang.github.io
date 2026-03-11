@@ -20,6 +20,8 @@ https://www.cnblogs.com/Tokubara/p/16281955.html 写了 org-mode 支持，但是
 - 表格支持的完整度
 - 编辑大纲方便
 
+[org-roam with quartz publish method](https://www.asterhu.com/post/20240220-publish-org-roam-with-quartz-oxhugo/)
+
 # Hub
 - https://sophiebos.io/posts/first-emacs-config/
 
