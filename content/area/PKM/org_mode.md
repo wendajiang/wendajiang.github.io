@@ -22,15 +22,6 @@ https://www.cnblogs.com/Tokubara/p/16281955.html 写了 org-mode 支持，但是
 
 [org-roam with quartz publish method](https://www.asterhu.com/post/20240220-publish-org-roam-with-quartz-oxhugo/)
 
-# Hub
-- https://sophiebos.io/posts/first-emacs-config/
-
-- Emacs [prelude](https://github.com/bbatsov/prelude) [emacs.d](https://github.com/purcell/emacs.d)
-	- [emacs manuals online](https://www.gnu.org/software/emacs/manual/)
-	- ~~[Org Mode - Organize Your Life In Plain Text!](https://doc.norang.ca/org-mode.html)~~
-	- [Emacs Lisp Elements](https://protesilaos.com/emacs/emacs-lisp-elements#h:getting-started-with-emacs-lisp)
-	- ~~[mastering emacs in one year](https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-en.org#introduction)~~
-
 # reference
 - https://nilesjohnson.net/org-roam-one-year.html
 - https://www.orgroam.com/manual.html
