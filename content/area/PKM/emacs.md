@@ -38,3 +38,7 @@ major mode, for example, lisp mode, text mode .etc.
 	- ~~[mastering emacs in one year](https://github.com/redguardtoo/mastering-emacs-in-one-year-guide/blob/master/guide-en.org#introduction)~~
 - [prelude author personal blog](https://batsov.com/archives/)
 - [prelude author emacs blog](https://emacsredux.com/about/)
+- frame, window, buffer
+    - [emacs wiki](https://wikemacs.org/wiki/Emacs_Terminology)
+    - [reddit, I know the perspective from it and \*-bar](https://www.reddit.com/r/emacs/comments/1m34m48/windows_frames_tabs_and_window_tabs_which/)
+    - [perspective-bar reddit](https://www.reddit.com/r/emacs/comments/115d0l0/perspectivetabs_perspectives_as_tabs_in_the_tabbar/)
