@@ -24,6 +24,11 @@ major mode, for example, lisp mode, text mode .etc.
 ![[/pics/Pasted image 20260308224825.png]]
 
 
+## packages
+1. projectile and project(built-in) to manage the well-defined root directory project
+2. [perspective](https://github.com/nex3/perspective-el): manage multiple project, make the buffer isolated
+
+
 # reference
 - [emacs 知乎专栏](https://www.zhihu.com/column/c_1328282687241908224)
 - https://sophiebos.io/posts/first-emacs-config/

@@ -48,6 +48,7 @@ liba.so 只会暴露 script 指定的 symbol，grpc public 的只剩下两个
 
 ![image-20230111174331686](/pics/one_dynamic_library_problem/image-20230111174331686.png)
 
+[来自工具链开发者对于 version script 的理解](https://maskray.me/blog/2020-11-26-all-about-symbol-versioning)
 ## 番外
 
 ```cpp
