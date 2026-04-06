@@ -26,6 +26,7 @@ title: BlogHub
 - design pattern
 	- [Game Programming Pattern](https://gameprogrammingpatterns.com/contents.html) [[area/blog/singleton|singleton]] [[area/blog/type_erasure|type_erasure]]
 	- [our pattern language](https://patterns.eecs.berkeley.edu/) parallel pattern
+- [A categorized list of C++ resources](https://github.com/MattPD/cpplinks/tree/master) 
 ## OS
 - linux kernel
 	- [Linux kernel doc](https://www.kernel.org/doc/html/latest/index.html)
@@ -139,6 +140,7 @@ title: BlogHub
 	- [nju 老师知乎](https://www.zhihu.com/people/tree-big-77/posts)
 	- [[area/ai_and_compiler/qihe| Qihe: static verilog analysis framework]]
 - [deepwiki about llvm-project source](https://deepwiki.com/llvm/llvm-project/2.2-constant-expression-evaluation-and-bytecode-interpreter)
+- https://www.cs.cornell.edu/courses/cs6120/2025fa/self-guided/
 ## interview
 - [os](https://zhuanlan.zhihu.com/p/23755202)
 - [network](https://zhuanlan.zhihu.com/p/24001696)

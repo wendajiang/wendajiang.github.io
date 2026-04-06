@@ -25,8 +25,14 @@ major mode, for example, lisp mode, text mode .etc.
 
 
 ## packages
+### Project manage
 1. projectile and project(built-in) to manage the well-defined root directory project
 2. [perspective](https://github.com/nex3/perspective-el): manage multiple project, make the buffer isolated
+3. treemacs like vim neotree, and integrate with perspective
+
+### Program
+1. lsp-mode
+   
 
 
 # reference
@@ -42,3 +48,4 @@ major mode, for example, lisp mode, text mode .etc.
     - [emacs wiki](https://wikemacs.org/wiki/Emacs_Terminology)
     - [reddit, I know the perspective from it and \*-bar](https://www.reddit.com/r/emacs/comments/1m34m48/windows_frames_tabs_and_window_tabs_which/)
     - [perspective-bar reddit](https://www.reddit.com/r/emacs/comments/115d0l0/perspectivetabs_perspectives_as_tabs_in_the_tabbar/)
+- [emacs daemon, and client do not load-theme correctly](https://stackoverflow.com/questions/18904529/after-emacs-deamon-i-can-not-see-new-theme-in-emacsclient-frame-it-works-fr)
