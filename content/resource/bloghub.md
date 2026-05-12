@@ -26,7 +26,9 @@ title: BlogHub
 - design pattern
 	- [Game Programming Pattern](https://gameprogrammingpatterns.com/contents.html) [[area/blog/singleton|singleton]] [[area/blog/type_erasure|type_erasure]]
 	- [our pattern language](https://patterns.eecs.berkeley.edu/) parallel pattern
-- [A categorized list of C++ resources](https://github.com/MattPD/cpplinks/tree/master) 
+- [A categorized list of C++ resources](https://github.com/MattPD/cpplinks/tree/master) (from [reddit](https://www.reddit.com/r/Compilers/comments/rvnesz/resources_for_learning_compiler_design/?tl=zh-hans))
+	- https://gist.github.com/MattPD/00573ee14bf85ccac6bed3c0678ddbef
+- [speed up zsh startup time](https://www.joshyin.cc/blog/speeding-up-zsh)
 ## OS
 - linux kernel
 	- [Linux kernel doc](https://www.kernel.org/doc/html/latest/index.html)
@@ -96,7 +98,6 @@ title: BlogHub
 	- [阿里为什么不用 zookeeper](https://www.infoq.cn/article/why-doesnot-alibaba-use-zookeeper) 注册中心（服务发现）在阿里的演进
 	- https://draven.co/consensus/
 ## Compiler 
-- [control flow and data flow (ECE 4530 lecture 18)](https://schaumont.dyn.wpi.edu/ece4530f19/lectures/lecture18-notes.html)
 - [infix expression evaluation cpp impl](https://www.geeksforgeeks.org/dsa/expression-evaluation/)
 - [Why SSA? (mcyoung blog)](https://mcyoung.xyz/posts/)
 - [Chris Lattner's Resume](https://www.nondot.org/sabre/Resume.html#writing)
@@ -117,7 +118,7 @@ title: BlogHub
 	- [cs143 Compiler](https://web.stanford.edu/class/cs143/) [bilibili](https://www.bilibili.com/video/BV1sV411g7Vv/?vd_source=bca5aac95ba1ac296e437bcb3303e1f3)
 	- [cs243](http://infolab.stanford.edu/~ullman/dragon/w06/w06.html)
 	- [cs4120](https://www.cs.cornell.edu/courses/cs4120/2023sp/notes/)
-	- [cs6120](https://www.cs.cornell.edu/courses/cs6120/2020fa/lesson/)
+	- [cs6120](https://www.cs.cornell.edu/courses/cs6120/2025fa/self-guided/) from [reddit](https://www.reddit.com/r/Compilers/comments/rvnesz/resources_for_learning_compiler_design/)
 	- [CSCD70](https://www.cs.toronto.edu/~pekhimenko/courses/cscd70-w19/content.html)
 	- [CSE131](https://cseweb.ucsd.edu/~gbournou/CSE131/links.html)
 - [llvm constant expression interpreter in clang](https://developers.redhat.com/author/timm-baeder)
@@ -140,7 +141,6 @@ title: BlogHub
 	- [nju 老师知乎](https://www.zhihu.com/people/tree-big-77/posts)
 	- [[area/ai_and_compiler/qihe| Qihe: static verilog analysis framework]]
 - [deepwiki about llvm-project source](https://deepwiki.com/llvm/llvm-project/2.2-constant-expression-evaluation-and-bytecode-interpreter)
-- https://www.cs.cornell.edu/courses/cs6120/2025fa/self-guided/
 ## interview
 - [os](https://zhuanlan.zhihu.com/p/23755202)
 - [network](https://zhuanlan.zhihu.com/p/24001696)
