@@ -118,7 +118,7 @@ title: BlogHub
 	- [cs143 Compiler](https://web.stanford.edu/class/cs143/) [bilibili](https://www.bilibili.com/video/BV1sV411g7Vv/?vd_source=bca5aac95ba1ac296e437bcb3303e1f3)
 	- [cs243](http://infolab.stanford.edu/~ullman/dragon/w06/w06.html)
 	- [cs4120](https://www.cs.cornell.edu/courses/cs4120/2023sp/notes/)
-	- [[resource/CS6120_course/index|cs6120]] from [reddit](https://www.reddit.com/r/Compilers/comments/rvnesz/resources_for_learning_compiler_design/)  [Good teacher blog](https://www.cs.cornell.edu/~asampson/blog/llvm.html)
+	- [[resource/CS6120_course/index|cs6120]] from [reddit](https://www.reddit.com/r/Compilers/comments/rvnesz/resources_for_learning_compiler_design/)  
 	- [CSCD70](https://www.cs.toronto.edu/~pekhimenko/courses/cscd70-w19/content.html)
 	- [CSE131](https://cseweb.ucsd.edu/~gbournou/CSE131/links.html)
 - [llvm constant expression interpreter in clang](https://developers.redhat.com/author/timm-baeder)
