@@ -118,7 +118,7 @@ title: BlogHub
 	- [cs143 Compiler](https://web.stanford.edu/class/cs143/) [bilibili](https://www.bilibili.com/video/BV1sV411g7Vv/?vd_source=bca5aac95ba1ac296e437bcb3303e1f3)
 	- [cs243](http://infolab.stanford.edu/~ullman/dragon/w06/w06.html)
 	- [cs4120](https://www.cs.cornell.edu/courses/cs4120/2023sp/notes/)
-	- [cs6120](https://www.cs.cornell.edu/courses/cs6120/2025fa/self-guided/) from [reddit](https://www.reddit.com/r/Compilers/comments/rvnesz/resources_for_learning_compiler_design/)
+	- [[resource/CS6120_course/index|cs6120]] from [reddit](https://www.reddit.com/r/Compilers/comments/rvnesz/resources_for_learning_compiler_design/)  [Good teacher blog](https://www.cs.cornell.edu/~asampson/blog/llvm.html)
 	- [CSCD70](https://www.cs.toronto.edu/~pekhimenko/courses/cscd70-w19/content.html)
 	- [CSE131](https://cseweb.ucsd.edu/~gbournou/CSE131/links.html)
 - [llvm constant expression interpreter in clang](https://developers.redhat.com/author/timm-baeder)
@@ -141,6 +141,7 @@ title: BlogHub
 	- [nju 老师知乎](https://www.zhihu.com/people/tree-big-77/posts)
 	- [[area/ai_and_compiler/qihe| Qihe: static verilog analysis framework]]
 - [deepwiki about llvm-project source](https://deepwiki.com/llvm/llvm-project/2.2-constant-expression-evaluation-and-bytecode-interpreter)
+- [youtube static program analysis](https://www.youtube.com/watch?v=te2iYyZfckg&list=PLC-dUCVQghfdu7AG5f_p4oRyKgjDuoAWU&index=3)
 ## interview
 - [os](https://zhuanlan.zhihu.com/p/23755202)
 - [network](https://zhuanlan.zhihu.com/p/24001696)
