@@ -121,6 +121,8 @@ title: BlogHub
 	- [[resource/CS6120_course/index|cs6120]] from [reddit](https://www.reddit.com/r/Compilers/comments/rvnesz/resources_for_learning_compiler_design/)  
 	- [CSCD70](https://www.cs.toronto.edu/~pekhimenko/courses/cscd70-w19/content.html)
 	- [CSE131](https://cseweb.ucsd.edu/~gbournou/CSE131/links.html)
+	- [UCSD CSE 231: Advanced Compiler Design - Sorin Lerner (after UCSD CSE 131: for more on analysis & optimization--data flow analysis, lattice theory, SSA, optimization](https://podcast.ucsd.edu/watch/wi19/cse231_a00)
+	- [KAIST CS420: Compiler Design - Jeehoon Kang (good modern treatment of SSA representation itself](https://www.youtube.com/watch?v=SOzsb09GldA&list=PL5aMzERQ_OZ8RWqn-XiZLXm1IJuaQbXp0&index=5)
 - [llvm constant expression interpreter in clang](https://developers.redhat.com/author/timm-baeder)
 - [halide-lang](https://halide-lang.org/)
 - [Linkers and Loaders](https://www.linuxjournal.com/article/6463)
@@ -141,7 +143,7 @@ title: BlogHub
 	- [nju 老师知乎](https://www.zhihu.com/people/tree-big-77/posts)
 	- [[area/ai_and_compiler/qihe| Qihe: static verilog analysis framework]]
 - [deepwiki about llvm-project source](https://deepwiki.com/llvm/llvm-project/2.2-constant-expression-evaluation-and-bytecode-interpreter)
-- [youtube static program analysis](https://www.youtube.com/watch?v=te2iYyZfckg&list=PLC-dUCVQghfdu7AG5f_p4oRyKgjDuoAWU&index=3)
+- [[resource/static_program_analysis/index|SPA]]
 ## interview
 - [os](https://zhuanlan.zhihu.com/p/23755202)
 - [network](https://zhuanlan.zhihu.com/p/24001696)
