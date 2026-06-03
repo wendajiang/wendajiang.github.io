@@ -5,3 +5,5 @@ title: DTS (Device Tree Spec)
 
 [The material](https://linux-book.readthedocs.io/en/latest/driver/dts/) is great overview and introduction.
 
+[linux and devicetree](https://docs.kernel.org/devicetree/usage-model.html) The Linux usage model for device tree data.
+
