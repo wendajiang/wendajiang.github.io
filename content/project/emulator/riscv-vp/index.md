@@ -11,4 +11,4 @@ The VP++ author proposal the [[pdf/hybrid/2025DATE_Fast_Interpreter-based_ISS.pd
 
 [[project/emulator/riscv-vp/dts|dts]] is needed by linux bootup.
 
-[systemc book](https://systemc.org/resources/books/) is from systemc official website.
+[systemc book](https://systemc.org/resources/books/) is from systemc official website. systemc and tlm2.0 [[pdf/hybrid/IEEE 1666-2023.pdf|spec]]. 
