@@ -12,3 +12,7 @@ The VP++ author proposal the [[pdf/hybrid/2025DATE_Fast_Interpreter-based_ISS.pd
 [[project/emulator/riscv-vp/dts|dts]] is needed by linux bootup.
 
 [systemc book](https://systemc.org/resources/books/) is from systemc official website. systemc and tlm2.0 [[pdf/hybrid/IEEE 1666-2023.pdf|spec]]. 
+
+[plic](https://docs.riscv.org/reference/plic/_attachments/riscv-plic.pdf) is the official pdf, and the [link](https://github.com/torvalds/linux/blob/5bfc75d92efd494db37f5c4c173d3639d4772966/Documentation/devicetree/bindings/interrupt-controller/sifive%2Cplic-1.0.0.yaml) is the linux kernel document about dts of sifive plic.
+
+[fu540-c000](https://static.dev.sifive.com/FU540-C000-v1.0.pdf) is the world's first 64-bit risc-v SoC, capable of supportting full-featured OS, like Linux. And riscv doc is [here](https://docs.riscv.org/reference/home/index.html). ISA reset is in The RISC-V Instruction Set Manual, Volume II: Privileged Architecture 3.4 chapter.
