@@ -23,6 +23,7 @@ title: BlogHub
 	- https://asciiflow.com/#/
 	- https://excalidraw.com/
 	- https://app.diagrams.net/
+	- https://diagon.arthursonzogni.com/#Sequence
 - design pattern
 	- [Game Programming Pattern](https://gameprogrammingpatterns.com/contents.html) [[area/blog/singleton|singleton]] [[area/blog/type_erasure|type_erasure]]
 	- [our pattern language](https://patterns.eecs.berkeley.edu/) parallel pattern
