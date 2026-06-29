@@ -17,4 +17,5 @@ qemu 系统中文学习资料（泽文）
 - https://zevorn.cn/
 - https://www.bilibili.com/video/BV13FrxYNEND?spm_id_from=333.788.videopod.sections&vd_source=bca5aac95ba1ac296e437bcb3303e1f3
 - https://qemu.gevico.online/tutorial/2026/ch1/vm-history/
-- https://gevico.github.io/learning-qemu-docs/ch1/sec1/vm-history/  （2025）
+
+QEMU 严重依赖 [Glib](https://docs.gtk.org/glib/)，基础数据比如 List HashTable 实用 Glib 提供，核心 [main_loop](https://docs.gtk.org/glib/struct.MainLoop.html) 实用 Glib 提供的 event listener 框架
