@@ -30,19 +30,10 @@ export const Latex: QuartzTransformerPlugin<Partial<Options>> = (opts) => {
       return [remarkMath]
     },
     htmlPlugins() {
-      switch (engine) {
-        case "katex": {
-          return [[rehypeKatex, { output: "html", macros, ...(opts?.katexOptions ?? {}) }]]
-        }
-        case "typst": {
-          return [[rehypeTypst, opts?.typstOptions ?? {}]]
-        }
-        case "mathjax": {
-          return [[rehypeMathjax, { macros, ...(opts?.mathJaxOptions ?? {}) }]]
-        }
-        default: {
-          return [[rehypeMathjax, { macros, ...(opts?.mathJaxOptions ?? {}) }]]
-        }
+      if (engine === "katex") {
+        return [[rehypeKatex, { output: "html", strict: "error" }]]
+      } else {
+        return [[rehypeMathjax, { macros }]]
       }
     },
     externalResources() {
@@ -59,8 +50,6 @@ export const Latex: QuartzTransformerPlugin<Partial<Options>> = (opts) => {
               },
             ],
           }
-        default:
-          return { css: [], js: [] }
       }
     },
   }

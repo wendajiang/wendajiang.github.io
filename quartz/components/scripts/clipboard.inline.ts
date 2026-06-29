@@ -7,7 +7,7 @@ document.addEventListener("nav", () => {
   const els = document.getElementsByTagName("pre")
   for (let i = 0; i < els.length; i++) {
     const codeBlock = els[i].getElementsByTagName("code")[0]
-    if (codeBlock) {
+    if (codeBlock && codeBlock.dataset.language !== "plaintext") {
       const source = (
         codeBlock.dataset.clipboard ? JSON.parse(codeBlock.dataset.clipboard) : codeBlock.innerText
       ).replace(/\n\n/g, "\n")

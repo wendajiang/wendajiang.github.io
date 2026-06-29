@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "David Garden",
+    pageTitle: "david.garden",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -23,32 +23,37 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "DM Serif Display",
+        header: {
+          name: "DM Serif Display",
+          weights: [400],
+        },
         body: "Bricolage Grotesque",
         code: "JetBrains Mono",
       },
       colors: {
+        // letterpress poster: deep navy + vermilion on warm paper
         lightMode: {
-          light: "#fffdfa",
-          lightgray: "#e0dcd3",
-          gray: "#b8b8b8",
-          darkgray: "#2A354B",
-          dark: "#08142C",
-          secondary: "#274B75",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "#f5eedd", // warm letterpress paper
+          lightgray: "#e3d9c0", // aged paper borders / code bg
+          gray: "#9a8e76", // muted warm gray (dates, line numbers)
+          darkgray: "#2d4673", // navy ink body text (reads clearly blue, not black)
+          dark: "#16294e", // deep navy headings
+          secondary: "#284d78", // navy links / title / primary accent
+          tertiary: "#c8482b", // bright orange-red (hover, active, graph)
+          highlight: "rgba(200, 72, 43, 0.1)", // faint vermilion ink wash
+          textHighlight: "#f4c84b88", // warm yellow marker
         },
+        // cyanotype: warm cream + vermilion accent on deep prussian blue
         darkMode: {
-          light: "#0c0f14",
-          lightgray: "#1D232D",
-          gray: "#5A657B",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7188A9",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          light: "#06182f", // deep prussian blue background
+          lightgray: "#122845", // lighter prussian borders / code bg
+          gray: "#7191b8", // muted steel-blue (dates, line numbers)
+          darkgray: "#caddf4", // cyanotype light-blue body text
+          dark: "#eef4fc", // bright blue-white (headings)
+          secondary: "#8fb9de", // luminous sky-cyan links / title
+          tertiary: "#e0552f", // bold vermilion (hover, active, graph)
+          highlight: "rgba(224, 85, 47, 0.14)", // faint vermilion wash
+          textHighlight: "#c9542f55", // muted vermilion marker
         },
       },
     },
@@ -57,18 +62,16 @@ const config: QuartzConfig = {
     transformers: [
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
-        priority: ["frontmatter", "filesystem"],
-      }),
-      Plugin.SyntaxHighlighting({
-        theme: {
-          light: "github-light",
-          dark: "github-dark",
-        },
-        keepBackground: false,
+        priority: ["frontmatter", "git", "filesystem"],
       }),
       Plugin.Poetry(),
-      Plugin.RoamFlavoredMarkdown(),
-      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false, parseTags: false }),
+      Plugin.Latex({ renderEngine: "katex" }),
+      Plugin.SyntaxHighlighting(),
+      Plugin.ObsidianFlavoredMarkdown({
+        enableInHtmlEmbed: false,
+        parseTags: false,
+        mermaid: false,
+      }),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "absolute", lazyLoad: true }),
@@ -77,7 +80,6 @@ const config: QuartzConfig = {
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
-      Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
       Plugin.FolderPage(),
@@ -88,7 +90,10 @@ const config: QuartzConfig = {
       }),
       Plugin.Assets(),
       Plugin.Static(),
+      Plugin.Favicon(),
       Plugin.NotFoundPage(),
+      // // Comment out CustomOgImages to speed up build time
+      Plugin.CustomOgImages(),
     ],
   },
 }

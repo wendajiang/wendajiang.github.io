@@ -16,14 +16,6 @@ body {
   font-synthesis: style;
 }
 
-img[src*="banner.svg"] {
-  opacity: 0.8;
-}
-
-[saved-theme="dark"] body[data-slug="index"] img[src*="banner.svg"] {
-  filter: invert(100%);
-}
-
 body[data-slug="thoughts/craft"] {
   & li:has(> img, > video) {
     list-style-type: none;
@@ -41,43 +33,6 @@ body[data-slug="thoughts/craft"] {
       list-style-type: none;
       margin: 1rem 0;
     }
-  }
-}
-
-.left {
-  display: grid !important;
-  gap: 1.5rem !important;
-  grid-template-columns: 1fr;
-  grid-template-rows: min-content min-content min-content min-content;
-  align-items: center;
-
-  .page-title {
-    grid-area: 1 / 1 / 2 / 3;
-  }
-
-  .search {
-    grid-area: 2 / 1 / 3 / 2;
-  }
-
-  .darkmode {
-    grid-area: 2 / 2 / 3 / 3;
-  }
-
-  .toc {
-    grid-row: 3;
-    grid-column: 1 / 3;
-  }
-
-  .recent-notes:nth-last-child(2) {
-    grid-area: 3 / 1 / 3 / 3;
-  }
-
-  .recent-notes:nth-last-child(1) {
-    grid-area: 4 / 1 / 4 / 3;
-  }
-
-  @media all and ($mobile) {
-    display: flex !important;
   }
 }
 
@@ -121,8 +76,162 @@ audio::-webkit-media-controls-panel {
   isolation: isolate;
 }
 
+// Keep link hover in the link's own color family (a brighter shade of the link
+// color) rather than flipping to the warm --tertiary accent. --tertiary stays
+// reserved for graph nodes / active accents. [saved-theme] (always on <html>)
+// raises specificity above the base `a:hover` rule, for both themes.
+[saved-theme] a:hover {
+  color: color-mix(in srgb, var(--secondary) 78%, white);
+}
+
+// Collapse the search to just the magnifying-glass icon (drop the bar).
+// The button still opens the search modal on click.
+.search {
+  min-width: 0;
+  max-width: none;
+
+  & > .search-button {
+    border: none;
+    width: auto;
+    height: 20px;
+    padding: 0;
+
+    & > p {
+      display: none;
+    }
+
+    & svg {
+      margin: 0;
+      width: 16px;
+      min-width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+// On mobile the left sidebar is a flex row; make the header flex-component span
+// the full width so PageTitle's grow:true still acts as a spacer, pushing the
+// search/darkmode icons to the right edge (same as desktop).
+@media all and ($mobile) {
+  .sidebar.left > .flex-component {
+    width: 100%;
+  }
+}
+
+// match the darkmode toggle to the search icon: a 20x20 flex-centered box
+// (default is 20x32 with the svg absolutely positioned), so the two icons
+// line up exactly on the header row
+.darkmode {
+  height: 20px;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & svg {
+    position: static;
+  }
+}
+
+// Blockquotes: a large decorative opening quotation mark instead of the
+// default left bar. The mark hangs in the left margin so the quote text stays
+// aligned with the surrounding prose.
+blockquote {
+  border-left: none;
+  padding-left: 0;
+  position: relative;
+  margin: 1.5rem 0 1.5rem 2.5rem;
+
+  &::before {
+    content: "\201C";
+    position: absolute;
+    left: -2.5rem;
+    top: 0;
+    // pull the glyph's baseline up so the visible top of the quote mark lines
+    // up with the cap height of the first line of the quote
+    transform: translateY(-0.08em);
+    font-family: var(--headerFont);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: var(--secondary);
+    opacity: 0.4;
+  }
+
+  @media all and ($mobile) {
+    margin-left: 1.75rem;
+
+    &::before {
+      left: -1.75rem;
+      font-size: 2.75rem;
+    }
+  }
+}
+
+// "See N more" links: dimmed body text with an underline for clickability,
+// instead of the bold, accent-colored default link styling.
+a.see-more {
+  font-weight: 400;
+  color: var(--darkgray);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  opacity: 0.6;
+
+  &:hover {
+    color: var(--darkgray);
+    opacity: 0.85;
+  }
+}
+
+// ─── Art-deco two-ink accents (vermilion in light, gold in dark via --tertiary) ───
+
+// Footnote reference markers read as the "second ink"
+.data-footnote-ref,
+a[data-footnote-ref] {
+  color: var(--tertiary);
+  font-weight: 600;
+}
+
+// The * * * scene break becomes a vermilion mark instead of muted gray
+hr:after {
+  color: var(--tertiary);
+}
+
+// Inline article links (the ones that used to get the pill wash): a vermilion
+// "second ink" underline instead. Scoped to article prose so nav/sidebar
+// internal links are untouched.
+article a.internal {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--tertiary);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 2px;
+
+  // image embeds and tag chips opt out of the underline
+  &:has(> img) {
+    text-decoration: none;
+  }
+  // tag chips keep their vermilion pill (matches TagList.css)
+  &.tag-link {
+    text-decoration: none;
+    background-color: color-mix(in srgb, var(--tertiary) 12%, transparent);
+  }
+}
+
+// smooth the light/dark theme swap. Bare `*` has zero specificity, so any
+// element with its own `transition` rule overrides this rather than losing it.
+* {
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease,
+    fill 0.15s ease;
+}
+
 // fade-in elements
-#quartz-body {
+body.animation-ready #quartz-body {
   [saved-theme="dark"] & {
     --animation-name: fade2;
   }
@@ -131,11 +240,15 @@ audio::-webkit-media-controls-panel {
     --animation-name: fade;
   }
 
+  // Diagonal cascade with row emphasis: rows within a column are the dominant
+  // motion, and the next column only starts ~75% of the way through the
+  // previous one. Column 1 has ~5 rows (range 4·row), so a column step of
+  // 3·row makes column 2 begin at the 75% mark. 0.2s head start.
   @for $i from 1 through 4 {
     @for $j from 1 through 8 {
       & > *:nth-child(#{$i}) > *:nth-child(#{$j}) {
-        animation: var(--animation-name) 2s ease 1 normal backwards;
-        animation-delay: #{0.1 * $j + 0.4 * $i}s;
+        animation: var(--animation-name) 0.5s ease 1 normal backwards;
+        animation-delay: #{0.2 + 0.45 * ($i - 1) + 0.15 * ($j - 1)}s;
       }
     }
   }
@@ -162,235 +275,265 @@ audio::-webkit-media-controls-panel {
   }
 }
 
-// dappled light
-#dappled-light {
-  animation-duration: 0s;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-  pointer-events: none;
-  position: fixed;
-  height: 100%;
+// footnote back-reference arrow (↩, U+21A9) defaults to emoji presentation;
+// force plain text rendering so it's a simple glyph, not a colored emoji
+.data-footnote-backref {
+  font-variant-emoji: text;
+}
+
+// custom audio player. audioPlayer.inline removes the native <audio>'s
+// `controls`, so it renders nothing (no hide hack needed) while still loading
+// and driving playback. .audio-player is the custom UI inserted next to it.
+.audio-player {
+  margin: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  & > .ap-row {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+
+  .ap-play {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: var(--tertiary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: color-mix(in srgb, var(--tertiary) 80%, white);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+  }
+
+  .ap-bars {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 2rem;
+    cursor: pointer;
+
+    & > span {
+      flex: 0 1 2px;
+      min-height: 2px;
+      background: var(--lightgray);
+      transition: background 0.1s ease;
+
+      &.played {
+        background: var(--tertiary);
+      }
+    }
+  }
+
+  .ap-time {
+    font-size: 0.8rem;
+    color: var(--gray);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+// index-only decorative Three.js dappled-light scene (see dappledLight.inline).
+// komorebi 3-tone palette: deep shadow -> warm gold light -> bright wall.
+// Theme-aware so both modes read well (warm gold on navy/prussian).
+:root {
+  --komorebi-shadow: #233452;
+  --komorebi-mid: #e89a39; // warm amber-orange rim
+  --komorebi-light: #f5eedd;
+  --komorebi-frame: var(--komorebi-shadow); // frame = the dark ink in light mode
+  --komorebi-gap: var(--komorebi-light); // padding gap fill
+  --komorebi-center: 0.38; // tonal balance: light wall w/ dark dapples
+}
+// nighttime: moonlit wall (light blue) with dark tree shadows, cool glow
+[saved-theme="dark"] {
+  --komorebi-shadow: #0c2038; // tree shadow / unlit wall (deep night blue)
+  --komorebi-mid: #6a86b0; // soft penumbra at shadow edges — dimmer than the wall
+  --komorebi-light: #83a1c9; // moonlit wall — the main light color (light blue)
+  --komorebi-frame: var(--komorebi-light); // frame = the moonlight color at night
+  --komorebi-gap: var(--komorebi-shadow); // padding gap fill (dark at night)
+  --komorebi-center: 0.38;
+}
+
+// Reserve the box up-front (fixed height + border) so there's no layout shift
+// while Three.js lazy-loads; the canvas fades in once rendered.
+.dappled-scene {
+  box-sizing: border-box;
+  position: relative;
   width: 100%;
-  isolation: isolate;
+  height: 180px;
+  margin: 0 0 1.5rem;
+  padding: 2px; // gap between the canvas and the border (matches border width)
+  border: 2px solid var(--komorebi-frame); // frame contrasts the page in both themes
+  overflow: hidden;
+  background-color: var(--komorebi-gap);
 
-  --day: #fffdfa;
-  --evening: #fccc83;
-  --dusk: #db7a2a;
-  --night: #0f131c;
-  --dawn: #16132b;
-  --morning: #9fb3bf;
-
-  --shadow: #1a1917;
-  --bounce-light: #f5d7a6;
-  --timing-fn: cubic-bezier(0.455, 0.19, 0, 0.985);
-
-  body.animation-ready & {
-    animation-play-state: running;
-    animation-duration: 1s;
-    animation-name: sunrise;
+  & > .dappled-canvas {
+    display: block;
+    image-rendering: pixelated; // crisp nearest-neighbor upscale of the low-res render
+    opacity: 0;
+    animation: dappled-fade-in 0.8s ease forwards;
   }
 
-  [saved-theme="dark"] body.animation-ready & {
-    animation-duration: 1.5s;
-    animation-name: sunset;
-  }
-
-  [saved-theme="dark"] & {
-    --shadow: #030307;
-    --bounce-light: #1b293f;
-  }
-
-  & > #progressive-blur {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-
-    & > div {
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      backdrop-filter: blur(var(--blur-amount));
-      mask-image: linear-gradient(
-        252deg,
-        transparent,
-        transparent var(--stop1),
-        black var(--stop2),
-        black
-      );
-
-      &:nth-child(1) {
-        --blur-amount: 8px;
-        --stop1: 0%;
-        --stop2: 0%;
-      }
-
-      &:nth-child(2) {
-        --blur-amount: 72px;
-        --stop1: 30%;
-        --stop2: 60%;
-      }
-    }
-  }
-
-  #glow {
-    position: absolute;
-    background: linear-gradient(309deg, var(--bounce-light), var(--bounce-light) 20%, transparent);
-    transition: background 1s var(--timing-fn);
-    height: 100%;
-    width: 100%;
-    opacity: 0.5;
-  }
-
-  #glow-bounce {
-    content: "";
-    position: absolute;
-    background: linear-gradient(355deg, var(--bounce-light) 0%, transparent 30%, transparent 100%);
-    transition: background 1s var(--timing-fn);
-    opacity: 0.5;
-    height: 100%;
-    width: 100%;
-    bottom: 0;
-  }
-
-  & > .perspective {
-    position: absolute;
-    transition:
-      transform 1.7s var(--timing-fn),
-      opacity 4s ease;
-    top: -30vh;
-    right: 0;
-    width: 80vw;
-    height: 130vh;
-    opacity: 0.07;
-    background-blend-mode: darken;
-    transform-origin: top right;
-    transform-style: preserve-3d;
-    transform: matrix3d(0.75, -0.0625, 0, 0.0008, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-
-    [saved-theme="dark"] & {
-      opacity: 0.3;
-      transform: matrix3d(0.8333, 0.0833, 0, 0.0003, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    }
-  }
-
-  #leaves {
-    position: absolute;
-    background-size: cover;
-    background-repeat: no-repeat;
-    bottom: 0px;
-    right: -600px;
-    width: 1600px;
-    height: 1400px;
-    background-image: url("/static/leaves.png");
-    perspective: 400px;
-    animation: billow 8s ease-in-out infinite;
-  }
-
-  #blinds {
-    position: relative;
-    width: 100%;
-
-    & .shutter,
-    & .bar {
-      background-color: var(--shadow);
-    }
-
-    & .shutter {
-      width: 100%;
-      height: 40px;
-      transition: height 1s var(--timing-fn);
-
-      [saved-theme="dark"] & {
-        height: 80px;
-      }
-    }
-
-    & .shutters {
-      display: flex;
-      flex-direction: column;
-      align-items: end;
-      gap: 60px;
-      transition: gap 1s var(--timing-fn);
-
-      [saved-theme="dark"] & {
-        gap: 20px;
-      }
-    }
-
-    & > .vertical {
-      top: 0;
-      position: absolute;
-      height: 100%;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-
-      & > .bar {
-        width: 12px;
-        height: 100%;
-      }
-    }
+  // on mobile the header stacks directly above the content, so add breathing room
+  @media all and ($mobile) {
+    margin-top: 1.5rem;
   }
 }
 
-@keyframes sunrise {
-  0% {
-    background-color: var(--night);
-  }
-
-  10% {
-    background-color: var(--dawn);
-  }
-
-  35% {
-    background-color: var(--morning);
-  }
-
-  100% {
-    background-color: var(--day);
+@keyframes dappled-fade-in {
+  to {
+    opacity: 1;
   }
 }
 
-@keyframes sunset {
-  0% {
-    background-color: var(--day);
+// dappled-light debug panel (Konami toggle: up up down down left right left right)
+.dappled-debug {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  width: 230px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 0.75rem;
+  // site theme vars so the panel flips with light/dark mode
+  background: color-mix(in srgb, var(--light) 95%, transparent);
+  color: var(--dark);
+  border: 1px solid var(--dark);
+  border-radius: 0;
+  font-family: var(--codeFont, monospace);
+  font-size: 0.72rem;
+
+  // live sparkline charts (fps, wind)
+  .dappled-chart {
+    margin: 0 0 0.5rem;
+
+    span {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--secondary);
+      opacity: 0.9;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 30px;
+      background: color-mix(in srgb, var(--secondary) 10%, transparent);
+    }
   }
 
-  30% {
-    background-color: var(--evening);
+  // section headers
+  .dappled-debug-h {
+    margin: 0.8rem 0 0.3rem;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--lightgray);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.66rem;
+    opacity: 0.7;
+
+    &:first-of-type {
+      margin-top: 0.3rem;
+    }
   }
 
-  60% {
-    background-color: var(--dusk);
+  .dappled-debug-btn {
+    display: block;
+    width: 100%;
+    margin: 0.3rem 0;
+    padding: 4px 6px;
+    background: var(--lightgray);
+    color: var(--dark);
+    border: 1px solid var(--dark);
+    border-radius: 0;
+    font: inherit;
+    font-size: 0.7rem;
+    cursor: pointer;
+
+    &:hover {
+      background: var(--secondary);
+      color: var(--light);
+    }
   }
 
-  90% {
-    background-color: var(--dawn);
+  label {
+    display: block;
+    margin: 0.4rem 0;
+
+    span {
+      display: block;
+      margin-bottom: 3px;
+      opacity: 0.85;
+    }
+
+    // thin slider track + small thumb
+    input[type="range"] {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 10px;
+      background: transparent;
+      cursor: pointer;
+
+      &::-webkit-slider-runnable-track {
+        height: 2px;
+        background: color-mix(in srgb, var(--gray) 50%, transparent);
+      }
+      &::-moz-range-track {
+        height: 2px;
+        background: color-mix(in srgb, var(--gray) 50%, transparent);
+      }
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 9px;
+        height: 9px;
+        margin-top: -3.5px;
+        border-radius: 50%;
+        background: var(--secondary);
+      }
+      &::-moz-range-thumb {
+        width: 9px;
+        height: 9px;
+        border: none;
+        border-radius: 50%;
+        background: var(--secondary);
+      }
+    }
   }
 
-  100% {
-    background-color: var(--night);
-  }
-}
+  // layer / dither toggles: checkbox inline with label
+  label.dappled-debug-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0.35rem 0;
+    cursor: pointer;
 
-@keyframes billow {
-  0% {
-    transform: rotateX(0deg) rotateY(0deg) scale(1);
-  }
-
-  18% {
-    transform: rotateX(1deg) rotateY(2deg) scale(1.03);
-  }
-
-  32% {
-    transform: rotateX(-4deg) rotateY(-2deg) scale(0.96);
-  }
-
-  66% {
-    transform: rotateX(3deg) rotateY(-1deg) scale(1.04);
-  }
-
-  100% {
-    transform: rotateX(0deg) rotateY(0deg) scale(1);
+    input[type="checkbox"] {
+      width: auto;
+      margin: 0;
+      accent-color: var(--secondary);
+    }
+    span {
+      display: inline;
+      margin: 0;
+      opacity: 0.95;
+    }
   }
 }

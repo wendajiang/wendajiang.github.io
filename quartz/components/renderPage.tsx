@@ -3,7 +3,8 @@ import { QuartzComponent, QuartzComponentProps } from "./types"
 import HeaderConstructor from "./Header"
 import BodyConstructor from "./Body"
 import { JSResourceToScriptElement, StaticResources } from "../util/resources"
-import { clone, FullSlug, RelativeURL, joinSegments, normalizeHastElement } from "../util/path"
+import { FullSlug, RelativeURL, joinSegments, normalizeHastElement } from "../util/path"
+import { clone } from "../util/clone"
 import { visit } from "unist-util-visit"
 import { Root, Element, ElementContent } from "hast"
 import { GlobalConfiguration } from "../cfg"
@@ -28,7 +29,7 @@ export function pageResources(
   const contentIndexPath = joinSegments(baseDir, "static/contentIndex.json")
   const contentIndexScript = `const fetchData = fetch("${contentIndexPath}").then(data => data.json())`
 
-  return {
+  const resources: StaticResources = {
     css: [
       {
         content: joinSegments(baseDir, "index.css"),
@@ -48,34 +49,33 @@ export function pageResources(
         script: contentIndexScript,
       },
       ...staticResources.js,
-      {
-        src: joinSegments(baseDir, "postscript.js"),
-        loadTime: "afterDOMReady",
-        moduleType: "module",
-        contentType: "external",
-      },
     ],
+    additionalHead: staticResources.additionalHead,
   }
+
+  resources.js.push({
+    src: joinSegments(baseDir, "postscript.js"),
+    loadTime: "afterDOMReady",
+    moduleType: "module",
+    contentType: "external",
+  })
+
+  return resources
 }
 
-export function renderPage(
+function renderTranscludes(
+  root: Root,
   cfg: GlobalConfiguration,
   slug: FullSlug,
   componentData: QuartzComponentProps,
-  components: RenderComponents,
-  pageResources: StaticResources,
-): string {
-  // make a deep copy of the tree so we don't remove the transclusion references
-  // for the file cached in contentMap in build.ts
-  const root = clone(componentData.tree) as Root
-
+) {
   // process transcludes in componentData
   visit(root, "element", (node, _index, _parent) => {
     if (node.tagName === "blockquote") {
       const classNames = (node.properties?.className ?? []) as string[]
       if (classNames.includes("transclude")) {
         const inner = node.children[0] as Element
-        const transcludeTarget = inner.properties["data-slug"] as FullSlug
+        const transcludeTarget = (inner.properties["data-slug"] ?? slug) as FullSlug
         const page = componentData.allFiles.find((f) => f.slug === transcludeTarget)
         if (!page) {
           return
@@ -103,7 +103,12 @@ export function renderPage(
                 tagName: "a",
                 properties: { href: inner.properties?.href, class: ["internal", "transclude-src"] },
                 children: [
-                  { type: "text", value: i18n(cfg.locale).components.transcludes.linkToOriginal },
+                  {
+                  type: "text",
+                  value:
+                    page.frontmatter?.title ??
+                    i18n(cfg.locale).components.transcludes.linkToOriginal,
+                },
                 ],
               },
             ]
@@ -146,7 +151,12 @@ export function renderPage(
               tagName: "a",
               properties: { href: inner.properties?.href, class: ["internal", "transclude-src"] },
               children: [
-                { type: "text", value: i18n(cfg.locale).components.transcludes.linkToOriginal },
+                {
+                  type: "text",
+                  value:
+                    page.frontmatter?.title ??
+                    i18n(cfg.locale).components.transcludes.linkToOriginal,
+                },
               ],
             },
           ]
@@ -176,7 +186,12 @@ export function renderPage(
               tagName: "a",
               properties: { href: inner.properties?.href, class: ["internal", "transclude-src"] },
               children: [
-                { type: "text", value: i18n(cfg.locale).components.transcludes.linkToOriginal },
+                {
+                  type: "text",
+                  value:
+                    page.frontmatter?.title ??
+                    i18n(cfg.locale).components.transcludes.linkToOriginal,
+                },
               ],
             },
           ]
@@ -184,6 +199,19 @@ export function renderPage(
       }
     }
   })
+}
+
+export function renderPage(
+  cfg: GlobalConfiguration,
+  slug: FullSlug,
+  componentData: QuartzComponentProps,
+  components: RenderComponents,
+  pageResources: StaticResources,
+): string {
+  // make a deep copy of the tree so we don't remove the transclusion references
+  // for the file cached in contentMap in build.ts
+  const root = clone(componentData.tree) as Root
+  renderTranscludes(root, cfg, slug, componentData)
 
   // set componentData.tree to the edited html that has transclusions rendered
   componentData.tree = root
@@ -218,11 +246,11 @@ export function renderPage(
   )
 
   const lang = componentData.fileData.frontmatter?.lang ?? cfg.locale?.split("-")[0] ?? "en"
+  const direction = i18n(cfg.locale).direction ?? "ltr"
   const doc = (
-    <html lang={lang}>
+    <html lang={lang} dir={direction}>
       <Head {...componentData} />
       <body data-slug={slug}>
-        <DappledLight />
         <div id="quartz-root" class="page">
           <Body {...componentData}>
             {LeftComponent}
@@ -234,11 +262,11 @@ export function renderPage(
                   ))}
                 </Header>
                 <div class="popover-hint">
-                  {beforeBody.map((BodyComponent) => (
-                    <BodyComponent {...componentData} />
-                  ))}
+                  {slug !== "index" &&
+                    beforeBody.map((BodyComponent) => <BodyComponent {...componentData} />)}
                 </div>
               </div>
+              {slug === "index" && <div class="dappled-scene" aria-hidden="true"></div>}
               <Content {...componentData} />
               <hr />
               <div class="page-footer">
@@ -259,51 +287,4 @@ export function renderPage(
   )
 
   return "<!DOCTYPE html>\n" + render(doc)
-}
-
-function DappledLight() {
-  return (
-    <div id="dappled-light">
-      <div id="glow"></div>
-      <div id="glow-bounce"></div>
-      <div class="perspective">
-        <div id="leaves"></div>
-        <div id="blinds">
-          <div class="shutters">
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-            <div class="shutter"></div>
-          </div>
-          <div class="vertical">
-            <div class="bar"></div>
-            <div class="bar"></div>
-          </div>
-        </div>
-      </div>
-      <div id="progressive-blur">
-        <div></div>
-        <div></div>
-      </div>
-    </div>
-  )
 }

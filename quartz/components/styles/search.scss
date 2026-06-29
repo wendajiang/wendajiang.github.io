@@ -8,24 +8,24 @@
   }
 
   & > .search-button {
-    background-color: var(--lightgray);
-    border: none;
-    border-radius: 4px;
+    background-color: transparent;
+    border: 1px var(--lightgray) solid;
+    border-radius: 0;
     font-family: inherit;
     font-size: inherit;
     height: 2rem;
-    padding: 0;
+    padding: 0 1rem 0 0;
     display: flex;
     align-items: center;
     text-align: inherit;
     cursor: pointer;
     white-space: nowrap;
     width: 100%;
-    justify-content: space-between;
 
     & > p {
       display: inline;
-      padding: 0 1rem;
+      color: var(--gray);
+      text-wrap: unset;
     }
 
     & svg {
@@ -36,13 +36,13 @@
 
       .search-path {
         stroke: var(--darkgray);
-        stroke-width: 2px;
+        stroke-width: 1.5px;
         transition: stroke 0.5s ease;
       }
     }
   }
 
-  & > #search-container {
+  & > .search-container {
     position: fixed;
     contain: layout;
     z-index: 999;
@@ -52,13 +52,12 @@
     height: 100vh;
     overflow-y: auto;
     display: none;
-    backdrop-filter: blur(4px);
 
     &.active {
       display: inline-block;
     }
 
-    & > #search-space {
+    & > .search-space {
       width: 65%;
       margin-top: 12vh;
       margin-left: auto;
@@ -70,11 +69,8 @@
 
       & > * {
         width: 100%;
-        border-radius: 7px;
+        border-radius: 0;
         background: var(--light);
-        box-shadow:
-          0 14px 50px rgba(27, 33, 48, 0.12),
-          0 10px 30px rgba(27, 33, 48, 0.16);
         margin-bottom: 2em;
       }
 
@@ -84,17 +80,17 @@
         font-family: var(--bodyFont);
         color: var(--dark);
         font-size: 1.1em;
-        border: 1px solid var(--lightgray);
+        border: 1px solid var(--darkgray);
 
         &:focus {
           outline: none;
         }
       }
 
-      & > #search-layout {
+      & > .search-layout {
         display: none;
         flex-direction: row;
-        border: 1px solid var(--lightgray);
+        border: 1px solid var(--darkgray);
         flex: 0 0 100%;
         box-sizing: border-box;
 
@@ -102,7 +98,7 @@
           display: flex;
         }
 
-        &[data-preview] > #results-container {
+        &[data-preview] > .results-container {
           flex: 0 0 min(30%, 450px);
         }
 
@@ -129,15 +125,17 @@
 
         & > div {
           height: calc(75vh - 12vh);
-          border-radius: 5px;
+          border-radius: 0;
         }
 
         @media all and ($mobile) {
-          & > #preview-container {
+          flex-direction: column;
+
+          & > .preview-container {
             display: none !important;
           }
 
-          &[data-preview] > #results-container {
+          &[data-preview] > .results-container {
             width: 100%;
             height: auto;
             flex: 0 0 100%;
@@ -146,11 +144,12 @@
 
         & .highlight {
           background: color-mix(in srgb, var(--tertiary) 60%, rgba(255, 255, 255, 0));
-          border-radius: 5px;
+          border-radius: 0;
           scroll-margin-top: 2rem;
         }
 
-        & > #preview-container {
+        & > .preview-container {
+          flex-grow: 1;
           display: block;
           overflow: hidden;
           font-family: inherit;
@@ -170,7 +169,7 @@
           }
         }
 
-        & > #results-container {
+        & > .results-container {
           overflow-y: auto;
 
           & .result-card {
@@ -203,13 +202,19 @@
               margin: 0;
             }
 
+            @media all and not ($mobile) {
+              & > p.card-description {
+                display: none;
+              }
+            }
+
             & > ul.tags {
               margin-top: 0.45rem;
               margin-bottom: 0;
             }
 
             & > ul > li > p {
-              border-radius: 8px;
+              border-radius: 0;
               background-color: var(--highlight);
               padding: 0.2rem 0.4rem;
               margin: 0 0.1rem;

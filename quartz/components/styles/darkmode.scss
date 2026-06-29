@@ -5,16 +5,23 @@
   background: none;
   border: none;
   width: 20px;
-  height: 20px;
-  margin: 0 10px;
+  height: 32px;
+  margin: 0;
   text-align: inherit;
+  flex-shrink: 0;
 
   & svg {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    top: calc(50% - 10px);
-    fill: var(--darkgray);
+    width: 16px;
+    height: 16px;
+    top: calc(50% - 8px);
+    // stroke-based icons to match the search icon. viewBox is 24 but renders at
+    // 20px, so 1.8 in-viewBox renders as the search's ~1.5px on-screen stroke
+    fill: none;
+    stroke: var(--darkgray);
+    stroke-width: 1.8px;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
     transition: opacity 0.1s ease;
   }
 }
@@ -28,19 +35,19 @@
 }
 
 :root[saved-theme="dark"] .darkmode {
-  & > #dayIcon {
+  & > .dayIcon {
     display: none;
   }
-  & > #nightIcon {
+  & > .nightIcon {
     display: inline;
   }
 }
 
 :root .darkmode {
-  & > #dayIcon {
+  & > .dayIcon {
     display: inline;
   }
-  & > #nightIcon {
+  & > .nightIcon {
     display: none;
   }
 }

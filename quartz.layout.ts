@@ -2,33 +2,8 @@ import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import { SimpleSlug } from "./quartz/util/path"
 
-// components shared across all pages
-export const sharedPageComponents: SharedLayout = {
-  head: Component.Head(),
-  header: [],
-  afterBody: [],
-  footer: Component.Footer({
-    links: {
-      GitHub: "https://github.com/wendajiang/wendajiang.github.io",
-    },
-  }),
-}
-
-// components for pages that display a single page (e.g. a single note)
-export const defaultContentPageLayout: PageLayout = {
-  beforeBody: [
-    Component.Breadcrumbs(),
-    Component.ArticleTitle(),
-    Component.ContentMeta(),
-    Component.TagList(),
-  ],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.Darkmode(),
-    Component.DesktopOnly(
-      Component.RecentNotes({
+const recentNotes = [
+  Component.RecentNotes({
         title: "Recent Blogs",
         limit: 9,
         showTags: false,
@@ -36,27 +11,46 @@ export const defaultContentPageLayout: PageLayout = {
           f.slug!.startsWith("area/blog/") && f.slug! !== "area/blog/index" && !f.frontmatter?.noindex,
         linkToMore: "blog/" as SimpleSlug,
       }),
-    ),
-  ],
-  right: [
-      Component.Graph({
+]
+
+// components shared across all pages
+export const sharedPageComponents: SharedLayout = {
+  head: Component.Head(),
+  header: [],
+  afterBody: [...recentNotes.map((c) => Component.MobileOnly(c))],
+  footer: Component.Footer({
+    links: {
+      GitHub: "https://github.com/wendajiang/wendajiang.github.io",
+    },
+  }),
+}
+
+const left = [
+  Component.Flex({
+    gap: "0.5rem",
+    components: [
+      { Component: Component.PageTitle(), grow: true },
+      { Component: Component.Search() },
+      { Component: Component.Darkmode() },
+    ],
+  }),
+  ...recentNotes.map((c) => Component.DesktopOnly(c)),
+]
+
+// components for pages that display a single page (e.g. a single note)
+export const defaultContentPageLayout: PageLayout = {
+  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta(), Component.TagList()],
+  left,
+  right: [Component.Graph({
           globalGraph: {
                showTags: false,
           },
-      }),
-    Component.Backlinks(),
-    Component.DesktopOnly(Component.TableOfContents()),
-  ],
+      }), Component.DesktopOnly(Component.TableOfContents()), Component.Backlinks()],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
-  left: [
-    Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
-    Component.Darkmode(),
-  ],
+  beforeBody: [Component.ArticleTitle(), Component.ContentMeta()],
+  left,
   right: [],
 }
