@@ -5,6 +5,7 @@ date: 2026-06-30
 QEMU use c language, and implement a class mechanism.
 
 review OO:
+- encapsulation （Object properties)
 - inheritance
 - static field
 - constructor and destructor
@@ -63,6 +64,32 @@ static const TypeInfo x86_cpu_type_info = {
 `X86CPU` is non-static member, and `X86CPUClass` is static member.
 ## QEMU all objects parent is `Object` and `ObjectClass`
 `Object` store the `non-static` part, `ObjectClass` store the `static` part
+
+```c
+/* include/qom/object.h: 127 */ 
+struct ObjectClass { 
+	/* private: */ 
+	Type type; 
+	GSList *interfaces; 
+	
+	const char *object_cast_cache[OBJECT_CLASS_CAST_CACHE]; 
+	const char *class_cast_cache[OBJECT_CLASS_CAST_CACHE]; 
+	
+	ObjectUnparent *unparent; 
+	GHashTable *properties; 
+};
+
+struct Object { 
+	/* private: */ 
+	ObjectClass *class; 
+	ObjectFree *free; 
+	GHashTable *properties; 
+	uint32_t ref; 
+	Object *parent; 
+};
+```
+
+`Object` first member is `ObjectClass*`. C language guarantee the first member is the struct base address, so any derived object first member is base object, we can `cast` it to `Object`.
 ## TypeInfo `instance_init` and `class_init` is the ctor of class and object
 ```c
 static const TypeInfo x86_cpu_type_info = {
@@ -70,7 +97,10 @@ static const TypeInfo x86_cpu_type_info = {
     .class_init = x86_cpu_common_class_init,
 };
 ```
+## Dtor
+QOM use ref count mechanism to determine when to call the dtor function to delete `object`. 
 
+`TypeInfo`'s `instance_finalize` to define the dtor function.
 ## function pointer in derived class init impl the `override`
 `x86_cpu_common_class_init` and `cpu_class_init` are `x86_cpu_type_info` and `cpu_type_info` registered ctor ，the parse_features function, 
 `x86_cpu_common_class_init` register to another function `x86_cpu_parser_featurestr`.
@@ -102,7 +132,10 @@ static void cpu_class_init(ObjectClass *klass, void *data)
 - TypeInfo::class_init: init the static member
 - TypeInfo::instance_init: init the non-static member
 
-[[resource/qemu/qdev|qdev]] have `qdev_realize` to initialize the device.
+[[resource/qemu/qdev|qdev]] have `qdev_realize` to initialize the device.  Why we need the `realized` property. 
+
+> As the Class init must be successful, so device need `realize` and `unrealize` to handle the device create and destroy dynamicly.
+> If device realize successfully, the device would be added to qom-tree, or set `Error**` pointer.
 
 ## type_init
 ```c
@@ -125,6 +158,8 @@ do_qemu_init_x86_cpu_register_types(void) {
 ```
 
 > Use `TypeInfo` init the `TypeImpl`, `TypeInfo` store the static data, `TypeImpl` store the runtime data
+
+![[pics/qemu-qom1.drawio.png]]
 
 So, the call chain is 
 ```text
@@ -177,8 +212,46 @@ Call `object_new` to initial:
 		- if object has parent, call parent's object_init_with_type
 		- call TypeImpl::instance_init
 
+[[resource/qemu/qdev|qdev]] describe device init that is related the object and objectclass
+
+The class relationship is below:
+![[pics/qemu-qom-class-tree.png]]
+
+# Property
+All property must be accessed by visitor. C language do not support struct `private`  member, so QEMU `Object` import `properties` hash table, contains `Object` can access/modify data and function(`ObjectProperty`)
+
+```c
+struct ObjectProperty { 
+	char *name; 
+	char *type; 
+	char *description; 
+	ObjectPropertyAccessor *get; 
+	ObjectPropertyAccessor *set; 
+	ObjectPropertyResolve *resolve; 
+	ObjectPropertyRelease *release; 
+	ObjectPropertyInit *init; 
+	void *opaque; 
+	QObject *defval; 
+};
+```
+
 # Interface
 
-@todo
+```c
+struct InterfaceClass {
+	ObjectClass parent_class;
+	
+	ObjectClass *concrete_class;
+	Type interface_type;
+};
+```
+
+One QOM class can implement multiple interface,  `ObjectClass` struct has `interfaces` list, every element is `InterfaceClass*`, to find the `interface_type` that point one `TypeImpl`.
 
 # Cast
+
+As [[#function pointer in derived class init impl the `override`| override]] describe, at runtime, QEMU support `dynamic cast` to call different function pointer to implement the `polymorphic`. The feature is 
+```c
+ObjectClass* object_class_dynamic_cast(ObjectClass* class, const char* typename);
+```
+
