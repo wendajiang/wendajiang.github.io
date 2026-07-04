@@ -3,7 +3,7 @@ title: QEMU information hub
 date: 2026-06-19
 ---
 [qemu wiki](https://wiki.qemu.org/Documentation) is another platform to simulate the risc-v ISA cpu. Its official webset [1](https://www.qemu.org/).
-- [[resource/qemu/qemu_build|QEMU build]]
+- [[resource/qemu/build|QEMU build]]
 
 [Fabrice Bellard](https://bellard.org/) is the author, and he also dev ffmpeg. 
 
