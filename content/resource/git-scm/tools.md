@@ -493,7 +493,7 @@ This can be particularly useful for conflicts of binary files where you can simp
 
 Another useful tool when resolving merge conflicts is `git log`. This can help you get context on what may have contributed to the conflicts. Reviewing a little bit of history to remember why two lines of development were touching the same area of code can be really helpful sometimes.
 
-To get a full list of all of the unique commits that were included in either branch involved in this merge, we can use the “triple dot” syntax that we learned in [[resource/git-scm/git_tools#Triple Dot| Triple Dot]].
+To get a full list of all of the unique commits that were included in either branch involved in this merge, we can use the “triple dot” syntax that we learned in [[resource/git-scm/tools#Triple Dot| Triple Dot]].
 
 ```console
 $ git log --oneline --left-right HEAD...MERGE_HEAD
