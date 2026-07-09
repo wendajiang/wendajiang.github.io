@@ -8,7 +8,7 @@ const recentNotes = [
         limit: 3,
         showTags: false,
         filter: (f) =>
-          f.slug!.startsWith("resource/") && f.slug! !== "resource/index" && !f.frontmatter?.noindex,
+          f.slug!.startsWith("resource/") && f.slug! !== "*index" && !f.frontmatter?.noindex,
         linkToMore: "resource/" as SimpleSlug,
       }),
   Component.RecentNotes({
@@ -16,7 +16,7 @@ const recentNotes = [
         limit: 3,
         showTags: false,
         filter: (f) =>
-          f.slug!.startsWith("project/") && f.slug! !== "project/index" && !f.frontmatter?.noindex,
+          f.slug!.startsWith("project/") && f.slug! !== "*index" && !f.frontmatter?.noindex,
         linkToMore: "project/" as SimpleSlug,
       }),
   Component.RecentNotes({
@@ -24,7 +24,7 @@ const recentNotes = [
         limit: 5,
         showTags: false,
         filter: (f) =>
-          f.slug!.startsWith("area/") && f.slug! !== "area/index" && !f.frontmatter?.noindex,
+          f.slug!.startsWith("area/") && f.slug! !== "*index" && !f.frontmatter?.noindex,
         linkToMore: "area/" as SimpleSlug,
       }),
 ]
