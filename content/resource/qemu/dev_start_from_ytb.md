@@ -140,6 +140,13 @@ for x86 machine
 		- Interrupt Request Handlers(IRQs)
 	- When a ps/2 keyboard interrupt occurs, draw a character to the VESA framebuffer
 
+
+## Summary
+- 1 main event thread
+- N vCPU threads
+- machine modeled in QOM types
+- memory regions link together devices
+
 # reference
 - https://www.youtube.com/watch?v=OCBLTMKLGAk
 - https://www.youtube.com/watch?v=jrZ56K3Sl_k

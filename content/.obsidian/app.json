@@ -2,5 +2,6 @@
   "alwaysUpdateLinks": true,
   "newLinkFormat": "absolute",
   "showUnsupportedFiles": false,
-  "attachmentFolderPath": "pics"
+  "attachmentFolderPath": "pics",
+  "readableLineLength": false
 }
