@@ -4,11 +4,27 @@ import { SimpleSlug } from "./quartz/util/path"
 
 const recentNotes = [
   Component.RecentNotes({
-        title: "Recent Blogs",
-        limit: 9,
+        title: "Recent Resource",
+        limit: 3,
         showTags: false,
         filter: (f) =>
-          f.slug!.startsWith("area/blog/") && f.slug! !== "area/blog/index" && !f.frontmatter?.noindex,
+          f.slug!.startsWith("resource/") && f.slug! !== "resource/index" && !f.frontmatter?.noindex,
+        linkToMore: "blog/" as SimpleSlug,
+      }),
+  Component.RecentNotes({
+        title: "Recent Project",
+        limit: 3,
+        showTags: false,
+        filter: (f) =>
+          f.slug!.startsWith("project/") && f.slug! !== "project/index" && !f.frontmatter?.noindex,
+        linkToMore: "blog/" as SimpleSlug,
+      }),
+  Component.RecentNotes({
+        title: "Recent Area",
+        limit: 5,
+        showTags: false,
+        filter: (f) =>
+          f.slug!.startsWith("area/") && f.slug! !== "area/index" && !f.frontmatter?.noindex,
         linkToMore: "blog/" as SimpleSlug,
       }),
 ]
