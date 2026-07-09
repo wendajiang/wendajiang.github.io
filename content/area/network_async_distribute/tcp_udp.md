@@ -1,5 +1,6 @@
 ---
 title: TCP and UDP basic
+date: 2025-10-21
 ---
 # TCP
 ![[pics/Pasted image 20251021234324.png]]
