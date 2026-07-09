@@ -4,6 +4,10 @@ date: 2026-07-01
 tags:
   - qemu
 ---
+- previously separate API
+- Now built on [[resource/qemu/qom|QOM]]
+- Generic Device base class, can connect to buses
+- Extra constructors `realize()/unrealize()` :(
 # Device Init
 ![[pics/qemu-qdev-class.drawio.png]]
 It show the class relationship.

@@ -2,6 +2,14 @@
 title: QEMU Object Model(QOM)
 date: 2026-06-30
 ---
+# QOM
+- OOP (object-oriented programming) system in C
+- Single-inheritance of types
+- Multiple inheritance of interfaces
+- Dynamic type registering(modules)
+- Map internal members to publicly exposed properties (get/set method)
+
+
 QEMU use c language, and implement a class mechanism.
 
 review OO:

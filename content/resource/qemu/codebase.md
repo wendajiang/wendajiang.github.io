@@ -1,0 +1,63 @@
+---
+title: CodeBase overview
+date: 2026-07-09
+tags:
+  - qemu
+---
+The [official doc](https://www.qemu.org/docs/master/devel/codebase.html) mentions the [[resource/qemu/dev_start_from_ytb|quick start dev video]] and the subsystems links. And it present briefly every folder.
+
+- accel: Infrastructure and architecture agnostic code related to the various accelerators supported by QEMU (**TCG, KVM, hvf, whpx, xen, nvmm, mshv**). Contains interfaces for operations that will be implemented per target
+- audio: Audio(host) support
+- authz: [QEMU authorization framework](https://www.qemu.org/docs/master/system/authz.html#client-authorization)
+- backends: Various backends that are used to access resources on the host (e.g. for random number generation, **memory backing** or cryptographic functions)
+- block: Block devices and image formats implementation
+- bsk-user: BSD User Mode
+- build: where the code built goes by default.
+- chardev: Various backends used by char devices
+- common-user: User-mode assembly code for **dealing with signals occuring during syscalls**
+- configs: makefiles defining configuration to build QEMU
+- contrib: Communitry contributed devices/plugins/tools
+- crypto: Cryptographic algorithms used in QEMU
+- disas: Disassembly functions used by QEMU target code
+- docs: QEMU documentation
+- dump: Code to dump memory of a running VM
+- ebpf: eBPF program support in QEMU. virtio-net RSS uses it
+- fpu: Floating-point software emulation
+- fsdev: [VirtFS](https://www.linux-kvm.org/page/VirtFS) support
+- gdbstub: GDB support
+- host: Various architecture specific header files(crypto, atomic, memory operations)
+- linux-headers: A subset of headers imported from Linux kernel and used for implementing KVM support and user-mode
+- linux-users: User mode implementation. Contains one folder per target architecture
+- include: All headers associated to different subsystems in QEMU
+- hw: **[Devices](https://www.qemu.org/docs/master/system/device-emulation.html#device-emulation) and boards emulation.** Devices are categorized by type/protocol/architecture and located in associated subfolder.
+- io: QEMU I/O channels
+- libdecnumber: Import of gcc library, used to implement decimal number arithmetic
+- migration: Migration framework
+- monitor: Monitor implementation (HMP & QMP)
+- nbd: QEMU NBD(Network Block Device) server.
+- net: Network (host) support
+- pc-bios: Contains pre-built fireware binaries and boot images, ready to use in QEMU without compilation
+- plugins: [TCG plugins](https://www.qemu.org/docs/master/about/emulation.html#tcg-plugins) core implementation. Plugins can be found in tests and contrib folders
+- po: Translation files
+- python: Python part of our build/test system
+- qapi: [QAPI](https://www.qemu.org/docs/master/devel/qapi-code-gen.html#qapi) implementation (json schema)
+- qobject: QEMU Object implementation
+- qga: QEMU Guest agent implementation
+- qom: QEMU [Object Model](https://www.qemu.org/docs/master/devel/qom.html#qom) implementation, with monitor associated commands
+- replay: QEMU [Record/replay](https://www.qemu.org/docs/master/system/replay.html#replay) implementation
+- roms: Contains source code for various firmware and ROMs, which can be compiled if custom or updated version are needed
+- rust: Rust integration in QEMU. It contains the new interfaces defined and associated devices using it
+- scripts: Collection of scripts used in build and test systems, and various tools for QEMU codebase and execution traces
+- scsi: Code releated to SCSI support, used by SCSI devices
+- semihosting: QEMU [Semihosting](https://www.qemu.org/docs/master/about/emulation.html#semihosting) implementation
+- stats: Monitor stats commands implementation
+- storage-daemon: QEMU [Storage daemon](https://www.qemu.org/docs/master/tools/qemu-storage-daemon.html#storage-daemon) implementation
+- stubs: Various stubs (empty functions) used to compile QEMU with specific configurations
+- subprojects: QEMU submodules used by QEMU build system
+- system: **QEMU system mode implementation (cpu, mmu, boot support)**
+- target: Contains code for all target architectures supported (one subfolder per arch). For every arch, you can find **accelerator specific implementations**
+- tcg: [TCG](https://www.qemu.org/docs/master/devel/index-tcg.html#tcg) related code. Contains one subforlder per host supported arch.
+- *test*
+- trace: [Tracing framework](https://www.qemu.org/docs/master/devel/tracing.html#tracing). Used to print information associated to various events during execution
+- ui: QEMU User interfaces
+- util: Utility code used by others pargs of QEMU
