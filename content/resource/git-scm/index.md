@@ -1,5 +1,6 @@
 ---
 title: git scm --everything-is-local
+date: 2026-03-05
 ---
 https://git-scm.com/
 - [reference](https://git-scm.com/docs)

@@ -1,5 +1,6 @@
 ---
 title: RISC-V Virtual Prototype(VP)
+date: 2026-05-30
 ---
 [[pdf/hybrid/2018FDL_RISCV_VP.pdf|Original RISCV_VP]] is begin from 2018. And the official website is [1](https://agra.informatik.uni-bremen.de/projects/risc-v/).
 

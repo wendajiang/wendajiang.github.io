@@ -1,5 +1,6 @@
 ---
 title: Static Program Analysis (SPA)
+date: 2026-05-27
 ---
 - [youtube static program analysis](https://www.youtube.com/watch?v=te2iYyZfckg&list=PLC-dUCVQghfdu7AG5f_p4oRyKgjDuoAWU&index=3)
 - [SPA nju](https://tai-e.pascal-lab.net/lectures.html) [bilibili](https://space.bilibili.com/2919428/upload/video)

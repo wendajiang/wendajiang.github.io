@@ -1,5 +1,6 @@
 ---
 title: DTS (Device Tree Spec)
+date: 2026-06-02
 ---
 [DTS spec](https://github.com/devicetree-org/devicetree-specification) is on github. and [[project/emulator/riscv-vp/notes_about_dts_spec|notes_about_dts_spec]] is the read note.
 

@@ -1,5 +1,6 @@
 ---
 title: "Lesson 7: Introduction LLVM"
+date: 2026-05-27
 ---
 [Good teacher blog](https://www.cs.cornell.edu/~asampson/blog/llvm.html)
 

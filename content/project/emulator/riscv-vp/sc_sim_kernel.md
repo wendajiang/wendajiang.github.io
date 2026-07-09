@@ -1,5 +1,6 @@
 ---
 title: SystemC Simulation Kernel
+date: 2026-06-14
 ---
 [blog about sc kernel](https://singularitykchen.github.io/blog/2020/06/12/SystemC-and-Its-Simulation-Kernel/) is one great overview about simulation kernel of systemc.
 ![[pics/Pasted image 20260614122117.png]]

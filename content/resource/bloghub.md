@@ -1,5 +1,6 @@
 ---
 title: BlogHub
+date: 2026-02-26
 ---
 ## Wiki
 - [中文独立博客列表](https://github.com/timqian/chinese-independent-blogs)
