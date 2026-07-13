@@ -9,3 +9,5 @@ PLIC doc is [[pdf/hybrid/riscv-plic.pdf|here]].
 
 [[project/emulator/riscv-vp/dlopen_cpp_class|dlopen and cpp class]] is a problem about how to use dlopen to load cpp class symbol, as dlsym only support load variable and function in c style.
 
+As we must use the QEMU to simu the T-head RISC-V CPU, [qbox](https://github.com/qualcomm/qbox) is one solution about integraing QEMU with SystemC.
+
