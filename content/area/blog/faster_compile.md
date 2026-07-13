@@ -71,13 +71,20 @@ would report more detail of compile time
    target_link_libraries(myexecutable PRIVATE mylib::pch)
    ```
 3. cache compile result
-   - ccache
-   - sccache(cache sharing)
-1. unity builds
+   - ccache (macos or linux)
+     ```cmake
+     find_program(CCACHE_PROGRAM ccache)
+     if (CCACHE_PROGRAM)
+	     set(CMAKE_C_COMPILER_LAUNCHER ${CCACHE_PROGRAM})
+	     set(CMAKE_CXX_COMPILER_LAUNCHER ${CCACHE_PROGRAM})
+	 endif()
+     ```
+   - sccache(window)
+4. unity builds
    `cmake -DCMAKE_UNITY_BUILD=ON` when cmake 3.16+
-2. LTO (link time optimization)
+5. LTO (link time optimization)
    `cmake -DLLVM_ENABLE_LTO=Thin` for clang
-3. PGO(profile guided optimization)
+6. PGO(profile guided optimization)
    ```markdown
    build clang with cmake -DLLVM_BUILD_INSTRUMENTED=IR
    use this to train the compiler
@@ -87,7 +94,7 @@ would report more detail of compile time
    feed output to clang cmake with -DLLVM_PROFDATA_FILE=<path>
    combine with LTO for best results
    ```
-4. Post link optimization
+7. Post link optimization
    - LLVM-BOLT
    - LLVM-Propeller
 
@@ -113,3 +120,4 @@ would report more detail of compile time
 - [youtube](https://www.youtube.com/watch?v=X4pyOtawqjg)
 - https://github.com/lagadic/visp/wiki/Profiling-Compilation-Times
 - https://opensource.adobe.com/lagrange-docs/dev/compilation-profiling/
+- [PCH](https://www.bensyz.com/blogs/PCH/)
