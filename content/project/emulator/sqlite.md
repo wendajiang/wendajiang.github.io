@@ -27,9 +27,11 @@ tags:
     
     For device-local storage with low writer concurrency and less than a terabyte of content, SQLite is almost always a better solution. SQLite is fast and reliable and it requires no configuration or maintenance. It keeps things simple. SQLite "just works".
 
+> sqlite author develop one version control systems to manage SQLite code [[project/emulator/fossil_vs_git|fossil]].
+
 # architecture of SQLite
 ![[/pics/Pasted image 20260312235503.png]]
 
-Compling SQL text into bytecode, then running that bytecode using a [virtual machine](https://sqlite.org/opcode.html).
+Compiling SQL text into bytecode, then running that bytecode using a [virtual machine](https://sqlite.org/opcode.html).
 # reference
 - https://sqlite.org/arch.html
