@@ -131,7 +131,7 @@ date: 2026-02-26
 	- [CUDA C++ programming](https://docs.nvidia.com/cuda/cuda-c-programming-guide/#what-is-the-cuda-c-programming-guide)
 - [Why you need subtyping](https://blog.polybdenum.com/2025/03/26/why-you-need-subtyping.html)
 - [deepwiki about llvm-project source](https://deepwiki.com/llvm/llvm-project/2.2-constant-expression-evaluation-and-bytecode-interpreter)
-- [[resource/static_program_analysis/index|SPA]]
+- [[area/ai_and_compiler/static_program_analysis|SPA]]
 ## interview
 - [os](https://zhuanlan.zhihu.com/p/23755202)
 - [network](https://zhuanlan.zhihu.com/p/24001696)

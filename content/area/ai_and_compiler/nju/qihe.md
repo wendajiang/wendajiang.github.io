@@ -5,7 +5,7 @@ tags:
   - spa
   - verilog
 ---
-[[area/ai_and_compiler/nju_spa| 南京大学程序分析团队]] 最新verilog 分析框架 Qihe.
+[[area/ai_and_compiler/nju/index| 南京大学程序分析团队]] 最新verilog 分析框架 Qihe.
 
 [paper link](https://arxiv.org/abs/2601.11408v1) and [office site](https://qihe.pascal-lab.net/)
 
