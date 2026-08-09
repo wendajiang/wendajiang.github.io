@@ -6,14 +6,18 @@ date: 2026-08-09
 [[pdf/nju_spa/4.DFA-FD.pdf|slides]]
 
 # review the iterative algorithm
-$OUT[entry] = \emptyset$
-$for (each \space basic \space block \space B\entry)$
-$\space \space OUT[B] = \emptyset$
-$while (changes \space to \space any \space OUT \space occur)$
-$\space \space for (each \space basic \space block \space B\entry) \{$
-$\space \space \space \space IN[B] = \bigcup_{P\space a \space predecessor \space of \space B}OUT[P];$
-$\space \space \space \space OUT[B] = gen_{B} \cup (IN[B] - kill_{B});$
-$\}$
+$$ 
+\begin{aligned} 
+&OUT[entry] = \emptyset \\
+&for (each \space basic \space block \space B\entry) \\
+&\space \space OUT[B] = \emptyset \\
+&while (changes \space to \space any \space OUT \space occur) \\
+&\space \space for (each \space basic \space block \space B\entry) \{ \\
+&\space \space \space \space IN[B] = \bigcup_{P\space a \space predecessor \space of \space B}OUT[P]; \\
+&\space \space \space \space OUT[B] = gen_{B} \cup (IN[B] - kill_{B}); \\
+&\}
+\end{aligned} 
+$$
 
 ## question
 - 1. is the algorithm guaranteed to terminate or reach the fixed point, or does it always have a solution ?
