@@ -5,3 +5,81 @@ date: 2026-08-09
 
 [[pdf/nju_spa/4.DFA-FD.pdf|slides]]
 
+# review the iterative algorithm
+$$ \begin{aligned} 
+&OUT[entry] = \emptyset \\
+&for (each \space basic \space block \space B\entry) \\
+&\space \space OUT[B] = \emptyset \\
+&while (changes \space to \space any \space OUT \space occur) \\
+&\space \space for (each \space basic \space block \space B\entry) \{ \\
+&\space \space \space \space IN[B] = \bigcup_{P\space a \space predecessor \space of \space B}OUT[P]; \\
+&\space \space \space \space OUT[B] = gen_{B} \cup (IN[B] - kill_{B}); \\
+&\}
+\end{aligned} $$
+
+## question
+- is the algorithm guaranteed to terminate or reach the fixed point, or does it always have a solution ?
+- if so, is there only one solution or only one fixed point ? if more than one, is our solution the best one (most precise) ?
+- When will the algorithm reach the fixed point, or when can we get the solution ?
+
+**We need some math - Lattice. But before introduce Lattice, we need learn some concept.**
+
+# Partial Order
+
+We define *poset* as a pair (P, $\sqsubseteq$), where $\sqsubseteq$ is a binary relation that defines a *partial ordering* over P, and $\sqsubseteq$ has the following properties:
+- $\forall x \in P, x\sqsubseteq x \qquad (Reflexivity)$
+- $\forall x,y\in P, x\sqsubseteq y \wedge y \sqsubseteq x \implies x = y \qquad (Antisymmetry)$
+- $\forall x,y,z\in P, x\sqsubseteq y \wedge y\sqsubseteq z \implies x \sqsubseteq z \qquad (Transitivity)$
+
+Example: Is (S, $\sqsubseteq$) a poset where S is a set of integers and $\sqsubseteq$ represents $\le$ ? -> Yes
+
+> **partial** means for a pair of set elements in P, they could be incomparable; in other words, not necessary that every pair of set elements must satisfy the ordering $\sqsubseteq$ 
+
+# Upper and Lower Bounds
+
+Given a poset (P, $\sqsubseteq$) and its subset S that $S \subseteq P$, we say that $u \in P$ is an **upper bound** of S, if $\forall x\in S, x\sqsubseteq u$. Similarly, $l\in P$ is an **lower bound** of S, if $\forall x\in S, l \sqsubseteq x$. 
+
+![[pics/Pasted image 20260809133544.png]]
+
+We define the **least upper bound (lub or join)** of S, written $\bigsqcup S$ , if for every upper bound of S, say u, $\bigsqcup S \sqsubseteq u$. Similarly, we define the **greatest lower bound (glb, or meet)** of S, written $\sqcap S$, if for every lower bound of S, say l, $l \sqsubseteq \sqcap S$.
+
+![[pics/Pasted image 20260809134325.png]]
+
+Some properties:
+- Not every poset has *lub* or *glb*
+- But if a poset has *lub* or *glb*, it will be unique
+
+
+# Lattice
+Given a poset (P, $\sqsubseteq$), $\forall a,b \in P, if a \bigsqcup b \space and \space a \sqcap b \space exist$, then (P, $\sqsubseteq$) is called a lattice.
+
+> A poset is a lattice if **every pair** of its elements has a least upper bound and a greatest lower bound 
+
+## Semilattice
+
+Given a poset (P, $\sqsubseteq$), $\forall a,b \in P$, 
+- if only $a \bigsqcup b \space  exists$, then (P, $\sqsubseteq$) is called a join semilattice.
+- if only $a \sqcap b \space exists$, then (P, $\sqsubseteq$) is called a meet semilattice.
+
+## Complete lattice
+Given a lattice (P, $\sqsubseteq$), for arbitrary subset S of P, if $\bigsqcup S$ and $\sqcap S$ exist, then (P, $\sqsubseteq$) is called a complete lattice.
+
+> **All subsets** of a lattice have a least upper bound and a greatest lower bound.
+
+Every complete lattice (P, $\sqsubseteq$) has 
+- a **greatest** element $\top = \bigsqcup P$  called **top** and 
+- a **least** element $\bot = \sqcap P$ called **bottom**
+
+
+> Every **finite** lattice (P is finite) is a complete lattice.
+
+
+## Product Lattice
+![[pics/Pasted image 20260809140426.png]]
+Ok, now the math is enough
+
+# Data Flow Analysis Framework via Lattice
+
+
+
+
