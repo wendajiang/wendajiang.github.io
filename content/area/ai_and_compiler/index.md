@@ -2,3 +2,45 @@
 title: AI and Compiler
 date: 2026-02-22
 ---
+- [infix expression evaluation cpp impl](https://www.geeksforgeeks.org/dsa/expression-evaluation/)
+- [Why SSA? (mcyoung blog)](https://mcyoung.xyz/posts/)
+- [Chris Lattner's Resume](https://www.nondot.org/sabre/Resume.html#writing)
+- [The Hardware Lottery](https://arxiv.org/abs/2009.06489) https://hardwarelottery.github.io/ @todo 
+- [编程语言基础 Agda](https://agda-zh.github.io/PLFA-zh/Preface/)
+- [GCC Wiki ListOfCompilerBooks](https://gcc.gnu.org/wiki/ListOfCompilerBooks)
+- frontend
+	- [Practical parsing with flex and bison](https://begriffs.com/posts/2021-11-28-practical-parsing.html)
+	- [Why you should not use (f)lex, yacc and bison](https://tomassetti.me/why-you-should-not-use-flex-yacc-and-bison/)
+	- [EBNF](https://tomassetti.me/ebnf/) [BNF playground](https://bnfplayground.pauliankline.com/)
+	- [Understanding the clang AST](https://jonasdevlieghere.com/post/understanding-the-clang-ast/) @todo
+- [maskray blog](https://maskray.me/blog/) 工具链开发很多优质内容
+- [llvm beginner resource](https://discourse.llvm.org/t/beginner-resources-documentation/5872)
+- [Deep diving into LLVM loop unroll](https://yashwantsingh.in/posts/loop-unroll/)
+- [A Loop Flattening Pass in LLVM](https://www.cs.cornell.edu/courses/cs6120/2020fa/blog/loop-flatten/)
+- [Bloaty (size profiler for binaries)](https://blog.reverberate.org/2018/08/07/bloaty-1.0.html)
+- [cs343 Advanced Compiler](https://web.stanford.edu/class/cs343/) 
+	- [cs143 Compiler](https://web.stanford.edu/class/cs143/) [bilibili](https://www.bilibili.com/video/BV1sV411g7Vv/?vd_source=bca5aac95ba1ac296e437bcb3303e1f3)
+	- [cs243](http://infolab.stanford.edu/~ullman/dragon/w06/w06.html)
+	- [cs4120](https://www.cs.cornell.edu/courses/cs4120/2023sp/notes/)
+	- [[resource/CS6120_course/index|cs6120]] from [reddit](https://www.reddit.com/r/Compilers/comments/rvnesz/resources_for_learning_compiler_design/)  
+	- [CSCD70](https://www.cs.toronto.edu/~pekhimenko/courses/cscd70-w19/content.html)
+	- [CSE131](https://cseweb.ucsd.edu/~gbournou/CSE131/links.html)
+	- [UCSD CSE 231: Advanced Compiler Design - Sorin Lerner (after UCSD CSE 131: for more on analysis & optimization--data flow analysis, lattice theory, SSA, optimization](https://podcast.ucsd.edu/watch/wi19/cse231_a00)
+	- [KAIST CS420: Compiler Design - Jeehoon Kang (good modern treatment of SSA representation itself](https://www.youtube.com/watch?v=SOzsb09GldA&list=PL5aMzERQ_OZ8RWqn-XiZLXm1IJuaQbXp0&index=5)  [github](https://github.com/kaist-cp/cs420)
+- [llvm constant expression interpreter in clang](https://developers.redhat.com/author/timm-baeder)
+- [halide-lang](https://halide-lang.org/)
+- [Linkers and Loaders](https://www.linuxjournal.com/article/6463)
+- [How to learn compilers: LLVM Edition](https://lowlevelbits.org/how-to-learn-compilers-llvm-edition/)
+- [Serene Programming Language - A Modern Lisp](https://serene-lang.org/)
+- [Language Programming engineer -> which parsing](https://tratt.net/laurie/blog/2020/which_parsing_approach.html)
+- [What is MLIR](http://lastweek.io/notes/MLIR/)
+- [AI compiler](https://openmlsys.github.io/chapter_preface_advanced/index.html)
+- [Programming Languages:Application and Interpretation](https://www.plai.org/)
+- [chenweiwei github.io Modular engineer](https://weiweichen.github.io/)
+- [Nividia docs](https://docs.nvidia.com/)
+	- [CUDA compilation](https://leimao.github.io/blog/CUDA-Compilation/) 
+	- [CUDA nvcc driver](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/#cuda-compilation-from-cu-to-executable-figure)
+	- [CUDA C++ programming](https://docs.nvidia.com/cuda/cuda-c-programming-guide/#what-is-the-cuda-c-programming-guide)
+- [Why you need subtyping](https://blog.polybdenum.com/2025/03/26/why-you-need-subtyping.html)
+- [deepwiki about llvm-project source](https://deepwiki.com/llvm/llvm-project/2.2-constant-expression-evaluation-and-bytecode-interpreter)
+- [[area/ai_and_compiler/static_program_analysis|SPA]]
