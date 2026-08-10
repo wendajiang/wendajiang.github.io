@@ -10,3 +10,5 @@ tags:
 - [nju 老师知乎](https://www.zhihu.com/people/tree-big-77/posts)
 - [[area/ai_and_compiler/nju/qihe| Qihe: static verilog analysis framework]]
 
+[[pdf/nju_spa/spa.pdf|spa.pdf]] is original pdf.
+

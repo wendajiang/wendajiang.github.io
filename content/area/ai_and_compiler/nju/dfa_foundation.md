@@ -108,5 +108,24 @@ then the **least fixed point** of f can be found by iterating $f(\bot),f(f(\bot)
 then the **greatest fixed point** of f can be found by iterating $f(\top),f(f(\top)), \dots,f^k(\top)$ until a fixed point is reached
 
 
+# May and Must Analyses, A Lattice View
+![[pics/Pasted image 20260810215323.png]]
 
 
+# Worklist Algorithm, an optimization of Iterative Algorithm
+
+$$ 
+\begin{aligned} 
+&OUT[entry] = \emptyset \\
+&for (each \space basic \space block \space B\entry) \\
+&\space \space OUT[B] = \emptyset \\
+&Worklist \leftarrow  all \space basic \space blocks \\
+&while (Worklist \space is \space not \space empty) \\
+&\space \space Pick \space a \space BB \space from \space Worklist \\
+&\space \space old\_OUT = OUT[B] \\
+&\space \space IN[B] = \bigcup_{P\space a \space predecessor \space of \space B}OUT[P]; \\
+&\space \space OUT[B] = gen_{B} \cup (IN[B] - kill_{B}); \\
+&\space \space if (old\_OUT \neq OUT[B])  \\ 
+&\space \space \space \space Add \space all \space successors \space of \space B \space to \space Worklist \\
+\end{aligned} 
+$$
