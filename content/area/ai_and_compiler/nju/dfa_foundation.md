@@ -5,6 +5,8 @@ date: 2026-08-09
 
 [[pdf/nju_spa/4.DFA-FD.pdf|slides]]
 
+[video](https://www.bilibili.com/video/BV1yFWDzZEdT?spm_id_from=333.788.videopod.episodes&vd_source=bca5aac95ba1ac296e437bcb3303e1f3&p=6)
+
 # review the iterative algorithm
 $$ 
 \begin{aligned} 
