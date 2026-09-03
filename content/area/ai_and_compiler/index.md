@@ -46,4 +46,5 @@ date: 2026-02-22
 - [[area/ai_and_compiler/static_program_analysis|SPA]]
 - [mattpd compilers list](https://github.com/MattPD/cpplinks/blob/master/compilers.md)
 - [不错的中文 Blog](https://lqhl.me/blog/)
-	- [[resource/leaky_abstractions_and_ai_agents|Agent 成为抽象层的问题]]
+	- [[area/blog/leaky_abstractions_and_ai_agents|Agent 成为抽象层的问题]]
+	- [[area/blog/pi_vs_dsh|Pi vs DSH]]
