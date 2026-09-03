@@ -89,7 +89,7 @@ date: 2026-02-26
 	- [知乎评论如何学习 mit6.824](https://www.zhihu.com/question/29597104)
 	- [阿里为什么不用 zookeeper](https://www.infoq.cn/article/why-doesnot-alibaba-use-zookeeper) 注册中心（服务发现）在阿里的演进
 	- https://draven.co/consensus/
-## [[area/ai_and_compiler/index|Compiler]]
+## [[area/ai_and_compiler/index|Ai and Compiler]]
 
 ## interview
 - [os](https://zhuanlan.zhihu.com/p/23755202)

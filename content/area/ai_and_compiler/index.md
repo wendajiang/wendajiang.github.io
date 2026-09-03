@@ -44,3 +44,6 @@ date: 2026-02-22
 - [Why you need subtyping](https://blog.polybdenum.com/2025/03/26/why-you-need-subtyping.html)
 - [deepwiki about llvm-project source](https://deepwiki.com/llvm/llvm-project/2.2-constant-expression-evaluation-and-bytecode-interpreter)
 - [[area/ai_and_compiler/static_program_analysis|SPA]]
+- [mattpd compilers list](https://github.com/MattPD/cpplinks/blob/master/compilers.md)
+- [不错的中文 Blog](https://lqhl.me/blog/)
+	- [[resource/leaky_abstractions_and_ai_agents|Agent 成为抽象层的问题]]
