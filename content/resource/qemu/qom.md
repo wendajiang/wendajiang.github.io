@@ -263,3 +263,7 @@ As [[#function pointer in derived class init impl the `override`| override]] des
 ObjectClass* object_class_dynamic_cast(ObjectClass* class, const char* typename);
 ```
 
+
+# reference
+- https://www.qemu.org/docs/master/devel/qom.html
+- 
