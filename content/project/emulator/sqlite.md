@@ -2,7 +2,7 @@
 title: SQLite
 date: 2026-03-12 22:50
 tags:
-  - SQL
+  - sqlite
 ---
 # how to choose right database engine
 1. **Is the data separated from the application by a network? → choose client/server**
